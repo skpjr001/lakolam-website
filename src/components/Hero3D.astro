@@ -1,0 +1,49 @@
+---
+// The hero visual. What ships in the HTML is a ~1 KB inline SVG of the same
+// phyllotaxis spiral — instant, styled, and the LCP candidate. three.js is a
+// separate chunk, dynamically imported on idle and only when the user hasn't
+// asked for reduced motion; the canvas then fades in over the SVG.
+//
+// The static spiral is real mathematics, not a sketch: golden-angle points,
+// r ∝ √i — the same rule the engine's phyllotaxis generator draws.
+
+const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
+const dots = Array.from({ length: 220 }, (_, i) => {
+  const t = i / 220;
+  const r = 118 * Math.sqrt(t);
+  const a = i * GOLDEN_ANGLE;
+  return {
+    x: (130 + r * Math.cos(a)).toFixed(1),
+    y: (130 + r * Math.sin(a)).toFixed(1),
+    s: (3.4 - 2.1 * t).toFixed(2),
+  };
+});
+---
+
+<div class="hero-visual relative aspect-square w-full" aria-hidden="true">
+  <svg viewBox="0 0 260 260" class="absolute inset-0 h-full w-full">
+    <g class="text-accent" fill="currentColor">
+      {dots.map((d) => <circle cx={d.x} cy={d.y} r={d.s} opacity={0.25 + +d.s * 0.16} />)}
+    </g>
+  </svg>
+  <canvas
+    id="hero-canvas"
+    class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-1000 [&.is-live]:opacity-100"
+  ></canvas>
+</div>
+
+<script>
+  // Idle-time upgrade only: never on reduced motion, never before the page
+  // has settled. The dynamic import keeps three.js off the critical path.
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canvas && !reduced) {
+    const boot = () =>
+      import('../scripts/hero-three').then(({ default: init }) => init(canvas));
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => boot(), { timeout: 2500 });
+    } else {
+      setTimeout(boot, 1200);
+    }
+  }
+</script>

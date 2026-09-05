@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import * as ld from '../lib/jsonld';
+
+const title = 'About Lakolam — an engine built on four invariants';
+const description =
+  'Lakolam is a Rust workspace of 66 crates: 55 generators over shared foundations for geometry, grids, constraint solving and rendering. Determinism, one display list, mandatory solvers, sizes as data.';
+
+const jsonLd = [
+  ld.breadcrumbs([
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about/' },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: title,
+    description,
+    mainEntity: ld.sourceCode(),
+  },
+];
+
+const invariants = [
+  {
+    n: '01',
+    title: 'Determinism',
+    body: '(generator, version, spec, seed) → byte-identical output, forever. Randomness is one seeded stream, derived per subsystem, so adding a feature never changes existing pages.',
+  },
+  {
+    n: '02',
+    title: 'One display list',
+    body: 'Generators emit a Scene; backends render it to SVG, PNG, JPEG or PDF. No generator ever writes SVG strings or touches an encoder — which is why every format looks the same.',
+  },
+  {
+    n: '03',
+    title: 'Solvers are mandatory',
+    body: 'Every puzzle ships with a solver that proves uniqueness and scores difficulty by the techniques required. A generator without a solver does not merge.',
+  },
+  {
+    n: '04',
+    title: 'Sizes are data',
+    body: 'Output dimensions live in profile documents, not in code: KDP trim sizes with bleed, social canvases, web previews — add a JSON file, get a format.',
+  },
+];
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+    <h1 class="text-3xl font-bold tracking-tight">Built on four invariants</h1>
+    <p class="text-ink-muted mt-4 text-lg leading-relaxed">
+      Lakolam is a Rust workspace of {SITE.stats.crates} crates —
+      {SITE.stats.generators} generators over shared foundations for geometry,
+      grids, constraint solving and rendering — verified by
+      {SITE.stats.tests.toLocaleString('en-US')} tests. These four rules held
+      from the first commit and explain most of what the engine can promise.
+    </p>
+
+    <div class="mt-10 space-y-6">
+      {
+        invariants.map((inv) => (
+          <section class="border-line bg-surface-raised rounded-xl border p-6">
+            <h2 class="flex items-baseline gap-3 font-semibold">
+              <span class="text-accent font-mono text-sm">{inv.n}</span>
+              {inv.title}
+            </h2>
+            <p class="text-ink-muted mt-2 text-sm leading-relaxed">{inv.body}</p>
+          </section>
+        ))
+      }
+    </div>
+
+    <section class="mt-14">
+      <h2 class="text-2xl font-bold tracking-tight">What that buys you</h2>
+      <ul class="text-ink-muted mt-4 list-disc space-y-2 pl-6 leading-relaxed">
+        <li>
+          <strong class="text-ink">Publishers:</strong> generate a 200-page
+          puzzle book with answer keys in one command, validate every page, and
+          regenerate any of them identically for a reprint.
+        </li>
+        <li>
+          <strong class="text-ink">Educators:</strong> difficulty ratings you
+          can trust — "easy" means solvable with singles, not "the RNG felt
+          gentle today".
+        </li>
+        <li>
+          <strong class="text-ink">Developers:</strong> a clean
+          <code class="font-mono text-sm">Generator</code> trait, a shared
+          constraint engine, and a registry — adding the 56th generator is a
+          crate, a solver and an INFO.md.
+        </li>
+      </ul>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="text-2xl font-bold tracking-tight">Open source</h2>
+      <p class="text-ink-muted mt-3 leading-relaxed">
+        The engine, the CLI and both studios are MIT OR Apache-2.0. The
+        repository's README is the architecture document the workspace was
+        built from, kept current — including the parts where the built system
+        went further than the plan.
+      </p>
+      <a
+        href={SITE.github}
+        rel="noopener"
+        class="bg-accent hover:bg-accent-strong text-surface mt-5 inline-block rounded-lg px-5 py-2.5 font-semibold no-underline transition-colors"
+      >
+        Read the source on GitHub
+      </a>
+    </section>
+  </div>
+</Base>

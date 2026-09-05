@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import * as ld from '../lib/jsonld';
+
+const title = 'Lakolam Studio — the whole engine in your browser';
+const description =
+  'Two browser studios for the Lakolam engine, both running entirely client-side as WebAssembly: the schema-driven Astro studio and the fully-Rust GPUI studio. No uploads, no account, no server.';
+
+const jsonLd = [
+  ld.breadcrumbs([
+    { name: 'Home', path: '/' },
+    { name: 'Studio', path: '/studio/' },
+  ]),
+  ld.softwareApplication(),
+];
+
+const features = [
+  {
+    title: 'Every knob, from the schema',
+    body: 'Each generator publishes a JSON Schema of its spec; the studio builds typed controls from it — dropdowns for enums, steppers for numbers, line editors for wordlists. Nothing is hard-coded, so new generators appear with full controls.',
+  },
+  {
+    title: 'Seeds you can keep',
+    body: 'Step the seed, reroll it deterministically, or type one in. The seed plus the spec is the page: paste the same values next year and get the same bytes.',
+  },
+  {
+    title: 'Export at print quality',
+    body: 'SVG master, PNG from 96 to 600 dpi, and fixed social canvases — Square, Portrait, Story, Landscape, Pin — rendered in the browser and downloaded directly.',
+  },
+  {
+    title: 'Honest metadata',
+    body: 'The result panel shows what the generator attests: measured difficulty versus requested, the rating basis, the uniqueness proof. If a puzzle says "hard", the solver earned that word.',
+  },
+];
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <h1 class="max-w-2xl text-3xl font-bold tracking-tight text-balance">
+      The whole engine runs in your browser
+    </h1>
+    <p class="text-ink-muted mt-4 max-w-2xl text-lg leading-relaxed">
+      Lakolam's generators, solvers and rasteriser compile to WebAssembly.
+      Both studios below are static pages: your pages are generated on your
+      machine, nothing is uploaded, and no account exists to create.
+    </p>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <section class="border-line bg-surface-raised rounded-2xl border p-7">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="text-xl font-bold">Lakolam Studio</h2>
+          <span class="bg-accent/10 text-accent rounded-full px-3 py-0.5 text-xs font-semibold">
+            Recommended
+          </span>
+        </div>
+        <p class="text-ink-muted mt-3 text-sm leading-relaxed">
+          The shipping interface: Astro + a WASM build of the engine, with
+          schema-driven controls, live previews, seed stepping and every
+          export format. Light and dark, fast on any machine.
+        </p>
+        <a
+          href={SITE.studio}
+          rel="noopener"
+          class="bg-accent hover:bg-accent-strong text-surface mt-6 inline-block rounded-lg px-5 py-2.5 font-semibold no-underline transition-colors"
+        >
+          Launch Lakolam Studio
+        </a>
+      </section>
+
+      <section class="border-line bg-surface-raised rounded-2xl border p-7">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="text-xl font-bold">GPUI Studio</h2>
+          <span class="border-line text-ink-muted rounded-full border px-3 py-0.5 text-xs">
+            Experimental
+          </span>
+        </div>
+        <p class="text-ink-muted mt-3 text-sm leading-relaxed">
+          The same engine behind a fully-Rust, GPU-rendered interface built on
+          GPUI — the framework behind the Zed editor — compiled to one
+          WebAssembly module: generators, rasteriser, UI, fonts and icons,
+          three requests total.
+        </p>
+        <a
+          href={SITE.studioGpui}
+          rel="noopener"
+          class="border-line hover:border-accent-dim text-ink mt-6 inline-block rounded-lg border px-5 py-2.5 font-medium no-underline transition-colors"
+        >
+          Try the GPUI Studio
+        </a>
+      </section>
+    </div>
+
+    <section class="mt-14">
+      <h2 class="text-2xl font-bold tracking-tight">What makes it a studio, not a toy</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2">
+        {
+          features.map((f) => (
+            <div class="border-line rounded-xl border p-5">
+              <h3 class="font-semibold">{f.title}</h3>
+              <p class="text-ink-muted mt-2 text-sm leading-relaxed">{f.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Base>

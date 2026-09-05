@@ -1,0 +1,244 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero3D from '../components/Hero3D.astro';
+import GeneratorCard from '../components/GeneratorCard.astro';
+import { SITE, CATEGORY_LABELS, CATEGORY_BLURBS } from '../lib/site';
+import * as ld from '../lib/jsonld';
+
+const generators = (await getCollection('generators')).sort((a, b) =>
+  a.id.localeCompare(b.id)
+);
+const featured = ['mandala', 'maze', 'sudoku', 'kolam', 'crossword', 'celtic', 'nonogram', 'tiling']
+  .map((id) => generators.find((g) => g.id === id))
+  .filter((g) => g !== undefined);
+const lanes = (['design', 'maze', 'puzzle', 'word'] as const).map((cat) => ({
+  cat,
+  label: CATEGORY_LABELS[cat],
+  blurb: CATEGORY_BLURBS[cat],
+  count: generators.filter((g) => g.data.category === cat).length,
+  sample: generators.filter((g) => g.data.category === cat)[0]?.id,
+}));
+
+const faqs = [
+  {
+    q: 'What does "deterministic" mean here?',
+    a: 'The same generator, spec and seed produce byte-identical output, forever. Every page is reproducible: record the seed and you can regenerate the exact same mandala, maze or sudoku years later, at any size or format.',
+  },
+  {
+    q: 'Are the puzzles guaranteed to be solvable?',
+    a: 'Yes — every puzzle generator ships with a solver that proves the puzzle has exactly one solution and scores its difficulty by the techniques required. A generator without a solver does not merge.',
+  },
+  {
+    q: 'What formats can I export?',
+    a: 'SVG is the resolution-independent master; PNG and JPEG at any DPI, and print-ready PDF including KDP trim sizes with bleed. Fixed social-media canvases (Instagram, Pinterest, story) are built in.',
+  },
+  {
+    q: 'Is Lakolam free?',
+    a: 'Yes. The engine and both studios are open source under MIT or Apache-2.0, and the browser studio runs entirely client-side — nothing is uploaded, no account is needed.',
+  },
+  {
+    q: 'Does the studio need a server?',
+    a: 'No. The whole engine compiles to WebAssembly and runs in your browser. Pages are generated on your machine; the site itself is static files.',
+  },
+];
+
+const jsonLd = [
+  ld.organization(),
+  ld.webSite(),
+  ld.softwareApplication(),
+  ld.sourceCode(),
+  ld.faqPage(faqs),
+];
+---
+
+<Base
+  title="Lakolam — deterministic generative designs, mazes and puzzles"
+  description={SITE.description}
+  ogImage="/og/default.png"
+  jsonLd={jsonLd}
+>
+  <!-- ── hero ── -->
+  <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:pt-20">
+    <div>
+      <p class="text-accent font-mono text-xs tracking-widest uppercase">
+        55 generators · 1,365 tests · one seed
+      </p>
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+        Infinite pages.<br />Zero surprises.
+      </h1>
+      <p class="text-ink-muted mt-5 max-w-xl text-lg leading-relaxed">
+        Lakolam is an open-source engine that generates mandalas, kolams,
+        mazes and logic puzzles as print-ready pages. Every output is
+        reproducible from a seed. Every puzzle is <em>proven</em> to have
+        exactly one solution.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={SITE.studio}
+          rel="noopener"
+          class="bg-accent hover:bg-accent-strong text-surface rounded-lg px-5 py-2.5 font-semibold no-underline transition-colors"
+        >
+          Open the studio — it's free
+        </a>
+        <a
+          href="/generators/"
+          class="border-line hover:border-accent-dim text-ink rounded-lg border px-5 py-2.5 font-medium no-underline transition-colors"
+        >
+          Browse all 55 generators
+        </a>
+      </div>
+      <p class="text-ink-muted mt-6 font-mono text-xs">
+        $ lako preview -g mandala --seed {SITE.artSeed} -o page.svg
+      </p>
+    </div>
+    <Hero3D />
+  </section>
+
+  <!-- ── the three promises ── -->
+  <section class="border-line bg-surface-raised border-y">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-3">
+      {
+        [
+          {
+            title: 'Deterministic, forever',
+            body: 'Generator + spec + seed → byte-identical output, guaranteed by 1,365 tests. A page you made today can be regenerated pixel-for-pixel in ten years.',
+          },
+          {
+            title: 'Proven, not sampled',
+            body: 'Every puzzle ships with a solver that certifies a unique solution and rates difficulty by the reasoning techniques it actually requires — no "medium" guesswork.',
+          },
+          {
+            title: 'Print-ready by design',
+            body: 'SVG masters, 300-dpi PDFs with KDP bleed, social canvases. Colouring pages are gated on region size and stroke width, so nothing ships that can’t be coloured.',
+          },
+        ].map((p) => (
+          <div>
+            <h2 class="text-base font-semibold">{p.title}</h2>
+            <p class="text-ink-muted mt-2 text-sm leading-relaxed">{p.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ── lanes ── -->
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <h2 class="text-2xl font-bold tracking-tight">Four lanes, one engine</h2>
+    <p class="text-ink-muted mt-2 max-w-2xl">
+      Every generator emits the same display list and renders through the same
+      backends — so a maze, a mandala and a crossword all export identically.
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        lanes.map((lane) => (
+          <a
+            href={`/generators/#${lane.cat}`}
+            class="border-line bg-surface-raised hover:border-accent-dim rounded-xl border p-5 no-underline transition-colors"
+          >
+            <div class="text-accent font-mono text-2xl font-bold">{lane.count}</div>
+            <h3 class="text-ink mt-1 font-semibold">{lane.label}</h3>
+            <p class="text-ink-muted mt-2 text-sm leading-relaxed">{lane.blurb}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ── gallery strip ── -->
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="text-2xl font-bold tracking-tight">Straight from the engine</h2>
+      <a href="/generators/" class="text-accent text-sm font-medium no-underline">
+        All generators →
+      </a>
+    </div>
+    <p class="text-ink-muted mt-2 max-w-2xl">
+      Nothing here is a mock-up: each preview below was rendered by
+      <code class="font-mono text-xs">lako preview --seed {SITE.artSeed}</code>.
+    </p>
+    <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      {
+        featured.map((g) => (
+          <GeneratorCard
+            id={g.id}
+            title={g.data.title}
+            blurb={g.data.blurb}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ── the studio ── -->
+  <section class="border-line bg-surface-raised border-y">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <h2 class="text-2xl font-bold tracking-tight">The whole engine, in your browser</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <div class="border-line bg-surface rounded-xl border p-6">
+          <h3 class="font-semibold">Lakolam Studio</h3>
+          <p class="text-ink-muted mt-2 text-sm leading-relaxed">
+            The engine compiled to WebAssembly with schema-driven controls for
+            every generator. Tweak a spec, step a seed, export SVG, PNG or PDF —
+            all client-side, nothing uploaded, no account.
+          </p>
+          <a href={SITE.studio} rel="noopener" class="text-accent mt-4 inline-block text-sm font-semibold no-underline">
+            Launch the studio →
+          </a>
+        </div>
+        <div class="border-line bg-surface rounded-xl border p-6">
+          <h3 class="font-semibold">GPUI Studio <span class="text-ink-muted text-xs font-normal">(experimental)</span></h3>
+          <p class="text-ink-muted mt-2 text-sm leading-relaxed">
+            The same engine with a fully-Rust, GPU-rendered interface — Zed's
+            GPUI framework compiled to WebAssembly. One module holds the
+            generators, the rasteriser, the UI and the fonts.
+          </p>
+          <a href={SITE.studioGpui} rel="noopener" class="text-accent mt-4 inline-block text-sm font-semibold no-underline">
+            Try the GPUI studio →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLI ── -->
+  <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Or a thousand pages from the command line</h2>
+      <p class="text-ink-muted mt-3 leading-relaxed">
+        The <code class="font-mono text-sm">lako</code> CLI generates books:
+        batches with answer keys, parameter sweeps as contact sheets, and a
+        validator that fails the build if a single page fails its checks.
+      </p>
+      <a
+        href={SITE.github}
+        rel="noopener"
+        class="text-accent mt-4 inline-block text-sm font-semibold no-underline"
+      >
+        Get it on GitHub →
+      </a>
+    </div>
+    <pre
+      class="border-line bg-surface-sunken overflow-x-auto rounded-xl border p-5 font-mono text-xs leading-relaxed"><code>$ lako generate -g nonogram --count 20 -o ./book
+$ lako sweep -g flowfield --axis octaves=1,3,5 --seeds 4 -o ./sweep
+$ lako validate -g wordfit --count 12   <span class="text-ink-muted"># exit 1 on any Fail</span>
+$ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="mx-auto max-w-3xl px-4 pb-8 sm:px-6">
+    <h2 class="text-2xl font-bold tracking-tight">Questions, answered</h2>
+    <div class="mt-6 space-y-3">
+      {
+        faqs.map((faq) => (
+          <details class="border-line bg-surface-raised group rounded-xl border px-5 py-4">
+            <summary class="cursor-pointer list-none text-sm font-semibold [&::-webkit-details-marker]:hidden">
+              {faq.q}
+            </summary>
+            <p class="text-ink-muted mt-3 text-sm leading-relaxed">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+/*
+ * The same token system as the studio — surface, ink, line, accent — so the
+ * marketing site and the product read as one thing. Dark mode is a class on
+ * <html>, set before first paint from localStorage/prefers-color-scheme.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface: #fdfdfc;
+  --color-surface-raised: #f6f7f5;
+  --color-surface-sunken: #eef0ec;
+  --color-line: #dbdfd8;
+  --color-ink: #171a17;
+  --color-ink-muted: #5a6259;
+  --color-accent: #17795a;
+  --color-accent-strong: #0e5a42;
+  --color-accent-dim: #8fd4b8;
+
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+  --font-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+}
+
+:root.dark {
+  --color-surface: #0e100f;
+  --color-surface-raised: #161816;
+  --color-surface-sunken: #1c1f1c;
+  --color-line: #272b27;
+  --color-ink: #e7eae6;
+  --color-ink-muted: #8b948b;
+  --color-accent: #7dd3a0;
+  --color-accent-strong: #a5e6c1;
+  --color-accent-dim: #3f6b55;
+}
+
+:root {
+  color-scheme: light;
+}
+:root.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: var(--color-accent-dim);
+    color: var(--color-ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/*
+ * Long-form markdown (the generator pages). Hand-rolled rather than the
+ * typography plugin: the needs are small and the tokens must be ours.
+ */
+@layer components {
+  .prose {
+    max-width: 44rem;
+    line-height: 1.75;
+    color: var(--color-ink);
+  }
+  .prose h2 {
+    margin: 2.25rem 0 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .prose p {
+    margin: 0.9rem 0;
+  }
+  .prose ul {
+    margin: 0.9rem 0;
+    padding-left: 1.4rem;
+    list-style: disc;
+  }
+  .prose li {
+    margin: 0.35rem 0;
+  }
+  .prose em {
+    font-style: italic;
+  }
+  .prose strong {
+    font-weight: 600;
+  }
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background-color: var(--color-surface-sunken);
+    border: 1px solid var(--color-line);
+    border-radius: 5px;
+    padding: 0.1em 0.35em;
+  }
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

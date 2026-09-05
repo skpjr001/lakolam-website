@@ -1,0 +1,153 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import { SITE } from '../lib/site';
+import * as ld from '../lib/jsonld';
+
+const title = 'Lakolam brand kit — logo, palette, typography';
+const description =
+  'Download the Lakolam mark and lockups, use the palette and typography, and follow the imagery rule: brand imagery is real engine output, reproducible from its seed.';
+
+const jsonLd = [
+  ld.breadcrumbs([
+    { name: 'Home', path: '/' },
+    { name: 'Brand', path: '/brand/' },
+  ]),
+];
+
+const palette = [
+  { name: 'Accent', light: '#17795a', dark: '#7dd3a0', use: 'Actions, links, the mark' },
+  { name: 'Ink', light: '#171a17', dark: '#e7eae6', use: 'Text' },
+  { name: 'Ink muted', light: '#5a6259', dark: '#8b948b', use: 'Secondary text' },
+  { name: 'Surface', light: '#fdfdfc', dark: '#0e100f', use: 'Page background' },
+  { name: 'Surface raised', light: '#f6f7f5', dark: '#161816', use: 'Cards, panels' },
+  { name: 'Line', light: '#dbdfd8', dark: '#272b27', use: 'Borders, dividers' },
+];
+
+const downloads = [
+  { file: '/brand/lakolam-mark.svg', label: 'Mark (SVG)' },
+  { file: '/brand/lakolam-mark-dark.svg', label: 'Mark for dark surfaces (SVG)' },
+  { file: '/brand/lakolam-mark-mono.svg', label: 'Mark, monochrome (SVG)' },
+  { file: '/brand/lakolam-lockup.svg', label: 'Horizontal lockup (SVG)' },
+  { file: '/brand/lakolam-lockup-dark.svg', label: 'Lockup for dark surfaces (SVG)' },
+];
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <div class="mx-auto max-w-4xl px-4 py-14 sm:px-6">
+    <h1 class="text-3xl font-bold tracking-tight">Brand kit</h1>
+    <p class="text-ink-muted mt-3 max-w-2xl leading-relaxed">
+      Everything needed to write about or link to Lakolam. The full guidelines
+      — logo construction, voice, imagery rules — live in this site's
+      repository as <code class="font-mono text-sm">brand/BRAND.md</code>.
+    </p>
+
+    <!-- ── the mark ── -->
+    <section class="mt-12">
+      <h2 class="text-xl font-bold tracking-tight">The mark</h2>
+      <p class="text-ink-muted mt-2 max-w-2xl text-sm leading-relaxed">
+        A two-ring labyrinth: one entrance, one doorway, the goal at the
+        centre. It is the product's promise drawn small — every page has
+        exactly one way in, and it can always be found again.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="border-line flex h-44 items-center justify-center rounded-xl border bg-white">
+          <img src="/brand/lakolam-mark.svg" alt="Lakolam mark on light" width="72" height="72" />
+        </div>
+        <div class="border-line flex h-44 items-center justify-center rounded-xl border bg-[#0e100f]">
+          <img src="/brand/lakolam-mark-dark.svg" alt="Lakolam mark on dark" width="72" height="72" />
+        </div>
+      </div>
+      <div class="border-line mt-4 flex h-28 items-center justify-center rounded-xl border">
+        <Logo class="text-3xl" />
+      </div>
+      <ul class="mt-6 grid gap-2 text-sm sm:grid-cols-2">
+        {
+          downloads.map((d) => (
+            <li>
+              <a href={d.file} download class="text-accent no-underline hover:underline">
+                ↓ {d.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- ── palette ── -->
+    <section class="mt-14">
+      <h2 class="text-xl font-bold tracking-tight">Palette</h2>
+      <p class="text-ink-muted mt-2 text-sm">
+        Semantic tokens, defined once per theme — the same system the studios
+        use. Tokens also ship as
+        <a href="/brand/tokens.css" class="text-accent">tokens.css</a> and
+        <a href="/brand/tokens.json" class="text-accent">tokens.json</a>.
+      </p>
+      <div class="border-line mt-6 overflow-hidden rounded-xl border">
+        <table class="w-full text-sm">
+          <thead class="bg-surface-raised text-left">
+            <tr>
+              <th class="px-4 py-2.5 font-semibold">Token</th>
+              <th class="px-4 py-2.5 font-semibold">Light</th>
+              <th class="px-4 py-2.5 font-semibold">Dark</th>
+              <th class="px-4 py-2.5 font-semibold">Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              palette.map((c) => (
+                <tr class="border-line border-t">
+                  <td class="px-4 py-2.5 font-medium">{c.name}</td>
+                  <td class="px-4 py-2.5 font-mono text-xs">
+                    <span class="border-line mr-2 inline-block size-3.5 rounded-full border align-[-2px]" style={`background:${c.light}`} />
+                    {c.light}
+                  </td>
+                  <td class="px-4 py-2.5 font-mono text-xs">
+                    <span class="border-line mr-2 inline-block size-3.5 rounded-full border align-[-2px]" style={`background:${c.dark}`} />
+                    {c.dark}
+                  </td>
+                  <td class="text-ink-muted px-4 py-2.5">{c.use}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── typography & voice ── -->
+    <section class="mt-14 grid gap-8 sm:grid-cols-2">
+      <div>
+        <h2 class="text-xl font-bold tracking-tight">Typography</h2>
+        <p class="text-ink-muted mt-2 text-sm leading-relaxed">
+          <strong class="text-ink">Inter</strong> (falling back to the system
+          sans) for interface and marketing;
+          <strong class="text-ink font-mono">JetBrains Mono</strong> for seeds,
+          specs and anything the CLI would print. Headlines are set tight
+          (-0.02em); seeds are always monospaced.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold tracking-tight">Imagery rule</h2>
+        <p class="text-ink-muted mt-2 text-sm leading-relaxed">
+          Brand imagery is <strong class="text-ink">real engine output</strong>,
+          never illustration: rendered by <code class="font-mono text-xs">lako</code>,
+          seed recorded (this site uses
+          <code class="font-mono text-xs">{SITE.artSeed}</code>). If an image
+          can't be regenerated from its caption, it isn't on brand.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── naming ── -->
+    <section class="mt-14">
+      <h2 class="text-xl font-bold tracking-tight">Writing the name</h2>
+      <ul class="text-ink-muted mt-3 list-disc space-y-1.5 pl-6 text-sm leading-relaxed">
+        <li><strong class="text-ink">Lakolam</strong> — the project and the engine. Capital L, one word.</li>
+        <li><strong class="text-ink">Lakolam Studio</strong> — the browser app.</li>
+        <li><code class="font-mono text-xs">lako</code> — the CLI, always lowercase and monospaced.</li>
+        <li>The name recalls <em>kolam</em>, the South-Indian ritual line drawing the engine grew from.</li>
+      </ul>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,68 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../lib/site';
+
+const columns = [
+  {
+    title: 'Generators',
+    links: [
+      { href: '/generators/#design', label: 'Design' },
+      { href: '/generators/#maze', label: 'Mazes' },
+      { href: '/generators/#puzzle', label: 'Logic puzzles' },
+      { href: '/generators/#word', label: 'Word puzzles' },
+    ],
+  },
+  {
+    title: 'Product',
+    links: [
+      { href: SITE.studio, label: 'Browser studio' },
+      { href: SITE.studioGpui, label: 'GPUI studio' },
+      { href: '/about/', label: 'About the engine' },
+      { href: '/brand/', label: 'Brand kit' },
+    ],
+  },
+  {
+    title: 'Open source',
+    links: [
+      { href: SITE.github, label: 'GitHub' },
+      { href: `${SITE.github}#readme`, label: 'Architecture' },
+      { href: `${SITE.github}/blob/main/BUILD.md`, label: 'Build guide' },
+    ],
+  },
+];
+---
+
+<footer class="border-line bg-surface-raised mt-20 border-t">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+    <div class="max-w-xs">
+      <Logo class="text-base" />
+      <p class="text-ink-muted mt-3 text-sm leading-relaxed">
+        {SITE.tagline}. Open source, MIT or Apache-2.0.
+      </p>
+      <p class="text-ink-muted mt-3 text-xs leading-relaxed">
+        Every image on this site was rendered by the engine itself — seed
+        <code class="font-mono">{SITE.artSeed}</code>. Same seed, same page, forever.
+      </p>
+    </div>
+    {
+      columns.map((col) => (
+        <nav aria-label={col.title}>
+          <h2 class="text-ink text-sm font-semibold">{col.title}</h2>
+          <ul class="mt-3 space-y-2 text-sm">
+            {col.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  rel={link.href.startsWith('http') ? 'noopener' : undefined}
+                  class="text-ink-muted hover:text-ink no-underline"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))
+    }
+  </div>
+</footer>

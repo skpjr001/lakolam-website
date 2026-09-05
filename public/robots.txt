@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lakolam-www.sachinkumarskrose.workers.dev/sitemap-index.xml

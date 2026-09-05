@@ -1,0 +1,24 @@
+/* Lakolam brand tokens — the same semantic system the studios use.
+   Light values on :root; dark values under `.dark`. */
+:root {
+  --lakolam-surface: #fdfdfc;
+  --lakolam-surface-raised: #f6f7f5;
+  --lakolam-surface-sunken: #eef0ec;
+  --lakolam-line: #dbdfd8;
+  --lakolam-ink: #171a17;
+  --lakolam-ink-muted: #5a6259;
+  --lakolam-accent: #17795a;
+  --lakolam-accent-strong: #0e5a42;
+  --lakolam-accent-dim: #8fd4b8;
+}
+.dark {
+  --lakolam-surface: #0e100f;
+  --lakolam-surface-raised: #161816;
+  --lakolam-surface-sunken: #1c1f1c;
+  --lakolam-line: #272b27;
+  --lakolam-ink: #e7eae6;
+  --lakolam-ink-muted: #8b948b;
+  --lakolam-accent: #7dd3a0;
+  --lakolam-accent-strong: #a5e6c1;
+  --lakolam-accent-dim: #3f6b55;
+}

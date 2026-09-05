@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import GeneratorCard from '../../components/GeneratorCard.astro';
+import { CATEGORY_LABELS, CATEGORY_BLURBS, SITE } from '../../lib/site';
+import * as ld from '../../lib/jsonld';
+
+const generators = (await getCollection('generators')).sort((a, b) =>
+  a.id.localeCompare(b.id)
+);
+const lanes = (['design', 'maze', 'puzzle', 'word'] as const).map((cat) => ({
+  cat,
+  label: CATEGORY_LABELS[cat],
+  blurb: CATEGORY_BLURBS[cat],
+  items: generators.filter((g) => g.data.category === cat),
+}));
+
+const title = `All ${generators.length} generators — designs, mazes and puzzles | Lakolam`;
+const description = `Browse every Lakolam generator: ${lanes.map((l) => `${l.items.length} ${l.label.toLowerCase()}${l.items.length === 1 ? '' : 's'}`).join(', ')}. Each one deterministic, each puzzle proven uniquely solvable.`;
+
+const jsonLd = [
+  ld.breadcrumbs([
+    { name: 'Home', path: '/' },
+    { name: 'Generators', path: '/generators/' },
+  ]),
+  ld.itemList(
+    'Lakolam generators',
+    generators.map((g) => ({ name: g.data.title, path: `/generators/${g.id}/` }))
+  ),
+];
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <h1 class="text-3xl font-bold tracking-tight">
+      {generators.length} generators
+    </h1>
+    <p class="text-ink-muted mt-3 max-w-2xl">
+      One engine, four lanes. Every preview below was rendered by the engine at
+      seed <code class="font-mono text-sm">{SITE.artSeed}</code> — click through
+      for how each one works, its guarantees, and its history.
+    </p>
+
+    <nav class="mt-6 flex flex-wrap gap-2" aria-label="Lanes">
+      {
+        lanes.map((lane) => (
+          <a
+            href={`#${lane.cat}`}
+            class="border-line hover:border-accent-dim text-ink rounded-full border px-4 py-1.5 text-sm no-underline transition-colors"
+          >
+            {lane.label}s <span class="text-ink-muted">· {lane.items.length}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    {
+      lanes.map((lane) => (
+        <section id={lane.cat} class="scroll-mt-24 pt-14">
+          <h2 class="text-xl font-bold tracking-tight">{lane.label}s</h2>
+          <p class="text-ink-muted mt-1 max-w-2xl text-sm">{lane.blurb}</p>
+          <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {lane.items.map((g) => (
+              <GeneratorCard id={g.id} title={g.data.title} blurb={g.data.blurb} />
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</Base>

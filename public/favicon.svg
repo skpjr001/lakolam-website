@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The Lakolam mark: a two-ring labyrinth — one entrance at the top, one
+       doorway inside, the goal at the centre. -->
+  <g stroke="#17795a" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M 20.28 4.25 A 12.5 12.5 0 1 1 11.72 4.25" />
+    <path d="M 12.54 22.65 A 7.5 7.5 0 1 1 19.46 22.65" />
+  </g>
+  <circle cx="16" cy="16" r="2.3" fill="#17795a" />
+</svg>
