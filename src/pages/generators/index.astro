@@ -18,8 +18,9 @@ const lanes = (['design', 'maze', 'puzzle', 'word'] as const).map((cat) => ({
 const title = `All ${generators.length} generators — designs, mazes and puzzles | Lakolam`;
 const description = `Browse every Lakolam generator: ${lanes.map((l) => `${l.items.length} ${l.label.toLowerCase()}${l.items.length === 1 ? '' : 's'}`).join(', ')}. Each one deterministic, each puzzle proven uniquely solvable.`;
 
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
-  ld.breadcrumbs([
+  ld.breadcrumbs(pageUrl, [
     { name: 'Home', path: '/' },
     { name: 'Generators', path: '/generators/' },
   ]),
@@ -30,7 +31,13 @@ const jsonLd = [
 ];
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd}>
+<Base
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  pageType="CollectionPage"
+  ogImage="/og/pages/generators.png"
+>
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
     <h1 class="text-3xl font-bold tracking-tight">
       {generators.length} generators

@@ -124,13 +124,31 @@ export default function init(canvas: HTMLCanvasElement): () => void {
   resizeObserver.observe(canvas);
   resize();
 
-  // ── pointer parallax, eased ──
+  // ── pointer parallax, eased — plus grab-to-spin on the canvas itself ──
   let targetTilt = 0;
   let tilt = 0;
+  let spin = 0;
+  let dragging = false;
+  let dragX = 0;
   const onPointer = (e: PointerEvent) => {
-    targetTilt = (e.clientX / innerWidth - 0.5) * 0.5;
+    if (dragging) {
+      spin += (e.clientX - dragX) * 0.005;
+      dragX = e.clientX;
+    } else {
+      targetTilt = (e.clientX / innerWidth - 0.5) * 0.5;
+    }
   };
-  addEventListener('pointermove', onPointer, { passive: true });
+  const onDown = (e: PointerEvent) => {
+    dragging = true;
+    dragX = e.clientX;
+    canvas.setPointerCapture(e.pointerId);
+  };
+  const onUp = () => {
+    dragging = false;
+  };
+  canvas.addEventListener("pointerdown", onDown);
+  addEventListener("pointerup", onUp, { passive: true });
+  addEventListener("pointermove", onPointer, { passive: true });
 
   // ── render loop: runs only while visible ──
   let frame = 0;
@@ -140,7 +158,7 @@ export default function init(canvas: HTMLCanvasElement): () => void {
     const t = (performance.now() - start) / 1000;
     material.uniforms.uTime!.value = t;
     tilt += (targetTilt - tilt) * 0.04;
-    points.rotation.y = t * 0.06 + tilt;
+    points.rotation.y = t * 0.06 + tilt + spin;
     renderer.render(scene, camera);
     frame = requestAnimationFrame(render);
   };
@@ -165,7 +183,9 @@ export default function init(canvas: HTMLCanvasElement): () => void {
     io.disconnect();
     themeObserver.disconnect();
     resizeObserver.disconnect();
-    removeEventListener('pointermove', onPointer);
+    canvas.removeEventListener("pointerdown", onDown);
+    removeEventListener("pointerup", onUp);
+    removeEventListener("pointermove", onPointer);
     document.removeEventListener('visibilitychange', onVisibility);
     geometry.dispose();
     material.dispose();

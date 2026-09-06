@@ -1,11 +1,13 @@
 ---
 // The hero visual. What ships in the HTML is a ~1 KB inline SVG of the same
-// phyllotaxis spiral — instant, styled, and the LCP candidate. three.js is a
-// separate chunk, dynamically imported on idle and only when the user hasn't
-// asked for reduced motion; the canvas then fades in over the SVG.
+// phyllotaxis spiral — instant, styled, and the LCP candidate — plus floating
+// proof chips carrying real engine facts. three.js is a separate chunk,
+// dynamically imported on idle and only when the user hasn't asked for
+// reduced motion; the canvas then fades in over the SVG and can be dragged.
 //
 // The static spiral is real mathematics, not a sketch: golden-angle points,
 // r ∝ √i — the same rule the engine's phyllotaxis generator draws.
+import { SITE } from '../lib/site';
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const dots = Array.from({ length: 220 }, (_, i) => {
@@ -20,17 +22,64 @@ const dots = Array.from({ length: 220 }, (_, i) => {
 });
 ---
 
-<div class="hero-visual relative aspect-square w-full" aria-hidden="true">
-  <svg viewBox="0 0 260 260" class="absolute inset-0 h-full w-full">
+<div class="hero-visual relative aspect-square w-full">
+  <svg viewBox="0 0 260 260" class="absolute inset-0 h-full w-full" aria-hidden="true">
     <g class="text-accent" fill="currentColor">
       {dots.map((d) => <circle cx={d.x} cy={d.y} r={d.s} opacity={0.25 + +d.s * 0.16} />)}
     </g>
   </svg>
   <canvas
     id="hero-canvas"
-    class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-1000 [&.is-live]:opacity-100"
+    class="absolute inset-0 h-full w-full cursor-grab opacity-0 transition-opacity
+           duration-1000 active:cursor-grabbing [&.is-live]:opacity-100"
+    aria-hidden="true"
   ></canvas>
+
+  <!-- Proof chips: real facts from the engine, floating over the scene. -->
+  <div class="chip left-0 top-[14%]">
+    <span class="chip-tag">SEED</span>
+    <span class="font-mono">{SITE.artSeed}</span>
+  </div>
+  <div class="chip -right-2 top-[38%] hidden sm:flex">
+    <span class="chip-tag">PROOF</span>
+    <span><span class="font-mono">unique: true</span> · solver-verified</span>
+  </div>
+  <div class="chip bottom-[8%] left-[8%] hidden sm:flex">
+    <span class="chip-tag">OUTPUT</span>
+    <span>byte-identical, forever</span>
+  </div>
 </div>
+
+<style>
+  /* Fade the particle field's edges instead of hard-clipping at the frame. */
+  .hero-visual canvas {
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 52%, transparent 97%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 52%, transparent 97%);
+  }
+  .chip {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--color-line);
+    background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .chip-tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+  }
+</style>
 
 <script>
   // Idle-time upgrade only: never on reduced motion, never before the page

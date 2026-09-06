@@ -7,12 +7,14 @@ const title = 'Lakolam Studio — the whole engine in your browser';
 const description =
   'Two browser studios for the Lakolam engine, both running entirely client-side as WebAssembly: the schema-driven Astro studio and the fully-Rust GPUI studio. No uploads, no account, no server.';
 
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
-  ld.breadcrumbs([
+  ld.breadcrumbs(pageUrl, [
     { name: 'Home', path: '/' },
     { name: 'Studio', path: '/studio/' },
   ]),
   ld.softwareApplication(),
+  ld.gpuiStudio(),
 ];
 
 const features = [
@@ -35,7 +37,7 @@ const features = [
 ];
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd}>
+<Base title={title} description={description} jsonLd={jsonLd} ogImage="/og/pages/studio.png">
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
     <h1 class="max-w-2xl text-3xl font-bold tracking-tight text-balance">
       The whole engine runs in your browser

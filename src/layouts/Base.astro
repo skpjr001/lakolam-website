@@ -1,11 +1,15 @@
 ---
-// The shared shell: full SEO head (canonical, Open Graph, Twitter, JSON-LD),
-// theme boot script, header and footer. Every page passes its own title,
-// description and structured data; everything else is derived from `site`.
+// The shared shell: full SEO head (canonical, robots, Open Graph, Twitter,
+// one JSON-LD @graph), theme boot script, header and footer.
+//
+// Every page gets three graph nodes for free — Organization, WebSite and its
+// own WebPage — and may pass more via `jsonLd`; everything is emitted as a
+// single @graph so the entities interlink by @id.
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../lib/site';
+import { organization, webPage, webSite } from '../lib/jsonld';
 
 interface Props {
   title: string;
@@ -13,8 +17,12 @@ interface Props {
   /** Absolute-from-root path of the social image, e.g. /og/default.png */
   ogImage?: string;
   ogImageAlt?: string;
-  /** JSON-LD objects to embed, one <script> per entry. */
+  /** Extra JSON-LD graph nodes (no @context — Base wraps the graph). */
   jsonLd?: Record<string, unknown>[];
+  /** The page's schema.org node type. */
+  pageType?: 'WebPage' | 'CollectionPage' | 'AboutPage';
+  /** Override the robots directive — e.g. 'noindex, follow' for duplicates. */
+  robots?: string;
   /** Override the derived canonical URL if a page ever needs to. */
   canonical?: string;
 }
@@ -25,10 +33,27 @@ const {
   ogImage = '/og/default.png',
   ogImageAlt = `${SITE.name} — ${SITE.tagline}`,
   jsonLd = [],
+  pageType = 'WebPage',
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props;
 
 const ogImageUrl = new URL(ogImage, Astro.site).href;
+
+const graph = [
+  organization(),
+  webSite(),
+  webPage({
+    type: pageType,
+    url: canonical,
+    title,
+    description,
+    image: ogImageUrl,
+    hasBreadcrumb: jsonLd.some((node) => node['@type'] === 'BreadcrumbList'),
+  }),
+  ...jsonLd,
+];
+const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 ---
 
 <!doctype html>
@@ -38,6 +63,7 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -48,6 +74,7 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -62,7 +89,7 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <script is:inline>
       // Before first paint, so a dark-mode user never sees a white flash.

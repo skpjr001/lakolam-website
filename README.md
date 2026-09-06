@@ -30,14 +30,18 @@ The synced output is committed, so this site builds standalone.
 
 ## Performance & SEO posture
 
-- Static HTML; no client JS except the theme toggle (~10 lines) and the hero.
-- three.js is a lazily-loaded chunk: dynamically imported on `requestIdleCallback`,
-  skipped entirely under `prefers-reduced-motion`; the LCP hero is a ~1 KB
-  inline SVG of the same phyllotaxis spiral. Rendering pauses offscreen.
+- Static HTML; no client JS except the theme toggle (~10 lines) and two
+  three.js scenes (the phyllotaxis hero and the self-solving maze). Both are
+  lazily imported on `requestIdleCallback`, skipped entirely under
+  `prefers-reduced-motion`, and pause offscreen; three.js itself is one
+  shared chunk (~127 KB gz) and each scene costs ~1.7 KB gz on top. The LCP
+  hero is a ~1 KB inline SVG of the same phyllotaxis spiral; the maze's
+  fallback is a real engine render.
 - Canonicals, Open Graph + Twitter cards, per-generator OG images (1200×630),
   sitemap (`@astrojs/sitemap`), robots.txt, JSON-LD on every page
   (Organization, WebSite, SoftwareApplication, SoftwareSourceCode,
-  BreadcrumbList, ItemList, CreativeWork, FAQPage).
+  BreadcrumbList, ItemList, CreativeWork, FAQPage) emitted as one @graph per
+  page with @id cross-references, so the entities interlink.
 - Thumbnails go through `astro:assets` (webp, lazy, sized).
 
 ## Brand kit

@@ -7,18 +7,13 @@ const title = 'About Lakolam — an engine built on four invariants';
 const description =
   'Lakolam is a Rust workspace of 66 crates: 55 generators over shared foundations for geometry, grids, constraint solving and rendering. Determinism, one display list, mandatory solvers, sizes as data.';
 
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
-  ld.breadcrumbs([
+  ld.breadcrumbs(pageUrl, [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about/' },
   ]),
-  {
-    '@context': 'https://schema.org',
-    '@type': 'AboutPage',
-    name: title,
-    description,
-    mainEntity: ld.sourceCode(),
-  },
+  ld.sourceCode(),
 ];
 
 const invariants = [
@@ -45,7 +40,13 @@ const invariants = [
 ];
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd}>
+<Base
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  pageType="AboutPage"
+  ogImage="/og/pages/about.png"
+>
   <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
     <h1 class="text-3xl font-bold tracking-tight">Built on four invariants</h1>
     <p class="text-ink-muted mt-4 text-lg leading-relaxed">

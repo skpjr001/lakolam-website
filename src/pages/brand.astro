@@ -8,8 +8,9 @@ const title = 'Lakolam brand kit — logo, palette, typography';
 const description =
   'Download the Lakolam mark and lockups, use the palette and typography, and follow the imagery rule: brand imagery is real engine output, reproducible from its seed.';
 
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
-  ld.breadcrumbs([
+  ld.breadcrumbs(pageUrl, [
     { name: 'Home', path: '/' },
     { name: 'Brand', path: '/brand/' },
   ]),
@@ -33,7 +34,7 @@ const downloads = [
 ];
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd}>
+<Base title={title} description={description} jsonLd={jsonLd} ogImage="/og/pages/brand.png">
   <div class="mx-auto max-w-4xl px-4 py-14 sm:px-6">
     <h1 class="text-3xl font-bold tracking-tight">Brand kit</h1>
     <p class="text-ink-muted mt-3 max-w-2xl leading-relaxed">

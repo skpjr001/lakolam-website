@@ -1,0 +1,50 @@
+---
+// The "zero surprises" scene: a lazily-loaded 3D maze that carves, solves
+// itself along the accent path, then reseeds — a different maze every loop.
+// Same budget rules as the hero: dynamic import on idle, skipped under
+// prefers-reduced-motion (the static fallback is a real engine render),
+// rendering paused offscreen. Shares the three.js chunk with the hero.
+import { Image } from 'astro:assets';
+import mazeThumb from '../assets/generators/maze.png';
+---
+
+<div class="maze-scene relative aspect-square w-full max-w-md" aria-hidden="true">
+  <Image
+    src={mazeThumb}
+    alt=""
+    width={520}
+    height={520}
+    loading="lazy"
+    decoding="async"
+    class="maze-fallback absolute inset-0 h-full w-full rounded-xl bg-white object-cover opacity-90 transition-opacity duration-700"
+  />
+  <canvas
+    id="maze-canvas"
+    class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-1000 [&.is-live]:opacity-100"
+  ></canvas>
+</div>
+
+<style>
+  /* Soften the scene's edges so the line work fades out rather than clipping. */
+  .maze-scene canvas {
+    mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, black 55%, transparent 98%);
+    -webkit-mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, black 55%, transparent 98%);
+  }
+  .maze-scene:has(canvas.is-live) .maze-fallback {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('maze-canvas') as HTMLCanvasElement | null;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canvas && !reduced) {
+    const boot = () =>
+      import('../scripts/maze-three').then(({ default: init }) => init(canvas));
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => boot(), { timeout: 3500 });
+    } else {
+      setTimeout(boot, 1800);
+    }
+  }
+</script>

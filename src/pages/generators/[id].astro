@@ -27,8 +27,9 @@ const thumbs = import.meta.glob<{ default: ImageMetadata }>(
 const thumb = thumbs[`../../assets/generators/${entry.id}.png`];
 
 const pageTitle = `${title} generator — ${CATEGORY_LABELS[category]?.toLowerCase()} | Lakolam`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
-  ld.breadcrumbs([
+  ld.breadcrumbs(pageUrl, [
     { name: 'Home', path: '/' },
     { name: 'Generators', path: '/generators/' },
     { name: title, path: `/generators/${entry.id}/` },
