@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: 'Is Lakolam free?',
-    a: 'Yes. The engine and both studios are open source under MIT or Apache-2.0, and the browser studio runs entirely client-side — nothing is uploaded, no account is needed.',
+    a: 'Yes. Both studios are free to use, and the browser studio runs entirely client-side — nothing is uploaded, no account is needed.',
   },
   {
     q: 'Does the studio need a server?',
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'Can I sell what I generate?',
-    a: 'Yes. The engine is MIT OR Apache-2.0 and the pages you generate are yours — puzzle books, colouring books, classroom sets, social posts. Wordlists and quote corpora ship inside the crates and are drawn from public-domain sources.',
+    a: 'Yes. The pages you generate are yours — puzzle books, colouring books, classroom sets, social posts. Wordlists and quote corpora ship inside the crates and are drawn from public-domain sources.',
   },
   {
     q: 'How are difficulty ratings decided?',
@@ -81,7 +81,7 @@ const jsonLd = [
         Infinite pages.<br />Zero surprises.
       </h1>
       <p class="text-ink-muted mt-5 max-w-xl text-lg leading-relaxed">
-        Lakolam is an open-source engine that generates mandalas, kolams,
+        Lakolam is an engine that generates mandalas, kolams,
         mazes and logic puzzles as print-ready pages. Every output is
         reproducible from a seed. Every puzzle is <em>proven</em> to have
         exactly one solution.
@@ -89,7 +89,7 @@ const jsonLd = [
       <div class="mt-8 flex flex-wrap gap-3">
         <a
           href={SITE.studio}
-          rel="noopener"
+          target="_blank" rel="noopener noreferrer"
           class="bg-accent hover:bg-accent-strong text-surface rounded-lg px-5 py-2.5 font-semibold no-underline transition-colors"
         >
           Open the studio — it's free
@@ -195,7 +195,7 @@ const jsonLd = [
             every generator. Tweak a spec, step a seed, export SVG, PNG or PDF —
             all client-side, nothing uploaded, no account.
           </p>
-          <a href={SITE.studio} rel="noopener" class="text-accent mt-4 inline-block text-sm font-semibold no-underline">
+          <a href={SITE.studio} target="_blank" rel="noopener noreferrer" class="text-accent mt-4 inline-block text-sm font-semibold no-underline">
             Launch the studio →
           </a>
         </div>
@@ -206,7 +206,7 @@ const jsonLd = [
             GPUI framework compiled to WebAssembly. One module holds the
             generators, the rasteriser, the UI and the fonts.
           </p>
-          <a href={SITE.studioGpui} rel="noopener" class="text-accent mt-4 inline-block text-sm font-semibold no-underline">
+          <a href={SITE.studioGpui} target="_blank" rel="noopener noreferrer" class="text-accent mt-4 inline-block text-sm font-semibold no-underline">
             Try the GPUI studio →
           </a>
         </div>
@@ -223,13 +223,6 @@ const jsonLd = [
         batches with answer keys, parameter sweeps as contact sheets, and a
         validator that fails the build if a single page fails its checks.
       </p>
-      <a
-        href={SITE.github}
-        rel="noopener"
-        class="text-accent mt-4 inline-block text-sm font-semibold no-underline"
-      >
-        Get it on GitHub →
-      </a>
     </div>
     <pre
       class="border-line bg-surface-sunken overflow-x-auto rounded-xl border p-5 font-mono text-xs leading-relaxed"><code>$ lako generate -g nonogram --count 20 -o ./book
@@ -274,15 +267,8 @@ $ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
       <h2 class="mt-3 text-2xl font-bold tracking-tight">Questions, answered</h2>
       <p class="text-ink-muted mt-3 text-sm leading-relaxed">
         Every claim below is checkable — in the metadata a generation reports,
-        or in the source itself.
+        or in the page it produces.
       </p>
-      <a
-        href={`${SITE.github}/issues`}
-        rel="noopener"
-        class="text-accent mt-4 inline-block text-sm font-semibold no-underline"
-      >
-        Something else? Open an issue →
-      </a>
     </div>
     <div class="border-line divide-line divide-y overflow-hidden rounded-xl border">
       {
@@ -311,9 +297,8 @@ $ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
   </section>
 
   <!-- ── contact: bidflow's CTA recipe — layered accent glows, a big
-       clamped headline, oversized actions, a glowing-dot note — improvised
-       for an open-source engine: the studio is the demo, the repo is the
-       contact channel, and a harmonograph draws itself behind it all. ── -->
+       clamped headline, oversized actions, a glowing-dot note — with the
+       studio as the demo and a harmonograph drawing itself behind it all. ── -->
   <section id="contact" class="cta-band border-line relative overflow-hidden border-t">
     <CtaScene />
     <div class="relative z-10 mx-auto max-w-[720px] px-4 py-[110px] text-center sm:px-6 lg:py-[130px]">
@@ -328,26 +313,23 @@ $ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
       <div class="mt-9 flex flex-wrap justify-center gap-4">
         <a
           href={SITE.studio}
-          rel="noopener"
+          target="_blank" rel="noopener noreferrer"
           class="bg-accent hover:bg-accent-strong text-surface rounded-xl px-9 py-4 text-base font-semibold no-underline shadow-lg transition-colors"
         >
           Open the studio
         </a>
         <a
-          href={SITE.github}
-          rel="noopener"
+          href={SITE.studioGpui}
+          target="_blank" rel="noopener noreferrer"
           class="border-line bg-surface/70 hover:border-accent hover:text-accent text-ink rounded-xl border px-9 py-4 text-base font-medium no-underline backdrop-blur transition-colors"
         >
-          View on GitHub
+          Try the GPUI studio
         </a>
       </div>
       <p class="text-ink-muted mt-7 text-sm">
         <span class="cta-dot" aria-hidden="true"></span>
-        Questions, or a generator you wish existed?
-        <a href={`${SITE.github}/issues`} rel="noopener" class="text-accent no-underline hover:underline">
-          Open an issue
-        </a>
-        · seed <span class="font-mono text-xs">{SITE.artSeed}</span> draws behind this text
+        Every image behind this text is real engine output · seed
+        <span class="font-mono text-xs">{SITE.artSeed}</span>
       </p>
     </div>
   </section>

@@ -19,14 +19,6 @@ const columns = [
       { href: SITE.studioGpui, label: 'GPUI studio' },
       { href: '/about/', label: 'About the engine' },
       { href: '/brand/', label: 'Brand kit' },
-    ],
-  },
-  {
-    title: 'Open source',
-    links: [
-      { href: SITE.github, label: 'GitHub' },
-      { href: `${SITE.github}#readme`, label: 'Architecture' },
-      { href: `${SITE.github}/blob/main/BUILD.md`, label: 'Build guide' },
       { href: '/#contact', label: 'Contact' },
     ],
   },
@@ -38,7 +30,7 @@ const columns = [
     <div class="max-w-xs">
       <Logo class="text-base" />
       <p class="text-ink-muted mt-3 text-sm leading-relaxed">
-        {SITE.tagline}. Open source, MIT or Apache-2.0.
+        {SITE.tagline}.
       </p>
       <p class="text-ink-muted mt-3 text-xs leading-relaxed">
         Every image on this site was rendered by the engine itself — seed
@@ -54,7 +46,8 @@ const columns = [
               <li>
                 <a
                   href={link.href}
-                  rel={link.href.startsWith('http') ? 'noopener' : undefined}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   class="text-ink-muted hover:text-ink no-underline"
                 >
                   {link.label}

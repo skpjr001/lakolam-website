@@ -7,7 +7,7 @@ export default defineConfig({
   // `site` powers canonical URLs, the sitemap, OG URLs and JSON-LD ids —
   // change it here and everything follows. The name matches the Workers
   // static-assets deploy in wrangler.jsonc.
-  site: 'https://lakolam-www.sachinkumarskrose.workers.dev',
+  site: 'https://www.lakolam.com',
   output: 'static',
   trailingSlash: 'always',
   integrations: [sitemap()],

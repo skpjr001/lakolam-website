@@ -5,7 +5,7 @@
 
 import { SITE } from './site';
 
-const site = 'https://lakolam-www.sachinkumarskrose.workers.dev';
+const site = 'https://www.lakolam.com';
 export const ids = {
   org: `${site}/#organization`,
   website: `${site}/#website`,
@@ -23,7 +23,6 @@ export const organization = () => ({
     '@type': 'ImageObject',
     url: `${site}/brand/lakolam-mark.svg`,
   },
-  sameAs: [SITE.github],
   knowsAbout: [
     'Generative art',
     'Procedural generation',
@@ -109,10 +108,8 @@ export const sourceCode = () => ({
   '@type': 'SoftwareSourceCode',
   '@id': ids.code,
   name: 'Lakolam',
-  codeRepository: SITE.github,
   programmingLanguage: 'Rust',
   runtimePlatform: 'WebAssembly',
-  license: ['https://spdx.org/licenses/MIT.html', 'https://spdx.org/licenses/Apache-2.0.html'],
   description: SITE.description,
   author: { '@id': ids.org },
 });
@@ -142,7 +139,6 @@ export const generatorWork = (g: {
   genre: g.category,
   creator: { '@id': ids.org },
   isPartOf: { '@id': ids.website },
-  license: ['https://spdx.org/licenses/MIT.html', 'https://spdx.org/licenses/Apache-2.0.html'],
 });
 
 export const itemList = (name: string, items: { name: string; path: string }[]) => ({
