@@ -8,7 +8,7 @@
 <div class="cta-scene pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
   <canvas
     id="cta-canvas"
-    class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-1000 [&.is-live]:opacity-100"
+    class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-1000 [&.is-live]:opacity-85"
   ></canvas>
 </div>
 
@@ -16,8 +16,8 @@
   /* Fade toward every edge so the ribbon floats behind the text rather than
      hard-clipping at the band's borders. */
   .cta-scene canvas {
-    mask-image: radial-gradient(ellipse 75% 85% at 50% 50%, black 45%, transparent 96%);
-    -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 50%, black 45%, transparent 96%);
+    mask-image: radial-gradient(ellipse 85% 95% at 50% 48%, black 55%, transparent 99%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 95% at 50% 48%, black 55%, transparent 99%);
   }
 </style>
 

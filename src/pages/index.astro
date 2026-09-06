@@ -310,44 +310,74 @@ $ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
     </div>
   </section>
 
-  <!-- ── contact: the closing band, harmonograph drawing behind it ── -->
-  <section id="contact" class="border-line bg-surface-raised relative overflow-hidden border-t">
+  <!-- ── contact: bidflow's CTA recipe — layered accent glows, a big
+       clamped headline, oversized actions, a glowing-dot note — improvised
+       for an open-source engine: the studio is the demo, the repo is the
+       contact channel, and a harmonograph draws itself behind it all. ── -->
+  <section id="contact" class="cta-band border-line relative overflow-hidden border-t">
     <CtaScene />
-    <div class="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-4 py-24 text-center sm:px-6">
-      <p class="text-accent font-mono text-xs tracking-widest uppercase">Get started</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-        Your first thousand pages are one seed away.
+    <div class="relative z-10 mx-auto max-w-[720px] px-4 py-[110px] text-center sm:px-6 lg:py-[130px]">
+      <p class="text-accent font-mono text-xs font-bold tracking-[0.2em] uppercase">Get started</p>
+      <h2 class="mt-4 text-[clamp(1.9rem,3.6vw,2.9rem)] leading-tight font-bold tracking-[-0.025em] text-balance">
+        Your first thousand pages are one&nbsp;seed&nbsp;away.
       </h2>
-      <p class="text-ink-muted mt-4 max-w-xl leading-relaxed">
+      <p class="text-ink-muted mx-auto mt-4 max-w-xl text-[1.08rem] leading-relaxed">
         Generate in the browser right now, or install the CLI and build whole
         books — pages, answer keys and validation in one command.
       </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <div class="mt-9 flex flex-wrap justify-center gap-4">
         <a
           href={SITE.studio}
           rel="noopener"
-          class="bg-accent hover:bg-accent-strong text-surface rounded-lg px-6 py-3 font-semibold no-underline transition-colors"
+          class="bg-accent hover:bg-accent-strong text-surface rounded-xl px-9 py-4 text-base font-semibold no-underline shadow-lg transition-colors"
         >
           Open the studio
         </a>
         <a
           href={SITE.github}
           rel="noopener"
-          class="border-line bg-surface hover:border-accent-dim text-ink rounded-lg border px-6 py-3 font-medium no-underline transition-colors"
+          class="border-line bg-surface/70 hover:border-accent hover:text-accent text-ink rounded-xl border px-9 py-4 text-base font-medium no-underline backdrop-blur transition-colors"
         >
           View on GitHub
         </a>
       </div>
       <p class="text-ink-muted mt-7 text-sm">
-        Questions, ideas, a generator you wish existed?
+        <span class="cta-dot" aria-hidden="true"></span>
+        Questions, or a generator you wish existed?
         <a href={`${SITE.github}/issues`} rel="noopener" class="text-accent no-underline hover:underline">
           Open an issue
         </a>
-        — the catalogue grew one generator at a time.
-      </p>
-      <p class="text-ink-muted mt-2 font-mono text-xs">
-        behind this text: a harmonograph, drawing itself · seed {SITE.artSeed}
+        · seed <span class="font-mono text-xs">{SITE.artSeed}</span> draws behind this text
       </p>
     </div>
   </section>
+
+  <style>
+    /* Bidflow's band treatment on our tokens: two accent glows over the
+       raised surface, so the section reads as a destination in both themes. */
+    .cta-band {
+      background:
+        radial-gradient(
+          ellipse at 50% 135%,
+          color-mix(in srgb, var(--color-accent) 15%, transparent),
+          transparent 62%
+        ),
+        radial-gradient(
+          ellipse at 10% -25%,
+          color-mix(in srgb, var(--color-accent-dim) 12%, transparent),
+          transparent 50%
+        ),
+        var(--color-surface-raised);
+    }
+    .cta-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 7px;
+      border-radius: 9999px;
+      background: var(--color-accent);
+      box-shadow: 0 0 8px color-mix(in srgb, var(--color-accent) 90%, transparent);
+      vertical-align: 1px;
+    }
+  </style>
 </Base>
