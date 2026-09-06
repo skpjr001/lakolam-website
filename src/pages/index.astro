@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Hero3D from '../components/Hero3D.astro';
 import MazeScene from '../components/MazeScene.astro';
+import CtaScene from '../components/CtaScene.astro';
 import GeneratorCard from '../components/GeneratorCard.astro';
 import { SITE, CATEGORY_LABELS, CATEGORY_BLURBS } from '../lib/site';
 import * as ld from '../lib/jsonld';
@@ -23,6 +24,10 @@ const lanes = (['design', 'maze', 'puzzle', 'word'] as const).map((cat) => ({
 
 const faqs = [
   {
+    q: 'How is this different from AI image generators?',
+    a: 'There is no model and no sampling. Every page is closed-form mathematics and constraint solving: motifs are parametric curves, puzzles are built against solvers, and the output is a vector scene — reproducible byte-for-byte from its seed. Nothing is approximated, so nothing can hallucinate.',
+  },
+  {
     q: 'What does "deterministic" mean here?',
     a: 'The same generator, spec and seed produce byte-identical output, forever. Every page is reproducible: record the seed and you can regenerate the exact same mandala, maze or sudoku years later, at any size or format.',
   },
@@ -41,6 +46,14 @@ const faqs = [
   {
     q: 'Does the studio need a server?',
     a: 'No. The whole engine compiles to WebAssembly and runs in your browser. Pages are generated on your machine; the site itself is static files.',
+  },
+  {
+    q: 'Can I sell what I generate?',
+    a: 'Yes. The engine is MIT OR Apache-2.0 and the pages you generate are yours — puzzle books, colouring books, classroom sets, social posts. Wordlists and quote corpora ship inside the crates and are drawn from public-domain sources.',
+  },
+  {
+    q: 'How are difficulty ratings decided?',
+    a: 'By the solver, not by feel. Each puzzle is solved with a ladder of human reasoning techniques, and its rating is the hardest technique actually required. The metadata reports both the requested and the measured difficulty, plus the rating basis.',
   },
 ];
 
@@ -254,20 +267,87 @@ $ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
     </div>
   </section>
 
-  <!-- ── FAQ ── -->
-  <section class="mx-auto max-w-3xl px-4 pb-8 sm:px-6">
-    <h2 class="text-2xl font-bold tracking-tight">Questions, answered</h2>
-    <div class="mt-6 space-y-3">
+  <!-- ── FAQ: sticky intro beside one exclusive accordion ── -->
+  <section id="faq" class="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[minmax(0,320px)_1fr]">
+    <div class="lg:sticky lg:top-24 lg:self-start">
+      <p class="text-accent font-mono text-xs tracking-widest uppercase">FAQ</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight">Questions, answered</h2>
+      <p class="text-ink-muted mt-3 text-sm leading-relaxed">
+        Every claim below is checkable — in the metadata a generation reports,
+        or in the source itself.
+      </p>
+      <a
+        href={`${SITE.github}/issues`}
+        rel="noopener"
+        class="text-accent mt-4 inline-block text-sm font-semibold no-underline"
+      >
+        Something else? Open an issue →
+      </a>
+    </div>
+    <div class="border-line divide-line divide-y overflow-hidden rounded-xl border">
       {
-        faqs.map((faq) => (
-          <details class="border-line bg-surface-raised group rounded-xl border px-5 py-4">
-            <summary class="cursor-pointer list-none text-sm font-semibold [&::-webkit-details-marker]:hidden">
+        faqs.map((faq, i) => (
+          <details class="group bg-surface-raised" name="faq" open={i === 0}>
+            <summary class="hover:text-accent flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold transition-colors [&::-webkit-details-marker]:hidden">
               {faq.q}
+              <svg
+                viewBox="0 0 24 24"
+                class="text-ink-muted size-4 shrink-0 transition-transform duration-200 group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
             </summary>
-            <p class="text-ink-muted mt-3 text-sm leading-relaxed">{faq.a}</p>
+            <p class="text-ink-muted -mt-1 max-w-2xl px-5 pb-5 text-sm leading-relaxed">{faq.a}</p>
           </details>
         ))
       }
+    </div>
+  </section>
+
+  <!-- ── contact: the closing band, harmonograph drawing behind it ── -->
+  <section id="contact" class="border-line bg-surface-raised relative overflow-hidden border-t">
+    <CtaScene />
+    <div class="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-4 py-24 text-center sm:px-6">
+      <p class="text-accent font-mono text-xs tracking-widest uppercase">Get started</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+        Your first thousand pages are one seed away.
+      </h2>
+      <p class="text-ink-muted mt-4 max-w-xl leading-relaxed">
+        Generate in the browser right now, or install the CLI and build whole
+        books — pages, answer keys and validation in one command.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a
+          href={SITE.studio}
+          rel="noopener"
+          class="bg-accent hover:bg-accent-strong text-surface rounded-lg px-6 py-3 font-semibold no-underline transition-colors"
+        >
+          Open the studio
+        </a>
+        <a
+          href={SITE.github}
+          rel="noopener"
+          class="border-line bg-surface hover:border-accent-dim text-ink rounded-lg border px-6 py-3 font-medium no-underline transition-colors"
+        >
+          View on GitHub
+        </a>
+      </div>
+      <p class="text-ink-muted mt-7 text-sm">
+        Questions, ideas, a generator you wish existed?
+        <a href={`${SITE.github}/issues`} rel="noopener" class="text-accent no-underline hover:underline">
+          Open an issue
+        </a>
+        — the catalogue grew one generator at a time.
+      </p>
+      <p class="text-ink-muted mt-2 font-mono text-xs">
+        behind this text: a harmonograph, drawing itself · seed {SITE.artSeed}
+      </p>
     </div>
   </section>
 </Base>

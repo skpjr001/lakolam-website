@@ -124,6 +124,10 @@ export default function init(canvas: HTMLCanvasElement): () => void {
   resizeObserver.observe(canvas);
   resize();
 
+  // One synchronous frame at init, so the fade-in never reveals an empty
+  // canvas even where requestAnimationFrame is throttled.
+  renderer.render(scene, camera);
+
   // ── pointer parallax, eased — plus grab-to-spin on the canvas itself ──
   let targetTilt = 0;
   let tilt = 0;

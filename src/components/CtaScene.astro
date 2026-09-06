@@ -1,0 +1,36 @@
+---
+// Ambient three.js background for the contact band: a harmonograph ribbon
+// drawing itself behind the content — decorative, masked at the edges, and
+// loaded last of the three scenes (longest idle timeout). Under
+// prefers-reduced-motion the band simply keeps its plain background.
+---
+
+<div class="cta-scene pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+  <canvas
+    id="cta-canvas"
+    class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-1000 [&.is-live]:opacity-100"
+  ></canvas>
+</div>
+
+<style>
+  /* Fade toward every edge so the ribbon floats behind the text rather than
+     hard-clipping at the band's borders. */
+  .cta-scene canvas {
+    mask-image: radial-gradient(ellipse 75% 85% at 50% 50%, black 45%, transparent 96%);
+    -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 50%, black 45%, transparent 96%);
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('cta-canvas') as HTMLCanvasElement | null;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canvas && !reduced) {
+    const boot = () =>
+      import('../scripts/cta-three').then(({ default: init }) => init(canvas));
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => boot(), { timeout: 4500 });
+    } else {
+      setTimeout(boot, 2400);
+    }
+  }
+</script>

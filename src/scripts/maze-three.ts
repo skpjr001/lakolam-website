@@ -210,6 +210,13 @@ export default function init(canvas: HTMLCanvasElement): () => void {
   resizeObserver.observe(canvas);
   resize();
 
+  // One synchronous frame at init, solved — so the canvas is never blank
+  // even where requestAnimationFrame is throttled; the loop then redraws
+  // the solution from the entrance.
+  pathGeometry.setDrawRange(0, pathPoints);
+  renderer.render(scene, camera);
+  pathGeometry.setDrawRange(0, 0);
+
   // ── the loop: solve over ~5s, hold the solved maze, then a new one ──
   const SOLVE = 5;
   const HOLD = 2.5;
