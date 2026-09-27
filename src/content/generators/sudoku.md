@@ -38,8 +38,7 @@ Find a cell whose value is forced — a digit that can go nowhere else in its
 row, column or region — write it in, and repeat. Harder boards need candidate
 reasoning: mark which digits each empty cell can still take, then eliminate
 with pairs, triples, box–line interactions and fish patterns. A proper sudoku
-never requires guessing, and every puzzle from this crate is verified to be
-solvable by inference alone.
+never requires guessing, and every puzzle here is verified to be solvable by inference alone.
 
 ## Purpose
 

@@ -2,7 +2,7 @@
 title: "Wordle Deduction"
 blurb: "Wordle deduction — deduce the hidden word from guesses and their colour feedback"
 category: word
-version: "1.0.0"
+version: "1.0.1"
 ---
 Someone has already played — read their guesses and the colours, and name
 the hidden five-letter word.

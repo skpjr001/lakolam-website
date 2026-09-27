@@ -16,8 +16,7 @@ breaks survive, which is what makes it solvable with a pencil.
 ## How to play
 
 One-letter words are A or I. The most frequent cipher letter is probably E,
-T, A or O; a frequency table (this crate prints one as an aux block) makes
-that concrete. Apostrophe patterns give T, S and N'T; double letters narrow
+T, A or O; a frequency table (printed alongside the puzzle) makes that concrete. Apostrophe patterns give T, S and N'T; double letters narrow
 fast (LL, EE, SS, OO). Guess a common short word, propagate its letters
 everywhere, and abandon the guess at the first contradiction — the cascade
 either confirms itself in a few words or collapses.

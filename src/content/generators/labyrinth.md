@@ -22,9 +22,7 @@ centre.
 
 Trace the corridor with a finger or pencil from the entrance to the centre —
 there is exactly one way — or colour the corridor and the wall band as two
-regions. The `meanders` figure in the metadata counts how often the path
-reverses direction between inward and outward: a spiral scores 0, the
-classical seven scores 2, and seeded designs usually score more.
+regions. Count how often the path reverses between heading inward and heading outward: a spiral never does, the classical seven-circuit labyrinth does twice, and most designs here do more.
 
 ## Why it is in the catalogue
 

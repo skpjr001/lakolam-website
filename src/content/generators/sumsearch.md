@@ -17,8 +17,7 @@ to it. The answer key rings them.
 
 Work from the extremes. A target of 34 out of four digits needs 9+9+9+7 or
 better, so scan for clusters of nines; a low target needs a run of ones and
-twos. Middle targets are the hard ones — and this generator prints them only
-when they happen to be unique.
+twos. Middle targets are the hard ones — and they are printed only when they happen to be unique.
 
 ## Why it is in the catalogue
 

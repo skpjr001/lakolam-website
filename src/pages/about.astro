@@ -5,7 +5,7 @@ import * as ld from '../lib/jsonld';
 
 const title = 'About Lakolam — an engine built on four invariants';
 const description =
-  'Lakolam is a Rust workspace of 108 crates: 98 generators over shared foundations for geometry, grids, constraint solving and rendering. Determinism, one display list, mandatory solvers, sizes as data.';
+  'Lakolam is a Rust workspace of 109 crates: 99 generators over shared foundations for geometry, grids, constraint solving and rendering. Determinism, one display list, mandatory solvers, sizes as data.';
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
@@ -106,6 +106,18 @@ const invariants = [
         class="bg-accent hover:bg-accent-strong text-surface mt-5 inline-block rounded-lg px-5 py-2.5 font-semibold no-underline transition-colors"
       >
         Open the studio
+      </a>
+      <p class="text-ink-muted mt-6 leading-relaxed">
+        Making a book? The book builder assembles a whole print-ready interior —
+        title page, contents, how-to-play pages, puzzles and answer keys — as
+        one PDF at a KDP trim size, with a large-print option.
+      </p>
+      <a
+        href={new URL('/book/', SITE.studio).href}
+        target="_blank" rel="noopener noreferrer"
+        class="border-line hover:border-accent mt-3 inline-block rounded-lg border px-5 py-2.5 font-semibold no-underline transition-colors"
+      >
+        Open the book builder
       </a>
     </section>
   </div>

@@ -2,7 +2,7 @@
 title: "Word Search"
 blurb: "Themed word searches with distribution-matched filler and answer keys"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Find the listed words hidden in a grid of letters — across, down, and
 diagonally, forwards or backwards.
@@ -17,8 +17,7 @@ up to eight directions. The unused cells are filled with decoy letters.
 
 Scan for a word's rarest letter — a Q or a Z narrows candidates instantly.
 Sweep each row and column with the word's first two letters in mind, then
-check both diagonals. Circle finds and cross them off the list. In this
-crate's harder settings, leftover letters can spell a hidden message once
+check both diagonals. Circle finds and cross them off the list. On the harder settings, leftover letters can spell a hidden message once
 every word is found.
 
 ## Purpose
