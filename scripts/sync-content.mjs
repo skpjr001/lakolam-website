@@ -43,7 +43,11 @@ mkdirSync(outDir, { recursive: true });
 const escape = (s) => s.replace(/"/g, '\\"');
 let written = 0;
 for (const entry of entries) {
-  const infoPath = join(repo, `crates/lako-${entry.id}/INFO.md`);
+  // A generator that shares a crate keeps its INFO beside it as INFO.<id>.md.
+  const shared = readdirSync(join(repo, 'crates'))
+    .map((d) => join(repo, 'crates', d, `INFO.${entry.id}.md`))
+    .find((f) => existsSync(f));
+  const infoPath = shared ?? join(repo, `crates/lako-${entry.id}/INFO.md`);
   if (!existsSync(infoPath)) {
     console.warn(`skip ${entry.id}: no INFO.md`);
     continue;
