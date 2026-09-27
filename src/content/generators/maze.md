@@ -2,7 +2,7 @@
 title: "Maze"
 blurb: "Mazes on square, triangular, hexagonal and circular grids, carved by eleven algorithms, with answer keys"
 category: maze
-version: "1.0.0"
+version: "1.1.0"
 ---
 Find the one path from entrance to exit.
 
@@ -10,8 +10,10 @@ Find the one path from entrance to exit.
 
 A field of passages and walls with a marked entry and exit. In a *perfect*
 maze there are no loops — exactly one route joins any two points. This crate
-carves rectangular, hex and circular mazes, and masked shapes (a heart, an
-animal silhouette) for kids' pages; a `braid` knob melts dead-ends into
+carves rectangular, hex, triangular and circular mazes — including the
+classic **theta** maze, whose rings subdivide as they grow so the cells stay
+square, solved from a door in the rim to the centre — and masked shapes (a
+heart, an animal silhouette) for kids' pages; a `braid` knob melts dead-ends into
 loops for a different texture.
 
 ## How to play
@@ -39,9 +41,18 @@ crate implements.
 
 ## This implementation
 
-- **Spec knobs:** `topology` (rect / hex / circular / masked), `algorithm`
-  (recursive backtracker, Wilson's, Kruskal, growing tree, Eller's),
-  `braid`, entry/exit placement, `difficulty`.
+- **Spec knobs:** `topology` (rect / hex / triangular / circular / theta),
+  `mask`, `algorithm` (recursive backtracker, Wilson's, Kruskal, growing
+  tree, Eller's), `braid`, `weave`, `openings` (furthest / perimeter /
+  centre), `difficulty`.
+- **Theta grids:** ring 0 is one central disc; each later ring multiplies the
+  one inside it by however many unit-deep cells fit around its inner edge
+  (the polar subdivision from *Mazes for Programmers*), so a 12-ring maze runs
+  1, 6, 12, 24, 24, 48 … cells outward. Every arc is sampled on one shared
+  angular lattice, so neighbouring cells meet at identical vertices and the
+  shared wall renderer needs no special case.
+- **Centre openings:** the goal is the central cell (the disc on a theta
+  grid), and the door is the rim cell furthest from it through the carve.
 - **Generation:** carve on the shared `lako-grid` topologies; masked shapes
   rasterise a silhouette onto the grid and carve inside it.
 - **Guarantees:** the maze is connected; at `braid = 0` it is perfect (every
