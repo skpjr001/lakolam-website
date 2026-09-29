@@ -8,7 +8,7 @@ import * as ld from '../../lib/jsonld';
 const generators = (await getCollection('generators')).sort((a, b) =>
   a.id.localeCompare(b.id)
 );
-const lanes = (['design', 'maze', 'puzzle', 'word'] as const).map((cat) => ({
+const lanes = (['design', 'maze', 'puzzle', 'word', 'maths'] as const).map((cat) => ({
   cat,
   label: CATEGORY_LABELS[cat],
   blurb: CATEGORY_BLURBS[cat],

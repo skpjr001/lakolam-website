@@ -8,7 +8,7 @@ const generators = defineCollection({
   schema: z.object({
     title: z.string(),
     blurb: z.string(),
-    category: z.enum(['design', 'maze', 'puzzle', 'word']),
+    category: z.enum(['design', 'maze', 'puzzle', 'word', 'maths']),
     version: z.string(),
   }),
 });
