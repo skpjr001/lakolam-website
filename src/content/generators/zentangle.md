@@ -2,7 +2,7 @@
 title: "Zentangle"
 blurb: "Zentangle — a partitioned page, each region filled with its own tangle"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 A page cut into regions, each filled with a different line texture — a
 *tangle*.
@@ -15,6 +15,13 @@ blank space. The appeal is the contrast between neighbouring textures, which
 is also the constraint — two dense tangles side by side read as one grey
 smear.
 
+## How to use
+
+Colour each region on its own, or doodle further into the texture. For
+crayons, markers, young children or tired eyes, choose the Bold & Easy
+version: a few big regions holding big shapes (bands, bubbles, a flower, a
+frame) in thick lines, with no fine texture at all.
+
 ## History
 
 The Zentangle method was created by Rick Roberts and Maria Thomas in 2004 as
@@ -23,6 +30,25 @@ one region at a time. The generator makes the substrate — the partition and
 the texture choice — that a colourist or doodler then works over.
 
 ## The implementation's guarantees
+
+- **Spec knobs:** `cuts`, `tangles`, `pitch`, `size`, `stroke`, `bold`.
+- **Bold & Easy (`bold: true`):** a different page, not the fine one with
+  thicker lines. At most four cuts, each accepted only if both pieces are big
+  (>= 7% of the page) and chunky (no thin wedges); every tangle becomes a
+  bold stand-in drawn as whole shapes instead of a clipped texture — hatch
+  and wave become one to four straight or wavy bands, pebble and stipple big
+  bubbles clear of each other and the edge, scallop and spiral one big flower
+  in the region's roomiest spot, brick an inset frame; blank is dropped
+  unless it is all that was asked for, and a region too narrow for its shape
+  takes the next one that fits. Pitch is 2.2 x `pitch` (75 to 140 Pt,
+  absolute, coarsened on retry); one stroke of 3.2 x `stroke` (4.5 pt by
+  default, never under 4). Gated by the bold check: lako-validate's **kids**
+  profile plus every stroke >= 3 pt plus a flood fill of the rendered page
+  measuring every enclosed region against 200 mm². Meta carries
+  `bold: true`, `colorable` and a `validation` block. Measured over 40
+  seeds: all pass, 14-24 regions, smallest 205-970 mm², typical median
+  ~1,700 mm² — against the fine page's 36-152 regions whose clipped
+  textures leave 1-4 mm² slivers at region edges.
 
 - **Regions cover the page exactly once**, tested: the partition is convex
   half-plane clipping, and the areas must sum to the page or a tangle is

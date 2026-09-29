@@ -2,7 +2,7 @@
 title: "Tanglewords"
 blurb: "Tanglewords - snaking word search and fill-in, every word path proven unique"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A word search where the words do not run in straight lines: each one snakes
 from letter to touching letter through the grid.
@@ -57,9 +57,16 @@ New York Times's Strands (2024).
 ## This implementation
 
 - **Spec knobs:** `variant` (`search` or `fill_in`), `difficulty`, `theme`
-  (space, animals, ocean, fruit, weather, garden) or your own `words` (four
-  letters or more), `rows`, `cols` and, for the search, `count`
-  (0 = from the difficulty), `word_list`, `cell`, `line`.
+  or your own `words` (four letters or more), `language`, `accents`,
+  `rows`, `cols` and, for the search, `count` (0 = from the difficulty),
+  `word_list`, `cell`, `line`. `theme` is one of the six built-in lists
+  (space, animals, ocean, fruit, weather, garden, unchanged) or any list of
+  the shared lexicon (`halloween`, `the_70s`, `birds`, ... sixty-odd English
+  themes). `language` (`en` default; `es`, `fr`, `de`, `it`, `pt`, `nl`)
+  picks that language's list (ten themes each) and fills the search grid
+  with its letter frequencies. `accents`: `fold` (default for theme lists)
+  or `keep` (accented capitals in the grid); unset leaves your own words
+  cleaned as before (A-Z only).
 - **Generation (search):** Kids 7x7 with 5 words, Easy 8x8 with 7, Medium
   10x10 with 9 (side-by-side steps); Hard 10x10 with 10 and Expert 12x12 with
   12 (diagonal steps too, words of five letters or more). Words (none

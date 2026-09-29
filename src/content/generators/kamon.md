@@ -2,7 +2,7 @@
 title: "Kamon"
 blurb: "Kamon - Japanese family crests with exact rotational symmetry, as silhouettes or colouring outlines"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Japanese family crests — blossoms, leaves, swirling tomoe, waves, feathers
 and diamonds, drawn with the exact symmetry of the real thing.
@@ -62,7 +62,7 @@ the war god Hachiman. Mon are still worn on formal kimono.
   sasa, tomoe, seigaiha, takanoha, hishi, igeta, wheel), `ring` (auto, none,
   maru, double, kikko, square, lozenge), `count` (tomoe 1 to 4, kiku petals
   8 to 24, bamboo leaves 3 to 8, wheel spokes 6 to 16; 0 = seeded), `style`
-  (silhouette, outline), `layout` (single, sheet), `columns`, `label`,
+  (silhouette, outline, bold), `layout` (single, sheet), `columns`, `label`,
   `stroke`, `width`, `height`.
 - **Generation:** each motif is authored once — one petal, leaf or comma as
   curves in a local frame — and placed by exact rotations about the
@@ -76,6 +76,19 @@ the war god Hachiman. Mon are still worn on formal kimono.
   are the same shapes as black lines, with thin veins and stamens drawn
   solid. A sheet deals its motifs from a seeded shuffle, so none repeats
   until all have appeared.
+- **Bold & Easy (`style: bold`):** one big crest in outline for crayons and
+  markers: a heavy line (4.5 pt, or `stroke` if heavier), no veins or
+  stamens, no label and no sheet (sheet crests are too small to stay chunky).
+  `auto` picks from the chunky motifs — sakura, kikyo, ume, kashiwa, aoi,
+  sasa, tomoe, hishi, igeta — with few repeats (tomoe 2–3, bamboo 3; asked
+  counts are held to kiku 8–12, bamboo 3–5, wheel 6–8), and a plain ring or
+  none (a double ring becomes a single one). The flowers are adjusted so no
+  sliver is left: sakura petals are widened until they overlap and the motif
+  is refitted to its ring, sakura and kikyo get a larger heart, and the ume
+  keeps its heart as one disc. Kiku, seigaiha, takanoha and the wheel are
+  drawn bold only when asked for by name and are not held to the bold
+  guarantee. Meta adds `bold`, `colorability_profile` (`kids`) and
+  `stroke_pt`; `colorable` is the kids' check.
 - **Solving:** nothing to solve — a design.
 - **Guarantees:** deterministic per seed. Tested: every crest is exactly
   invariant under its reported rotational order (the motif's order, reduced
@@ -85,7 +98,10 @@ the war god Hachiman. Mon are still worn on formal kimono.
   and a half-step turn is not a symmetry; tomoe commas never touch; every
   motif point lies inside the ring's room, which lies inside the ring's
   inner edge; every path on the page is closed; single outline pages pass
-  the adult colouring preflight for every motif and ring (sheets are
-  smaller and report their result). Meta carries each crest's name, order
-  and mirror flag, the measured symmetry error on single pages, and the
-  containment and closed-path results. Milliseconds per page.
+  the adult colouring preflight for every motif and ring (sheets are smaller
+  and report their result). Meta carries each crest's name, order and mirror
+  flag, the measured symmetry error on single pages, and the containment and
+  closed-path results. Milliseconds per page. Bold crests are tested for
+  every chunky motif in every ring on the rendered page: every patch of
+  paper is at least 200 mm², and the crest keeps its exact symmetry and
+  stays inside its ring.

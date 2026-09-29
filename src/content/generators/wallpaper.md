@@ -2,7 +2,7 @@
 title: "Wallpaper"
 blurb: "Surface patterns and seamless repeat tiles from the 17 wallpaper groups"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Surface patterns and seamless repeat tiles built from the seventeen
 wallpaper groups: leaves, petals, stars and small florals placed once and
@@ -75,7 +75,7 @@ paper services.
   all but the plain dot), `palette` (garden, ocean, terracotta, nursery,
   midnight, line), `background` (palette, white, dark, none), `output`
   (`page` or `tile`), `width`, `height`, `margin` (page output), `stroke`
-  (line art).
+  (line art), `bold` (Bold & Easy, below).
 - **Generation:** the group's cosets and lattice come from `lako-geom`
   (shared with mandala) and are scaled to the cell. The placer solves each
   non-identity coset (with lattice shifts) for its fixed points and mirror
@@ -103,18 +103,32 @@ paper services.
   centred-rectangular lattices and `cell` by `cell` times the square root of
   3 for the hexagonal ones (both lattice periods), clipped from the plane
   pattern. Typically 1 to 10 ms per page.
+- **Bold & Easy (`bold`):** a chunky colouring page whatever the palette:
+  line art, always a page, a heavy line (at least 4 pt), a cell of at least
+  170 pt and a fundamental region of at least 110 pt square-equivalent, one
+  or two main motifs, no sprig (a stem of small leaves) and no filler dots.
+  Veins are dropped and accents too small to colour are left out rather than
+  inked as pips; motifs are sized so their regions clear 1.4 times the kids'
+  200 mm² floor, kept apart by lanes of three line widths, and may grow to
+  four times their placed size. Only whole motif copies lying inside the
+  frame (clear of it by two line widths) are drawn, so nothing is sliced into
+  slivers at the edge: the pattern floats on one open ground. Checked
+  against the kids' profile; meta adds `bold`, `colorability_profile` and
+  `stroke_pt`.
 - **Solving:** nothing to solve — a design.
 - **Guarantees:** deterministic per seed. Tested for all 17 groups across
-  many seeds: the emitted geometry is invariant under every generator of
-  the group (each coset and both lattice translations map every path vertex,
+  many seeds: the emitted geometry is invariant under every generator of the
+  group (each coset and both lattice translations map every path vertex,
   with its paint, onto a vertex of the pattern); a tile's content equals the
   content of every translate of it by its width and height, so tiles meet
   seamlessly (whatever crosses one edge continues from the opposite edge),
-  and a hexagonal tile is exactly `cell` by `cell` times the square root
-  of 3; no two copies of any motif overlap (their covering circles, proven
-  to cover every outline point, are disjoint); medallions sit exactly on
+  and a hexagonal tile is exactly `cell` by `cell` times the square root of
+  3; no two copies of any motif overlap (their covering circles, proven to
+  cover every outline point, are disjoint); medallions sit exactly on
   rotation centres; line art passes the colourability check at the adult
   floor (and reports its findings in meta, with a debug overlay if it ever
   fails) and uses black only. Meta records the group, symmetry order,
   lattice, cell, motifs placed, medallions, fillers, palette, output, the
-  tile size and `seamless` for tiles.
+  tile size and `seamless` for tiles. Bold pages are tested for all 17
+  groups on the rendered page: every patch of paper is at least 200 mm², and
+  the page has no solid marks and no line under 4 pt.

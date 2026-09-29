@@ -2,7 +2,7 @@
 title: "Bingo"
 blurb: "Bingo cards - 75-ball, 90-ball tickets, words and maths facts, with a caller sheet"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Class sets of bingo cards — numbers, 90-ball tickets, words or maths facts —
 with a caller sheet, and never two cards alike.
@@ -16,8 +16,9 @@ Printable bingo cards, one, two or four to a page, in four kinds:
 - **90-ball** — the UK ticket: three rows by nine columns, fifteen numbers,
   five in every row, each column holding its own ten (1-9, 10-19, ... 80-90)
   in order from top to bottom.
-- **Words** — a themed list (sight words, animals, colours, holidays) or
-  your own words.
+- **Words** — a themed list (sight words, animals, colours, holidays, and
+  dozens more: holidays, seasons, decades, sports, hobbies), a list in
+  Spanish, French, German, Italian, Portuguese or Dutch, or your own words.
 - **Maths** — the cards show answers; the caller reads the facts ("6 X 7"),
   and players cover the answer. Facts step up by level, from adding single
   digits to times tables, division and two-digit products.
@@ -54,7 +55,12 @@ Lowe, who sold it as "bingo"; Britain and Australia kept the older 90-ball
 ## This implementation
 
 - **Spec knobs:** `kind` (`numbers`, `90ball`, `words`, `maths`), `theme`
-  (`sight_words`, `animals`, `colours`, `holidays`) or your own `words`,
+  (`sight_words`, `animals`, `colours`, `holidays`, unchanged, or any list
+  of the shared lexicon: `christmas`, `the_90s`, `jobs`, ... sixty-odd
+  English themes) or your own `words`, `language` (`en` default; `es`,
+  `fr`, `de`, `it`, `pt`, `nl`: that language's list, ten themes each),
+  `accents` (`fold`, the default for theme lists, or `keep` accented
+  capitals; unset leaves your own words cleaned as before),
   `difficulty` (maths facts by level, and the default card size), `cards`
   per page (1, 2 or 4), `card_index` (the first card of this page within
   the set, 0-based), `size` (3, 4 or 5 for word and maths cards; 0 picks

@@ -2,7 +2,7 @@
 title: "Subdivision"
 blurb: "Recursive subdivision art — Mondrian, quadtree, triangles, golden kd-cuts, circles, plotter fills"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Cut a rectangle, cut the pieces, and cut them again: Mondrian blocks,
 quadtrees, folded triangles, golden-ratio grids, Bauhaus circles and
@@ -63,7 +63,7 @@ and the circle-in-a-square grids echo Bauhaus poster design.
   `palette` (auto, piet, bauhaus, earth, sunset, ocean, mono), `stroke`
   (0 = heavy lines for Mondrian, fine for the rest), `patterns` (add
   plotter fills to any kind), `spacing` (pattern line spacing), `start`
-  (square or triangle, for the triangles kind).
+  (square or triangle, for the triangles kind), `bold` (Bold & Easy, below).
 - **Generation:** depth-first recursion from the frame. The first two or
   three levels always split (when the minimum size allows); after that a
   cell splits with probability `split_bias`, and only when both children
@@ -75,13 +75,24 @@ and the circle-in-a-square grids echo Bauhaus poster design.
   the three largest, and always places blue and yellow. Pattern fills are
   generated over each cell and clipped to it (Cyrus-Beck), with neighbouring
   cells steered away from repeating a pattern.
+- **Bold & Easy (`bold`):** a chunky colouring page: line art, no fill
+  patterns (the `patterns` kind draws as `kd`), no gap, a heavy line
+  (4.5 pt at 600 pt, scaling with the page), at most four levels, no cell
+  narrower than 12% of the frame (14% for circles, whose shapes need the
+  room), and a split bias of at most 0.55 so more of the page stays in big
+  pieces. A circles cell keeps only shapes of at least 1.6 times the kids'
+  200 mm² floor. Checked against the kids' profile (the circles' white fills
+  are paper, so the check reads the lines alone); meta adds `bold` and
+  `colorability_profile`.
 - **Solving:** nothing to solve; it is a design.
 - **Guarantees:** deterministic per seed; the leaf cells tile the frame
   exactly (their areas sum to the frame's, all lie inside it and no two
   overlap, checked with a separating-axis test); every cell's smallest
   caliper width is at least `min_cell`; every fill mark lies inside its
-  cell. Line-art pages pass the colourability check (regions of at least
-  40 mm2, strokes of at least 0.75 pt, ink under 55%); shapes too small to
+  cell. Line-art pages pass the colourability check (regions of at least 40
+  mm2, strokes of at least 0.75 pt, ink under 55%); shapes too small to
   colour are left out. Meta reports `tiles_frame`, `area_error`,
   `smallest_cell_width` and `colorable`. A page builds in a few
-  milliseconds.
+  milliseconds. Bold pages are tested for every kind and start on the
+  rendered page: every patch of paper is at least 200 mm² and every line at
+  least 4.5 pt.

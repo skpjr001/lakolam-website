@@ -2,7 +2,7 @@
 title: "Angle Search"
 blurb: "Angle search - a word search where every word bends once, each hidden exactly once"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A word search with a twist: every hidden word runs straight, turns a corner
 once, and runs straight again.
@@ -52,9 +52,16 @@ search manageable: the answer is still two straight lines, not a free path.
 
 ## This implementation
 
-- **Spec knobs:** `difficulty`, `theme` (space, animals, ocean, fruit,
-  weather, garden) or your own `words` (five letters or more), `rows`,
-  `cols` and `count` (0 = from the difficulty), `word_list`, `cell`, `line`.
+- **Spec knobs:** `difficulty`, `theme` or your own `words` (five letters or
+  more), `language`, `accents`, `rows`, `cols` and `count` (0 = from the
+  difficulty), `word_list`, `cell`, `line`. `theme` is one of the six
+  built-in lists (space, animals, ocean, fruit, weather, garden, unchanged)
+  or any list of the shared lexicon (`christmas`, `the_80s`, `dinosaurs`,
+  `bible_books`, ... sixty-odd English themes). `language` (`en` default;
+  `es`, `fr`, `de`, `it`, `pt`, `nl`) picks that language's list (ten themes
+  each, including animals) and fills the grid with its letter frequencies.
+  `accents`: `fold` (default for theme lists) or `keep` (accented capitals
+  in the grid); unset leaves your own words cleaned as before (A-Z only).
 - **Generation:** the difficulty fixes a set of bent shapes (first-leg
   directions and turn angles) and a grid: Kids 9x9 with 6 words, Easy 11x11
   with 8, Medium 12x12 with 10, Hard 13x13 with 12, Expert 14x14 with 14.

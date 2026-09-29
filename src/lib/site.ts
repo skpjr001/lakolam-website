@@ -5,15 +5,15 @@ export const SITE = {
   name: 'Lakolam',
   tagline: 'Deterministic generative designs, mazes and puzzles',
   description:
-    'Lakolam is a generative engine: 150 generators for mandalas, kolams, mazes and logic puzzles, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
+    'Lakolam is a generative engine: 151 generators for mandalas, kolams, mazes and logic puzzles, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
   studio: 'https://app.lakolam.com',
   studioGpui: 'https://studio.lakolam.com',
   // The seed behind every image on this site — determinism as a brand asset.
   artSeed: '0xa11ce',
   stats: {
-    generators: 150,
-    tests: 2140,
-    crates: 159,
+    generators: 151,
+    tests: 2248,
+    crates: 161,
     profiles: 10,
   },
 } as const;
