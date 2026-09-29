@@ -1,8 +1,8 @@
 ---
 title: "Border"
-blurb: "Ornamental borders — the seven frieze groups over the motif library"
+blurb: "Ornamental borders — frieze-group motif bands and Greek key frames"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Ornamental bands and page frames built from the seven frieze groups.
 
@@ -13,6 +13,26 @@ one of the seven frieze groups — hop, step, sidle, spinning hop, jump,
 spinning sidle, spinning jump — and either shown as a single band or placed
 on all four page edges as a frame, where the rotated side bands meet the
 horizontal ones in corner blocks.
+
+A second family draws the classic line borders instead of motif cells
+(`style`):
+
+- **Meander** — the Greek key: one line that turns in a square spiral and
+  back out again, every channel one unit wide, period after period.
+- **Double meander** — the same line turning twice before it unwinds.
+- **Running dog** — the Vitruvian scroll: a chain of wave crests, each
+  curling into a spiral, the back of the next wave springing from the foot
+  of the last.
+- **Key with squares** — key units standing on the base line, alternating
+  with squares that carry a small ornament (a saltire, a cross or a dot).
+- **Greek key** — one of the four above, chosen per seed.
+
+In a frame the continuous keys turn the corners with the line itself: the
+edge length is solved so every edge holds a whole number of periods and
+the key's outer run meets the next edge's exactly at the corner, so the
+whole frame is one closed line; the square inside each turn carries a small
+corner ornament. The running dog and the key with squares close their
+corners with a ring or an ornamented square.
 
 ## Why it is in the catalogue
 
@@ -34,6 +54,21 @@ strapwork — is one of these seven.
 
 ## The implementation's guarantees
 
+- **Additive:** the key family is a new `style` whose default, `motifs`,
+  is the original border. A spec without `style` produces byte-identical
+  pages to version 1.0 (checked by rendering the defaults, both layouts,
+  every group and restricted motif lists before and after) and consumes no
+  new randomness; the key styles draw only from their own stream
+  (`border/key`), for the corner ornament and the `greek_key` choice.
+- **Key geometry:** tested — one key period starts and ends on the link row
+  one period apart, visits no grid point twice and never reuses a unit
+  segment across periods (so every channel is one unit wide); the meander
+  bands have half-turn symmetry (frieze group `p2`; the running dog and
+  key with squares are `p1`); a meander frame is a single closed line whose
+  every step is horizontal or vertical and which maps onto itself under a
+  quarter turn about the page centre, so all four corners turn alike; every
+  key style in both layouts passes the colourability check.
+
 - **Every one of the seven groups produces a page**, tested individually: a
   group that silently drew nothing would be a hole in the whole point of the
   crate.
@@ -46,4 +81,7 @@ strapwork — is one of these seven.
 - Each row draws a distinct motif family — picking randomly per row produced
   bands of three identical petals often enough to look like a bug.
 - Rating basis: none — a design. Honesty fields: group, layout, repeats, cell
-  and depth in points, attempt.
+  and depth in points, attempt; for the key styles, style, group, periods
+  per edge, grid unit, depth and corner ornament. The key styles ignore
+  `group`, `motifs` and `repeats`: `depth` sets their scale and the
+  period count follows from the page.
