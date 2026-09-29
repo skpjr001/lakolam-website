@@ -26,7 +26,7 @@ if (!existsSync(repo)) {
 const list = execFileSync(exe, ['list'], { encoding: 'utf8' });
 const entries = list
   .split('\n')
-  .map((line) => line.match(/^(\S+)\s+(\S+)\s+(design|maze|puzzle|word)\s+(.+?)\s*$/))
+  .map((line) => line.match(/^(\S+)\s+(\S+)\s+(design|maze|puzzle|word|maths)\s+(.+?)\s*$/))
   .filter(Boolean)
   .map(([, id, version, category, blurb]) => ({ id, version, category, blurb }));
 
