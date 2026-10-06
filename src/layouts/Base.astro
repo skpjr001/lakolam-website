@@ -25,6 +25,11 @@ interface Props {
   robots?: string;
   /** Override the derived canonical URL if a page ever needs to. */
   canonical?: string;
+  /** JSON-LD @id of the page's main entity, and of what it is about. */
+  mainEntity?: string;
+  about?: string;
+  /** Absolute URLs of related pages on this site (WebPage.relatedLink). */
+  relatedLinks?: string[];
 }
 
 const {
@@ -36,6 +41,9 @@ const {
   pageType = 'WebPage',
   robots = 'index, follow, max-image-preview:large, max-snippet:-1',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
+  mainEntity,
+  about,
+  relatedLinks,
 } = Astro.props;
 
 const ogImageUrl = new URL(ogImage, Astro.site).href;
@@ -52,6 +60,9 @@ const graph = [
     description,
     image: ogImageUrl,
     hasBreadcrumb: jsonLd.some((node) => node['@type'] === 'BreadcrumbList'),
+    mainEntity,
+    about,
+    relatedLinks,
   }),
   ...jsonLd,
 ];

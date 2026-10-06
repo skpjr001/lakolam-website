@@ -12,7 +12,12 @@ export const ids = {
   app: `${SITE.studio}/#software`,
   gpuiApp: `${SITE.studioGpui}/#software`,
   code: `${site}/#code`,
+  generators: `${site}/generators/#list`,
 } as const;
+
+/** A generator's own node, linked from its page, the index list and siblings. */
+export const generatorId = (id: string) => `${site}/generators/${id}/#work`;
+export const generatorUrl = (id: string) => `${site}/generators/${id}/`;
 
 export const organization = () => ({
   '@type': 'Organization',
@@ -53,6 +58,12 @@ export const webPage = (options: {
   description: string;
   image: string;
   hasBreadcrumb: boolean;
+  /** @id of what the page is chiefly about (its generator, the studio…). */
+  mainEntity?: string;
+  /** @id of the subject the page describes, when not the main entity. */
+  about?: string;
+  /** Other pages on this site the page links to as related. */
+  relatedLinks?: string[];
 }) => ({
   '@type': options.type,
   '@id': options.url,
@@ -63,6 +74,9 @@ export const webPage = (options: {
   isPartOf: { '@id': ids.website },
   primaryImageOfPage: { '@type': 'ImageObject', url: options.image },
   ...(options.hasBreadcrumb ? { breadcrumb: { '@id': `${options.url}#breadcrumb` } } : {}),
+  ...(options.mainEntity ? { mainEntity: { '@id': options.mainEntity } } : {}),
+  ...(options.about ? { about: { '@id': options.about } } : {}),
+  ...(options.relatedLinks?.length ? { relatedLink: options.relatedLinks } : {}),
 });
 
 export const softwareApplication = () => ({
@@ -130,26 +144,44 @@ export const generatorWork = (g: {
   title: string;
   blurb: string;
   category: string;
+  version: string;
+  studioLink: string;
 }) => ({
   '@type': 'CreativeWork',
-  '@id': `${site}/generators/${g.id}/#work`,
+  '@id': generatorId(g.id),
   name: `${g.title} generator`,
+  url: generatorUrl(g.id),
+  mainEntityOfPage: { '@id': generatorUrl(g.id) },
   description: g.blurb,
   image: `${site}/og/generators/${g.id}.png`,
   genre: g.category,
+  version: g.version,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
   creator: { '@id': ids.org },
-  isPartOf: { '@id': ids.website },
+  isBasedOn: { '@id': ids.code },
+  isPartOf: [{ '@id': ids.website }, { '@id': ids.generators }],
+  // The page's call to action: this generator, open in the studio.
+  potentialAction: {
+    '@type': 'CreateAction',
+    name: `Generate a ${g.title} page in the studio`,
+    target: g.studioLink,
+    instrument: { '@id': ids.app },
+  },
 });
 
-export const itemList = (name: string, items: { name: string; path: string }[]) => ({
+/** Every generator, each item pointing at that generator's own node. */
+export const generatorList = (items: { id: string; title: string }[]) => ({
   '@type': 'ItemList',
-  name,
+  '@id': ids.generators,
+  name: 'Lakolam generators',
   numberOfItems: items.length,
-  itemListElement: items.map((item, i) => ({
+  itemListElement: items.map((g, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    name: item.name,
-    url: `${site}${item.path}`,
+    name: g.title,
+    url: generatorUrl(g.id),
+    item: { '@id': generatorId(g.id) },
   })),
 });
 
