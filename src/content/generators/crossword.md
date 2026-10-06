@@ -2,7 +2,7 @@
 title: "Crossword"
 blurb: "Symmetric crossword grids filled from a clued wordlist"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill the symmetric grid from numbered clues, across and down.
 
@@ -44,6 +44,14 @@ checking and rotational symmetry.
   minimum-word-length constraints, then backtracking fill with
   most-constrained-slot-first over the scored wordlist; clues come with the
   list entries.
+- **When the asked-for grid cannot fill** (v1.1): the dense `blocked`
+  style outruns the embedded vocabulary from about 13x13, and a long
+  shortest answer (`min_word` 8) starves either style. Only after every
+  attempt at the asked-for grid fails, the generator relaxes as little as
+  it can from fresh seeds — a blocked grid steps down in size (to the
+  largest that fills, usually 11x11), then the shortest answer steps down —
+  and records `requested_size` / `requested_min_word` in the metadata.
+  Every grid that filled before is unchanged.
 - **Guarantees:** the grid is connected, symmetric, fully filled from the
   list, and every entry has a clue; the fill is deterministic per seed.
 - **Difficulty:** wordlist scoring tier and grid openness (block count,

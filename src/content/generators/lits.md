@@ -2,7 +2,7 @@
 title: "LITS"
 blurb: "Shade one L, I, T or S tetromino in every region, all joined, with no two alike touching"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade one tetromino in every region — L, I, T or S — all connected, no 2×2
 block, and no two identical shapes touching.
@@ -48,6 +48,11 @@ Nikoli in 2004 — the name is simply the four usable tetromino letters.
   (regions ≈ 5.4 cells, where published LITS sits), draws regions around the
   pieces, then repairs boundaries — a second answer diagnoses exactly which
   region had a choice, and one cell moves to remove it.
+  On large boards (11×11, some 7×11) the dense packing search can run out
+  of nodes on all 24 attempts; only then the packing is allowed 6, 8 or 10
+  more bare cells, from fresh seeds, and the nearest band found is served
+  and labelled (v1.1.0). Such boards still take 15–25 s: the 24 dense
+  attempts run first so that every board generated before is unchanged.
 - **Guarantees:** exactly one shading, verified against the rule definition;
   the shape classifier is pinned by enumerating all 19 fixed tetrominoes
   (2 I, 1 square, 4 T, 8 L, 4 S) — an invariant like neighbour-count

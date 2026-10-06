@@ -2,7 +2,7 @@
 title: "Akari (Light Up)"
 blurb: "Place bulbs to light every cell, with no two bulbs shining on each other"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Place light bulbs in white cells so every cell is lit and no two bulbs shine
 on each other.
@@ -50,3 +50,8 @@ twist.
 - **A lesson recorded:** a wall blocks a *column* as well as a row, and all
   four neighbours of a wall can hold bulbs — two "obvious" assumptions the
   brute-force sweep corrected during development.
+- **Knobs that find nothing (v1.1):** a `wall_share` below about 0.15 found no
+  board with one answer. Now, only when the requested share finds nothing, a
+  second pass from fresh seeds retries it, then moves it in steps of 0.05
+  toward 0.2; the metadata reports `wall_share_used`. Every board that
+  generated before is unchanged.

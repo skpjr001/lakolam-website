@@ -2,7 +2,7 @@
 title: "Shakashaka"
 blurb: "Place half-cell triangles so every white area left over is a rectangle"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Place half-cell triangles so that every white area left over is a rectangle —
 upright or tilted 45°.
@@ -56,3 +56,8 @@ of the pudding". It is among the youngest puzzles Nikoli made canonical.
   bug that made the prune reject the diamond itself.
 - **Difficulty:** search nodes per cell, thresholds from measured quintiles
   (2.3–17.4 across 30 boards).
+- **Knobs that find nothing (v1.1):** a `diamond_share` of 0 has no puzzle in
+  it (every number is a nought) and found no board. Now, only when the
+  requested share finds nothing, a second pass from fresh seeds retries it,
+  then raises it in steps of 0.1 toward 0.7; the metadata reports
+  `diamond_share_used`. Every board that generated before is unchanged.

@@ -2,7 +2,7 @@
 title: "Word Search"
 blurb: "Themed word searches with distribution-matched filler and answer keys"
 category: word
-version: "1.2.0"
+version: "1.3.0"
 ---
 Find the listed words hidden in a grid of letters — across, down, and
 diagonally, forwards or backwards.
@@ -48,7 +48,12 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
   `national_parks`) and more. `language` (`en` default; `es`, `fr`, `de`,
   `it`, `pt`, `nl`) picks the list in that language (ten themes each:
   animals, food, colours, family, home, nature, school, body, travel,
-  christmas). `accents`: `fold` (default for theme lists: E for É, N for Ñ,
+  christmas). A theme with no list in the chosen language (the default
+  `starter` among them) uses the nearest of those ten instead — `animals`
+  for creature themes, `food`, `school`, `travel`, `home`, otherwise
+  `nature` — and the metadata names it (`theme`, `requested_theme`);
+  before v1.3 that was an error, so a page whose only change from the
+  defaults was the language would not generate. `accents`: `fold` (default for theme lists: E for É, N for Ñ,
   AE/OE/UE for German umlauts) or `keep` (accented capitals in the grid);
   unset leaves your own words cleaned as before (A-Z only). `count` (0 =
   all of your words, or for a theme a random selection of about one word

@@ -2,7 +2,7 @@
 title: "Paper"
 blurb: "Specialty paper — lined, graph, dot, isometric, hex, polar, music, handwriting, calligraphy, Cornell, engineering, perspective"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Specialty printable paper, ruled to the exact spacing you ask for — lined,
 graph, dot grid, isometric, hex, polar, music staff, handwriting,
@@ -87,3 +87,12 @@ in the 2010s. Music staff paper has been printed since the 16th century.
   ink, stroke widths and dot radii included, stays inside the margins on
   every page size, portrait and landscape; isometric neighbours and hexagon
   sides are exactly one spacing long.
+- **Out-of-range knobs (1.1.0+):** a page the knobs used to refuse is now
+  drawn with each knob brought into range, and meta lists the moved knobs in
+  `adjusted`: `weight` 0.1–5 pt, `shade` at most 240, `slant` 20–90°,
+  `horizon` 0.05–0.95, `spokes` at most 360, negative `spacing`/`margin` to
+  0, a page side given alone takes the other from `page`, sides 36–5000 pt,
+  a `margin` that would leave less than half an inch of content is reduced,
+  and a `spacing` is held between 1 mm and the content size (and shrunk a
+  fifth at a time when the kind needs several spacings of room). Too many
+  music `staves` for the page is still refused.

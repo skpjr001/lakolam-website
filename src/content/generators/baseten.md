@@ -2,7 +2,7 @@
 title: "Base Ten Blocks"
 blurb: "Base-ten blocks — read, draw, expand and regroup place value"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 A place-value worksheet: count the cubes, rods, flats and big cubes, draw
 numbers with them, write them in expanded form and regroup.
@@ -88,3 +88,8 @@ since.
   answer key writes every answer and draws every "draw it" number
   (`answers_checked`). Rating basis: the places used and the number of
   regrouping trades. Every difficulty is reachable with every task.
+- **Small pages (v1.1.0):** a page too small for every problem used to be
+  refused ("ask for fewer"). Now it keeps as many as fit legibly, at least
+  one: fewer problems in bigger cells, so the blocks stay at a readable
+  size. Meta then records `requested_problems`. A page that already fitted
+  is unchanged.

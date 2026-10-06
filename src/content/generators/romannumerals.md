@@ -2,7 +2,7 @@
 title: "Roman Numerals"
 blurb: "Roman numeral worksheets — conversions both ways, Roman clock faces and Roman arithmetic"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Numbers to write in Roman numerals and Roman numerals to read, from I to
 XX up to MMMCMXCIX, with Roman clock faces and Roman arithmetic.
@@ -92,3 +92,14 @@ the numerals themselves.
   Meta records `answers_checked`, `no_duplicates`, `canonical:
   subtractive`, `round_trip_checked`, the grade and `rating_basis:
   number_range_and_tasks`. A page takes about a millisecond.
+- **Out-of-range knobs (1.1.0+):** a knob outside its range is held to it
+  instead of refused, and meta names it in `adjusted`: `max` to 5–3999,
+  `conversions` to 0–30 and to no more than the numbers in range, `clocks`
+  and `arithmetic` to 0–12, and a page asking for nothing gets one
+  conversion.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  at a time from whichever kind there are most of, and records the count
+  asked for as `requested_problems` in meta, instead of refusing. Pages that
+  fitted before are unchanged.

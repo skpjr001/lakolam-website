@@ -2,7 +2,7 @@
 title: "Nurikabe"
 blurb: "Shade a connected wall around numbered islands, with no 2x2 block shaded"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade a connected wall around numbered islands: each number is an island of
 exactly that many white cells.
@@ -51,3 +51,10 @@ Cell Structure and Islands in the Stream.
   because the shape counts (1, 4, 18, 76, 315) are pinned in a test. The
   boards are capped at 128 cells so shapes fit a `u128` and overlap tests are
   single instructions.
+- **Knobs that find nothing (v1.1):** a `max_island` of 8 found no 8×8 board,
+  and some sizes (8×11) failed for single seeds. Now, only when the
+  requested cap finds nothing, a second pass from fresh seeds lowers it a
+  step at a time toward 4 (a cap at or below the default is first retried as
+  asked); the metadata reports `max_island_used`. Every board that generated
+  before is unchanged. A cap of 8 is slow, since its first pass must fail
+  before the second runs.

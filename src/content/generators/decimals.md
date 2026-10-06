@@ -2,7 +2,7 @@
 title: "Decimals"
 blurb: "Decimal worksheets — add, subtract, multiply, divide, round, compare and convert, exactly"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Decimal practice from tenths and hundredths to thousandths: add and subtract
 with the points lined up, multiply, long-divide, round, compare, order and
@@ -124,3 +124,13 @@ a convention this worksheet can follow.
   digits. Meta records `answers_checked`, `exact_arithmetic`,
   `no_duplicates`, the grade and `rating_basis:
   grade_operations_and_places`. A page takes a few milliseconds.
+- **Out-of-range knobs (1.1.0+):** `places` above 3 is held to 3,
+  `whole_digits` above 4 to 4, and `problems` to 1–40 (1–16 in large print)
+  and to at least one per operation, instead of the sheet being refused;
+  meta names each moved knob in `adjusted`.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  at a time (and, once down to one per operation, the last operation), and
+  records the count asked for as `requested_problems` in meta, instead of
+  refusing. Pages that fitted before are unchanged.

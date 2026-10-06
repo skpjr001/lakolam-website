@@ -2,7 +2,7 @@
 title: "Addition"
 blurb: "Addition worksheets — column or one-line sums with guaranteed regrouping"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Column and one-line addition practice, from single-digit facts to adding
 three five-digit numbers, with regrouping exactly where the page says.
@@ -55,7 +55,8 @@ step.
 - **Spec knobs:** `difficulty`; `digits` (digits in each addend, 1-9, top to
   bottom; a short list repeats its last entry); `addends` (2-6);
   `regrouping` (`none`, `some`, `all`, `every`); `layout` (`vertical` or
-  `horizontal`); `problems` (1-40, 1-12 in `large_print`); `large_print`;
+  `horizontal`); `problems` (1-40, 1-12 in `large_print`; a count outside the range is
+  clamped to it, so switching on large print keeps the page); `large_print`;
   `grid_support`; `carry_boxes`; `show_carries` (on the key); `locale`
   (`us`, `uk`, `in`: regroup / exchange / carry, and 1,234,567 or 12,34,567
   grouping on one-line problems of five digits and more); page `width`,

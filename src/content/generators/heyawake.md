@@ -2,7 +2,7 @@
 title: "Heyawake"
 blurb: "Paint each room its number of cells, keeping white connected and never running through three rooms"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Paint cells by the room numbers — no two painted cells touching, white in one
 piece, and no white corridor running through three rooms.
@@ -52,3 +52,10 @@ boards lean on parity arguments researchers still write papers about.
   rooms constrain more. Difficulty is the share of rooms still numbered
   (`rating_basis: numbered_room_share`), thresholds set from measured
   quintiles.
+- **Knobs that find nothing (v1.1):** `max_room` of 0–2 found no board, and 3
+  failed for some seeds. Now, only when the requested cap finds nothing, a
+  second pass from fresh seeds retries it and raises it a step at a time
+  toward 4; a cap above 4 that finds nothing drops straight to 4, since big
+  caps are slow to fail. The metadata reports `max_room_used`. Every board
+  that generated before is unchanged. Caps of 9–12 are slow (tens of
+  seconds), as the measurements above predict.

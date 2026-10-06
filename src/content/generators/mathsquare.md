@@ -2,7 +2,7 @@
 title: "Maths Square"
 blurb: "Maths square — symbol sums: find each picture's number from the row and column totals"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Every picture hides a number: use the row and column totals to find them all.
 
@@ -45,7 +45,9 @@ which go back to the Chinese *Nine Chapters on the Mathematical Art*.
 ## This implementation
 
 - **Spec knobs:** `difficulty`, `size` (3–5; 0 picks from the difficulty),
-  `symbols` (2–7; 0 picks), `max_value` (5–50; 0 picks), `diagonals` (also
+  `symbols` (2–7; 0 picks; at most one fewer than the printed totals,
+  since the row and column totals share one grand total — so 5 on a 3×3
+  without diagonals), `max_value` (5–50; 0 picks), `diagonals` (also
   print both diagonal totals), `colour` (false for grey fills in black and
   white print), `cell`, `line`.
 - **Generation:** distinct values from 1 to the maximum are drawn for the

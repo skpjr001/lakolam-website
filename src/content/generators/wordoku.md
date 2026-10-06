@@ -2,7 +2,7 @@
 title: "Word Sudoku"
 blurb: "Word sudoku — letters instead of digits, and a hidden word in one row"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 A sudoku played with letters instead of digits — and once it is solved, one row
 spells a hidden word.
@@ -47,3 +47,7 @@ along a row or a diagonal.
   board stays uniquely solvable and its rating — the hardest technique the
   ladder needed — is exactly the underlying sudoku's; the tests re-check both
   after relabelling. The answer key names the word and its row.
+- **Out-of-range knobs (1.1.0+):** the shared size list offers twelve, which
+  has no twelve-letter word list; it is now served as nine letters with
+  `requested_size: 12` in meta instead of being refused.
+

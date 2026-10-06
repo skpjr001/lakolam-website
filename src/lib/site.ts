@@ -5,15 +5,15 @@ export const SITE = {
   name: 'Lakolam',
   tagline: 'Deterministic generative designs, mazes and puzzles',
   description:
-    'Lakolam is a generative engine: 187 generators for mandalas, kolams, mazes and logic puzzles, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
+    'Lakolam is a generative engine: 311 generators for mandalas, kolams, mazes, logic and word puzzles and maths worksheets, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
   studio: 'https://app.lakolam.com',
   studioGpui: 'https://studio.lakolam.com',
   // The seed behind every image on this site — determinism as a brand asset.
   artSeed: '0xa11ce',
   stats: {
-    generators: 187,
-    tests: 2602,
-    crates: 198,
+    generators: 311,
+    tests: 4096,
+    crates: 323,
     profiles: 10,
   },
 } as const;
@@ -31,7 +31,7 @@ export const CATEGORY_BLURBS: Record<string, string> = {
     'Mandalas, kolams, tilings and flow fields — colourable line art with mathematical bones.',
   maze: 'Square, triangular, hexagonal and circular mazes carved by eleven algorithms, with answer keys.',
   puzzle:
-    'Sudoku, nonograms, slitherlink and sixty more — every one proven uniquely solvable.',
+    'Sudoku, nonograms, slitherlink and a hundred more — every one proven uniquely solvable.',
   word: 'Word searches, crosswords, cryptograms and ladders — built from curated wordlists and quotes.',
   maths:
     'Addition to algebra, abacus to angles — drills, visual models and number puzzles for US, UK and Indian classrooms, every answer checked.',

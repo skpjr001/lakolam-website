@@ -2,7 +2,7 @@
 title: "Mixed Operations"
 blurb: "Mixed operations — add, subtract, multiply and divide facts on one page"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Addition, subtraction, multiplication and division facts on one page, so
 the reader has to look at every sign.
@@ -44,7 +44,8 @@ textbooks.
 
 - **Spec knobs:** `difficulty`; `add`, `sub`, `mul`, `div`, each `{weight,
   min, max}` (the share of the page and the range of the numbers; weight 0
-  leaves the operation out); `problems` (4-60, 4-24 in `large_print`);
+  leaves the operation out); `problems` (4-60, 4-24 in `large_print`; a count outside the range is
+  clamped to it, so switching on large print keeps the page);
   `timed` (TIME / SCORE box); `large_print`; `locale` (`us`, `uk`, `in`:
   "MATH" or "MATHS", digit grouping); page `width`, `height`, `line`.
 - **Difficulty (grade):** Kids = + and - with numbers 0-5 (K-1); Easy = +
@@ -73,3 +74,8 @@ textbooks.
   records `answers_checked`, `no_duplicates`, the per-operation counts, the
   grade and `rating_basis: operations_and_number_ranges`. A page takes a
   few milliseconds.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  at a time, and records the count asked for as `requested_problems` in
+  meta, instead of refusing. Pages that fitted before are unchanged.

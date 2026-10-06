@@ -2,7 +2,7 @@
 title: "Solving Equations"
 blurb: "Solving equations — one-step to both-sides linear equations, and balance puzzles"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Linear equations to solve, from balance-scale pictures for young children
 through one-step and two-step equations to variables on both sides, each
@@ -100,3 +100,9 @@ the boxes and triangles used for missing numbers.
   reader that parses the equations into linear forms. On balance pages the
   boxes and weights on the two pans weigh the same. A page takes a few
   milliseconds.
+- **Small pages (v1.1.0):** a page too small for every problem used to be
+  refused ("ask for fewer"). Now it keeps as many as fit legibly, at least
+  one: the count steps down until the widest problem of every form fits,
+  and a count above the layout's maximum (24, or 10 balance pictures) is
+  cut to it. Meta then records `requested_problems`. A page that already
+  fitted is unchanged.

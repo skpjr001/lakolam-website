@@ -2,7 +2,7 @@
 title: "Multiplication"
 blurb: "Multiplication worksheets — standard column, lattice, area model, partial products and times-table facts"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Multi-digit multiplication practice in four written methods (standard
 columns, lattice, area model and partial products) plus times-table facts,
@@ -150,3 +150,15 @@ grade 5.
   `times_table_range` for facts). A page takes a few milliseconds. Large
   area models (5 × 4 in large print) do not fit a page and are refused;
   timed fact drills belong to the timed-test pages.
+- **Out-of-range knobs (1.1.0+):** a knob outside its range is held to it
+  instead of refused, and meta names it in `adjusted`: `digits` to top 1–5
+  and bottom 1–4 (a bottom longer than the top is swapped up), `max_factor`
+  to 1–12, `min_factor` to at most `max_factor`, `table` to 0–12, `problems`
+  to 40 (20 in large print), and a facts page asking for more problems than
+  different facts exist prints every fact. A `digits` list that is not two
+  numbers is still refused.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  at a time, and records the count asked for as `requested_problems` in
+  meta, instead of refusing. Pages that fitted before are unchanged.

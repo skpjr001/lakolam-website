@@ -2,7 +2,7 @@
 title: "Shikaku"
 blurb: "Partition a grid into rectangles, one numbered clue per rectangle"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Divide the grid into rectangles, one per clue, each covering exactly its
 clue's number of cells.
@@ -49,3 +49,9 @@ puzzles he invented. The full name *Shikaku ni kire* means "cut into squares
   from milliseconds into minutes.
 - **Difficulty:** the size of the candidate space (placements per clue),
   banded — a proxy, and labelled as one.
+- **Knobs that find nothing (v1.1):** a `max_area` of 0–2 (all dominoes) or a
+  `min_area` of 4 or more under the default cap found no board. Now, only
+  when the requested bounds find nothing, a second pass from fresh seeds
+  retries them, then moves each a step at a time toward its default (2 and
+  8); the metadata reports `min_area_used` and `max_area_used`. Every board
+  that generated before is unchanged.

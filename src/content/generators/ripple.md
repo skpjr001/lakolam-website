@@ -2,7 +2,7 @@
 title: "Ripple Effect"
 blurb: "Fill each room with 1 to its size, keeping equal values further apart than themselves"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill every room with 1 to its size — and keep equal numbers further apart
 than their own value.
@@ -49,3 +49,8 @@ solver crate.
 - **Difficulty:** the hardest technique the ladder actually needed.
 - **Cross-check:** the spacing propagator is verified against an exhaustive
   3×3 enumeration.
+- **Knobs that find nothing (v1.1):** `max_room` of 0–4 found no 8×8 board,
+  and 5 failed for some seeds. Now, only when the requested cap finds
+  nothing, a second pass from fresh seeds retries it, then raises it a step
+  at a time toward 6; the metadata reports `max_room_used`. Every board that
+  generated before is unchanged.

@@ -2,7 +2,7 @@
 title: "Thermometers"
 blurb: "Thermometers — fill each from its bulb so the counts match"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill the thermometers with mercury. Each fills from its bulb toward its tip in
 one unbroken run, and the numbers count the filled cells in each row and column.
@@ -48,3 +48,8 @@ paired in variety collections.
   longest-first, pruned so no line overshoots and every line's deficit stays
   reachable — proves exactly one set of fills fits (a truncated search is
   treated as ambiguous). Rated by how many thermometers there are.
+- **Knobs that find nothing (v1.1):** short caps (`max_length` 0–3) failed for
+  some seeds and sizes. Now, only when the requested cap finds nothing, a
+  second pass from fresh seeds retries it, then raises it a step at a time
+  toward 5; the metadata reports `max_length_used` when it differs. Every
+  board that generated before is unchanged.

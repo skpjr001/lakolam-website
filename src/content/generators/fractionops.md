@@ -2,7 +2,7 @@
 title: "Fraction Operations"
 blurb: "Fraction operations — add, subtract, multiply, divide, simplify, convert, compare and order fractions and mixed numbers"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Add, subtract, multiply and divide fractions and mixed numbers, then simplify,
 convert, compare and order them, with answers in simplest form.
@@ -124,3 +124,17 @@ division has been taught in schools since at least the 18th century.
   denominator relationships hold for every problem; no two problems on a page
   are the same, with a + b and b + a (and a × b, b × a) counted as one.
   `answers_checked`, `no_duplicates` in meta.
+- **Out-of-range knobs (1.1.0+):** a knob outside its range is held to it
+  instead of refused — denominators to 2–99 (a largest set below the level's
+  smallest pulls the smallest down; both set the wrong way round are
+  swapped), `max_whole` to 1–20, `problems` to 1–30 — and a denominator
+  range holding no pairs of the kind asked for, or too few different
+  problems of some kind (Medium at denominators 4–9 used to fail), is
+  widened, the largest denominator upward first, until the page fills. Meta
+  names each moved knob in `adjusted`. Contradictory settings (whole numbers
+  with simplify-only problems, say) are still refused.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  at a time, and records the count asked for as `requested_problems` in
+  meta, instead of refusing. Pages that fitted before are unchanged.

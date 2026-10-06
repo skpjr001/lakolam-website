@@ -2,7 +2,7 @@
 title: "Isohedral Tilings"
 blurb: "Escher-style interlocking tilings by Kaplan's isohedral types, properly coloured"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Escher-style interlocking tiles in twenty-six tiling types — every
 tile the same shape, every edge fitting its neighbour exactly.
@@ -53,7 +53,9 @@ type by its tiling vertices and the shape class (J, U, S, I) of each edge.
 ## This implementation
 
 - **Spec knobs:** `size`, `margin`, `ih` (the Grünbaum–Shephard number, or
-  0 for a seeded pick), `family` (any / hexagon / pentagon / quad /
+  0 for a seeded pick; since 1.1.0 a number that is not implemented gets
+  the nearest implemented type, the lower on a tie, with `requested_ih` in
+  meta), `family` (any / hexagon / pentagon / quad /
   triangle, for seeded picks), `tiles_across`, `wiggle` (edge bend as a
   fraction of edge length), `harmonics`, `irregularity` (how far tile
   corners move from the type's defaults), `angle`, `palette` (escher,

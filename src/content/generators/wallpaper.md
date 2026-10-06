@@ -2,7 +2,7 @@
 title: "Wallpaper"
 blurb: "Surface patterns and seamless repeat tiles from the 17 wallpaper groups"
 category: design
-version: "1.1.0"
+version: "1.2.0"
 ---
 Surface patterns and seamless repeat tiles built from the seventeen
 wallpaper groups: leaves, petals, stars and small florals placed once and
@@ -32,6 +32,15 @@ The page is either a full sheet of pattern inside a margin, or exactly one
 and whose bottom continues into its top, so that copies laid side by side
 and top to bottom make an unbroken pattern of any size.
 
+The **azulejo** outputs make one square tile in the manner of Portuguese
+azulejos and Moorish or Spanish encaustic floor tiles: a medallion in the
+middle, petals around it, and at every corner a quarter of a medallion and
+at the middle of every edge half of one. Laid edge to edge, four corners
+meet to make a whole medallion and two edges a whole lens, and the band
+running across the tile (a lattice of diamonds, a ring, or arcs round the
+corners) continues unbroken from tile to tile. Choose the single tile or a
+ready-made panel of four by four tiles with thin grout lines.
+
 ## How to use it
 
 Print a full page as wrapping paper, a scrapbook sheet, a background for
@@ -39,7 +48,9 @@ cards or a pattern to frame. For fabric, wallpaper or print-on-demand
 products, use the repeat tile: upload it as a repeating design, set the
 repeat to "basic" (straight, not half-drop), and the service lays copies
 edge to edge. Scale it to taste: the drawing is vector art, crisp at any
-size. Choose the line-art version to colour: every shape is a closed
+size. The azulejo tile is a print for coasters, trivets, ceramic decals,
+stencils or a tiled backdrop; print the panel to see the repeat, or tile
+the single square as above. Choose the line-art version to colour: every shape is a closed
 outline large enough to fill, the tiny details are solid dots, and the
 pattern's symmetry makes a satisfying page to colour in a scheme of your
 own, repeating the same colours wherever a shape repeats.
@@ -63,7 +74,10 @@ paintings. William Morris's wallpapers and textiles in 19th-century England
 made the carefully drawn, invisibly seamed repeat an art in its own right,
 and M. C. Escher's notebooks explored the groups after he studied the
 Alhambra. Today the same repeats are made for print-on-demand fabric and
-paper services.
+paper services. The square tile designed to be laid in its own repeat, its
+corner and edge motifs completed by its neighbours, runs from the
+tin-glazed azulejos of Portugal and Spain to the cement encaustic tiles of
+19th-century floors.
 
 ## This implementation
 
@@ -74,8 +88,38 @@ paper services.
   (0 to 1, filler dots), `shapes` (restrict the motif library; empty means
   all but the plain dot), `palette` (garden, ocean, terracotta, nursery,
   midnight, line), `background` (palette, white, dark, none), `output`
-  (`page` or `tile`), `width`, `height`, `margin` (page output), `stroke`
-  (line art), `bold` (Bold & Easy, below).
+  (`page`, `tile`, `azulejo` or `azulejo_panel`), `width`, `height`,
+  `margin` (page output and azulejo panels), `stroke` (line art), `bold`
+  (Bold & Easy, below).
+- **Azulejo (`output: azulejo` / `azulejo_panel`):** one square tile,
+  `cell` points a side (line art at least 216 pt), or a 4 x 4 panel of it
+  inside `margin`, with thin grout lines one shade darker than the ground
+  (none in line art). `group`, `motifs`, `density` and `shapes` do not
+  apply; `palette`, `background`, `cell`, `margin` and `stroke` do; `bold`
+  still draws a Bold & Easy page. The tile is designed in coordinates
+  centred on the tile and every shape is drawn as its whole orbit under D4,
+  the eight symmetries of the square (coinciding images drawn once). A
+  seeded composition: a band (diamond lattice through the edge midpoints, a
+  ring, or rings round the corners) in the palette's dark colour (the
+  lightest ink on a dark ground); 8-, 12- or 16-point stars, rosettes or
+  quatrefoils at the centre and on the corners, each with an inner accent;
+  a lens on each edge midpoint; teardrop petals on the diagonals, the axes
+  or both, sized to the gaps; five inks, shuffled. Because D4 contains the
+  mirror parallel to each edge through the centre, the strips inside
+  opposite edges are mirror images, so the two strips meeting at any seam
+  are mirror images across it: the same curve continues on both sides, and
+  the repeat is a p4m pattern. Corner shapes are D4-symmetric about the
+  corner and edge shapes mirror-symmetric about the edge midpoint, so the
+  pieces meeting there assemble into whole medallions. Line art draws every
+  shape white with a black outline (so shapes in front hide what is
+  behind), leaves out the band and the smallest accents, and measures every
+  patch of paper on a rendered panel (100 dpi flood fill; crumbs under
+  1 mm² ignored; motifs cut by the panel edge open into the margin, as no
+  frame is drawn): if the smallest is under the 40 mm² adult floor the
+  tile grows 15% and tries again, up to three times. Meta: `output`,
+  `group` (p4m), `tile_symmetry` (d4), `tile_pt`, `seamless`, `band`,
+  `centre`, `corner`, `shapes`, `palette`, `panel` (panels), and for line
+  art `colorable`, `smallest_region_mm2`, `colorability_floor_mm2`.
 - **Generation:** the group's cosets and lattice come from `lako-geom`
   (shared with mandala) and are scaled to the cell. The placer solves each
   non-identity coset (with lattice shifts) for its fixed points and mirror
@@ -131,4 +175,11 @@ paper services.
   lattice, cell, motifs placed, medallions, fillers, palette, output, the
   tile size and `seamless` for tiles. Bold pages are tested for all 17
   groups on the rendered page: every patch of paper is at least 200 mm², and
-  the page has no solid marks and no line under 4 pt.
+  the page has no solid marks and no line under 4 pt. Azulejo designs are
+  tested over 40 seeds for D4 invariance (every image of every shape, with
+  its ink, is present) and for corner and edge shapes symmetric about their
+  centres; rendered panels in every palette mirror themselves across every
+  interior seam pixel for pixel (fewer than 0.5% of compared pixels differ
+  beyond anti-aliasing), while a tile with one corner medallion nudged off
+  its corner fails the same check; line-art panels clear the 40 mm² region
+  floor.

@@ -2,7 +2,7 @@
 title: "Snakes and Ladders"
 blurb: "Snakes and ladders boards balanced by an exact Markov-chain game length"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 A printable board whose game length is worked out exactly — short games for
 little ones, long ones for the patient.
@@ -75,3 +75,9 @@ a Markov chain, so its expected length can be calculated exactly.
   six rolls from the second-last square under the exact rule. Rated by
   `expected_rolls_markov_vs_empty_board`. There is no answer key: the page
   is a game board with nothing to solve.
+- **Out-of-range knobs (1.1.0+):** when no board keeps the placement rules
+  with the `snakes`/`ladders` counts asked for (say 128 snakes), the counts
+  are cut by a quarter at a time, with up to 300 fresh attempts per round,
+  until a board fits; meta then carries `requested_snakes` /
+  `requested_ladders`. Boards that generated before are unchanged.
+

@@ -2,7 +2,7 @@
 title: "Angle Search"
 blurb: "Angle search - a word search where every word bends once, each hidden exactly once"
 category: word
-version: "1.1.0"
+version: "1.2.0"
 ---
 A word search with a twist: every hidden word runs straight, turns a corner
 once, and runs straight again.
@@ -62,6 +62,12 @@ search manageable: the answer is still two straight lines, not a free path.
   each, including animals) and fills the grid with its letter frequencies.
   `accents`: `fold` (default for theme lists) or `keep` (accented capitals
   in the grid); unset leaves your own words cleaned as before (A-Z only).
+  A theme with no list in the chosen language (the default `space` among
+  them) uses the nearest of those ten instead — `animals` for creature
+  themes, `food`, `school`, `travel`, `home`, otherwise `nature` — and the
+  metadata names it (`theme`, `requested_theme`); before v1.2 that was an
+  error, so a page whose only change from the defaults was the language
+  would not generate.
 - **Generation:** the difficulty fixes a set of bent shapes (first-leg
   directions and turn angles) and a grid: Kids 9x9 with 6 words, Easy 11x11
   with 8, Medium 12x12 with 10, Hard 13x13 with 12, Expert 14x14 with 14.

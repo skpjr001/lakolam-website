@@ -2,7 +2,7 @@
 title: "Word Shapes"
 blurb: "Word shapes - write each spelling word into the row of boxes shaped like it"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Spelling words drawn as rows of boxes: find the word whose letters fit each
 shape and write it in.
@@ -66,3 +66,9 @@ partly by their outline.
   match shapes to words. Letters are classed by school print heights. Meta
   carries `answers_checked`; a page whose words cannot fit is refused rather
   than clipped.
+- **Out-of-range knobs (1.1.0+):** when words drawn from the list do not fit
+  the page (a small page at a level with many words), one fewer is drawn at
+  a time until they do, with `requested_words` in meta; your own words are
+  never dropped, and a page too small for them is still refused. A
+  `box_size` below the 9 pt minimum is drawn at 9 pt instead of failing.
+

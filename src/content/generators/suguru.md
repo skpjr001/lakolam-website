@@ -2,7 +2,7 @@
 title: "Suguru"
 blurb: "Suguru — each region counts itself, touching cells never match"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Each region holds the digits 1 up to its own size — and no two touching
 cells anywhere, diagonals included, may match.
@@ -43,7 +43,11 @@ Europe as Suguru or Tectonic, where it has become a daily-paper staple.
   every 2×2 block rejects uncolourable partitions before any search; the
   shared solver's own search fills the survivors; digits are then dug out one
   at a time while the ladder still finishes the board at the requested
-  ceiling.
+  ceiling. On 8×8 and 9×9 most random partitions cannot be filled, and a
+  seed can miss in all 200 attempts; only then up to 3,000 more attempts run
+  from fresh seeds with a smaller fill budget (a dead partition is dropped
+  fast), and the first board found is served at the band it earns, labelled
+  with the band requested (v1.1.0).
 - **Guarantees:** deterministic per seed; exactly one solution, proven by
   exhaustive count; solvable by inference alone; rated by the hardest
   technique the solve actually used.

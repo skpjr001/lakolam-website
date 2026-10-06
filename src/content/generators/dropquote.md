@@ -2,7 +2,7 @@
 title: "Drop Quote"
 blurb: "Drop quote — fallen phrases, proven to reassemble one way"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A quotation's letters have fallen out of their grid; each column's letters
 hang above it in alphabetical order. Drop them back so the rows read the
@@ -40,6 +40,12 @@ kind of thing this workspace insists on proving absent rather than assuming.
   Franklin replacement fell the same way) whose pools genuinely permit two
   fillings at every tried width. They were replaced, and the curation is a
   test: every corpus entry must find an unambiguous width.
+- A narrow width (`cols` at or below 8, which clamps to 8) leaves the
+  nudge only one side to move into, and one corpus quote is ambiguous at
+  every width from 8 to 12. Since v1.1, when every nearby width is
+  ambiguous the search widens to every other width from 8 to 20 (nearest
+  first) and then, for a corpus draw, to other corpus quotes — only where
+  generation used to fail; every page that generated before is unchanged.
 - Identical words swapping positions produce the identical grid — the solver
   deduplicates them, which an earlier test learned the hard way.
 - Rating basis: `deepest_column_pool` (2 Easy, 3 Medium, more Hard). The

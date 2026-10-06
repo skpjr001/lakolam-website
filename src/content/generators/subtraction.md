@@ -2,7 +2,7 @@
 title: "Subtraction"
 blurb: "Subtraction worksheets — column or one-line, with guaranteed regrouping and borrowing across zeros"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Column and one-line subtraction practice, from facts within ten to
 five-digit problems that borrow across zeros, with regrouping exactly where
@@ -60,7 +60,8 @@ step "regrouping", English schools "exchanging" and Indian schools
   bottom no longer than the top; one entry = both the same); `regrouping`
   (`none`, `some`, `all`, `every`); `across_zero` (`avoid`, `allow`,
   `require`); `layout` (`vertical` or `horizontal`); `problems` (1-40, 1-12
-  in `large_print`); `large_print`; `grid_support`; `carry_boxes`;
+  in `large_print`; a count outside the range is clamped to it, so
+  switching on large print keeps the page); `large_print`; `grid_support`; `carry_boxes`;
   `show_carries` (on the key); `locale` (`us`, `uk`, `in`: regroup /
   exchange / borrow, and digit grouping on long one-line problems); page
   `width`, `height`, `line`.

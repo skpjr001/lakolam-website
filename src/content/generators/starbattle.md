@@ -2,7 +2,7 @@
 title: "Star Battle"
 blurb: "Star Battle — a star in every row, column and region, none touching"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Place a star in every row, every column and every region — no two stars
 touching, not even diagonally.
@@ -52,3 +52,14 @@ from gentle 1★ 6×6s to the tournament-standard 2★ 10×10.
   exhaustive count; solvable by the technique ladder without guessing, and
   rated by the hardest technique actually used with board size as the
   tie-break (`rating_basis` names this).
+- **Version 1.1 — every size generates:** at 8 and 9 (and 7 for a few
+  seeds) randomly grown regions are almost never unique, and all 400
+  original attempts failed. Only that failure path changed: when they
+  produce nothing, up to 24 more grow a layout from fresh seeds and repair it
+  by local search — a non-star cell moves to a neighbouring region (both stay
+  connected, regions stay within 14 cells) whenever the ladder then settles
+  no fewer cells — until the ladder finishes the board; uniqueness is then
+  proven by the exhaustive count as before. The band is measured as before;
+  one that is out of reach is served as the nearest and labelled
+  (`requested_difficulty`). Every board that generated before is
+  byte-identical.

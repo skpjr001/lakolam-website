@@ -51,7 +51,14 @@ built on words read around a flower of petals.
 - **Generation:** a closed loop of five-letter words is chained by boundary
   letter (each word's last letter starting the next, the last closing back to
   the first) via backtracking over the vocabulary; then letters are trimmed
-  from the full ring to a set that still forces the answer.
+  from the full ring to a set that still forces the answer. Since 1.1.0 the
+  chaining search is bounded: at most 1,000,000 steps per starting word and
+  4,000,000 per attempt (about a second or three), after which the next
+  start, then the next attempt, is tried. Before, a start whose ring could
+  not close — few words end in its first letter — searched every branch,
+  which took minutes for about one seed in ten at 8–10 petals (the default
+  spec at seed 1 took five). Flowers the old search found within those
+  bounds are byte-identical; the slow seeds now get a different flower.
 - **Guarantees:** deterministic per seed; every petal is a vocabulary word and
   neighbours share their boundary letter (checked); and a backtracking search
   petal by petal proves exactly one filling is consistent with the given

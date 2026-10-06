@@ -2,7 +2,7 @@
 title: "Rounding"
 blurb: "Rounding and estimation worksheets — nearest 10 to 100,000 and decimal places, half up"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Rounding practice from two-digit numbers on number lines to seven-digit
 numbers and decimals, with estimation problems that round first and
@@ -103,3 +103,15 @@ answers more important than working them by hand.
   and "NEAREST 1,00,000", on `in` pages). Meta records `answers_checked`,
   `no_duplicates`, `rule: half_up`, `tight`, the grade and `rating_basis:
   digits_and_places`. A page takes a few milliseconds.
+- **Out-of-range knobs (1.1.0+):** a knob outside its range is held to it
+  instead of refused, and meta names it in `adjusted`: `digits` to 2–9 and
+  lengthened to what the chosen places need (rounding to the thousands needs
+  four-digit numbers), `problems` to 30 (16 with number lines), `estimates`
+  to 12, and a page asking for nothing gets one problem. A request with too
+  few different numbers is still refused.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  problem or estimate at a time (from whichever there are more of), and
+  records the count asked for as `requested_problems` in meta, instead of
+  refusing. Pages that fitted before are unchanged.

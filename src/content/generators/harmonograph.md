@@ -2,7 +2,7 @@
 title: "Harmonograph"
 blurb: "Damped pendulum figures, with frequencies nudged off exact ratios so they precess"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 The figures a swinging table draws: damped pendulums, slightly detuned so
 the curve precesses instead of retracing itself.
@@ -50,3 +50,9 @@ added by honest friction.
   and near-duplicate rejection against *every* earlier figure on the page.
 - **Guarantees:** deterministic per seed; every figure fits the page (scaled
   by its own extent); colourability-gated with figure-count escalation.
+- **Out-of-range knobs (1.1.0+):** a `steps` count so low that every figure
+  fails the taste checks (it is held to at least 200, and the checks need
+  more samples than that) is doubled until a page draws, up to the 20,000
+  cap; meta then carries `steps` and `requested_steps`. Pages that drew
+  before are unchanged.
+

@@ -73,9 +73,9 @@ export const softwareApplication = () => ({
   operatingSystem: 'Web browser',
   url: SITE.studio,
   description:
-    'A browser studio for the Lakolam engine: 55 deterministic generators for designs, mazes and puzzles, running entirely client-side as WebAssembly.',
+    'A browser studio for the Lakolam engine: 311 deterministic generators for designs, mazes and puzzles, running entirely client-side as WebAssembly.',
   featureList: [
-    '187 generators: mandalas, kolams, tilings, mazes, sudoku, nonograms, crosswords and more',
+    '311 generators: mandalas, kolams, tilings, mazes, sudoku, nonograms, crosswords and more',
     'Deterministic output — same seed, same page, byte-identical',
     'Solver-proven unique solutions with technique-ladder difficulty',
     'Schema-driven controls generated from each generator’s own spec',

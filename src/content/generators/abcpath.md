@@ -2,7 +2,7 @@
 title: "ABC Path"
 blurb: "ABC Path — A to Y, each letter touching the next, guided by edge clues"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Place A to Y in a 5×5 grid so every letter touches the next, guided by clues
 around the edges.
@@ -50,3 +50,13 @@ published as Letter Path and (with digits) as Number Path.
   additionally checks the ladder's solution *is* the generated path.
 - Rating basis: `surviving_clue_count` — named honestly, because one rule
   means the ladder cannot separate boards.
+- **Version 1.1 — no runaway path searches.** The random path search is a
+  plain backtracking walk, and now and then it paints itself into a corner
+  it can only back out of by trying hundreds of millions of orders — 20–50
+  seconds for one page, the default included. A search now gives up after
+  60 million steps (a few seconds) and the attempt is skipped; pages whose
+  attempts all stayed under that are unchanged (192 of 200 sampled pages),
+  and the slowest sampled page now takes about ten seconds. Kids and Expert,
+  which the clue-count rating cannot give, also stop as soon as they hold a
+  board in the nearest band it can (Easy, Hard) instead of trying all 16
+  attempts — the board they would have returned anyway.

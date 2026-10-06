@@ -2,7 +2,7 @@
 title: "Timed Test"
 blurb: "Timed tests — mad-minute fact drills and fact-frenzy grids"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fact drills against the clock: a page of 20, 30, 50 or 100 basic facts, or
 a 10 x 10 frenzy grid with shuffled headers, with TIME and SCORE boxes.
@@ -88,3 +88,10 @@ cousin of Pythagoras's multiplication table.
   tests. Meta records `answers_checked`, the fact-set size,
   `every_fact_covered`, the grade and `rating_basis:
   operation_range_and_count`. A page takes a few milliseconds.
+- **Out-of-range knobs (1.1.0+):** a knob the sheet cannot print is brought
+  into range instead of refused, and meta names it in `adjusted`: `problems`
+  to 10–100, `min`/`max` to 0–20 (swapped when reversed; division reaches at
+  least 1), `focus` to 0–20 (1 for division), a frenzy `size` to 5–12 with
+  its range widened to hold that many numbers, and vertical `layout` with
+  division becomes horizontal.
+

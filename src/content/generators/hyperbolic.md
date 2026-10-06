@@ -2,7 +2,7 @@
 title: "Hyperbolic Tiling"
 blurb: "Regular hyperbolic tilings {p,q} in the Poincare disc, Escher Circle Limit style"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Infinitely many identical tiles in a single circle, shrinking towards an edge
 they never reach. This is the geometry behind M. C. Escher's "Circle Limit"
@@ -61,7 +61,10 @@ fish print, is built on the {8,3} tiling.
 - **Spec knobs:** `size` (page side, pt); `p`, `q` (0 = let the seed pick
   from {7,3} {5,4} {4,5} {6,4} {8,3} {3,7} {4,6} {5,5}; a fixed side with
   the other on auto is raised until hyperbolic; 3 to 12, and
-  `1/p + 1/q < 1/2` is required); `min_tile` (smallest tile width drawn, pt;
+  `1/p + 1/q < 1/2` is required — since 1.1.0 a side outside 3–12 is held
+  to that range and a fixed pair that is not hyperbolic, such as {4,4},
+  has `q` raised until it is, with `requested_p`/`requested_q` in meta,
+  rather than the page failing); `min_tile` (smallest tile width drawn, pt;
   0 = automatic); `depth` (max rings of tiles, 0 = unlimited); `style`
   (`lines` | `checker` | `palette`; default `palette`, a full-colour print
   grown to the rim); `pattern` (`regular` | `rectified` |

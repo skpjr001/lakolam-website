@@ -2,7 +2,7 @@
 title: "Sum Search"
 blurb: "Sum Search — find the digit runs that add to each target, uniquely"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Find the run of digits that adds up to each printed target — across, down or
 diagonally.
@@ -36,6 +36,14 @@ reaching the same total.
   makes a mid-range sum rare, and each reroll perturbs dozens of runs at
   once; forty grids failed in a row. Tallying every run's sum and printing
   only the sums that occur exactly once is cheaper *and* exact.
+- **When no random grid will do** (v1.1): three-digit runs (sums span
+  only 3..27), nine or more targets, or a big grid (a 16×16 holds ~750
+  runs of four) can leave every one of the 40 random grids short of
+  once-only sums. Only then, the generator grows a grid instead: from a
+  fresh seed it changes one digit at a time, keeping any change that
+  leaves no fewer once-only sums, until there are enough. The targets are
+  still read off the finished grid by the same exact tally. Every page
+  that generated before is unchanged.
 - A test re-verifies each target against every run in the grid,
   independently of the tally that produced it.
 - Digits are 1–9, never 0: a zero lets two visibly different runs share a

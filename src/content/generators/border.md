@@ -2,7 +2,7 @@
 title: "Border"
 blurb: "Ornamental borders — frieze-group motif bands and Greek key frames"
 category: design
-version: "1.1.0"
+version: "1.2.0"
 ---
 Ornamental bands and page frames built from the seven frieze groups.
 
@@ -26,13 +26,18 @@ A second family draws the classic line borders instead of motif cells
 - **Key with squares** — key units standing on the base line, alternating
   with squares that carry a small ornament (a saltire, a cross or a dot).
 - **Greek key** — one of the four above, chosen per seed.
+- **Step fret** — the border of the Andes and of Mesoamerica: a hook that
+  winds in a square spiral at the top of a stepped diagonal, interlocking
+  with the same figure turned upside down. One line divides the band into
+  the two interlocking shapes, one rooted on each rail. (Plain geometry on
+  the key's grid — not a copy of any particular textile or frieze.)
 
 In a frame the continuous keys turn the corners with the line itself: the
 edge length is solved so every edge holds a whole number of periods and
 the key's outer run meets the next edge's exactly at the corner, so the
 whole frame is one closed line; the square inside each turn carries a small
-corner ornament. The running dog and the key with squares close their
-corners with a ring or an ornamented square.
+corner ornament. The running dog, the key with squares and the step fret
+close their corners with a ring or an ornamented square.
 
 ## Why it is in the catalogue
 
@@ -50,7 +55,10 @@ The seven frieze groups are the complete classification of one-dimensional
 repeating ornament, proved in the 19th century and named in the crystallographic
 notation used here (`p1`, `p11g`, `p1m1`, `p2`, `p11m`, `p2mg`, `p2mm`).
 Every border in every tradition — Greek key, Celtic knotwork band, Islamic
-strapwork — is one of these seven.
+strapwork, the Andean and Mesoamerican step fret — is one of these seven.
+The step fret (the *xicalcoliuhqui* of central Mexico) runs through
+two thousand years of Andean weaving and Mesoamerican stone and pottery; its
+interlocking half-turned pair makes it a `p2` frieze.
 
 ## The implementation's guarantees
 
@@ -60,6 +68,18 @@ strapwork — is one of these seven.
   every group and restricted motif lists before and after) and consumes no
   new randomness; the key styles draw only from their own stream
   (`border/key`), for the corner ornament and the `greek_key` choice.
+  The step fret (version 1.2) is additive the same way: it is not one of
+  the keys `greek_key` chooses between, so every existing page — motif
+  bands and all five key styles — is byte-identical to version 1.1
+  (checked over seven specs × six seeds).
+- **Step fret geometry:** tested — the fret line over several periods is a
+  simple path on the unit grid (no point visited, no unit segment drawn
+  twice), so every channel is a full unit wide; it stays a unit clear of
+  both rails; its segment set maps onto itself under the half-turn about
+  the staircase midpoint (frieze group `p2`, so the two interlocking
+  regions are congruent) but not under a vertical mirror (it is handed, not
+  `p2mm`); and each period has both hooks' turns and the staircase's steps.
+  Both layouts pass the colourability check.
 - **Key geometry:** tested — one key period starts and ends on the link row
   one period apart, visits no grid point twice and never reuses a unit
   segment across periods (so every channel is one unit wide); the meander
@@ -80,6 +100,10 @@ strapwork — is one of these seven.
   it thin out instead.
 - Each row draws a distinct motif family — picking randomly per row produced
   bands of three identical petals often enough to look like a bug.
+- **Spec knobs:** `layout` (frame / band), `style` (`motifs` — the
+  default — `greek_key`, `meander`, `double_meander`, `running_dog`,
+  `key_squares`, `step_fret`), `group`, `motifs`, `repeats` (motif bands
+  only), `depth`, `size`, `stroke`.
 - Rating basis: none — a design. Honesty fields: group, layout, repeats, cell
   and depth in points, attempt; for the key styles, style, group, periods
   per edge, grid unit, depth and corner ornament. The key styles ignore

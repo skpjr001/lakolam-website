@@ -8,13 +8,17 @@
 // again after the engine gains or changes generators.
 //
 //   LAKOLAM_REPO=/path/to/lakolam node scripts/sync-content.mjs
+//   (LAKO_BIN=/path/to/lako to use a CLI built elsewhere)
 
 import { execFileSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const repo = process.env.LAKOLAM_REPO ?? 'C:/kitchen-sink/lakolam';
-const exe = join(repo, 'target/release/lako.exe');
+// The CLI: LAKO_BIN if set, else the release build (lako.exe on Windows).
+const exe =
+  process.env.LAKO_BIN ??
+  join(repo, 'target/release', process.platform === 'win32' ? 'lako.exe' : 'lako');
 const artSrc = 'assets-src'; // engine renders staged by scripts/render-art (or by hand)
 
 if (!existsSync(repo)) {

@@ -2,7 +2,7 @@
 title: "Kakuro"
 blurb: "Cross-sums with combination reasoning and proven uniqueness"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Cross-sums: fill the white runs with digits 1–9 so each run adds to its clue,
 with no digit repeated within a run.
@@ -50,3 +50,12 @@ cross"). It is Japan's second most popular pencil puzzle after sudoku.
 - **Note:** the Kids/Easy bands floor their reasoning at `SumBounds` — a
   kakuro cannot be solved without reading its run totals, so the band below
   that rung cannot exist and is reported honestly as Easy.
+- **Version 1.1 — big boards finish.** Each refinement step searches for two
+  solutions to find a cell they disagree on. Almost every step needs a few
+  hundred search nodes, but on boards of 12 and more a carve now and then
+  needs millions — a minute or more for one step, and nearly always ending
+  ambiguous anyway. A step that needs more than 100,000 nodes now abandons
+  its carve; every step under that is the same search as before, so pages
+  whose carves all stayed under it are unchanged (126 of 126 sampled,
+  including 16×9 and 12×12). 16×9 and 12×12 went from 1–2.5 minutes to
+  seconds; 16×16 from about 18 minutes to one or two.

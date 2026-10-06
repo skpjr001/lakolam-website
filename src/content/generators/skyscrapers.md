@@ -2,7 +2,7 @@
 title: "Skyscrapers"
 blurb: "Skyscrapers — a Latin square read from its edges by visibility counts"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Each cell holds a building 1..n tall, once per row and column; the numbers
 outside say how many buildings are visible from that side.
@@ -18,7 +18,8 @@ step. Everything between is deduction.
 
 The extremes go in first (1 and n force whole lines). After that, work out
 which arrangements of a line are still consistent with what you know and its
-clue: heights that appear in none of them are impossible.
+clue: heights that appear in none of them are impossible. On the larger
+boards a few heights may already be printed in the grid to start you off.
 
 ## Why it is in the catalogue
 
@@ -51,3 +52,20 @@ where it is a regular round.
 - Clues are thinned while the ladder can still finish unaided — the shipped
   5×5 typically prints 8–10 of the 20 possible.
 - Rating basis: `technique_ladder`.
+
+### Version 1.1 — every size generates
+
+The board side is 4–7 (other values are clamped). At 6 and 7 the original
+generator, which builds its answer from a shuffled cyclic Latin square, finds
+no board the clues pin down for most seeds — the cyclic squares' edge clues
+rarely decide a unique filling — and failed outright. Only that failure path
+changed: when all 20 original attempts produce nothing, up to 12 more start
+from a fully random Latin square; where the edge clues alone still leave the
+ladder stuck, heights are printed in the grid one at a time until it can
+finish, then the givens and then the clues are thinned while it still can.
+Uniqueness and the no-guessing rating are proved exactly as before. These
+boards rate Medium; another band asked for is served as Medium and labelled
+(`requested_difficulty`), never relabelled. An original attempt the ladder
+cannot finish even with every clue printed is now skipped before thinning
+(thinning could only fail), which cuts a 7×7 board from ~13 s to ~3 s.
+Every board that generated before is byte-identical.

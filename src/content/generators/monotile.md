@@ -2,7 +2,7 @@
 title: "Monotile"
 blurb: "Aperiodic monotile tilings: the hat and the spectre, grown by substitution"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 One shape and endless pattern that never repeats. The "hat" and the
 "spectre" are the einstein tiles found in 2023.
@@ -96,3 +96,10 @@ spectre, which does not.
   in meta; default pages show about 0.124–0.127. The default line-art pages pass the ADULT
   colourability gate. Meta records `levels`, `tiles`, `coverage`,
   `gap_free`, `reflected` and `colorable`.
+- **Out-of-range knobs (1.1.0+):** when the deepest substitution still
+  leaves part of the page bare (small tiles on a big page with the seeded
+  window off-centre), the window is centred (`window: centred` in meta), and
+  if that is not enough the tiles are made a quarter larger at a time until
+  the page is covered (`tile_size` and `requested_tile_size` in meta).
+  Patches that covered before are unchanged.
+

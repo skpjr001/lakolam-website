@@ -2,7 +2,7 @@
 title: "Planner"
 blurb: "Planner pages — year and month calendars, weekly and daily planners, habit and mood trackers, reading log, meal planner, budget, gratitude and goal pages"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Printable planner and tracker pages: a year at a glance, monthly and weekly
 calendars, daily schedules, habit and mood trackers, a reading log, a meal
@@ -102,3 +102,12 @@ in the 2000s.
   start day; all ink stays inside the margins on every page size, portrait
   and landscape, dated and undated; no two labels overlap; every printed
   character exists in the font; the minimal style uses greys only.
+- **Out-of-range knobs (1.1.0+):** a page the knobs used to refuse is now
+  drawn with each knob brought into range, and meta lists the moved knobs in
+  `adjusted`: `year` 1–9999, `month` 1–12, `day` to the month's last,
+  `index` at most 100000, `day_start`/`day_end` held to 0–23 and swapped
+  when reversed (equal hours are opened to one hour), `rows` at most 60,
+  `days` at most 62, `weight` 0.1–3 pt, a page side given alone takes the
+  other from `page`, sides 200–5000 pt, a `margin` that would leave less
+  than 200 pt of content is reduced, and a `title` is cut to 40 characters.
+

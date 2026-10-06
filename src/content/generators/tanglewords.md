@@ -2,7 +2,7 @@
 title: "Tanglewords"
 blurb: "Tanglewords - snaking word search and fill-in, every word path proven unique"
 category: word
-version: "1.1.0"
+version: "1.2.0"
 ---
 A word search where the words do not run in straight lines: each one snakes
 from letter to touching letter through the grid.
@@ -67,6 +67,12 @@ New York Times's Strands (2024).
   with its letter frequencies. `accents`: `fold` (default for theme lists)
   or `keep` (accented capitals in the grid); unset leaves your own words
   cleaned as before (A-Z only).
+  A theme with no list in the chosen language (the default `ocean` among
+  them) uses the nearest of those ten instead — `animals` for creature
+  themes, `food`, `school`, `travel`, `home`, otherwise `nature` — and the
+  metadata names it (`theme`, `requested_theme`); before v1.2 that was an
+  error, so a page whose only change from the defaults was the language
+  would not generate.
 - **Generation (search):** Kids 7x7 with 5 words, Easy 8x8 with 7, Medium
   10x10 with 9 (side-by-side steps); Hard 10x10 with 10 and Expert 12x12 with
   12 (diagonal steps too, words of five letters or more). Words (none
@@ -82,6 +88,12 @@ New York Times's Strands (2024).
   backtracking from the first free cell, with lengths chosen from the word
   list and every leftover region kept large enough for a word; each path then
   takes a word of its length, read from either end.
+- **Small search grids** (v1.2): Hard and Expert on five rows or columns
+  cannot fit the level's ten or twelve long words. Only when every attempt
+  at the level's count fails, the search hides one word fewer at a time
+  (down to three) from fresh seeds, and the metadata notes the level's
+  count as `requested_words`. Every page that generated before is
+  unchanged.
 - **Solving:** search: an exhaustive depth-first count of every route of
   each word from every starting cell. Fill-in: every route of every word is
   listed, then an exact-cover search on the most constrained cell counts the

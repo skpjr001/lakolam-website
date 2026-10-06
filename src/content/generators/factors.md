@@ -2,7 +2,7 @@
 title: "Factors and Multiples"
 blurb: "Factors and multiples — factor trees, prime or composite, the sieve, HCF/GCF and LCM with Venn diagrams"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Factor trees, factor lists, primes, the sieve of Eratosthenes, and the
 highest common factor and lowest common multiple, with Venn diagrams of
@@ -127,3 +127,10 @@ British and Indian textbooks in the 1990s.
   records `answers_checked`, `no_duplicates`, the grade and
   `rating_basis: number_size_and_skill`, and every question with its
   answer. A page takes a few milliseconds.
+- **Small pages (v1.1.0):** a page too small for every problem used to be
+  refused ("ask for fewer"). Now it keeps as many as fit legibly, at least
+  one: a section whose single problem cannot fit the page width goes
+  first, then problems from the end of the fullest section. A count above
+  what the level has different problems for is cut to what it has. Meta
+  then records `requested_problems` and `problems_placed`. A page that
+  already fitted is unchanged.

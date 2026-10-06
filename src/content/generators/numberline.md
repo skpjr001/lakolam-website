@@ -2,7 +2,7 @@
 title: "Number Lines"
 blurb: "Number lines — missing numbers, skip counting and jumps"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Rows of number lines: fill in the missing numbers, count in steps, and
 follow the jumps to see where they land.
@@ -72,3 +72,10 @@ the 1990s, notably through the Dutch realistic mathematics tradition.
   through another jump's label, and that neighbouring tick labels keep a
   clear gap. Difficulty is set by the number range and step
   (`rating_basis: number_range_and_step`).
+- **Small pages (v1.1.0):** a page too small for every problem used to be
+  refused ("ask for fewer"). Now it keeps as many as fit legibly, at least
+  one: a page too short for three lines keeps the one or two that fit
+  (`rows` against `rows_requested` in meta), and a page too narrow for a
+  level's tick labels is widened in 20 pt steps to the narrowest that
+  holds them (meta `width` and `requested_width`). A page that already
+  fitted is unchanged.

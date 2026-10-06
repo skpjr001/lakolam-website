@@ -2,7 +2,7 @@
 title: "Measuring Length"
 blurb: "Measuring — objects on a true-size ruler in cm, mm or inches, and lines to draw"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Pencils, crayons, keys, leaves and worms laid over a true-size ruler: measure
 them, then draw lines of your own.
@@ -78,3 +78,8 @@ classroom worksheet staple.
   mark — at every level and in both unit systems, and check that both ends
   land on a drawn tick. Difficulty is the precision asked
   (`rating_basis: measuring_precision`).
+- **Out-of-range knobs (1.1.0+):** a short ruler (a narrow page) at a coarse
+  level can hold fewer different lengths than the rows asked for; the page
+  now prints the rows it has, with `requested_rows` in meta, instead of
+  failing. Pages that generated before are unchanged.
+

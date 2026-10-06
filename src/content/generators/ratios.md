@@ -2,7 +2,7 @@
 title: "Ratios and Percents"
 blurb: "Ratios and percents — ratio tables, simplifying, sharing with bar models, unit rates, percent bars"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Ratio tables, simplifying ratios, sharing in a ratio with bar models, unit
 rates, percents of amounts and percent bars, with every answer coming out
@@ -116,3 +116,10 @@ Education in the 1980s and are now used worldwide.
   Meta records `answers_checked`, `no_duplicates`, the grade,
   `rating_basis: number_size_and_skill`, and every question and answer.
   A page takes a few milliseconds.
+- **Small pages (v1.1.0):** a page too small for every problem used to be
+  refused ("ask for fewer"). Now it keeps as many as fit legibly, at least
+  one: a section whose single problem cannot fit the page width goes
+  first, then problems from the end of the fullest section. A count above
+  what the level has different problems for is cut to what it has. Meta
+  then records `requested_problems` and `problems_placed`. A page that
+  already fitted is unchanged.

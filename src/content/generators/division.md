@@ -2,7 +2,7 @@
 title: "Division"
 blurb: "Division worksheets — facts, short and long division with remainders or decimal answers, worked steps on the key"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Division practice from the facts of the times tables to long division with
 remainders and decimal answers, in the written layout your school uses,
@@ -134,3 +134,11 @@ primary schools.
   records `answers_checked`, `steps_checked`, `no_duplicates`, the grade
   and `rating_basis: method_digits_remainders_and_decimal_places`. A page
   takes a few milliseconds.
+- **Out-of-range knobs (1.1.0+):** a request the method cannot print is
+  brought into range instead of refused, and meta names each moved knob in
+  `adjusted`: `divisor_digits` to 1–3 (1–2 for short division),
+  `dividend_digits` to 1–7 and at least the divisor's, `decimal_places` to
+  0–3 and to at most 8 written digits (0 for facts), `table_max` to 5–12,
+  `problems` to the page's maximum and lowered to what fits, and remainders
+  are dropped when dividing on to decimal places. A request with too few
+  different problems is still refused.

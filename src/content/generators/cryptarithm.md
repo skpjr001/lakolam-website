@@ -2,7 +2,7 @@
 title: "Cryptarithm"
 blurb: "An addition in letters, with exactly one way to read it as digits"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 An addition written in letters: give each letter a digit and make the sum
 true.
@@ -44,6 +44,12 @@ H. Hunter later coined **alphametic** for the meaningful-words special case.
   plausibility filter, then a column-by-column search with carry propagation
   counts assignments; only triples with exactly one survive. The one reading
   is re-verified arithmetically rather than trusted from the search.
+- **Specs that used to fail** (v1.1): the word list runs to five letters,
+  so a `min_word` above five is held to five (noted as
+  `requested_min_word`); and when the first shuffle of the pool spends its
+  whole search budget without a unique sum (three-letter words only, for
+  one seed), up to six fresh shuffles of the same pool are searched. Every
+  puzzle that generated before is unchanged.
 - **Guarantees:** exactly one digit assignment; leading letters nonzero;
   cross-checked against brute force over all 151,200 assignments of a
   six-letter sum.

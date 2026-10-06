@@ -2,7 +2,7 @@
 title: "Integers"
 blurb: "Integer worksheets — negative numbers in all four operations, compare and order"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Negative-number practice: add, subtract, multiply and divide with integers,
 from jumps on a number line to mixed pages with every sign rule.
@@ -108,3 +108,14 @@ only in the twentieth century.
   records `answers_checked`, `sign_rules_checked`, `no_duplicates`, the grade
   and `rating_basis: grade_operations_and_range`. A page takes a few
   milliseconds.
+- **Out-of-range knobs (1.1.0+):** a knob outside its range is held to it
+  instead of refused — `range` to 5–999, `factor_max` to 2–99, `problems` to
+  1–40 (1–16 in large print) and to at least one per operation — and when
+  the settings allow too few different problems, `factor_max` and `range`
+  are doubled (within those caps) until the page fills. Meta names each
+  moved knob in `adjusted`.
+- **Too many problems for the page (1.1.0+):** when the problems asked for
+  do not fit the page legibly (a half-size page, say, or a long list in
+  large print), the page places as many as fit, at least one, removing one
+  at a time, and records the count asked for as `requested_problems` in
+  meta, instead of refusing. Pages that fitted before are unchanged.

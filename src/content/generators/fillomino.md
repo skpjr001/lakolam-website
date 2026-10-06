@@ -2,7 +2,7 @@
 title: "Fillomino"
 blurb: "Partition the grid into regions, each cell holding the size of its own"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Divide the grid into regions so every cell's number equals the size of the
 region containing it.
@@ -49,3 +49,8 @@ A Nikoli puzzle, first published in 1994. The name blends "fill" with
 - **Performance note:** batching removals during thinning was tried and made
   generation *slower* (1.9 s → 4.6 s); the naive one-at-a-time loop is kept
   and the failed optimisation is recorded in the implementation notes.
+- **Knobs that find nothing (v1.1):** `max_region` of 0–3 found no 7×7 board
+  for any seed. Now, only when the requested cap finds nothing, a second
+  pass from fresh seeds retries it, then raises it a step at a time toward
+  5; the board's metadata reports `max_region_used`. Every board that
+  generated before is unchanged.

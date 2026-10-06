@@ -2,7 +2,7 @@
 title: "Compare"
 blurb: "Comparing worksheets — <, > or = for numbers, decimals, fractions and expressions, plus ordering"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Greater than, less than or equal: pairs of numbers, decimals, fractions
 and short sums to compare, with rows of numbers to put in order.
@@ -96,3 +96,10 @@ twentieth-century classroom device.
   `no_duplicates`, the `equals` count, `tight`, the grade and
   `rating_basis: number_kinds_and_size`. A page takes about a
   millisecond.
+- **Small pages (v1.1.0):** a page too small for every problem used to be
+  refused ("ask for fewer"). Now it keeps as many as fit legibly, at least
+  one: problems go from the section that overflowed, ordering rows first,
+  so a narrow page keeps all its comparisons when only the ordering rows
+  are too wide. Meta then records `requested_problems` and
+  `requested_order_rows`, and `equals` counts the "=" answers actually
+  printed. A page that already fitted is unchanged.

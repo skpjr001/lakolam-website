@@ -2,7 +2,7 @@
 title: "Order of Operations"
 blurb: "Order of operations — PEMDAS / BIDMAS / BODMAS worksheets with step-by-step keys"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 PEMDAS, BIDMAS or BODMAS practice: expressions of two to six steps, with
 brackets that matter, powers at the higher levels, and an answer key that
@@ -96,3 +96,8 @@ divide share a rank, and so do add and subtract.
   without brackets gives a different answer when worked strictly left to
   right. Integer pages have a negative number in every problem. A page
   takes a few milliseconds (fractions up to ~0.1 s).
+- **Out-of-range knobs (1.1.0+):** `steps` outside 2–6 is held to that
+  range, and `problems` to 1–16 and lowered to the most the page holds,
+  instead of the sheet being refused; meta names each moved knob in
+  `adjusted`.
+
