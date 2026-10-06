@@ -15,7 +15,7 @@ npx wrangler deploy
 
 ## How content gets here
 
-The 55 generator pages are synced from the engine repository — each page is
+The 311 generator pages are synced from the engine repository — each page is
 the generator's own `INFO.md` plus its catalogue line, and every image is real
 engine output rendered at seed `0xa11ce`:
 

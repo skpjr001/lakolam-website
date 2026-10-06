@@ -5,7 +5,7 @@ import * as ld from '../lib/jsonld';
 
 const title = 'About Lakolam — an engine built on four invariants';
 const description =
-  'Lakolam is a Rust workspace of 323 crates: 311 generators over shared foundations for geometry, grids, constraint solving and rendering. Determinism, one display list, mandatory solvers, sizes as data.';
+  `Lakolam is a Rust workspace of ${SITE.stats.crates} crates: ${SITE.stats.generators} generators over shared foundations for geometry, grids, constraint solving and rendering.`;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = [
@@ -87,7 +87,7 @@ const invariants = [
         <li>
           <strong class="text-ink">Developers:</strong> a clean
           <code class="font-mono text-sm">Generator</code> trait, a shared
-          constraint engine, and a registry — adding the 56th generator is a
+          constraint engine, and a registry — adding the next generator is a
           crate, a solver and an INFO.md.
         </li>
       </ul>

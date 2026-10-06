@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'Can I sell what I generate?',
-    a: 'Yes. The pages you generate are yours — puzzle books, colouring books, classroom sets, social posts. Wordlists and quote corpora ship inside the crates and are drawn from public-domain sources.',
+    a: 'Yes. The pages you generate are yours — puzzle books, colouring books, classroom sets, social posts. Wordlists and quote corpora ship inside the crates, drawn from public-domain or openly licensed sources (SCOWL and others), each credited with its licence.',
   },
   {
     q: 'How are difficulty ratings decided?',
@@ -67,7 +67,7 @@ const jsonLd = [
 
 <Base
   title="Lakolam — deterministic generative designs, mazes and puzzles"
-  description={SITE.description}
+  description={`${SITE.stats.generators} generators for mandalas, kolams, mazes, logic and word puzzles and maths worksheets — reproducible from a seed, every puzzle proven uniquely solvable.`}
   ogImage="/og/default.png"
   jsonLd={jsonLd}
 >
@@ -75,7 +75,7 @@ const jsonLd = [
   <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:pt-20">
     <div>
       <p class="text-accent font-mono text-xs tracking-widest uppercase">
-        311 generators · 4,096 tests · one seed
+        {SITE.stats.generators} generators · {SITE.stats.tests.toLocaleString('en-US')} tests · one seed
       </p>
       <h1 class="mt-4 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
         Infinite pages.<br />Zero surprises.
@@ -98,7 +98,7 @@ const jsonLd = [
           href="/generators/"
           class="border-line hover:border-accent-dim text-ink rounded-lg border px-5 py-2.5 font-medium no-underline transition-colors"
         >
-          Browse all 311 generators
+          Browse all {SITE.stats.generators} generators
         </a>
       </div>
       <p class="text-ink-muted mt-6 font-mono text-xs">
@@ -115,7 +115,7 @@ const jsonLd = [
         [
           {
             title: 'Deterministic, forever',
-            body: 'Generator + spec + seed → byte-identical output, guaranteed by 4,096 tests. A page you made today can be regenerated pixel-for-pixel in ten years.',
+            body: `Generator + spec + seed → byte-identical output, guaranteed by ${SITE.stats.tests.toLocaleString('en-US')} tests. A page you made today can be regenerated pixel-for-pixel in ten years.`,
           },
           {
             title: 'Proven, not sampled',
@@ -142,7 +142,7 @@ const jsonLd = [
       Every generator emits the same display list and renders through the same
       backends — so a maze, a mandala and a crossword all export identically.
     </p>
-    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {
         lanes.map((lane) => (
           <a

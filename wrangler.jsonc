@@ -10,6 +10,8 @@
     { "pattern": "www.lakolam.com", "custom_domain": true }
   ],
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    // Serve dist/404.html (with a 404 status) for unknown paths.
+    "not_found_handling": "404-page"
   }
 }
