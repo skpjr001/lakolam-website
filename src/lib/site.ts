@@ -18,6 +18,14 @@ export const SITE = {
   },
 } as const;
 
+/**
+ * A studio link that opens one generator at the site's art seed, so the
+ * studio shows exactly the page pictured here (the studio reads `g`, `seed`
+ * and an optional `spec` from its address bar).
+ */
+export const studioUrl = (id: string, seed: string = SITE.artSeed) =>
+  `${SITE.studio}/?${new URLSearchParams({ g: id, seed })}`;
+
 export const CATEGORY_LABELS: Record<string, string> = {
   design: 'Design',
   maze: 'Maze',
