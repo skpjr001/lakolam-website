@@ -28,6 +28,14 @@ export const organization = () => ({
     '@type': 'ImageObject',
     url: `${site}/brand/lakolam-mark.svg`,
   },
+  email: SITE.contact.email,
+  sameAs: [SITE.contact.twitter.url, SITE.contact.linkedin.url],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: SITE.contact.email,
+    availableLanguage: 'en',
+  },
   knowsAbout: [
     'Generative art',
     'Procedural generation',

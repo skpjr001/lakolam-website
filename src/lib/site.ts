@@ -8,6 +8,13 @@ export const SITE = {
     'Lakolam is a generative engine: 354 generators for mandalas, kolams, mazes, logic and word puzzles and maths worksheets, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
   studio: 'https://app.lakolam.com',
   studioGpui: 'https://studio.lakolam.com',
+  // How to reach the maker: shown in the contact band and footer, and
+  // declared in the Organization JSON-LD (sameAs, email).
+  contact: {
+    email: 'sachinkumarskrose@gmail.com',
+    twitter: { handle: '@skpjr001', url: 'https://x.com/skpjr001' },
+    linkedin: { handle: 'skpjr001', url: 'https://www.linkedin.com/in/skpjr001/' },
+  },
   // The seed behind every image on this site — determinism as a brand asset.
   artSeed: '0xa11ce',
   stats: {

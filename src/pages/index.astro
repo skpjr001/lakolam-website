@@ -329,6 +329,26 @@ $ lako preview -g maze --profile kdp_letter_bleed -o maze.pdf</code></pre>
           Try the GPUI studio
         </a>
       </div>
+      <p class="text-ink-muted mt-8 text-sm">
+        Questions, ideas or a generator you'd like to see? Get in touch:
+      </p>
+      <ul class="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
+        <li>
+          <a href={`mailto:${SITE.contact.email}`} class="text-accent hover:text-accent-strong no-underline">
+            {SITE.contact.email}
+          </a>
+        </li>
+        <li>
+          <a href={SITE.contact.twitter.url} target="_blank" rel="noopener noreferrer me" class="text-accent hover:text-accent-strong no-underline">
+            X / Twitter {SITE.contact.twitter.handle}
+          </a>
+        </li>
+        <li>
+          <a href={SITE.contact.linkedin.url} target="_blank" rel="noopener noreferrer me" class="text-accent hover:text-accent-strong no-underline">
+            LinkedIn {SITE.contact.linkedin.handle}
+          </a>
+        </li>
+      </ul>
       <p class="text-ink-muted mt-7 text-sm">
         <span class="cta-dot" aria-hidden="true"></span>
         Every image behind this text is real engine output · seed

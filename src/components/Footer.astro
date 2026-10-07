@@ -23,6 +23,14 @@ const columns = [
       { href: '/#contact', label: 'Contact' },
     ],
   },
+  {
+    title: 'Contact',
+    links: [
+      { href: `mailto:${SITE.contact.email}`, label: SITE.contact.email },
+      { href: SITE.contact.twitter.url, label: `X / Twitter ${SITE.contact.twitter.handle}` },
+      { href: SITE.contact.linkedin.url, label: `LinkedIn ${SITE.contact.linkedin.handle}` },
+    ],
+  },
 ];
 ---
 
@@ -49,7 +57,7 @@ const columns = [
                   href={link.href}
                   target={link.href.startsWith('http') ? '_blank' : undefined}
                   rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  class="text-ink-muted hover:text-ink no-underline"
+                  class="text-ink-muted hover:text-ink break-words no-underline"
                 >
                   {link.label}
                 </a>
