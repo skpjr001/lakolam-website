@@ -2,7 +2,7 @@
 title: "Angle Facts"
 blurb: "Angle facts — parallel lines and transversals, triangles between parallels, polygons and algebraic angles, every angle proven deducible"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Parallel lines, transversals and polygons — find the marked angles, and say why.
 
@@ -81,6 +81,9 @@ tradition of school geometry, kept today in GCSE mark schemes.
   "linear pair", "alternate interior" and "co-interior"); `reasons` (ask
   for the reason on one-step questions, default on); `count` (4-8);
   `width`, `height`, `line` (clamped to sensible page sizes).
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** every figure is built from exact whole-degree angles —
   a transversal at 40-140° (avoiding near-right angles), a triangle
   between parallels with base angles 35-80°, a convex polygon from

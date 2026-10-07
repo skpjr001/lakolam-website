@@ -2,7 +2,7 @@
 title: "Algebraic Expressions"
 blurb: "Algebraic expressions worksheet — simplify, expand, factorise, substitute and write from words"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Simplify, expand, factorise and substitute — the everyday grammar of algebra.
 
@@ -63,6 +63,9 @@ exponents such as x².
 - **Spec knobs:** `difficulty`; `mode` (`mixed`, `simplify`, `expand`,
   `factorise`, `substitute`, `words`); `locale` (`us` says "factor",
   `uk` and `in` "factorise"); `count` (6–16); `width`, `height`, `line`.
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** each level has its own forms. Kids: collect x-terms and
   numbers (no negatives), substitute into ax + b, simple phrases. Easy:
   two letters with subtraction, a(bx + c), common number factors. Medium:

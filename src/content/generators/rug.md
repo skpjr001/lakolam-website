@@ -2,7 +2,7 @@
 title: "Rug"
 blurb: "Rug - kilim and carpet layouts on a knot grid, symmetric about both axes"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 A kilim or carpet designed knot by knot: nested borders, a central medallion
 or an all-over field of guls and stars, mirrored across both centre lines the
@@ -99,3 +99,10 @@ uneven dye lots produced abrash, now prized as a mark of a hand-made rug.
   Metadata reports the region count and the smallest region (in knots and
   mm²) — line art is a fine-detail chart, and its smallest patches are single
   knots.
+- **Versions:** 1.1.0 — the star medallion now has eight points (before,
+  its extra box lay wholly inside the lozenge, so `star` drew the same rug
+  as `lozenge`). The seed's own choice never picks the new star, so every
+  `auto` rug keeps its picture (meta now names its medallion `lozenge`,
+  which is what it always drew). A border-only `field_motif` is reported
+  as `requested_field_motif`. Lozenge, hexagon and all-over rugs are
+  unchanged.

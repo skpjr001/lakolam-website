@@ -2,7 +2,7 @@
 title: "Knots"
 blurb: "Knot and link diagrams — torus knots, Lissajous knots and closed braids as ribbons or broken lines"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Mathematical knots and links drawn as ribbons that weave over and under
 themselves: torus knots, Lissajous knots and closed braids.
@@ -110,3 +110,6 @@ the 1980s settled Tait's old conjectures about alternating diagrams.
 - **Caveats:** the crossing count is that of the diagram drawn, not the
   knot's crossing number. A closed braid can be a simpler knot than its
   word suggests, and the name says only "closed braid knot" or "link".
+- **Versions:** 1.1.0 — setting only one of `p` and `q` for a torus knot
+  keeps it and lets the seed pick the other (before, a lone `p` or `q` was
+  ignored). Pages with both or neither set are unchanged.

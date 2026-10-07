@@ -2,7 +2,7 @@
 title: "Logic Grid"
 blurb: "Logic grids with relational clues, minimised to the smallest sufficient set"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Deduce who owns what from relational clues — the zebra-puzzle formula, with a
 tick-and-cross grid to track it.
@@ -44,7 +44,15 @@ the tick-grid presentation into a durable magazine genre from the 1960s on.
 - **Generation:** a random full assignment is drawn (anchor attribute fixed to
   kill relabelling symmetry — without that, "unique" is meaningless), a
   candidate clue set is emitted from relational templates, then **minimised**:
-  clues are removed while the assignment stays the only one consistent.
+  clues are removed, in a seeded random order, while the assignment stays the
+  only one consistent.
+- **v1.1 — ordering clues:** in 1.0 the shuffled removal order was sorted back
+  to "last clue first", so the "before" clues (listed last) were always tried
+  first and always dropped — `ordering_clues` changed nothing and no page ever
+  showed one. The order is now the seeded shuffle, so "before" clues survive
+  where they carry weight; every page (the default included) changed. Each
+  theme's ordered attribute is its fourth, so ordering clues appear only at
+  `attributes: 4`.
 - **Guarantees:** exactly one assignment satisfies the shipped clues, and
   every surviving clue is load-bearing — removing any one of them admits a
   second assignment.

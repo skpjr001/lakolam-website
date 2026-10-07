@@ -2,7 +2,7 @@
 title: "Matchstick Equations"
 blurb: "Matchstick Equations — move, add or take away one match to make the equation true"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Each equation made of matches is wrong - move one match to put it right.
 
@@ -53,6 +53,10 @@ puzzle books, party games and online brain teasers.
 **Spec knobs:** `difficulty`; `change` (`move`, `add`, `remove`, or `mixed`,
 which cycles the three and labels each puzzle); `count` (1-8 puzzles, one
 per row); page `width`/`height`; `line`.
+
+**Since 1.1.0:** `line` scales every rule and diagram stroke on the
+page and its key (it was accepted but changed nothing before); a `count`
+outside its range is clamped and recorded as `requested_count`.
 
 **Generation:** a true equation of the band's shape is drawn - Kids two
 one-digit numbers with a one-digit answer; Easy the same with answers up

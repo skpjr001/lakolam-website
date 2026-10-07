@@ -2,7 +2,7 @@
 title: "Paper Weaving"
 blurb: "Paper weaving — a slit mat and numbered strips printed so that weaving over and under reveals a picture, a check or a gingham"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Cut a mat, cut the strips, weave them over and under — and a picture
 appears.
@@ -66,7 +66,13 @@ three basic weave structures of textiles.
 - **Spec knobs:** `picture` (motif, check, stripes), `weave` (plain, twill,
   basket), `icon` (the motif's picture; none = chosen for the page),
   `columns` (4-16), `strips` (4-16), `colour` (off = greys for
-  black-and-white printing), `width`, `height`.
+  black-and-white printing), `width`, `height`, `theme` (a seasonal picture
+  pack for a chosen motif — `halloween`, `christmas`, `easter`,
+  `thanksgiving`, `birthday`, `valentines`, `festivals` — or `none` for the
+  classic pictures; the pack's pictures are tried first and a classic motif
+  is used only if none traces well at the grid size; ignored when `icon`
+  names the motif or the picture is a check or stripes). `icon` also takes
+  any seasonal picture ("pumpkin").
 - **Generation:** the weave fixes, for every crossing, whether the strip
   lies over the mat. The picture fixes the colour every crossing must show:
   a motif traces an icon's silhouette onto the grid (a square is picture

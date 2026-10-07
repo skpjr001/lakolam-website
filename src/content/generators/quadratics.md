@@ -2,7 +2,7 @@
 title: "Quadratics"
 blurb: "Quadratics worksheet — factorising, the formula, completing the square, the discriminant, turning points and graphs, with exact surd answers"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Factorise, use the formula, complete the square and read the parabola — every answer exact.
 
@@ -73,6 +73,9 @@ Descartes, and the word "discriminant" was coined by J. J. Sylvester in
   vertex, simplest radical form; `uk` and `in` factorising, turning point,
   surd form); `count` (4-12; graph pages hold at most 6 — meta reports
   `requested_count`); `width`, `height`, `line`.
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** Easy asks x² + bx + c = 0 with small whole roots,
   x² + bx = 0 and x² = k, and reading roots, intercept and turning point
   off a printed graph; Medium uses any signs, the difference of two

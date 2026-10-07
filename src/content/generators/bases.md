@@ -2,7 +2,7 @@
 title: "Number Bases"
 blurb: "Number bases worksheet — binary place value, binary, hexadecimal and base-n conversion, and addition in other bases"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Binary, hexadecimal and other bases: read a place-value chart, convert, and add in columns.
 
@@ -68,6 +68,9 @@ such as the IBM System/360 in the 1960s.
 - **Spec knobs:** `difficulty`; `topic` (`mixed`, `binary`, `hex`,
   `base_n`, `addition`); `locale` (`uk` says DENARY for base 10; `us` and
   `in` say DECIMAL); `count` (4-12); `width`, `height`, `line`.
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** Kids reads 4-bit place-value charts and converts numbers
   below 16 to and from binary; Easy goes to 6 bits with 8-bit charts;
   Medium converts 8-bit binary and two-digit hexadecimal and adds in

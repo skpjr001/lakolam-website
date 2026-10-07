@@ -2,7 +2,7 @@
 title: "Rhythm"
 blurb: "Rhythm — count the beats of notes and rests, complete the bar, draw the bar lines; exact fraction answers"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Count the beats of notes and rests, complete the bar, draw the bar lines — every answer an exact fraction.
 
@@ -60,6 +60,9 @@ ones; British English keeps the older semibreve, minim and crotchet.
   Expert: dotted eighths and syncopation); `task` (`mixed`, `count_beats`,
   `complete_bar`, `bar_lines`); `count` (4-12); page `width`, `height` and
   `line`.
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** bars are filled beat-group by beat-group from the level's
   rhythm cells (a quarter, two beamed eighths, four sixteenths, a dotted
   quarter and eighth…), so beams always cover exactly one beat and nothing

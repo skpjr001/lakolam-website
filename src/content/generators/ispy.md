@@ -2,7 +2,7 @@
 title: "I Spy and Count"
 blurb: "I Spy and count — pictures scattered over the page, turned and never overlapping; count each kind and write the number in the tally"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Pictures scattered all over the page. How many cars can you find? How many
 keys?
@@ -54,7 +54,11 @@ five-year-olds.
   up to eight, any angle; Hard: six kinds, two to ten, any angle, one kind not
   counted; Expert: seven kinds from one family, three to ten, any angle, some
   flipped over, two kinds not counted), `kinds` (3-8, 0 = the level's),
-  `max_count` (2-10, 0 = the level's), `colour`, `width`, `height`.
+  `max_count` (2-10, 0 = the level's), `colour`, `width`, `height`, `theme`
+  (a seasonal picture pack — `halloween`, `christmas`, `easter`,
+  `thanksgiving`, `birthday`, `valentines`, `festivals` — or `none` for the
+  classic pictures; a pack is drawn from first and topped up with classic
+  pictures only if it runs short, reported as `theme_pictures`).
 - **Generation:** pictures come from the shared icon set. Kinds are taken
   from a shuffled pool one at a time, each kept only if it is clearly
   different from every kind already taken. Counts are drawn, then every

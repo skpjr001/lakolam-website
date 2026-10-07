@@ -2,7 +2,7 @@
 title: "Tangent Circles"
 blurb: "Tangent circles — Doyle spirals, nested Steiner and Pappus chains, Ford circles"
 category: design
-version: "1.1.0"
+version: "1.2.0"
 ---
 Circles that only ever touch: Doyle spirals winding out from a centre,
 rings of circles inside circles, chains shrinking into a point, and the
@@ -104,3 +104,6 @@ others. The spiral pattern itself recalls the seed heads of sunflowers.
   circles shrink with the circles, so line-art pages with small circles have
   gaps below the colouring floor. `colorable` checks the circles only, as
   the shared check measures closed paths, not the gaps between them.
+- **Versions:** 1.2.0 — setting only one of `p` and `q` keeps it and lets
+  the seed pick the other (before, a lone `p` or `q` was ignored and the
+  seed picked both). Pages with both or neither set are unchanged.

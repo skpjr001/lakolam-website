@@ -2,7 +2,7 @@
 title: "Celtic Plait"
 blurb: "An interlaced plait: cords passing over and under, with cells that turn them back"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 An interlaced plait: cords crossing over and under, turned back by chosen
 cells, every cord provably a closed loop.
@@ -48,7 +48,10 @@ descend from George Bain's *Celtic Art: The Methods of Construction* (1951).
 ## This implementation
 
 - **Spec knobs:** `size`, `cells`, `break_share` (fraction of cells that
-  turn the cords), `gap` (the under-crossing window), `stroke`, `kids`.
+  turn the cords), `gap` (the under-crossing window), `stroke`, `kids`
+  (1.75× heavier cords, at least 2.8 pt, at most 6 cells across, and the
+  kids' colouring check). When the grid is coarsened — by kids mode or by
+  the colouring check's escalation — meta reports `requested_cells`.
 - **Generation:** a grid of crossing cells with turns placed at random;
   degree-two connectivity checked (a failure is a model bug, reported as
   such); cords traced deterministically from sorted starts; dull knots
@@ -56,3 +59,7 @@ descend from George Bain's *Celtic Art: The Methods of Construction* (1951).
 - **Guarantees:** every cord closes — by counting argument, verified per
   page; over/under alternates along every cord (cell-parity rule, tested);
   deterministic per seed; colourability-gated with grid coarsening.
+- **Versions:** 1.1.0 — `kids` now draws heavier cords on a coarser grid
+  (before, it only switched the colouring check, which the default pages
+  already passed, so it changed nothing). Pages without `kids` are
+  unchanged.

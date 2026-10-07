@@ -2,7 +2,7 @@
 title: "Word Problems"
 blurb: "Word problems — one-, two- and three-step stories for every operation, money, measures and fractions, each answer checked from the printed numbers"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Short maths stories, from one step to three, where every answer has been worked out twice.
 
@@ -76,6 +76,9 @@ before solving it.
   `multiply_divide`, `money`, `measures`, `fractions`); `steps` (0 = the
   mix suited to the level, or exactly 1, 2 or 3); `locale` (`us`, `uk`,
   `in`); `count` (3-10); `width`, `height`, `line`.
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** stories come from a bank of 74 templates written for
   Lakolam and reviewed so that no story needs a fact it does not state.
   Each template has typed slots (two different names from a short list of

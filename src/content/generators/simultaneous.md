@@ -2,7 +2,7 @@
 title: "Simultaneous Equations"
 blurb: "Simultaneous equations — elimination, substitution, word problems and how many solutions, every answer proven the only one"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Two equations, two unknowns, one answer — by elimination, by substitution, and in words.
 
@@ -77,6 +77,9 @@ and-legs puzzle have been school favourites for centuries.
   "pairs of linear equations" and rupees); `count` (4-12); `working` (show
   the working on the key, default on); `width`, `height`, `line` (clamped
   to sensible page sizes).
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** every solvable pair is built around its solution, chosen
   first (whole numbers 1-10 on Easy, with negatives from Medium); the
   coefficients are drawn and the constants follow. Elimination is rated by

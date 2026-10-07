@@ -2,7 +2,7 @@
 title: "Draw a Line"
 blurb: "Draw-a-line matching — pictures to pictures, groups to numbers, letters to pictures, halves to halves"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Two columns of pictures. Draw a line from each one on the left to its
 partner on the right.
@@ -54,7 +54,13 @@ preschool and kindergarten worksheets.
 
 - **Spec knobs:** `mode` (same, count, initial, halves), `difficulty`
   (pairs: Kids 3, Easy 4, Medium 5, Hard 6, Expert 7; counting pages count
-  up to 3, 5, 6, 8 and 10), `colour`, `width`, `height`.
+  up to 3, 5, 6, 8 and 10), `colour`, `width`, `height`, `theme` (a
+  seasonal picture pack — `halloween`, `christmas`, `easter`,
+  `thanksgiving`, `birthday`, `valentines`, `festivals` — or `none` for the
+  classic pictures; the pack is used first and topped up with classic
+  pictures only when it runs short, reported as `theme_pictures`; on
+  first-letter pages a seasonal picture's other names — "present" for a
+  gift — are kept off the page's letters too).
 - **Generation:** pictures come from the shared icon set (plain shapes are
   left out except on same-picture pages). Same-picture and halves pages
   take pictures from a shuffled pool one at a time, keeping each only if it

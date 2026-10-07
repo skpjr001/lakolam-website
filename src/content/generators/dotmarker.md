@@ -2,7 +2,7 @@
 title: "Dot Markers"
 blurb: "Dot-marker pages — big non-touching dots to stamp along giant letters and numbers, inside pictures, or on every copy of one picture"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Big round dots to stamp with a dot marker: along giant letters and numbers,
 inside pictures, or on every apple on the page.
@@ -56,7 +56,11 @@ most common preschool activity pages.
   by the seed), `dot_mm` (dot diameter at print size, 12-30 mm), `gap_mm`
   (clear space between dots, 1-10 mm), `numbered` (number the dots in
   order), `targets` (pictures to dot on a count page, 2-10), `colour`,
-  `width`, `height`.
+  `width`, `height`, `theme` (a seasonal picture pack — `halloween`,
+  `christmas`, `easter`, `thanksgiving`, `birthday`, `valentines`,
+  `festivals` — or `none` for the classic pictures; picture, count and
+  companion pictures come from the pack first, classic ones only if no pack
+  picture fits). `picture` also names any seasonal picture ("pumpkin").
 - **Generation:** letter and number pages scale the built-in single-stroke
   capital or digit to fill the page, draw its strokes as a pale road a
   little wider than a dot, and space dots evenly along each stroke at no

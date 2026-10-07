@@ -2,7 +2,7 @@
 title: "Proportion"
 blurb: "Proportion — is it proportional, the constant of proportionality, direct, inverse and power proportion, unitary-method word problems"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Is it proportional? The constant, the equation, direct and inverse proportion — every answer exact.
 
@@ -77,6 +77,9 @@ Hooke's law to Newton's inverse-square law of gravitation.
   `uk` and `in` kilometres, litres, metres, and pounds or rupees);
   `count` (4-10); `width`, `height`, `line` (clamped to sensible page
   sizes).
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** every relationship is built from its constant, chosen
   first. Easy uses whole constants: "is this table proportional?",
   y = kx through a given pair, and whole-number word problems. Medium adds

@@ -2,7 +2,7 @@
 title: "Sight Words"
 blurb: "Sight words — read, trace, write, find, fill in and build each Dolch word"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Sight-word practice pages: read each word, trace it, write it, find it
 among look-alikes, fill in its missing letter and build it from tiles.
@@ -16,7 +16,8 @@ look at the same word in six different ways. The words come from the Dolch
 lists, the classic sight-word lists for preschool to third grade plus 94
 common nouns, or from your own list.
 
-All words are printed in capital letters.
+Words are printed in capital letters, or in small letters (a, the, said)
+with the small-letters option.
 
 ## How to play
 
@@ -62,14 +63,18 @@ first-grade workbooks.
   default 2), `find_count` (entries in the find row, counting the word's own
   copies; 5–10, default 8), `missing` (letters left out, 1–3, default 1;
   never the whole word except for a one-letter word), `width`, `height`,
-  `name_line`.
+  `name_line`, `lowercase` (off by default: show the words in small
+  letters, traced on guide lines whose dotted middle line marks the
+  x-height).
 - **Generation:** words are drawn without repeats from the chosen Dolch
   list (vendored; the lists are public domain). Two entries are left out
   because the page works one plain word at a time: the contraction DON'T
   and the two-word noun SANTA CLAUS. Each panel's find row holds 2–4 copies
   of the word (never more than half the row) among look-alikes made by
   swapping one letter for a capital that looks like it (E and F, O and Q,
-  M and N, P and R ...) or by swapping two neighbouring letters; every
+  M and N, P and R ...; with `lowercase`, small letters that are easy to
+  confuse: b d p q, n h u, i l t ...) or by swapping two neighbouring
+  letters; every
   look-alike passes the family-friendly filter. Missing letters are chosen
   at random positions, and the tiles are the word's letters shuffled out of
   order (unless every letter is the same).
@@ -80,6 +85,6 @@ first-grade workbooks.
   look-alike letter or one neighbour swap away from the word and is never
   the word itself, so the circled count is exact; the missing letters
   restore the word; the tiles are exactly the word's letters, out of order.
-  Checked for every word of every list in tests. The stroke font draws
-  capitals only, so words are shown in capitals — the main limit of this
-  page, since many classrooms teach sight words in lower case.
+  Checked for every word of every list in tests. Capitals are the
+  default; `lowercase` draws the words in the canvas's mixed-case face,
+  and pages without it are unchanged byte for byte.

@@ -2,7 +2,7 @@
 title: "Coordinate Geometry"
 blurb: "Coordinate geometry — gradient, midpoint, exact distance, the section formula, equations of lines, parallel and perpendicular lines"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Slope, midpoint, exact distance, the section formula and the equations of lines — every answer exact.
 
@@ -78,6 +78,9 @@ in Euclid.
   `distance`, `section`, `lines`, `parallel`); `locale` (`us` "slope" and
   "radical form"; `uk`, `in` "gradient" and "surd form"); `count` (4-12);
   `width`, `height`, `line` (clamped to sensible page sizes).
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** points have whole coordinates. Easy keeps to the first
   quadrant (0 to 10) with whole, positive gradients, whole midpoints and
   whole distances (from Pythagorean triples) and lines with whole gradient

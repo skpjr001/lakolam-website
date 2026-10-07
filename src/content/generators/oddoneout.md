@@ -2,7 +2,7 @@
 title: "Odd One Out"
 blurb: "Odd one out — circle the picture that is different (picture, filling, count, mirror, turn, missing detail) or the one that matches"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Rows of pictures that are all the same except one. Can you spot it?
 
@@ -55,7 +55,11 @@ Metzler (1971).
   or half turns, five to a row; Hard: a missing detail; Expert: six to a row
   and "flipped among turned" rows), `task` (`mixed`, `odd_one`, `match`),
   `rows` (3-7), `figures` (4-6, or 0 for the level's own), `colour`,
-  `width`, `height`.
+  `width`, `height`, `theme` (a seasonal picture pack — `halloween`,
+  `christmas`, `easter`, `thanksgiving`, `birthday`, `valentines`,
+  `festivals` — or `none` for the classic pictures; each row prefers the
+  pack's pictures and falls back to classic ones only where none suits —
+  filling rows use plain shapes — reported as `theme_pictures`).
 - **Generation:** each row takes a kind of difference from the level's list
   in a shuffled cycle and pictures from the shared `lako-icons` set (near
   twins left out, pictures not yet on the page preferred). Mirror and turn

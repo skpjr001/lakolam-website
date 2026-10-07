@@ -2,7 +2,7 @@
 title: "Big and Small, Long and Short"
 blurb: "Size order and measuring — number pictures from smallest to biggest, circle the longest, measure with cubes or paperclips"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Put pictures in order of size, find the longest, and measure with cubes or
 paperclips.
@@ -62,7 +62,12 @@ end.
   objects not lined up, a longer measuring strip, up to 10; Hard: six sizes
   18 % apart, "how many longer?" rows, up to 12; Expert: sizes 15 % apart,
   five objects, up to 15), `task` (mixed, order, compare, measure), `unit`
-  (cubes, paperclips), `rows` (3-8), `colour`, `width`, `height`.
+  (cubes, paperclips), `rows` (3-8), `colour`, `width`, `height`, `theme`
+  (a seasonal picture pack for the order rows — `halloween`, `christmas`,
+  `easter`, `thanksgiving`, `birthday`, `valentines`, `festivals` — or
+  `none` for the classic pictures; the pack's airy drawings such as the
+  snowflake are left out, and compare and measure rows, which draw pencils,
+  crayons, worms and ribbons, ignore it).
 - **Generation:** an order row picks one picture and draws its sizes as a
   chain of steps, each at least the level's margin bigger than the last,
   then shuffles them (never leaving them already in order). A compare row

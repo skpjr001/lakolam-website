@@ -2,7 +2,7 @@
 title: "Polynomials"
 blurb: "Polynomials — add, subtract, multiply, long and synthetic division, the remainder and factor theorems, zeros and coefficients"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Add, multiply and divide polynomials — long division, synthetic division and the remainder theorem.
 
@@ -80,6 +80,9 @@ coefficients of an equation in the 1590s.
   `multiply`, `long_division`, `synthetic`, `theorems`, `zeros`); `locale`
   (`in` spells "zeroes", as NCERT does); `count` (4-10); `width`,
   `height`, `line` (clamped to sensible page sizes).
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** Easy adds a quadratic to a cubic, multiplies (x + a) by a
   quadratic, and divides cubics exactly by (x – a) both ways. Medium adds
   subtraction of cubics with missing terms, any leading coefficients,

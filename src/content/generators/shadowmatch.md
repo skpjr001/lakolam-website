@@ -2,7 +2,7 @@
 title: "Match the Shadow"
 blurb: "Shadow matching — draw a line from each picture to its shadow; harder pages turn or flip the shadows and add decoys"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Pictures on one side, black shadows on the other. Which shadow belongs to
 which picture?
@@ -54,7 +54,15 @@ turned shadows are the harder level here.
   shadows turned by quarter turns, one decoy; Expert: turned and flipped, two
   decoys, all pictures from one family such as all fruit and plants or all
   shapes), `pairs` (3-6), `decoys` (0-2, default by level), `colour`,
-  `width`, `height`.
+  `width`, `height`, `theme` (a seasonal picture pack — `halloween`,
+  `christmas`, `easter`, `thanksgiving`, `birthday`, `valentines`,
+  `festivals` — or `none` for the classic pictures; pictures come from the
+  pack first, and on Expert pages the pack stands in for the one family;
+  classic pictures top it up only when the pack runs short of clearly
+  different shadows, reported as `theme_pictures`; packs are mostly
+  symmetric pictures, so on levels with moves only half of a themed page's
+  pictures must be ones a move visibly changes, and the rating counts the
+  moves the shadows really show).
 - **Generation:** pictures come from the shared `lako-icons` set. At levels
   with moves, only pictures whose shadow a move visibly changes are used (a
   turned circle is no turn). Icons are taken from a shuffled pool one at a

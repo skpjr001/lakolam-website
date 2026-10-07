@@ -2,7 +2,7 @@
 title: "Cut and Paste"
 blurb: "Cut and paste — cut out the pieces at the bottom and glue each into its one box: sort, count, order by size or rebuild a picture"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Cut out the squares at the bottom of the page and glue each one into its
 place.
@@ -59,7 +59,12 @@ for preschoolers.
   2 groups of 2, 2 of 3, 3 of 2, 3 of 3, 4 of 2; count: counts up to 3, 5,
   6, 8 and 10 in 3 to 6 boxes; size: 3 to 7 sizes; picture: 2 x 2 with a
   faint guide, 2 x 2, 3 x 3 with a guide, 3 x 3, and 3 x 3 with no copy to
-  follow), `colour`, `width`, `height`.
+  follow), `colour`, `width`, `height`, `theme` (a seasonal picture pack —
+  `halloween`, `christmas`, `easter`, `thanksgiving`, `birthday`,
+  `valentines`, `festivals` — or `none` for the classic pictures; pictures
+  come from the pack first, sort pages choose the groups the pack can fill,
+  and classic pictures top up a group the pack cannot, reported as
+  `theme_pictures`).
 - **Generation:** pictures come from the shared icon set. Sort pages take
   pictures from the icon set's own families, leaving out the ones a child
   could reasonably put in two groups (moon, star, drop, heart, sun, beach

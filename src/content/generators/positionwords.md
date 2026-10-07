@@ -2,7 +2,7 @@
 title: "Where Is It? Position Words"
 blurb: "Position words — pictures on shelves; circle what is above, below, next to, between, left or right of a named picture"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Pictures on a set of shelves. What is above the cat? What is between the cup
 and the bell?
@@ -57,7 +57,12 @@ name the skill "positional language".
   right; Hard: three shelves of four, adds two-step questions; Expert: four
   shelves of four, two two-step questions per scene), `scenes` (1-3),
   `questions` per scene (2-5), `choices` per question (2-4), `colour`,
-  `width`, `height`.
+  `width`, `height`, `theme` (a seasonal picture pack — `halloween`,
+  `christmas`, `easter`, `thanksgiving`, `birthday`, `valentines`,
+  `festivals` — or `none` for the classic pictures; shelves are stocked
+  from the pack first, and the bigger Hard and Expert shelves are topped up
+  with classic pictures when the pack runs short, reported as
+  `theme_pictures`).
 - **Generation:** each scene fills every cubby with a different picture (no
   plain shapes), each clearly different from the others on pixels. Every
   scene asks the level's hardest kind of question at least once; the rest

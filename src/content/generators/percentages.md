@@ -2,7 +2,7 @@
 title: "Percentages"
 blurb: "Percentages worksheet — percent of, change, reverse percentages, profit and loss, discount, tax, simple and compound interest"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 Percent of, percentage change, profit and loss, discounts, tax and interest — every answer exact.
 
@@ -84,6 +84,9 @@ and Services Tax in 2017.
   "percent"; `uk` pounds and VAT, "percentage"; `in` rupees and GST at 5,
   12, 18 or 28%, lakh digit grouping, "per annum", "half-yearly"); `count`
   (4-12); `width`, `height`, `line`.
+- **Since 1.1.0:** `line` scales every rule and diagram stroke on the
+  page and its key (it was accepted but changed nothing before); a
+  `count` outside its range is clamped and recorded as `requested_count`.
 - **Generation:** Kids asks 10%, 25% and 50% of round numbers; Easy uses
   friendly rates (5, 10, 20, 25, 50, 75%) for percent of, increases,
   decreases and discounts, with whole-number answers; Medium uses any whole

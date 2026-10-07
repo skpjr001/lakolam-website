@@ -2,7 +2,7 @@
 title: "Friendship Bracelets"
 blurb: "Friendship-bracelet patterns — normal chevron, diamond and zigzag knot diagrams worked out by moving every string through every knot, and alpha patterns with names and motifs"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Friendship-bracelet patterns: chevrons, diamonds and zigzags knotted on the
 diagonal, and alpha bands with names and pictures. Every knot's colour is
@@ -81,7 +81,9 @@ letters for colours, and "alpha" grids for pictures and names.
   (4–24, even), `colours` (2–6, at most half the strings) and `border`; for
   alpha patterns `alpha_motif` (text, hearts, diamonds, waves, checks),
   `text` (A–Z, digits, spaces and `*` for a heart, up to 16), `alpha_width`
-  (7–20 base strings) and `alpha_rows` (8–80); `output` (diagram, preview),
+  (7–20 base strings) and `alpha_rows` (8–80, the rows in one repeat;
+  text repeats the word as many times as fit and spaces out the spare
+  rows, and never cuts the word short); `output` (diagram, preview),
   `threads` (auto, rainbow, pastel, ocean, sunset, forest, berry),
   `line_art`, `width`, `height`.
 - **Generation:** normal colours are laid out across the left half in
@@ -112,3 +114,10 @@ letters for colours, and "alpha" grids for pictures and names.
   belongs to a leading string, the bundle ends where it started, and the
   knot counts match the key. Tests also read the alpha text back off the
   grid, catch a wrong knot colour, and sweep every option and boundary.
+  A request the generator cannot meet is reported beside what it used:
+  `requested_strings`, `requested_colours` (more colours than half the
+  strings), `requested_alpha_rows` and `requested_alpha_width`.
+- **Versions:** 1.1.0 — `alpha_rows` now sets the length of a text band
+  (before, text ignored it and used exactly one copy of the word); text
+  pages whose word was shorter than `alpha_rows` changed. Every other page
+  is unchanged.

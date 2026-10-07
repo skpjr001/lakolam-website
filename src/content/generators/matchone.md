@@ -2,7 +2,7 @@
 title: "Find the Match"
 blurb: "Find the match — a printable card deck where any two cards share exactly one picture, built from a finite projective plane"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 A deck of picture cards where any two cards share exactly one picture. Be
 the first to spot it!
@@ -59,7 +59,12 @@ card games in the world.
   becomes 7, other numbers the nearest order), `symbols` (pictures, numbers,
   letters), `colour`, `shape` (round or square cards), `cards_per_page` (1,
   2, 4 or 6), `page` (0-based; past the end prints the last page), `width`,
-  `height`.
+  `height`, `theme` (a seasonal picture pack for picture decks —
+  `halloween`, `christmas`, `easter`, `thanksgiving`, `birthday`,
+  `valentines`, `festivals` — or `none` for the classic pictures; a pack has
+  12-13 pictures, so a Kids deck (7 symbols) is all seasonal, an Easy deck
+  (13) nearly so, and bigger decks are topped up with classic pictures that
+  look clearly different from the pack's, reported as `theme_pictures`).
 - **Generation:** the deck is the projective plane of order q over the field
   GF(q) - prime fields for 2, 3, 5 and 7, and GF(4) from its addition (XOR)
   and multiplication tables. Points and lines are the normalised vectors
