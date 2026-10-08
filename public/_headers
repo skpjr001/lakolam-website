@@ -1,0 +1,4 @@
+# Content-hashed build assets never change under the same name: cache them
+# for a year so a refresh never waits on revalidating them.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -10,6 +10,9 @@ export default defineConfig({
   site: 'https://www.lakolam.com',
   output: 'static',
   trailingSlash: 'always',
+  // Inline the CSS into every page: a refresh then never paints unstyled
+  // HTML (a full-size logo, shifting layout) while a stylesheet loads.
+  build: { inlineStylesheets: 'always' },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
