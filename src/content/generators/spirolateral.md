@@ -2,7 +2,7 @@
 title: "Spirolateral"
 blurb: "Spirolaterals on square, triangle and hex grids — closure proven, faces coloured by winding"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Walk 1, 2, 3 … steps, turn, and repeat — until the path comes home.
 
@@ -81,3 +81,9 @@ reversed turns, and Ed Pegg Jr. collected many of their properties.
   cases (1–4 at 90° is open, 1–3 at 90° closes in 4 rounds, 1–3 at 120° is
   open); the faces' areas weighted by winding equal the walk's signed area;
   line art passes the adult colourability check.
+- **Version 1.1.0:** lattice dots stay inside their panel. On a skewed
+  (60°) lattice the dot range was the bounding box of the index range's
+  corners, which is wider than the figure, so dots could run into the next
+  panel or, on an edge panel, 14 pt off the page. Pages whose dots already
+  stayed in their panels are byte-identical to 1.0.0; the default page
+  changes.

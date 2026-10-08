@@ -40,6 +40,12 @@ planar graph is a circle-packing contact graph).
 
 - **Spec knobs:** `size`, `shape` (page silhouette), `min_radius`,
   `max_radius`, `candidates` per placement, `rings`, `stroke`, `kids`.
+  `min_radius` is held to 1 Pt–a quarter of the page (`requested_min_radius`
+  reports a clamped request). A `max_radius` under twice the radius floor
+  (zero, say) leaves no room for a packing and is raised to twice the floor,
+  held to half the page; meta reports `requested_max_radius`. If a retry's
+  raised floor outgrows the page, the last page that drew ships, reported
+  as not colourable. Every spec that drew before draws the same page.
 - **Generation:** rejection-sampled candidate centres; each circle takes the
   largest legal radius at its position, capped by `max_radius`; placement
   stops when `candidates` successive positions all fail at `min_radius`.

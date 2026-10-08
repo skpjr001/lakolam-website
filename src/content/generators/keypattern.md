@@ -64,7 +64,10 @@ of the skeleton turned 45 degrees at scale 1/√2.
 - **Spec knobs:** `mode` (spiral or penmon), `layout` (panel, band — two-
   or three-square-deep friezes stacked down the page, frame, cross),
   `width`, `height`, `cells` (grid squares across, 4-16; the Penmon grid uses
-  half as many, each square holding a whole recursion), `turns` (1-4: turns
+  half as many, each square holding a whole recursion; mirror symmetry off
+  the band layout needs an even count, so an odd one is rounded down, and
+  meta reports `requested_cells` whenever the squares drawn differ from the
+  request), `turns` (1-4: turns
   in each triangle, which sets the path width), `depth` (Penmon levels,
   2-4), `cut_share` (the share of squares cut by a diagonal; the rest hold
   square spirals), `symmetry` (mirror: left-right and top-bottom, or a

@@ -2,7 +2,7 @@
 title: "Slitherlink"
 blurb: "Draw one closed loop, clued by how many edges each cell touches"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Draw a single closed loop along the grid lines so each clue counts the edges
 drawn around its cell.
@@ -81,3 +81,7 @@ It remains one of the most-analysed pencil puzzles in computer science.
   set of enclosed cells on small hex and triangle boards. The variety pages
   draw faint cell outlines under the dots, since hexagons and triangles are
   hard to read from dots alone. Square boards are byte-identical to 1.0.
+- **Version 1.2 — `line` works on every grid:** the answer key's loop is
+  drawn `line` times its standard width. Square boards draw no cell outlines,
+  so before this `line` changed nothing there. Pages and keys at the default
+  `line` of 1 are unchanged.

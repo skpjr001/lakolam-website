@@ -2,7 +2,7 @@
 title: "Tessellation"
 blurb: "Interlocking tiles whose wiggly edges match exactly, laid by translation or glide"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Interlocking tiles whose wiggly edges match exactly — Escher's construction,
 parameterised.
@@ -53,3 +53,12 @@ this crate automates. Heesch later classified the edge-modification types.
 - **Guarantees:** exact edge matching (shared curve, not similar curves);
   deterministic per seed; colourability-gated with tile-size escalation; the
   stroke on the page is the stroke in the spec, asserted by test.
+- **Too flat to draw:** a `wiggle` below about 0.05 (zero, or a negative
+  value, which is held to zero) leaves every tile a plain square and no tile
+  passes the flatness check; such a request is drawn at a wiggle of 0.15 and
+  meta reports `requested_wiggle`. Every wiggle that drew before draws the
+  same tile.
+- **Version 1.1.0:** the outer ring of tiles bulges past the page by design
+  and is now cut by an explicit page clip, where before it was left as ink up
+  to 105 pt off the page. The picture is unchanged; the bytes of every page
+  change.

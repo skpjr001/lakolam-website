@@ -2,7 +2,7 @@
 title: "Border"
 blurb: "Ornamental borders — frieze-group motif bands and Greek key frames"
 category: design
-version: "1.2.0"
+version: "1.3.0"
 ---
 Ornamental bands and page frames built from the seven frieze groups.
 
@@ -104,6 +104,14 @@ interlocking half-turned pair makes it a `p2` frieze.
   default — `greek_key`, `meander`, `double_meander`, `running_dog`,
   `key_squares`, `step_fret`), `group`, `motifs`, `repeats` (motif bands
   only), `depth`, `size`, `stroke`.
+- **Version 1.3.0 — the page clip.** A motif band runs a cell or more past
+  each end so it never stops short of the edge; before 1.3.0 that overhang
+  was left in the display list as ink up to 417 pt off the page (invisible,
+  but outside the page's bounds in every backend). Motif pages now leave out
+  the motifs wholly off the page and wrap the rest in one group clipped to
+  the page: the picture is unchanged, the
+  bytes of every `motifs` page change, and the key styles are byte-identical
+  to 1.2.0.
 - Rating basis: none — a design. Honesty fields: group, layout, repeats, cell
   and depth in points, attempt; for the key styles, style, group, periods
   per edge, grid unit, depth and corner ornament. The key styles ignore

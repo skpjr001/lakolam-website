@@ -2,7 +2,7 @@
 title: "Hitori"
 blurb: "Shade cells until no number repeats in any row or column"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade out cells until no number repeats in any row or column — without ever
 shading two neighbours or cutting the board in two.
@@ -36,7 +36,12 @@ after the goal of making every number solitary in its lines.
 
 ## This implementation
 
-- **Spec knobs:** `rows`, `cols`, `symbols`, `difficulty`.
+- **Spec knobs:** `rows`, `cols`, `extra_values`, `difficulty`.
+  `extra_values` adds numbers beyond the classic 1–n: from 2 up the board is
+  filled from 1 to n + `extra_values` − 1. Version 1.1 made it work — before,
+  the classic alphabet was always tried first and nearly always filled, so
+  every value gave the same page; boards at 0 and 1 (the default) are
+  unchanged.
 - **Generation:** a near-Latin grid is built, duplicates are introduced
   deliberately, and the shading that fixes them is verified unique.
 - **Guarantees:** the shipped answer passes all three rules (checked against

@@ -52,6 +52,11 @@ descend from George Bain's *Celtic Art: The Methods of Construction* (1951).
   (1.75× heavier cords, at least 2.8 pt, at most 6 cells across, and the
   kids' colouring check). When the grid is coarsened — by kids mode or by
   the colouring check's escalation — meta reports `requested_cells`.
+  A `break_share` too low for any knot to pass the taste check (zero, or a
+  negative value held to zero, draws the one plain plait, which falls apart
+  into short loops at every seed) is drawn at the default 0.10 instead, and
+  meta reports `requested_break_share`; every share that drew before draws
+  the same knot.
 - **Generation:** a grid of crossing cells with turns placed at random;
   degree-two connectivity checked (a failure is a model bug, reported as
   such); cords traced deterministically from sorted starts; dull knots

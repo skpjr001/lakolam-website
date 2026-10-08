@@ -2,7 +2,7 @@
 title: "Pantograph"
 blurb: "Edge-to-edge quilting pantographs — loops, waves, scallops and points as one continuous line per row, seamless repeats, rows nested at a measured clearance; quilt preview, printable template or plotter lines"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Edge-to-edge quilting designs: one continuous line per row, repeating
 seamlessly across the quilt, with the rows tucked into each other at a
@@ -101,3 +101,8 @@ edge-to-edge patterns.
   output, and every family, enum and boundary value generating. The
   pattern sheet prints at full size when it fits and otherwise at a round
   reduction (25%, 33.3%…) with the enlargement stated and a one-inch bar.
+- **Version 1.1.0:** the quilt preview's covering rows overshoot the patch
+  on every side and are cut by its clip; rows wholly outside the clip (up to
+  140 pt below the page) were kept as invisible ink and are now left out.
+  The picture is unchanged; quilt-preview bytes change, template and
+  plotter pages are byte-identical to 1.0.0.

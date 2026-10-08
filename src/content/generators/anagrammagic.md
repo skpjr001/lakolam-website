@@ -2,7 +2,7 @@
 title: "Anagram Magic Square"
 blurb: "Anagram Magic Square — unscramble the cells, read the magic-order initials"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Unscramble the nine words, then read their first letters in the order the
 magic square gives — 1, 2, 3 up to 9 — to reveal a hidden word.
@@ -46,3 +46,7 @@ pairing the ancient magic square with wordplay and a hidden-message payoff.
   anagram of exactly one vocabulary word, and the initials in number order
   spell the hidden word. Vocabulary vendored, so the crate depends on no other
   generator.
+- **Since 1.1.0:** the instruction under the grid wraps (and shrinks if it
+  must) to the grid's width; on one line it ran 129 pt off the right of the
+  default page. Every page with the default instruction changes; the answer
+  key, whose line fits, does not.

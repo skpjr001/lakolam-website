@@ -2,7 +2,7 @@
 title: "Norinori"
 blurb: "Norinori — shade two cells in every region, all in dominoes that touch only diagonally"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade exactly two squares in every outlined region — and every shaded square
 must pair with exactly one neighbour, so the shading falls into dominoes.
@@ -39,8 +39,8 @@ shaded squares stick together in pairs.
 
 ## This implementation
 
-- **Spec knobs:** `size` (5–12; 0 picks from the difficulty), `difficulty`,
-  `cell`, `line`.
+- **Spec knobs:** `size` (5–10; 0 picks from the difficulty; 11 and 12 are
+  built at 10 and reported as `requested_size`), `difficulty`, `cell`, `line`.
 - **Generation:** dominoes are placed first, none touching along a side. Their
   squares are paired into region seeds — a whole domino, or halves of two
   neighbouring dominoes joined through a blank square, the interlock that
@@ -50,7 +50,15 @@ shaded squares stick together in pairs.
   blank border square at a time moves to a neighbouring region, both staying
   connected, keeping moves that leave no more squares unsettled by the
   inference ladder, with occasional uphill steps to leave plateaus, until the
-  ladder settles every square.
+  ladder settles every square. If that finds nothing, a second phase pairs
+  the seeds most-constrained-first and aims each move at a region that still
+  holds an undecided square.
+- **v1.1.0:** the region-growing sort drew fresh noise per comparison, which is
+  not a total order: past 20 regions std's sort panicked (11×11, 12×12). Up to
+  20 regions the same draws are kept call for call, so those boards are
+  byte-identical; above, each region draws its noise once. 11 and 12 rarely
+  settled even without the panic and are now built at 10×10; boards that
+  previously failed at 10 now come from the second phase.
 - **Solving:** *basic* (region counts; the domino rule from both sides — a
   shaded square's partner, and a square that can never find one) and *trial*
   (assume a square, strike it on a contradiction). If the requested ceiling

@@ -51,6 +51,12 @@ a fusion of their own Yajisan-Kazusan counting clues with the loop genres.
   keeps the sampled answer valid while strictly removing freedom, until the
   count of answers is exactly one (proven by exhaustive search) or the board
   is discarded.
+- **When the request admits nothing:** a low clue share leaves the loop too
+  much slack, so if no board at the requested share is unique the share is
+  raised (0.10, 0.14, 0.20) and reported as `clue_share` beside
+  `requested_clues`; an odd side that still finds nothing is built one
+  smaller and reported as `requested_size`. Boards the request did produce
+  are unchanged.
 - **Guarantees:** deterministic per seed; exactly one answer, loop and
   shading both; the shipped answer is the sampled configuration, checked
   outright. Difficulty is rated by clue density, the same basis as masyu, and

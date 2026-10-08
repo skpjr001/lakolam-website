@@ -2,7 +2,7 @@
 title: "Zentangle"
 blurb: "Zentangle — a partitioned page, each region filled with its own tangle"
 category: design
-version: "1.1.0"
+version: "1.2.0"
 ---
 A page cut into regions, each filled with a different line texture — a
 *tangle*.
@@ -66,3 +66,10 @@ the texture choice — that a colourist or doodler then works over.
   `colorable: false` honestly. A test pins this, so if it ever becomes
   colourable the doc gets corrected rather than quietly drifting.
 - The escalation lever is a coarser pitch. Rating basis: none — a design.
+- **Version 1.2.0:** a texture is generated over its region's bounding box
+  and clipped to the region, so some strokes miss the region entirely — up
+  to 30 pt past the page edge. They drew nothing but stayed in the display
+  list as ink off the page; they are now left out (after the colourability
+  check, so the attempt each page settles on is unchanged). The picture is
+  unchanged; the bytes of regular pages change, Bold & Easy pages are
+  byte-identical to 1.1.0.

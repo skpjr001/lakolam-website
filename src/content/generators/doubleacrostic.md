@@ -2,7 +2,7 @@
 title: "Double Acrostic"
 blurb: "Double Acrostic — initials spell one word, finals spell another"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Unscramble each row into a word. The first letters, read down, spell one
 hidden word; the last letters spell another.
@@ -44,3 +44,7 @@ each spelled a theme. It predates the crossword by decades.
   vocabulary (so each has one solution) and genuinely scrambled; the initials
   spell the front word and the finals spell the back word — all checked at
   build time. Vocabulary vendored, so the crate depends on no other generator.
+- **Since 1.1.0:** the line under the rows wraps (and shrinks if it must)
+  to the page's width inside the margins; on one line the instruction ran
+  79 pt off the right of the default page. Puzzle pages change; answer keys
+  whose line fits do not.

@@ -2,7 +2,7 @@
 title: "Word Sudoku"
 blurb: "Word sudoku — letters instead of digits, and a hidden word in one row"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 A sudoku played with letters instead of digits — and once it is solved, one row
 spells a hidden word.
@@ -51,3 +51,8 @@ along a row or a diagonal.
   has no twelve-letter word list; it is now served as nine letters with
   `requested_size: 12` in meta instead of being refused.
 
+- **Footer fit (1.2.0+):** the letter-set line under a nine-letter grid ran
+  about 6 pt past both edges of the page at the default cell size; footer text
+  is now shrunk just enough to fit inside the page, so boards whose footer
+  already fitted are unchanged and the default page is drawn slightly smaller
+  in that one line.

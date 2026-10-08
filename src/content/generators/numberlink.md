@@ -47,7 +47,13 @@ optimisation target.
 - **Spec knobs:** `rows`, `cols`, `pairs`, `difficulty`.
 - **Generation:** answer first — the grid is decomposed into non-crossing
   paths that cover it, endpoints become the clues, and the router proves the
-  clues admit exactly one covering set of paths.
+  clues admit exactly one covering set of paths. If no plain carve routes
+  uniquely (most 10-wide boards, long `min_path`), a second phase carves
+  freely and *repairs* short paths — a short path's end joins an adjacent
+  path's cell and takes that path's cells to one of its ends, never touching
+  itself — and if even that finds nothing, `min_path` is relaxed one step at
+  a time and reported as `min_path` beside `requested_min_path`. The band is
+  rated by average path length (`rating_basis: average_path_length`).
 - **Guarantees:** `count(2) == Exact(1)` from a bounded search; a budget
   overrun is a *rejection*, never a shipped guess. Prunes: per-pair
   reachability flood fills (epoch-stamped so resets are free), stranded-cell

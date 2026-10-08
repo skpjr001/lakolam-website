@@ -2,7 +2,7 @@
 title: "Hashi (Hashiwokakero)"
 blurb: "Join the islands with bridges, clued by how many each one takes"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Connect the numbered islands with bridges: each island's number is how many
 bridge ends it takes, and everything must join up.
@@ -36,7 +36,13 @@ degree sequences made playable.
 
 ## This implementation
 
-- **Spec knobs:** `rows`, `cols`, `islands`, `difficulty`.
+- **Spec knobs:** `rows`, `cols`, `islands`, `extra_bridges`, `difficulty`.
+  `extra_bridges` is the share (of the island count) of bridges added after
+  the growth: a new pair across open water, or a second bridge on a pair
+  already joined. Version 1.1 let it double existing bridges — before, the
+  walk to a neighbour stopped on the bridge's own corridor, so doubling never
+  happened, few new pairs could be found, and every share from 0.175 to 1.5
+  gave the same board. The default page changed with it.
 - **Generation:** answer first — islands are placed on the lattice, a
   connected planar multigraph (≤2 edges per pair, no crossings) is built over
   them, and each island's clue is its degree in that graph.

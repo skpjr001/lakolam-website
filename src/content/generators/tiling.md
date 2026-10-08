@@ -2,7 +2,7 @@
 title: "Tiling"
 blurb: "Islamic star, Truchet, Penrose and Cairo tilings as line art"
 category: design
-version: "1.2.0"
+version: "1.3.0"
 ---
 Islamic stars, Truchet fields, Penrose quasicrystals and Cairo pentagons —
 four families of tiling, one line-art generator.
@@ -93,6 +93,10 @@ echoed in medieval girih and in physical quasicrystals (Shechtman, Nobel
   are tested to be true Penrose rhombs (equal sides, angles of 36/144 or
   72/108 degrees).
 - **Changelog:**
+  - 1.3.0 — every page is wrapped in one group clipped to the page. The
+    frame is centred on the page edge, so half its stroke used to sit off
+    the page as ink outside the page bounds; the picture is unchanged, the
+    bytes of every page change.
   - 1.2.0 — Penrose pages before 1.2.0 were **not true Penrose tilings**:
     the regular page's subdivision gave two pieces of the wide triangle each
     other's kinds, seeded `p3` pages with wide triangles in 36° wedges, never
