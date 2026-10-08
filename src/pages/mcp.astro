@@ -1,0 +1,474 @@
+---
+// /mcp/ — Lakolam for AI agents: the lako-mcp server, how to install it in
+// each MCP client, what it offers, and why its pages are reproducible.
+// Snippets live in frontmatter strings so braces never meet the template.
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import * as ld from '../lib/jsonld';
+
+const repo = 'https://github.com/skpjr001/lakolam';
+const releases = `${repo}/releases`;
+const readme = `${repo}/tree/main/crates/lako-mcp#readme`;
+
+const title = 'Lakolam for AI agents — the MCP server';
+const description = `Give Claude, Cursor, VS Code, Codex or any MCP client ${SITE.stats.generators} deterministic generators: printable puzzles, mazes, worksheets and designs with answer keys, and whole KDP-ready books.`;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const mcpId = `${pageUrl}#software`;
+
+const mcpApp = {
+  '@type': 'SoftwareApplication',
+  '@id': mcpId,
+  name: 'Lakolam MCP server (lako-mcp)',
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'macOS, Windows, Linux',
+  url: pageUrl,
+  downloadUrl: releases,
+  description: `A Model Context Protocol server that lets AI agents search, configure and run ${SITE.stats.generators} deterministic Lakolam generators and build KDP-ready books, locally.`,
+  featureList: [
+    'search_generators, describe_generator, validate_spec',
+    'generate: PNG preview plus PNG, SVG or PDF pages and answer keys',
+    'list_profiles: KDP trims, social canvases, thumbnails',
+    'build_book: interior PDF and full-wrap cover',
+    'Same generator, spec and seed give the same page, byte for byte',
+  ],
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  license: 'https://opensource.org/license/mit',
+  publisher: { '@id': ld.ids.org },
+  isBasedOn: { '@id': ld.ids.code },
+};
+
+const faqs = [
+  {
+    q: 'Does the Lakolam MCP server need an account or internet access?',
+    a: 'No. lako-mcp is a single binary that runs on your machine and talks to your AI client over stdio. Pages are generated locally and written to a folder you choose; nothing is uploaded.',
+  },
+  {
+    q: 'Which AI clients work with it?',
+    a: 'Any client that speaks the Model Context Protocol over stdio: Claude Desktop (one-click .mcpb bundle), Claude Code, Cursor, VS Code with GitHub Copilot, OpenAI Codex CLI, Zed, Windsurf and others.',
+  },
+  {
+    q: 'Can I get the same puzzle again later?',
+    a: 'Yes. Every result includes a recipe (generator, version, spec, seed). The same recipe reproduces the page byte for byte, in the MCP server, the lako CLI or the browser studio.',
+  },
+];
+
+const jsonLd = [
+  ld.breadcrumbs(pageUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'AI agents (MCP)', path: '/mcp/' },
+  ]),
+  mcpApp,
+  ld.faqPage(faqs),
+];
+
+// ── install snippets, one tab per client ──────────────────────────────────
+const clients = [
+  {
+    id: 'claude-desktop',
+    label: 'Claude Desktop',
+    intro: `Easiest: download lakolam-<version>.mcpb from the latest release and open it — Claude Desktop installs it as an extension and asks where to save pages. Or add it by hand to claude_desktop_config.json (Settings → Developer → Edit Config), then restart Claude:`,
+    file: 'claude_desktop_config.json',
+    code: `{
+  "mcpServers": {
+    "lakolam": {
+      "command": "/ABSOLUTE/PATH/TO/lako-mcp",
+      "args": ["--out-dir", "/Users/you/Documents/Lakolam"]
+    }
+  }
+}`,
+  },
+  {
+    id: 'claude-code',
+    label: 'Claude Code',
+    intro: 'One command adds it for every project (use --scope project to write a shareable .mcp.json instead):',
+    file: 'terminal',
+    code: `claude mcp add --transport stdio --scope user lakolam \\
+  --env LAKO_MCP_OUT="$HOME/Lakolam" -- lako-mcp`,
+  },
+  {
+    id: 'cursor',
+    label: 'Cursor',
+    intro: 'In .cursor/mcp.json for one project, or ~/.cursor/mcp.json for all of them:',
+    file: '.cursor/mcp.json',
+    code: `{
+  "mcpServers": {
+    "lakolam": {
+      "type": "stdio",
+      "command": "/ABSOLUTE/PATH/TO/lako-mcp",
+      "args": ["--out-dir", "/ABSOLUTE/PATH/TO/lakolam-out"]
+    }
+  }
+}`,
+  },
+  {
+    id: 'vscode',
+    label: 'VS Code',
+    intro: 'For GitHub Copilot agent mode, in .vscode/mcp.json — note the top-level key is "servers":',
+    file: '.vscode/mcp.json',
+    code: `{
+  "servers": {
+    "lakolam": {
+      "type": "stdio",
+      "command": "/ABSOLUTE/PATH/TO/lako-mcp",
+      "args": ["--out-dir", "\${workspaceFolder}/lakolam-out"]
+    }
+  }
+}`,
+  },
+  {
+    id: 'codex',
+    label: 'Codex CLI',
+    intro: 'Run codex mcp add lakolam -- lako-mcp, or add it to ~/.codex/config.toml (books take longer than the default 60-second tool timeout):',
+    file: '~/.codex/config.toml',
+    code: `[mcp_servers.lakolam]
+command = "/ABSOLUTE/PATH/TO/lako-mcp"
+args = ["--out-dir", "/ABSOLUTE/PATH/TO/lakolam-out"]
+tool_timeout_sec = 300`,
+  },
+  {
+    id: 'zed',
+    label: 'Zed',
+    intro: 'In Zed’s settings.json:',
+    file: 'settings.json',
+    code: `{
+  "context_servers": {
+    "lakolam": {
+      "command": "/ABSOLUTE/PATH/TO/lako-mcp",
+      "args": ["--out-dir", "/ABSOLUTE/PATH/TO/lakolam-out"],
+      "env": {}
+    }
+  }
+}`,
+  },
+];
+
+const getIt = [
+  {
+    title: 'One-click bundle',
+    body: 'For Claude Desktop and other MCP Bundle clients: download lakolam-<version>.mcpb and open it. macOS, Windows and Linux in one file.',
+    code: 'lakolam-<version>.mcpb',
+  },
+  {
+    title: 'Prebuilt binary',
+    body: 'Archives for macOS (universal), Linux x64 and arm64, and Windows x64, with SHA256SUMS. Unpack and point your client at lako-mcp.',
+    code: 'lako-mcp --version',
+  },
+  {
+    title: 'From source',
+    body: 'With Rust 1.99 or newer, cargo builds and installs it into ~/.cargo/bin.',
+    code: 'cargo install --locked --git https://github.com/skpjr001/lakolam lako-mcp',
+  },
+];
+
+const tools = [
+  {
+    name: 'search_generators',
+    body: 'Finds the right generator for a request in plain words — “easy mazes for a six-year-old”, “logic puzzle with arrows” — across designs, mazes, puzzles, word puzzles and maths.',
+  },
+  {
+    name: 'describe_generator',
+    body: 'Its spec as JSON Schema, the defaults, the difficulty bands it accepts and the how-to-play text, so the agent fills in real options instead of guessing.',
+  },
+  {
+    name: 'validate_spec',
+    body: 'Checks a spec before generating. Mistakes come back with a hint the model can act on: which field, which values are allowed.',
+  },
+  {
+    name: 'generate',
+    body: 'Makes one page: a preview image the model can look at, PNG, SVG or PDF files with the answer key, the measured difficulty, and a recipe that reproduces it.',
+  },
+  {
+    name: 'list_profiles',
+    body: 'Output sizes as data: KDP letter with bleed, 8.5″ square, Instagram, Pinterest, story, thumbnails and the SVG master.',
+  },
+  {
+    name: 'build_book',
+    body: 'A whole book — sections of puzzles, how-to-play pages, answer keys at the back — as an interior PDF, plus a KDP full-wrap cover.',
+  },
+];
+
+const prompts = [
+  'Make three easy mazes for a six-year-old on US letter, with answers.',
+  'Build a 100-page sudoku book for KDP — easy to hard, 8.5 × 11, with a cover.',
+  'A space-themed word search, then the same one with a bigger grid.',
+  'Twenty two-digit addition problems with carrying, and an answer sheet.',
+  'A mandala colouring page for an Instagram post.',
+  'What logic puzzles do you have that use arrows? Show me one at medium.',
+];
+
+const recipe = `{
+  "id": "sudoku",
+  "version": "1.0.0",
+  "spec": { "difficulty": "hard" },
+  "seed": "0xa11ce",
+  "profile": "kdp_letter_bleed",
+  "digest": "…"
+}`;
+---
+
+<Base title={title} description={description} jsonLd={jsonLd} mainEntity={mcpId}>
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <p class="text-accent font-mono text-sm">MCP server · lako-mcp</p>
+    <h1 class="mt-2 max-w-3xl text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+      Lakolam for AI agents
+    </h1>
+    <p class="text-ink-muted mt-4 max-w-2xl text-lg leading-relaxed">
+      Ask your AI assistant for a page in plain words — it finds the right
+      generator among {SITE.stats.generators}, fills in the options, and saves
+      print-ready puzzles, mazes, worksheets and designs with their answer
+      keys. Or a whole book, ready for KDP. It all runs on your machine through
+      the <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-3">Model Context Protocol</a>.
+    </p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a
+        href={releases}
+        target="_blank" rel="noopener noreferrer"
+        class="bg-accent hover:bg-accent-strong text-surface inline-block rounded-lg px-5 py-2.5 font-semibold no-underline transition-colors"
+      >
+        Download lako-mcp
+      </a>
+      <a
+        href={readme}
+        target="_blank" rel="noopener noreferrer"
+        class="border-line hover:border-accent-dim text-ink inline-block rounded-lg border px-5 py-2.5 font-medium no-underline transition-colors"
+      >
+        Read the documentation
+      </a>
+    </div>
+
+    <!-- ── get it ─────────────────────────────────────────────────────── -->
+    <section class="mt-16" aria-labelledby="get-it">
+      <h2 id="get-it" class="text-2xl font-bold tracking-tight">1. Get the server</h2>
+      <p class="text-ink-muted mt-2 max-w-2xl leading-relaxed">
+        One small program, no account and no network. Every option comes from the
+        same <a href={releases} target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-3">GitHub release</a>.
+      </p>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        {
+          getIt.map((g) => (
+            <div class="border-line bg-surface-raised flex min-w-0 flex-col rounded-xl border p-5">
+              <h3 class="font-semibold">{g.title}</h3>
+              <p class="text-ink-muted mt-2 flex-1 text-sm leading-relaxed">{g.body}</p>
+              <code class="bg-surface-sunken border-line mt-4 block overflow-x-auto rounded-md border px-3 py-2 font-mono text-xs whitespace-nowrap">
+                {g.code}
+              </code>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- ── connect a client ───────────────────────────────────────────── -->
+    <section class="mt-16" aria-labelledby="connect">
+      <h2 id="connect" class="text-2xl font-bold tracking-tight">2. Connect your AI client</h2>
+      <p class="text-ink-muted mt-2 max-w-2xl leading-relaxed">
+        Replace <code class="font-mono text-sm">/ABSOLUTE/PATH/TO/lako-mcp</code> with
+        where you put the binary (on Windows <code class="font-mono text-sm">C:\path\to\lako-mcp.exe</code>,{' '}
+        with each backslash doubled in JSON) and choose an output folder:{' '}
+        <code class="font-mono text-sm">--out-dir</code>{' '}or{' '}
+        <code class="font-mono text-sm">LAKO_MCP_OUT</code>{' '}sets where pages are saved.
+      </p>
+
+      <div class="mt-6" data-tabs>
+        <div
+          role="tablist"
+          aria-label="MCP client"
+          class="border-line hidden flex-wrap gap-1 border-b"
+          data-tablist
+        >
+          {
+            clients.map((c, i) => (
+              <button
+                type="button"
+                role="tab"
+                id={`tab-${c.id}`}
+                aria-controls={`panel-${c.id}`}
+                aria-selected={i === 0 ? 'true' : 'false'}
+                tabindex={i === 0 ? 0 : -1}
+                class="text-ink-muted hover:text-ink aria-selected:border-accent aria-selected:text-ink -mb-px cursor-pointer border-b-2 border-transparent px-3 py-2 text-sm font-medium transition-colors"
+              >
+                {c.label}
+              </button>
+            ))
+          }
+        </div>
+        {
+          clients.map((c) => (
+            <div
+              role="tabpanel"
+              id={`panel-${c.id}`}
+              aria-labelledby={`tab-${c.id}`}
+              class="mt-5 min-w-0"
+              data-panel
+            >
+              <h3 class="font-semibold" data-panel-heading>{c.label}</h3>
+              <p class="text-ink-muted mt-1 max-w-3xl text-sm leading-relaxed">{c.intro}</p>
+              <div class="border-line mt-3 overflow-hidden rounded-xl border">
+                <div class="bg-surface-raised border-line flex items-center justify-between border-b px-4 py-2">
+                  <span class="text-ink-muted font-mono text-xs">{c.file}</span>
+                  <button
+                    type="button"
+                    class="border-line text-ink-muted hover:text-ink cursor-pointer rounded-md border px-2 py-0.5 text-xs"
+                    data-copy
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre class="bg-surface-sunken overflow-x-auto p-4 font-mono text-[13px] leading-relaxed"><code>{c.code}</code></pre>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- ── ask ────────────────────────────────────────────────────────── -->
+    <section class="mt-16" aria-labelledby="ask">
+      <h2 id="ask" class="text-2xl font-bold tracking-tight">3. Ask for pages</h2>
+      <p class="text-ink-muted mt-2 max-w-2xl leading-relaxed">
+        No spec to learn: the agent searches, reads the generator’s options,
+        checks them, generates, and looks at the preview before it answers.
+      </p>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {
+          prompts.map((p) => (
+            <li class="border-line rounded-xl border px-4 py-3 text-sm leading-relaxed">
+              <span class="text-accent mr-1 font-mono" aria-hidden="true">›</span>
+              {p}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- ── tools ──────────────────────────────────────────────────────── -->
+    <section class="mt-16" aria-labelledby="tools">
+      <h2 id="tools" class="text-2xl font-bold tracking-tight">What the agent gets</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          tools.map((t) => (
+            <div class="border-line rounded-xl border p-5">
+              <h3 class="font-mono text-sm font-semibold">{t.name}</h3>
+              <p class="text-ink-muted mt-2 text-sm leading-relaxed">{t.body}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div class="border-line bg-surface-raised rounded-xl border p-5">
+          <h3 class="font-semibold">Resources</h3>
+          <ul class="text-ink-muted mt-2 space-y-1.5 text-sm leading-relaxed">
+            <li><code class="font-mono text-xs">lako://generators/&#123;id&#125;/info</code> — what it is, how to play, its guarantees</li>
+            <li><code class="font-mono text-xs">lako://generators/&#123;id&#125;/schema</code> — the spec’s JSON Schema</li>
+            <li><code class="font-mono text-xs">lako://out/&#123;name&#125;</code> — any file the server wrote</li>
+          </ul>
+        </div>
+        <div class="border-line bg-surface-raised rounded-xl border p-5">
+          <h3 class="font-semibold">Prompts</h3>
+          <ul class="text-ink-muted mt-2 space-y-1.5 text-sm leading-relaxed">
+            <li><code class="font-mono text-xs">activity_pack</code> — a themed set of mixed pages for a child or class</li>
+            <li><code class="font-mono text-xs">puzzle_book</code> — plan and build a print-on-demand puzzle book</li>
+            <li><code class="font-mono text-xs">worksheet_set</code> — a run of worksheets at one level, with answers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── determinism ────────────────────────────────────────────────── -->
+    <section class="mt-16 grid items-start gap-8 lg:grid-cols-2" aria-labelledby="same-page">
+      <div>
+        <h2 id="same-page" class="text-2xl font-bold tracking-tight">Same recipe, same page, forever</h2>
+        <p class="text-ink-muted mt-3 leading-relaxed">
+          Language models are unpredictable; Lakolam is not. Every page the
+          agent makes comes with a recipe — generator, version, spec, seed and
+          size. Keep it, and the same page comes back byte for byte next week
+          or next year: in the MCP server, the <code class="font-mono text-sm">lako</code>{' '}command line, or the <a href={SITE.studio} target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-3">browser studio</a>.
+        </p>
+        <p class="text-ink-muted mt-3 leading-relaxed">
+          Change the seed for a new puzzle; keep it and change the size for the
+          same puzzle on another page. Every puzzle is proven to have exactly
+          one solution, and “hard” means the solver needed hard techniques.
+        </p>
+      </div>
+      <div class="border-line min-w-0 overflow-hidden rounded-xl border">
+        <div class="bg-surface-raised border-line border-b px-4 py-2">
+          <span class="text-ink-muted font-mono text-xs">recipe</span>
+        </div>
+        <pre class="bg-surface-sunken overflow-x-auto p-4 font-mono text-[13px] leading-relaxed"><code>{recipe}</code></pre>
+      </div>
+    </section>
+
+    <!-- ── faq ────────────────────────────────────────────────────────── -->
+    <section class="mt-16 max-w-3xl" aria-labelledby="faq">
+      <h2 id="faq" class="text-2xl font-bold tracking-tight">Questions</h2>
+      <div class="mt-4 space-y-3">
+        {
+          faqs.map((f) => (
+            <details class="border-line rounded-xl border px-5 py-3">
+              <summary class="cursor-pointer font-medium">{f.q}</summary>
+              <p class="text-ink-muted mt-2 text-sm leading-relaxed">{f.a}</p>
+            </details>
+          ))
+        }
+        <details class="border-line rounded-xl border px-5 py-3">
+          <summary class="cursor-pointer font-medium">It does not connect. What should I check?</summary>
+          <p class="text-ink-muted mt-2 text-sm leading-relaxed">
+            Give the client the absolute path to <code class="font-mono text-xs">lako-mcp</code>{' '}(desktop apps do not see your shell’s PATH), and run{' '}
+            <code class="font-mono text-xs">lako-mcp --help</code>{' '}yourself to make sure it starts.
+            The server speaks the protocol on stdout and logs to stderr, which
+            your client keeps in its MCP logs. More in the{' '}
+            <a href={readme} target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-3">troubleshooting guide</a>.
+          </p>
+        </details>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Tabs: without JS every client's snippet is shown in turn; with JS the
+  // tab bar appears and one panel shows at a time (arrow keys move).
+  for (const root of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
+    const list = root.querySelector<HTMLElement>('[data-tablist]');
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[data-panel]')];
+    if (!list || tabs.length === 0) continue;
+    list.classList.remove('hidden');
+    list.classList.add('flex');
+    for (const h of root.querySelectorAll<HTMLElement>('[data-panel-heading]')) h.classList.add('sr-only');
+
+    const select = (i: number, focus = false) => {
+      tabs.forEach((t, j) => {
+        t.setAttribute('aria-selected', String(i === j));
+        t.tabIndex = i === j ? 0 : -1;
+      });
+      panels.forEach((p, j) => (p.hidden = i !== j));
+      if (focus) tabs[i].focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', (e) => {
+        const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (step) {
+          e.preventDefault();
+          select((i + step + tabs.length) % tabs.length, true);
+        }
+      });
+    });
+    select(0);
+  }
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
+    button.addEventListener('click', async () => {
+      const code = button.closest('[data-panel]')?.querySelector('pre')?.textContent ?? '';
+      try {
+        await navigator.clipboard.writeText(code);
+        button.textContent = 'Copied';
+      } catch {
+        button.textContent = 'Select and copy';
+      }
+      setTimeout(() => (button.textContent = 'Copy'), 1600);
+    });
+  }
+</script>
