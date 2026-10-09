@@ -2,7 +2,7 @@
 title: "Clueless Crossword"
 blurb: "Clueless Crossword — a few letters given and no clues: fill the grid so every run across and down is a word"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A crossword with no clues at all: a few letters are given, and every run across and down must be a word.
 
@@ -82,3 +82,4 @@ filled from.
   `requested_size`. Meta carries `unique`, `difficulty` with
   `rating_basis: grid_size_and_technique`, `technique`, the number of
   givens and the answer words.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

@@ -2,7 +2,7 @@
 title: "Cross-Out"
 blurb: "Cross-out — strike every word a rule describes; the words left spell a saying"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Strike out every word the rules describe — the words left over spell a saying.
 
@@ -80,3 +80,4 @@ pupils cross out words or letters by rule to reveal a message.
   raised to the band of the hardest kind of rule printed. Overriding
   `rules` can move the rating away from the asked level; meta then records
   `requested_difficulty`.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

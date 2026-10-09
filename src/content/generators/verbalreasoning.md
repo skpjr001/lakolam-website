@@ -2,7 +2,7 @@
 title: "Verbal Reasoning"
 blurb: "11+ verbal reasoning — insert or move a letter, letter series, letter and word codes, make a word, letters for numbers; every answer proven unique"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Eleven-plus verbal reasoning practice: letters, codes and words, every answer
 proven to be the only one.
@@ -85,3 +85,4 @@ among the most practised.
   words are family-friendly common words; difficulty is the band of the
   hardest question (`rating_basis`), served lower and reported as
   `requested_difficulty` only when a band cannot be filled.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

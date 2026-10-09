@@ -2,7 +2,7 @@
 title: "Making Words"
 blurb: "Making Words — cut-out letter tiles, little words built up to a mystery word that uses them all, and a sort by ending"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Cut out the letter tiles, build little words, then find the mystery word that uses every tile.
 
@@ -77,3 +77,4 @@ length, a ladder of small changes, and a sort by spelling pattern.
   every box and lists every word the tiles make. Any other real word that
   fits a box counts too. The tests recheck the mystery word against the
   whole dictionary and recompute the made words with plain letter counts.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

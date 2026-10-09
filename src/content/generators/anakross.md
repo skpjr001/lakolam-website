@@ -2,7 +2,7 @@
 title: "Anakross"
 blurb: "Anakross — unjumble eight-letter words and wrap each clockwise round its numbered diamond; neighbours share their tips"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Unjumble eight-letter words, then wrap each one clockwise round its numbered diamond.
 
@@ -74,3 +74,4 @@ grid.
   family-friendly word of the level's tier. The tests recount the
   placements with an independent search and re-derive every jumble's
   answers by scanning the dictionary.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

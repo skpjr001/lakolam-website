@@ -2,7 +2,7 @@
 title: "Three-Choice Kriss Kross"
 blurb: "Three-Choice Kriss Kross — a kriss-kross where each slot offers three words; pick the one per slot that makes every crossing agree"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Every slot in the grid offers three words, and only one of them fits. Pick
 the right word for each slot so that every crossing agrees.
@@ -69,3 +69,4 @@ slot, which turns fitting into a chain of eliminations.
   slots) or Easy; two rounds Medium; three or four Hard; five or more, or a
   trial guess, Expert. When the search cannot reach the requested band, the
   nearest band is returned and labelled honestly.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

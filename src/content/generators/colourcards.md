@@ -2,7 +2,7 @@
 title: "Colour Cards"
 blurb: "Colouring bookmarks, greeting cards, gift tags, door hangers and postcards cut from a mandala, stained glass or tiling — cut lines inside the margin, folds simulated, every space still colourable after cropping"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Bookmarks, greeting cards, gift tags, door hangers and postcards to colour
 in, cut from a mandala, a stained-glass window or a patterned tiling.
@@ -75,3 +75,4 @@ cards and bookmarks grew up alongside the adult colouring boom of the
   verse on the wrong side) fail.
 - **Where it lives:** in `lako-catalog`, beside colour by code, because it
   uses other generators' designs.
+- **Version 1.1:** nested clips now intersect — a source design's own clip groups no longer bleed into the neighbouring piece's art (seen on some zentangle and isohedral sheets); other pages' pictures are unchanged.

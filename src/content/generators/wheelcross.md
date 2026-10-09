@@ -2,7 +2,7 @@
 title: "Letter Wheel Crossword"
 blurb: "Letter Wheel Crossword — fill a small grid with words spelled from the letters on a wheel"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A wheel of letters and a small crossword: every answer is spelled from the
 wheel.
@@ -68,3 +68,4 @@ make" puzzles found in newspapers and puzzle books.
   wheel letter beyond five, minus one for every two starters. Bands are
   served at the nearest reachable band and labelled so
   (`requested_difficulty` in the metadata).
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

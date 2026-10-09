@@ -2,7 +2,7 @@
 title: "KenKen"
 blurb: "Fill a Latin square so each cage reaches its target by its operation"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Fill a Latin square so every outlined cage reaches its target number using its
 printed operation.
@@ -76,4 +76,25 @@ daily. Also circulated as KenDoku, Calcudoku and Mathdoku.
   seeds); the variants add `ops` and `operators_printed` to the metadata.
 - **Difficulty:** led by the shared technique ladder with a ±1 band nudge from
   mean cage size. The spec bounds which bands exist — a 4×4 of dominoes is
-  Kids and cannot be otherwise; Hard needs a 9×9.
+  Kids and cannot be otherwise; Hard needs a 9×9. Measured over seeds 1–20
+  (version 1.2), the cage propagators finish most boards on their own, so
+  the reachable bands are narrow at the smaller sizes:
+
+  | spec | served for a Kids … Expert request |
+  |---|---|
+  | 6×6, cages ≤ 4 (the default) | mostly Kids: asked for Medium or harder, 15 seeds in 20 still come out Kids, 3 Easy, 1–2 Medium, 1 Expert (a board past the ladder); Hard is not reached |
+  | 4×4 or 5×5, cages ≤ 3 | Kids and Easy |
+  | 5×5 or 7×7, cages ≤ 5 | Kids, Easy, now and then Medium |
+  | 9×9, cages ≤ 5 | Kids through Expert |
+
+  A band the spec cannot reach is served as the nearest one found and
+  labelled (`requested_difficulty`), never relabelled; a ramp that should
+  climb wants a 9×9 with cages up to 5.
+- **Version 1.2 — the band chosen is the band served.** The operator sweep
+  (re-rolling each domino's operation after uniqueness is proven) used to
+  run after the band was chosen and then re-rate the board, and a looser
+  clue could leave a board unique but past every rung of the ladder: a 6×6
+  asked for as Kids came out Expert (seeds 69, 78, 117 and 126 of the
+  default spec). A swap that moves the rating is now undone like one that
+  breaks uniqueness. Pages whose every swap kept the band are unchanged
+  (42 of 60 sampled across the five bands at the default spec).

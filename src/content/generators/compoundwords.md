@@ -2,7 +2,7 @@
 title: "Compound Words"
 blurb: "Compound words — join, split, match the halves and circle the partners, matchings proven unique"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Sun + flower = sunflower — join, split, match and circle the words that make compound words.
 
@@ -78,3 +78,4 @@ generations.
   pages carry `unique`. If too few everyday compounds fit a long page the
   pool widens to common compounds; meta records `requested_rows` when a
   page holds fewer rows than asked.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

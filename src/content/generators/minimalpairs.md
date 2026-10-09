@@ -2,7 +2,7 @@
 title: "Minimal Pairs"
 blurb: "Minimal pairs — listen-and-circle, sort and odd-sound-out sheets for ESL and speech practice, every pair one sound apart (American pronunciation)"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Ship or sheep? Light or right? Listening, sorting and odd-one-out sheets for words one sound apart.
 
@@ -75,3 +75,4 @@ the 1940s and 1950s, and speech-language pathologists built the
   the stated sound and every answer is right (`answers_checked`,
   `every_pair_minimal`). The tests re-check every pair from the raw
   ARPAbet strings of every pronunciation variant.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

@@ -66,3 +66,7 @@ France. Milton Bradley published it as the boxed game Scattergories in
   `every_cell_answerable`), and the answer page lists up to three sample
   answers for each. Any other answer that fits counts too. The tests
   recount every box from the raw data file.
+
+## Version history
+
+- **1.1:** WATER PISTOL left the toys list — the family filter now blocks PISTOL, and every answer must pass it. Pages that could draw it from the toys list change.

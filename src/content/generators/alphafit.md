@@ -2,7 +2,7 @@
 title: "Alpha-Fit"
 blurb: "Alpha-fit — a criss-cross with 26 empty squares; each letter A-Z fits exactly one"
 category: word
-version: "1.1.0"
+version: "1.2.0"
 ---
 A crossword with no clues and 26 empty squares: every letter from A to Z
 goes in exactly one of them.
@@ -86,3 +86,4 @@ fill-in. This is a criss-cross version of the idea under a generic name.
   is a placed word; exactly one way of putting A–Z, once each, into the 26
   empty squares makes every word a large-dictionary word (`unique`); every
   printed word passes the family-friendly filter.
+- **Version 1.2:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

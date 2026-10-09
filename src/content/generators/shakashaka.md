@@ -2,7 +2,7 @@
 title: "Shakashaka"
 blurb: "Place half-cell triangles so every white area left over is a rectangle"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Place half-cell triangles so that every white area left over is a rectangle —
 upright or tilted 45°.
@@ -61,3 +61,11 @@ of the pudding". It is among the youngest puzzles Nikoli made canonical.
   requested share finds nothing, a second pass from fresh seeds retries it,
   then raises it in steps of 0.1 toward 0.7; the metadata reports
   `diamond_share_used`. Every board that generated before is unchanged.
+- **Version 1.1.1 — the request note is spelled `requested_difficulty`.**
+  Earlier versions wrote `difficulty_requested`, which nothing else in the
+  catalogue reads. Pages and keys are unchanged.
+- **Reachable bands (honest limit).** The proxy is the uniqueness proof's
+  search effort, and at the default 6×6 it seldom runs high: over seeds 1–8,
+  Kids is served as asked, and Easy through Expert requests are served Easy
+  on 5 seeds, Medium on 2 and Kids on 1. Hard and Expert boards were not
+  found within the 24 attempts; the miss is recorded, never relabelled.

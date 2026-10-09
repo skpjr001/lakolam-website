@@ -2,7 +2,7 @@
 title: "Cryptogram"
 blurb: "Substitution ciphers over public-domain quotes, with a frequency table"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Break the substitution cipher and recover the quotation.
 
@@ -47,3 +47,14 @@ Cryptogram Association (1929) standardised the hobby form it still has.
   construction.
 - **Difficulty:** quote length, letter-frequency flatness, and how many one-
   and two-letter words are exposed, banded.
+- **Version 1.1 — every band is served.** Without hints no English quote
+  rates below Medium — letter flatness alone is about 0.9 — so Kids and Easy
+  requests were served Medium (the schema promised Easy quotes for Kids;
+  there were none). A request gentler than every quote at the requested
+  hints now raises the hints one letter at a time, up to five, until a
+  quote rates in that band: Easy gets one hint, Kids two (seeds 1–12). The
+  hints are counted by the rating, so the label is measured, not relabelled,
+  and meta `requested_hints` records the change. Measured over seeds 1–20,
+  every band from Kids to Expert is served as asked. Medium, Hard and Expert
+  pages are byte-identical to 1.0 (12 of 12 sampled per band); their meta
+  gains `rating_basis` (`letter_flatness_length_short_words_hints`).

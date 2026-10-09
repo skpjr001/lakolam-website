@@ -2,7 +2,7 @@
 title: "Skyscrapers"
 blurb: "Skyscrapers — a Latin square read from its edges by visibility counts"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Each cell holds a building 1..n tall, once per row and column; the numbers
 outside say how many buildings are visible from that side.
@@ -44,7 +44,7 @@ where it is a regular round.
   now enumerates the arrangements still consistent with the domains and
   eliminates heights absent from all of them — affordable because a line is
   at most 7 cells, pruned by domains and by running visibility.
-- It sits on the ladder at `SumCombination`, the rung kakuro's combination
+- Line solving sits on the ladder at `SumCombination`, the rung kakuro's combination
   reasoning uses, and for the same reason: one clue's own bookkeeping, no
   cross-referencing.
 - **Uniqueness and no guessing** are proved on the board that ships, and the
@@ -69,3 +69,31 @@ boards rate Medium; another band asked for is served as Medium and labelled
 cannot finish even with every clue printed is now skipped before thinning
 (thinning could only fail), which cuts a 7×7 board from ~13 s to ~3 s.
 Every board that generated before is byte-identical.
+
+### Version 1.2 — a ladder with rungs
+
+Version 1.1 rated every board Medium, whatever was asked for: the clue
+propagator had one rung (`SumCombination`, line solving), every board needs
+it, and the solver had nothing above Medium to try. Now:
+
+- Below the line-solving rung the clue applies the three deductions a solver
+  names — a 1 puts the tallest in front, an `n` makes the line climb, a clue
+  `k` caps the cell `i` steps in at `n - k + 1 + i` — rated `Relation`
+  (Easy). Line solving is used only when those and the Latin singles stall.
+- X-Wing and Swordfish over rows and columns are on the ladder, so a board
+  that needs one is rated by it (Hard, Expert).
+- Clues are thinned while the ladder can finish within the requested band's
+  top rung (Easy: `Relation`; Medium: hidden pair; Hard: X-Wing; Expert:
+  everything), falling back to the whole ladder when the full clue set
+  needs more. The rating is still what the ladder needed, cheapest rung
+  first.
+
+Measured over seeds 1–20 at 5×5: Easy requests are served Easy on 9 seeds
+and Medium on 11; Medium requests Medium on all 20; Hard requests Hard on 13
+and Medium on 7. Kids does not exist (every board needs its clues read,
+which is Easy) and is served as Easy or Medium; Expert (a Swordfish) was not
+reached and is served as Hard or Medium. The served band is recorded with
+`requested_difficulty`. A Medium request draws the same page as 1.1 (its
+thinning stops at the same boards; sampled 12 of 12), with `relation` now in
+the metadata's technique trace; other requests change on about half their
+seeds.

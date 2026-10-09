@@ -2,7 +2,7 @@
 title: "Brick by Brick"
 blurb: "Brick by Brick — a crossword cut into three-square bricks: put each row's bricks back so every run is a word"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A crossword cut into bricks: put each row's bricks back in the right order and every word falls into place.
 
@@ -79,3 +79,4 @@ built.
   records `requested_size` and `requested_grouping`. Meta carries
   `unique`, `difficulty` with `rating_basis: wall_size_and_grouping`, the
   search nodes used and the answer words.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

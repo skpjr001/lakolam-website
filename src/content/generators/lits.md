@@ -2,7 +2,7 @@
 title: "LITS"
 blurb: "Shade one L, I, T or S tetromino in every region, all joined, with no two alike touching"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Shade one tetromino in every region — L, I, T or S — all connected, no 2×2
 block, and no two identical shapes touching.
@@ -61,3 +61,7 @@ Nikoli in 2004 — the name is simply the four usable tetromino letters.
 - **Difficulty:** search nodes per cell, with thresholds measured on LITS
   itself — its proofs cost ~0.2 nodes/cell where kuromasu's cost 1–11, so
   borrowed cuts would have rated every board Kids.
+- **Version 1.1.1 — the request note is spelled `requested_difficulty`.**
+  Earlier versions wrote `difficulty_requested`, which nothing else in the
+  catalogue reads. Pages and keys are unchanged. Over seeds 1–8 every band is
+  reached; Medium is the thin one (served Easy or Hard on 7 seeds of 8).

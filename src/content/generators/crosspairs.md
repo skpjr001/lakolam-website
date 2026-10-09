@@ -2,7 +2,7 @@
 title: "Cross Pairs"
 blurb: "Cross Pairs — a word seek with no list: find the pairs of words that cross at their middle letters"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A word seek with no word list: find the pairs of words that cross at their middle letters.
 
@@ -71,3 +71,4 @@ their common middle letter, with one pair looped to start.
   repeats, and every hidden word is an everyday, family-friendly word. The
   tests recount the pairs with an independent scan of every full row,
   column and diagonal.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

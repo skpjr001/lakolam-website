@@ -2,7 +2,7 @@
 title: "Sujiko"
 blurb: "Sujiko — place 1-9 so each corner circle sums its 2x2 block"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Place 1 to 9 in the grid so that each circle equals the sum of the four
 numbers around it.
@@ -43,3 +43,14 @@ groups.
   and the four sums match (checked); and an exhaustive search over the
   permutations — pruning the moment a completed block misses its sum — proves
   exactly one arrangement fits. Rated by how many digits are given.
+- **Version 1.1 — the request steers the board.** Version 1.0 ignored
+  `difficulty` and served whatever the first permutation gave, almost
+  always Easy (one or two digits given). Now Medium is a board whose four
+  sums alone force the answer, found by trying up to 64 permutations; Kids
+  shows extra digits on top of the minimal set until three are given; Easy
+  keeps the first permutation where it rates Easy, so most Easy pages are
+  unchanged (11 of 12 sampled). Rated, as before, by how many digits are given. Measured over
+  seeds 1–20: Kids, Easy and Medium are served as asked (Medium on 18 seeds,
+  Easy on the 2 whose 64 permutations all needed a digit). Hard and Expert
+  do not exist on a 3×3 of sums: they are served as Medium (or Easy) and
+  recorded with `requested_difficulty`.

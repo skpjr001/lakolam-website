@@ -2,7 +2,7 @@
 title: "Letter Sets"
 blurb: "Letter Sets — a clue-free crossword: unscramble each answer's alphabetised letters so the crossings agree"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A crossword with no clues: every answer is given as its own letters,
 sorted into alphabetical order.
@@ -72,3 +72,4 @@ same, fair starting point, since no jumble accidentally hints at the answer.
   Hard 8–15, Expert 16 or more. A request whose band is not reached in 40
   layouts is served at the nearest band and labelled so
   (`requested_difficulty` in the metadata).
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

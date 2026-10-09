@@ -2,7 +2,7 @@
 title: "Heyawake"
 blurb: "Paint each room its number of cells, keeping white connected and never running through three rooms"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Paint cells by the room numbers — no two painted cells touching, white in one
 piece, and no white corridor running through three rooms.
@@ -59,3 +59,6 @@ boards lean on parity arguments researchers still write papers about.
   caps are slow to fail. The metadata reports `max_room_used`. Every board
   that generated before is unchanged. Caps of 9–12 are slow (tens of
   seconds), as the measurements above predict.
+- **Version 1.1.1 — the request note is spelled `requested_difficulty`.**
+  Earlier versions wrote `difficulty_requested`, which nothing else in the
+  catalogue reads. Pages and keys are unchanged.

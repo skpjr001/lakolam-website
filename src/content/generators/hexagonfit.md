@@ -2,7 +2,7 @@
 title: "Hexagon Fit"
 blurb: "Hexagon Fit — wrap each listed six-letter word clockwise around its hexagon of triangles; neighbours share letters"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Six-letter words wrapped around overlapping hexagons of triangles. Fit
 every word in the list so that neighbouring hexagons agree.
@@ -85,3 +85,4 @@ which works like a crossword on a triangle grid.
   words rarely agree on two shared triangles. An Expert request is served
   as a 12-hexagon Hard board and labelled so (`requested_difficulty` in
   the metadata).
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

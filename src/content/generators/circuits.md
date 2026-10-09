@@ -2,7 +2,7 @@
 title: "Circuits"
 blurb: "Circuits — a network of word boxes where every arrow joins two words into a compound; fill the blanks, proven unique"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A network of word boxes joined by arrows: every arrow makes a compound word. Fill in the empty boxes.
 
@@ -73,3 +73,4 @@ form.
   the network is connected and no word repeats. The tests recount every
   level with an independent breadth-first enumeration over the
   dictionary.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

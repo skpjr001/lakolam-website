@@ -50,6 +50,16 @@ cross"). It is Japan's second most popular pencil puzzle after sudoku.
 - **Note:** the Kids/Easy bands floor their reasoning at `SumBounds` — a
   kakuro cannot be solved without reading its run totals, so the band below
   that rung cannot exist and is reported honestly as Easy.
+- **Reachable bands: Easy and Medium.** Measured over seeds 1–20 at the
+  default 9×9: Kids and Easy requests are served Easy; Medium, Hard and
+  Expert requests are served Medium on 12 seeds in 20 and Easy on the rest
+  (no Medium board among that seed's attempts). Hard and Expert do not
+  exist here: the ladder's Hard and Expert rungs (box interactions, fish,
+  chains) need groups that must hold every digit, and a kakuro run holds
+  only some — so the hardest reasoning a kakuro board can be rated by is
+  combination reasoning and naked subsets (Medium), and a board
+  that needs more is rejected as needing guesswork. The served band is
+  always measured, and `requested_difficulty` records the request.
 - **Version 1.1 — big boards finish.** Each refinement step searches for two
   solutions to find a cell they disagree on. Almost every step needs a few
   hundred search nodes, but on boards of 12 and more a carve now and then

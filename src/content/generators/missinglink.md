@@ -2,7 +2,7 @@
 title: "Missing Link"
 blurb: "Missing Link — find the one word that joins each row's three clue words into compound words"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Find the one word that joins all three clues in a row into compound words.
 
@@ -71,3 +71,4 @@ bookcase) far more freely than many languages.
   `rows_and_mixed_sides`): no mixed rows is Kids (up to 5 rows) or Easy;
   some mixed rows (up to half, up to 8 rows) Medium; more Hard; all mixed
   Expert. Every band is served as requested.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

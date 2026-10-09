@@ -2,7 +2,7 @@
 title: "Word Square Deduction"
 blurb: "Word-square deduction — rows and columns are words; coloured guesses beside each row pin the square"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Every row and every column of the square is a word. Coloured guesses
 beside each row tell you which letters are right — work out the square.
@@ -85,3 +85,4 @@ version under a generic name.
   shown pass the family-friendly filter. Hard is not reached for every seed
   — a square whose minimal guesses always settle by crossing is served as
   Medium and labelled so.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

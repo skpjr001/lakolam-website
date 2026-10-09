@@ -2,7 +2,7 @@
 title: "Key Maze"
 blurb: "Key maze — fetch the key for every locked door (or collect the stars, or obey one-way gates) on the way to the treasure"
 category: maze
-version: "1.0.0"
+version: "1.0.1"
 ---
 Locked doors stand between you and the treasure. Find each key, in the right
 order, and take the one shortest way through.
@@ -81,3 +81,7 @@ waits somewhere before it. One-way doors are a staple of Robert Abbott's
   gate mazes are short and open, so they usually rate a band below the level
   asked for, and are labelled so. The key draws the route in red with
   direction arrows and prints its length.
+- **Version 1.0.1 — a missed band is recorded.** The rating is measured
+  from the route, and now and then a seed lands one band below or above the
+  request (seeds 1–8: 2 of 40 off). The page and key are unchanged; the
+  metadata now adds `requested_difficulty` when the served band differs.

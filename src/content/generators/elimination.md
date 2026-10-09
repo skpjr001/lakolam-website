@@ -2,7 +2,7 @@
 title: "Elimination"
 blurb: "Elimination — cross out names clue by clue until exactly one is left; every clue is needed"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A list of names, a handful of clues, and only one name that fits them all — cross out the rest.
 
@@ -85,3 +85,4 @@ to eliminate names until a single culprit remains.
   least two suspects survive (`every_clue_needed`); both are recomputed
   over the whole list before the page ships, and the tests re-check them
   by parsing the printed clue text with an independent reader.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

@@ -2,7 +2,7 @@
 title: "Chain Words"
 blurb: "Chain Words — order letter chunks along a chain so each box joined to the next makes a word"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Put the letter chunks in order along the chain, so each box joined to the
 next makes a word.
@@ -71,3 +71,4 @@ chain of words has to be rebuilt link by link.
   `chunks_to_place`): up to 5 is Kids, 6 to 7 Easy, 8 to 9 Medium, 10 to 11
   Hard, 12 or more Expert. When printed chunks drop a puzzle below the
   requested band, the nearest band is returned and labelled honestly.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

@@ -2,7 +2,7 @@
 title: "Stretch Letters"
 blurb: "Stretch letters — fit the list across only; tall boxes hold one letter shared by every row they span"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A fill-in where the only crossings are tall letters stretched over several rows.
 
@@ -71,3 +71,4 @@ decades and is sold as its own puzzle book.
   ≤ 29 Hard, more Expert), one band easier when more than a quarter as
   many letters as words are printed (`rating_basis` `words_and_givens`);
   a band the page does not reach is reported as `requested_difficulty`.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

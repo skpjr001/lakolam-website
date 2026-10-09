@@ -2,7 +2,7 @@
 title: "Guide Words"
 blurb: "Guide words — which words belong on a dictionary page between two guide words"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Does BOAT belong on the page that runs from BEACH to BRICK? Use the guide words to find out.
 
@@ -77,3 +77,4 @@ dictionaries.
 - **Guarantees:** deterministic per seed; answers checked
   (`answers_checked`); the band is computed from the words printed, never
   assumed.
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

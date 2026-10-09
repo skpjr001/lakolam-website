@@ -2,7 +2,7 @@
 title: "Train Tracks"
 blurb: "Train Tracks — lay one railway from A to B to match the row and column counts"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Lay one railway from A to B — the numbers say how many squares of each row
 and column the track passes through.
@@ -56,3 +56,7 @@ magazines for decades.
   independent pruned count in the tests. Counts and rails alone are Easy; the
   boards that need a what-if are banded by size (7×7 Medium, 8–9 Hard, 10+
   Expert).
+- **Version 1.0.1 — a missed band is recorded.** A Medium request is served
+  Easy on about 1 seed in 4 (seeds 1–8), every other band as asked. The page
+  and key are unchanged; the metadata now adds `requested_difficulty` when
+  the served band differs.

@@ -2,7 +2,7 @@
 title: "Dropout"
 blurb: "Dropout — a crossword's letters have fallen to the foot of their columns: put back the black squares and the words"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 A finished crossword whose letters have all fallen to the bottom of their
 columns. Put the black squares back and the words reappear.
@@ -89,3 +89,4 @@ in a daily crossword, gives the solver a firm place to start.
   is settled by row logic. **Kids is not reachable** (the smallest grid
   is already Easy work): a Kids request is served as Easy and labelled so
   (`requested_difficulty` in the metadata).
+- **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.

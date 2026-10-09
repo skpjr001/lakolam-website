@@ -2,7 +2,7 @@
 title: "Chess Maze"
 blurb: "Chess maze — move one white piece to the star in the fewest moves, never stopping where a black piece attacks"
 category: maze
-version: "1.0.0"
+version: "1.0.1"
 ---
 One white chess piece, a star to reach, and black pieces whose every attacked
 square is a pit: find the shortest safe way through.
@@ -85,3 +85,7 @@ pieces, and may not capture.
   queen at Easy, Hard or Expert often lands a band lower); the
   nearest maze is served with its honest rating. The key marks every
   attacked square with a cross and draws the route as numbered red arrows.
+- **Version 1.0.1 — a missed band is recorded.** The rating is measured
+  from the route; a Medium request is served Easy on about 3 seeds in 8
+  (seeds 1–8), every other band as asked. The page and key are unchanged;
+  the metadata now adds `requested_difficulty` when the served band differs.
