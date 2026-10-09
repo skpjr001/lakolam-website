@@ -2,7 +2,7 @@
 title: "Fillomino"
 blurb: "Partition the grid into regions, each cell holding the size of its own"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Divide the grid into regions so every cell's number equals the size of the
 region containing it.
@@ -54,3 +54,13 @@ A Nikoli puzzle, first published in 1994. The name blends "fill" with
   pass from fresh seeds retries it, then raises it a step at a time toward
   5; the board's metadata reports `max_region_used`. Every board that
   generated before is unchanged.
+- **Version 1.2 — Kids and Easy are served.** Thinning leaves every number
+  load-bearing, about a third of the cells on a 7×7, so the ladder only ever
+  gave Medium and Hard. Kids and Easy requests now put numbers of the answer
+  back — first one in each region that shows none — until 58% (Kids) or 48%
+  (Easy) of cells are numbered; restoring a true number cannot admit a second
+  answer. Rated by the share of cells numbered: Kids from 55%, Easy 45%,
+  Medium 35%, Hard 25%. A thinned board almost never drops under a quarter, so
+  Expert is served as Hard (with `requested_difficulty`), and a Hard request
+  whose 24 attempts all thin to Medium is served as Medium. Medium, Hard and
+  Expert boards are unchanged.

@@ -2,7 +2,7 @@
 title: "Numberlink"
 blurb: "Join each numbered pair with a path, filling every cell"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Join each numbered pair with a path so that no paths cross and every cell is
 used.
@@ -44,7 +44,8 @@ optimisation target.
 
 ## This implementation
 
-- **Spec knobs:** `rows`, `cols`, `pairs`, `difficulty`.
+- **Spec knobs:** `rows`, `cols` (5–10), `min_path` (2–12), `difficulty`,
+  `cell`, `line`.
 - **Generation:** answer first — the grid is decomposed into non-crossing
   paths that cover it, endpoints become the clues, and the router proves the
   clues admit exactly one covering set of paths. If no plain carve routes
@@ -53,9 +54,23 @@ optimisation target.
   path's cell and takes that path's cells to one of its ends, never touching
   itself — and if even that finds nothing, `min_path` is relaxed one step at
   a time and reported as `min_path` beside `requested_min_path`. The band is
-  rated by average path length (`rating_basis: average_path_length`).
+  rated by average path length (`rating_basis: average_path_length`), and
+  the requested band steers the carve: a walk stops at 3 cells for Kids, 4
+  for Easy, 6 for Medium and 10 for Hard (never below `min_path + 1`), while
+  Expert walks until it is stuck. Kids means an average path under three
+  cells, so it is reachable only at `min_path` 2; at the default 3 a Kids
+  request ships Easy with `requested_difficulty`.
 - **Guarantees:** `count(2) == Exact(1)` from a bounded search; a budget
   overrun is a *rejection*, never a shipped guess. Prunes: per-pair
   reachability flood fills (epoch-stamped so resets are free), stranded-cell
   detection, and the no-self-touching rule real numberlink shares.
-- **Difficulty:** path count, length variance and search depth, banded.
+- **Difficulty:** average path length (cells per pair), banded: under 3
+  Kids, under 4.5 Easy, under 6.5 Medium, under 9 Hard, else Expert.
+- **Version 1.1 — the band steers the carve.** An uncapped walk runs until
+  it is stuck, which on the default 7x7 always made six or seven long paths:
+  every request from Kids to Hard was served Hard or Expert (half of each),
+  and only Expert was honest. The plain and repaired carves now cap a walk's
+  length by the requested band, so Easy, Medium and Hard are served as asked
+  (and Kids at `min_path` 2); pages at those bands change, Expert pages do
+  not. Lower bands are also far quicker: the 200-carve search no longer runs
+  dry looking for a band the walk could not make.

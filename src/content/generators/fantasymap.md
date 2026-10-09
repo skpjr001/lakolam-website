@@ -2,7 +2,7 @@
 title: "Fantasy Map"
 blurb: "Fantasy maps — islands, archipelagos and continents with rivers that drain downhill to the sea, road-linked towns, invented names and a hexcrawl mode, with a key"
 category: design
-version: "1.1.0"
+version: "1.2.0"
 ---
 An invented island, archipelago or continent for your story or campaign —
 coasts, rivers, peaks, forests, towns and roads, every place with a name of
@@ -123,3 +123,4 @@ war games was borrowed for "hexcrawl" exploration.
   key); names are invented and family-friendly. The ink and colouring
   pages use black and greys only.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Version 1.2:** nested and single clips now apply to live text in web SVG too — labels inside a clipped frame are cut at the frame, as they always were in print, PNG and PDF; print output is unchanged.

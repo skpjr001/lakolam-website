@@ -2,7 +2,7 @@
 title: "Kuromasu (Kurodoko)"
 blurb: "Black out cells so every number counts the white cells its own cell can see"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Black out cells so every number counts exactly the white cells its own cell
 can see.
@@ -51,3 +51,9 @@ Kuromasu ("black squares") is the name that travelled west.
   search_nodes_per_cell`), reported alongside the band. Measured before
   banding: ten 7×7 boards all kept 9 clues and 9 blacks, while proof effort
   spread 49–379 nodes — an 8:1 range where clue count did not move at all.
+- **Served band:** if the requested band is not reached the nearest band
+  found is returned and labelled (`requested_difficulty` in meta).
+- **Version 1.0.1 — the served-band note is spelled `requested_difficulty`:**
+  a band missed was recorded as `difficulty_requested`, a spelling no other
+  generator uses. Meta only: every page and answer key is byte-identical to
+  1.0.0.

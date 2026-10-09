@@ -2,7 +2,7 @@
 title: "ABC Path"
 blurb: "ABC Path — A to Y, each letter touching the next, guided by edge clues"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Place A to Y in a 5×5 grid so every letter touches the next, guided by clues
 around the edges.
@@ -60,3 +60,13 @@ published as Letter Path and (with digits) as Number Path.
   which the clue-count rating cannot give, also stop as soon as they hold a
   board in the nearest band it can (Easy, Hard) instead of trying all 16
   attempts — the board they would have returned anyway.
+- **Version 1.2 — Easy is reachable.** Thinning runs to a minimal board,
+  and a minimal board rates Medium or Hard, so an Easy or Kids request was
+  served Medium after trying every attempt (seven to ten seconds a page). Such
+  a request now puts thinned clues back — in a seeded order, at most three per
+  line so the stack fits the margin — until the board rates Easy; extra clues
+  never admit a second answer, and uniqueness is still proved on the board
+  that ships. Medium, Hard and Expert pages are unchanged. The ladder is now
+  Kids → Easy, Easy → Easy, Medium → Medium, Hard → Hard, Expert → Hard (the
+  clue-count rating has no Kids or Expert band; `requested_difficulty` always
+  records the request).

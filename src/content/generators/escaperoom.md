@@ -2,7 +2,7 @@
 title: "Escape Room"
 blurb: "Paper escape room — four to six proven mini puzzles, each giving one symbol of the code that opens the final lock"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Four to six small puzzles on one page. Every one you solve gives you one
 symbol of the code that opens the final lock.
@@ -76,3 +76,4 @@ in the 2010s.
   Deterministic per seed.
 - **Where it lives:** in `lako-catalog`, beside spot the difference, because
   it uses other generators' pages; no generator crate depends on another.
+- **Version 1.1:** nested and single clips now apply to live text in web SVG too — labels inside a clipped frame are cut at the frame, as they always were in print, PNG and PDF; print output is unchanged.

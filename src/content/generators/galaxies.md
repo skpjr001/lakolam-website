@@ -2,7 +2,7 @@
 title: "Spiral Galaxies"
 blurb: "Spiral Galaxies — partition into whirls, each symmetric about its dot"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Divide the whole board into whirls, one around each dot — every whirl looks
 identical turned 180° about its own dot.
@@ -37,7 +37,9 @@ West as Spiral Galaxies. A favourite of Simon Tatham's puzzle collection.
 ## This implementation
 
 - **Spec knobs:** `size` (5–9), `galaxy_share` (target coverage per whirl —
-  smaller means more, tighter galaxies), `difficulty`, `cell`, `line`.
+  smaller means more, tighter galaxies; null — the default — takes it from
+  `difficulty`: 0.14 for expert, 0.25 for every other band), `difficulty`
+  (default expert), `cell`, `line`.
 - **Generation:** symmetric galaxies are grown to cover the board, each cell
   added together with its 180° image so symmetry holds by construction; dots
   are placed only where their whole core mirrors on-board. The dots are then
@@ -47,4 +49,17 @@ West as Spiral Galaxies. A favourite of Simon Tatham's puzzle collection.
 - **Guarantees:** deterministic per seed; every galaxy provably symmetric and
   connected; exactly one partition, proven by exhaustive symmetric search.
   Rated by galaxy density (named in the metadata) — a region genre with no
-  technique ladder.
+  technique ladder: easy ≤ 0.10 galaxies per cell, medium ≤ 0.16, hard
+  ≤ 0.22, expert above. The first board in the requested band is kept, else
+  the nearest; with a null share on a board of 7×7 or less, 400 layouts are
+  tried rather than 60.
+- **Reachable bands (a limit of the carve):** grown galaxies stall small, and
+  layouts of few large galaxies rarely admit a single partition, so a 7×7
+  serves expert and hard reliably and medium for about one seed in four (3 of
+  12 surveyed); easy (≤ 4 galaxies on a 7×7) was never reached, and a 5×5 is
+  always expert. Kids has no rung. Every off-band page carries
+  `requested_difficulty`.
+- **Version 1.1:** `galaxy_share` may be null, and is by default, so the
+  band picks the share. Before, the share was 0.14 for every request and every
+  page came out expert. Pages that set `galaxy_share`, expert requests, and
+  the default page are byte-identical to 1.0.

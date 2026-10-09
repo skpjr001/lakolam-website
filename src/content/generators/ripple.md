@@ -2,7 +2,7 @@
 title: "Ripple Effect"
 blurb: "Fill each room with 1 to its size, keeping equal values further apart than themselves"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Fill every room with 1 to its size — and keep equal numbers further apart
 than their own value.
@@ -54,3 +54,15 @@ solver crate.
   nothing, a second pass from fresh seeds retries it, then raises it a step
   at a time toward 6; the metadata reports `max_room_used`. Every board that
   generated before is unchanged.
+- **Version 1.2 — a Hard rung:** the ladder had only singles to offer, so
+  every request from Easy up came back Easy. A room–line move is now on the
+  ladder at sudoku's pointing-pair rung: when the cells of a room still open
+  to a value all lie in one row or column, any cell of that line outside the
+  room within that value's reach of every one of them cannot hold it. It
+  runs only at the Hard and Expert ceilings, so Kids, Easy and Medium boards
+  are byte-identical to 1.1; Hard and Expert requests now get boards that
+  need the move (Hard, about 11 seeds in 12). **Reachable bands:** Kids,
+  Easy and Hard. Medium is out of reach — measured, the pair rungs are never
+  what a thinned board needs, because the spacing rule does that work — and
+  Expert has no rung here, so both are served as the nearest band with
+  `requested_difficulty` recorded.

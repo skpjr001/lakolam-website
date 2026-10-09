@@ -2,7 +2,7 @@
 title: "Battleships (Bimaru)"
 blurb: "Battleships (Bimaru) — find the hidden fleet from the edge counts"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Find the hidden fleet. The numbers count the ship cells in each row and
 column; ships run straight and never touch, not even at a corner.
@@ -48,4 +48,14 @@ Yubotu and Battleship Solitaire.
   whole-fleet backtracking solver — largest ships first, pruned by the
   remaining edge counts and the reveals — proves exactly one arrangement fits
   (a truncated search is treated as ambiguous, never as unique). Rated by how
-  many cells are revealed.
+  many cells are revealed: Easy from 18% of cells, Medium from 10%, Hard
+  from 4%, Expert below that.
+- **Version 1.1 — the request steers the band.** Trimming keeps only the
+  reveals uniqueness needs, so before 1.1 every request got a Hard or Expert
+  board. Now an easier request reveals extra cells of the one answer — ship
+  segments first, then water — until the board rates as asked (Easy from
+  20% of cells revealed, Medium 12%, Hard 5%). Kids is served as Easy, and an
+  Expert request whose trimmed board still shows more than 4% of cells is
+  served as Hard; both report `requested_difficulty`. Expert requests, and
+  any request whose trimmed board already rates at or easier than asked, get
+  the same board as before.

@@ -2,7 +2,7 @@
 title: "Heyawake"
 blurb: "Paint each room its number of cells, keeping white connected and never running through three rooms"
 category: puzzle
-version: "1.1.1"
+version: "1.2.0"
 ---
 Paint cells by the room numbers — no two painted cells touching, white in one
 piece, and no white corridor running through three rooms.
@@ -43,7 +43,9 @@ boards lean on parity arguments researchers still write papers about.
   answer found by the same backtracking search that checks boards, then
   **densified** — cells painted until no more fit — because sparse answers
   are not pinned by their counts (a fully numbered sparse board still had
-  five answers). Numbers are read off the answer and thinned while unique.
+  five answers). From 100 cells up the answer comes from local repair
+  instead (see v1.2). Numbers are read off the answer, proved to admit one
+  answer, and thinned while unique.
 - **Guarantees:** exactly one painting satisfies the numbers, and it is the
   painting they were counted from. The room-by-room search is cross-checked
   against brute force over all 65,536 paintings of a 4×4.
@@ -62,3 +64,26 @@ boards lean on parity arguments researchers still write papers about.
 - **Version 1.1.1 — the request note is spelled `requested_difficulty`.**
   Earlier versions wrote `difficulty_requested`, which nothing else in the
   catalogue reads. Pages and keys are unchanged.
+- **Version 1.2 — 11×11 generates, and every board is checked whole.**
+  11×11, the largest documented size, failed on most seeds ("no 11x11 board
+  survived thinning") after 20–30 s, and 10×10 took up to 20 s. The cause was
+  the answer, not the thinning: the search that checks boards also supplied
+  the unnumbered answer to start from, and on a 10×10 or larger carve it ran
+  out of its node budget on 36–40 carves in 40, because the run rule only
+  bites once three rooms in a line are settled. Answers for boards of 100
+  cells or more now come from **local repair** — start all white, and while
+  some white run crosses three rooms, paint a cell of the shortest stretch
+  that breaks it, clearing touching paint and lifting nearby paint whenever
+  the white would split — which settles about two carves in three. Those
+  boards also stop looking for the requested band two attempts after the
+  first board is found (thinning one takes about two seconds and the bands
+  are narrow: 10×10 and 11×11 measure Kids and Easy, Medium rarely), so an
+  11×11 board now takes 2–7 s. Smaller boards try repair only after the
+  search's first pass has found nothing, before the `max_room` ladder.
+  Also fixed: the fully numbered board is now proved to have one answer
+  before thinning. Thinning only checked a board after removing a number, so
+  a fully numbered board with two answers kept every number and could ship
+  (seen on a 4×4); such boards are now rejected. Boards under 100 cells that
+  the first pass built and that were unique are unchanged; 10×10 and larger
+  boards, boards the first pass did not build, and the rare ambiguous board
+  change.

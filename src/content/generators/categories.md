@@ -2,7 +2,7 @@
 title: "Categories"
 blurb: "Categories — the Stop the Bus word game: an answer for every category starting with each letter, every box checked answerable"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Think of an animal starting with B, a country starting with M — one answer for every category and every letter.
 

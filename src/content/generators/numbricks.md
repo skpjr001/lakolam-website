@@ -2,7 +2,7 @@
 title: "Numbricks"
 blurb: "Numbricks — 1 to n² snaking through the grid, one step at a time"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill the grid with 1 to n² so that consecutive numbers touch — up, down,
 left or right, never diagonally.
@@ -45,3 +45,12 @@ Path needs sixteen edge labels.
   ladder cannot separate boards.
 - Size is capped at 5×5 by the solver's 32-value ceiling (a 6×6 would need
   36 values).
+- **Bands:** `difficulty` stops the thinning once the printed share reaches
+  the band's (kids > 60 %, easy > 45 %, medium > 30 %); hard thins as far as
+  the ladder can still finish the board. There is no expert rung — the
+  fully thinned board is the hardest this rating can name — so expert is
+  served as hard; `requested_difficulty` is always echoed.
+- **Version 1.1:** thinning used to run to the end for every request, so
+  every board came out hard. Now kids, easy, medium and hard are each served
+  (a kids rung was added). Hard (the new default) and expert requests, and
+  so the default page, are byte-identical to 1.0.

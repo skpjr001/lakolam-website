@@ -2,7 +2,7 @@
 title: "Arrowword"
 blurb: "Arrowword — a fully-checked word square with in-grid clues and arrows"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 The crossword with its clues inside the grid. Each clue sits in a shaded cell
 with an arrow, and the answer runs off the way the arrow points.
@@ -36,7 +36,9 @@ Puzzler Arrowords, Lovatts — in dozens of languages.
 
 ## This implementation
 
-- **Spec knobs:** `size` (4 or 5), `difficulty`, `cell`, `line`.
+- **Spec knobs:** `size` (3–5, or null — the default — to take it from
+  `difficulty`: kids 3, easy 4, medium and above 5), `difficulty`, `cell`,
+  `line`.
 - **Generation:** a word square is filled row by row from the clued vocabulary,
   pruned by requiring every partial column to be the prefix of some word and
   every completed column to be an actual word; each row and column then takes
@@ -45,4 +47,13 @@ Puzzler Arrowords, Lovatts — in dozens of languages.
   dictionary word — a valid, fully-checked word square (checked at build time).
   Like a crossword, the solve rests on the clues; the grid's correctness is the
   provable part. Clued wordlist vendored, so the crate depends on no other
-  generator.
+  generator. Rated by grid size (`rating_basis: grid_size`: 3 kids, 4 easy,
+  5 medium).
+- **Reachable bands:** kids, easy and medium. 5×5 is the largest word square
+  built from the clued list, so there is no hard or expert rung: those are
+  served as medium with `requested_difficulty`.
+- **Version 1.1:** `size` may be null, and is by default, so `difficulty`
+  picks the grid, and a 3×3 kids square was added (an explicit `size: 3` was
+  clamped to 4 before). Before, every request was served medium on a 5×5.
+  Pages that set `size` to 4 or 5, medium-and-above requests, and the default
+  page are byte-identical to 1.0.

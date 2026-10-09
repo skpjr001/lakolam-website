@@ -2,7 +2,7 @@
 title: "Dominosa"
 blurb: "Dominosa — partition the number field into the full set of dominoes"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 A grid of numbers, and one complete set of dominoes hidden in it. Draw the
 borders so every domino from double-blank to double-six appears exactly once.
@@ -37,7 +37,9 @@ Simon Tatham's Puzzles (as "Dominosa"); the domino set itself dates to
 ## This implementation
 
 - **Spec knobs:** `max_pip` (3–7; the set runs 0..=max_pip and tiles a
-  (max_pip+1)×(max_pip+2) grid), `difficulty`, `cell`, `line`.
+  (max_pip+1)×(max_pip+2) grid; null — the default — takes it from
+  `difficulty`: kids 3, easy 4, medium 5, hard 6, expert 7), `difficulty`
+  (default hard), `cell`, `line`.
 - **Generation:** a random domino tiling of the rectangle is drawn, each
   domino assigned a distinct pair (orientation random), and the number field
   read off — kept only when a backtracking tiler finds it admits a single
@@ -46,4 +48,10 @@ Simon Tatham's Puzzles (as "Dominosa"); the domino set itself dates to
   uses every pair exactly once (checked); and a backtracking tiler — placing a
   domino on the first free cell, forbidding any repeated pair, with a node
   budget — proves exactly one tiling exists (a truncated search is treated as
-  ambiguous). Rated by the size of the domino set.
+  ambiguous). Rated by the size of the domino set (`rating_basis:
+  domino_set_size`); every band is reachable, and an explicit `max_pip` of
+  another band is reported with `requested_difficulty`.
+- **Version 1.1:** `max_pip` may be null, and is by default, so
+  `difficulty` picks the set. Before, the set was always double-six and every
+  request was served hard. Pages that set `max_pip`, hard requests, and the
+  default page are byte-identical to 1.0.

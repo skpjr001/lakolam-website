@@ -2,7 +2,7 @@
 title: "Statue Park"
 blurb: "Statue Park — place every shape once, none touching, black circles covered and the open ground joined"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Set every statue in the park — no two touching, and the paths all joined.
 
@@ -79,7 +79,7 @@ polyominoes or a custom set of shapes.
   Kids for sets of at most five shapes and Easy otherwise, look-one-step
   Medium, trial Hard, search-only Expert. If a band is not reached in ten
   attempts the nearest band found is returned and labelled as such
-  (`difficulty_requested` in meta).
+  (`requested_difficulty` in meta).
 - **Version 1.1 — every size generates:** a side too small to hold the
   set's shapes apart (twelve pentominoes below 12×12, the five tetrominoes
   at 6×6, a large custom mix on a small board) used to fail outright. Only
@@ -90,4 +90,7 @@ polyominoes or a custom set of shapes.
   byte-identical. Expert pentomino parks (12×12, whether asked for or grown
   to) remain the slow case, typically 10–30 s: the search-only thinning
   counts every circle it removes.
-
+- **Version 1.1.1 — the served-band note is spelled `requested_difficulty`:**
+  a band missed was recorded as `difficulty_requested`, a spelling no other
+  generator uses. Meta only: every page and answer key is byte-identical to
+  1.1.0.

@@ -2,7 +2,7 @@
 title: "Kakurasu"
 blurb: "Kakurasu — shade cells so every line sums to its position clue"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade cells so that every line's shaded *positions* add up to its clue.
 
@@ -49,3 +49,14 @@ and by Grandgames/Puzzle-Team under the names Kakurasu and Index Sums.
   ladder alone cannot separate boards — what varies is how many clues
   survived thinning, and the metadata says so rather than dressing density up
   as a technique measurement.
+- **Reachable bands.** The share of the 2n clue slots still printed rates
+  the board: above 80 % Easy, above 60 % Medium, otherwise Hard. There is
+  no Kids or Expert rung, so those requests get Easy and Hard-or-nearest,
+  with `requested_difficulty` in the metadata. At the default 6×6 (and up
+  to 8×8) a board thinned as far as the ladder allows keeps 8–9 of 12
+  clues — Medium — so Hard and Expert requests are served Medium; on 4×4
+  and 5×5 boards full thinning usually rates Hard. **Version 1.1:** Kids
+  and Easy requests stop thinning while more than 80 % of the clues remain,
+  so they are always served Easy (before, thinning ran to the end for every
+  request and Easy came up only by chance). Medium, Hard and Expert boards
+  are unchanged.

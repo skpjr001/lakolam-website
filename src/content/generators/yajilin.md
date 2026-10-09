@@ -2,7 +2,7 @@
 title: "Yajilin"
 blurb: "Yajilin — arrows count hidden shaded cells, one loop threads the rest"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Grey arrows count the shaded cells they point at; a single loop threads
 every cell that is neither.
@@ -61,3 +61,18 @@ a fusion of their own Yajisan-Kazusan counting clues with the loop genres.
   shading both; the shipped answer is the sampled configuration, checked
   outright. Difficulty is rated by clue density, the same basis as masyu, and
   the metadata names it.
+
+- **Version 1.1 — Easy is reachable:** the repair stops at the first unique
+  board, which leaves too few clue cells for the Easy band, so Kids and
+  Easy requests came back Easy or Medium by chance. An Easy (or Kids)
+  request now keeps converting shaded cells into clue cells past uniqueness
+  until 22% of the board is clues, re-proving uniqueness after every step
+  (recomputed counts are new clues, so the count is checked, not assumed).
+  Medium, Hard and Expert boards are byte-identical to 1.0. **Reachable
+  bands:** Easy (10 seeds in 12 on the 8×8 default; the rest run out of
+  shaded cells and are Medium) and Medium. Hard and Expert need a board
+  unique with fewer than 14% (Hard) or 8% (Expert) of its cells clued, and the repair only
+  ever adds clue cells: starting from sparser shares (0.08, 0.06) was
+  measured and still finished Medium on every seed, so those requests are
+  served as Medium (or as the nearest found) with `requested_difficulty`
+  recorded. Kids has no band of its own and is served as Easy.

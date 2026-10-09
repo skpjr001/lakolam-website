@@ -2,7 +2,7 @@
 title: "Flower Power"
 blurb: "Flower Power — a ring of five-letter petals sharing boundary letters"
 category: word
-version: "1.1.0"
+version: "1.2.0"
 ---
 A ring of petals around a hub, each petal a five-letter word — and where two
 petals meet they share a letter, so the words chain all the way around.
@@ -35,7 +35,8 @@ built on words read around a flower of petals.
 
 ## This implementation
 
-- **Spec knobs:** `petals` (6–10), `difficulty`, `diameter`, `line`, `bold`.
+- **Spec knobs:** `petals` (6–10), `difficulty` (default hard), `diameter`,
+  `line`, `bold`.
 - **Bold & Easy (`bold: true`):** six petals (the fewest), the diameter
   raised to at least 520 Pt, letter circles that touch in a closed ring (so no
   guide line cuts through them and the paper inside is enclosed), six big
@@ -51,7 +52,9 @@ built on words read around a flower of petals.
 - **Generation:** a closed loop of five-letter words is chained by boundary
   letter (each word's last letter starting the next, the last closing back to
   the first) via backtracking over the vocabulary; then letters are trimmed
-  from the full ring to a set that still forces the answer. Since 1.1.0 the
+  from the full ring, each removal kept only while the answer stays forced,
+  until their share reaches the requested band's (kids ≥ 75 %, easy ≥ 60 %,
+  medium ≥ 45 %), or to a minimal forcing set for hard. Since 1.1.0 the
   chaining search is bounded: at most 1,000,000 steps per starting word and
   4,000,000 per attempt (about a second or three), after which the next
   start, then the next attempt, is tried. Before, a start whose ring could
@@ -63,3 +66,12 @@ built on words read around a flower of petals.
   neighbours share their boundary letter (checked); and a backtracking search
   petal by petal proves exactly one filling is consistent with the given
   letters. Vocabulary vendored, so the crate depends on no other generator.
+  Rated by the share of letters given (`rating_basis: given_ratio`).
+- **Reachable bands:** kids, easy, medium and hard. There is no expert rung —
+  a minimal forcing set is the hardest the given count can make — so expert
+  is served as hard with `requested_difficulty` (bold pages included).
+- **Version 1.2:** `difficulty` now steers the trim, and a kids rung (≥ 75 %
+  of letters given) was added. Before, every flower was trimmed to a minimal
+  set and came out hard whatever was asked. Hard (the new default) and expert
+  requests, and so the default page, are byte-identical to 1.1; bold pages now
+  report `requested_difficulty` when the band differs.

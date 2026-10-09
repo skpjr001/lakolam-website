@@ -2,7 +2,7 @@
 title: "Pentominous"
 blurb: "Pentominous — divide the grid into pentominoes, no two of one shape touching, every letter in its shape"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Cut the grid into pentominoes — and keep look-alikes apart.
 
@@ -71,4 +71,8 @@ online puzzle collections.
   Rated by the hardest rung needed (forced: Kids for grids of 30 cells or
   fewer, else Easy; look-one-step Medium; pairs Hard; search-only Expert).
   If a band is not reached in eight attempts the nearest band found is
-  returned and labelled (`difficulty_requested` in meta).
+  returned and labelled (`requested_difficulty` in meta).
+- **Version 1.0.1 — the served-band note is spelled `requested_difficulty`:**
+  a band missed was recorded as `difficulty_requested`, a spelling no other
+  generator uses. Meta only: every page and answer key is byte-identical to
+  1.0.0.

@@ -92,3 +92,14 @@ from gentle 1★ 6×6s to the tournament-standard 2★ 10×10.
   Kids, Easy and Medium requests are served as Hard and the request is
   recorded (`requested_difficulty`). A 10×10 takes up to a few seconds.
   One-star boards are byte-identical to 1.1.
+- **Reachable bands (documented, output unchanged):** the band is the
+  hardest rung the solve needed with board size as the tie-break, and on
+  one-star boards only two rungs decide it in practice — counting alone, or
+  a confinement. Placement enumeration is almost never the hardest step
+  needed: in a measurement, 171 of 171 layouts repaired to be solvable
+  without confinement came out solvable by counting alone. So the bands
+  reached are, by size: **5–6** Easy (counting) and Hard (confinement);
+  **7** Medium and Hard; **8–9** Medium and Expert. Kids is never reached
+  (counting is the first rung any board needs), nor Expert below 8, nor
+  Medium at 5–6 except by rare chance; such requests are served as the
+  nearest band and `requested_difficulty` records the request.

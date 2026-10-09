@@ -2,7 +2,7 @@
 title: "Star Wheel"
 blurb: "Planisphere (star wheel) for any latitude, to cut out and pin, or a sky chart for a date, time and place"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Make a planisphere for your own latitude — a turning star map that shows
 the sky for any date and hour — or print the sky above a place at a moment.
@@ -96,3 +96,4 @@ first compiled by Frank Schlesinger in 1930 and revised by Dorrit Hoffleit.
   against example 21.b (θ Persei), altitude and azimuth against example
   13.b (Venus from Washington), catalogue places of Sirius, Vega and
   Polaris, Polaris's altitude, and Orion's place in a January evening sky.
+- **Version 1.1:** nested and single clips now apply to live text in web SVG too — labels inside a clipped frame are cut at the frame, as they always were in print, PNG and PDF; print output is unchanged.

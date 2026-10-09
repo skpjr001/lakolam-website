@@ -2,7 +2,7 @@
 title: "Thermometers"
 blurb: "Thermometers — fill each from its bulb so the counts match"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Fill the thermometers with mercury. Each fills from its bulb toward its tip in
 one unbroken run, and the numbers count the filled cells in each row and column.
@@ -37,7 +37,9 @@ paired in variety collections.
 
 ## This implementation
 
-- **Spec knobs:** `size` (5–9), `max_length` (longest tube), `difficulty`,
+- **Spec knobs:** `size` (5–9), `max_length` (longest tube; null — the
+  default — takes it from `difficulty`: kids and easy the grid side, medium 5,
+  hard 3, expert 2, with hard and expert using 4 on 8×8 and 9×9), `difficulty`,
   `cell`, `line`.
 - **Generation:** the grid is packed with straight thermometers — from each
   free cell the longest available run is taken, so a few long tubes cover the
@@ -47,9 +49,21 @@ paired in variety collections.
   bulb and the counts match (checked); and an exhaustive search — thermometers
   longest-first, pruned so no line overshoots and every line's deficit stays
   reachable — proves exactly one set of fills fits (a truncated search is
-  treated as ambiguous). Rated by how many thermometers there are.
+  treated as ambiguous). Rated by how many thermometers there are
+  (`rating_basis: thermometer_count`: per cell, easy ≤ 0.24, medium ≤ 0.34,
+  hard ≤ 0.44, expert above).
+- **Reachable bands:** on the default 7×7 a null `max_length` serves easy for
+  most seeds (9 of 12 surveyed; the rest medium), medium, hard and expert
+  (10 of 12; the rest hard). There is no kids rung — kids is served as easy or
+  medium. On a 9×9, tubes shorter than 4 took 8–16 s a page and still came
+  out mostly medium, so on 8×8 and 9×9 hard and expert use 4 — fast, but
+  mostly served as medium. Off-band pages carry `requested_difficulty`.
 - **Knobs that find nothing (v1.1):** short caps (`max_length` 0–3) failed for
   some seeds and sizes. Now, only when the requested cap finds nothing, a
   second pass from fresh seeds retries it, then raises it a step at a time
   toward 5; the metadata reports `max_length_used` when it differs. Every
   board that generated before is unchanged.
+- **Version 1.2:** `max_length` may be null, and is by default, so the band
+  picks the longest tube. Before, it was 5 for every request and every page
+  came out medium. Pages that set `max_length`, medium requests, and the
+  default page are byte-identical to 1.1.

@@ -2,7 +2,7 @@
 title: "Pentomino Fill"
 blurb: "Pentomino fill — cover a rectangle, holed square or picture exactly with a set of pentominoes or tetrominoes, with pieces to cut out"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Fill the shape exactly with the pieces — then cut them out and try it.
 
@@ -76,4 +76,8 @@ rectangle has 2,339 different fillings, and the 3×20 rectangle only two.
   (`rating_basis: pieces_to_place`): tetrominoes — up to 6 Kids, more Easy;
   pentominoes — up to 3 Kids, 4–5 Easy, 6–8 Medium, 9–10 Hard, 11–12
   Expert. If a band is not reached in twelve attempts the nearest band found
-  is returned and labelled (`difficulty_requested` in meta).
+  is returned and labelled (`requested_difficulty` in meta).
+- **Version 1.0.1 — the served-band note is spelled `requested_difficulty`:**
+  a band missed was recorded as `difficulty_requested`, a spelling no other
+  generator uses. Meta only: every page, answer key and cut-out sheet is byte-identical to
+  1.0.0.

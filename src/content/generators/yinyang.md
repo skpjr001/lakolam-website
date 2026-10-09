@@ -2,7 +2,7 @@
 title: "Yin-Yang"
 blurb: "Yin-Yang — two connected colours, no 2x2 all one shade"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill every cell black or white so that all the black cells connect, all the
 white cells connect, and no 2×2 square is a single colour.
@@ -47,3 +47,14 @@ and a regular at world puzzle championships.
   monochrome (checked); and a backtracking search — pruning monochrome squares
   as they form, checking both regions connected at the leaves, node-budgeted —
   proves exactly one completion fits. Rated by how many circles are given.
+- **Version 1.1 — the band steers the build:** the request used to be
+  ignored (every band got the same board, Easy or Medium by chance). Now,
+  after trimming to a minimal set, an Easy request prints trimmed circles
+  back, in the order they were trimmed, until 45% of the board is given; a
+  Medium request whose minimal set is still that dense trims up to 16 more
+  boards for a sparser one. Extra circles keep the answer unique, and the
+  count is re-checked. **Reachable bands:** Easy and Medium, each served as
+  asked. Hard and Expert are out of reach — no minimal set was measured
+  below about 40% of the board at 6×6, 7×7 or 8×8 — so they get the first
+  board, exactly as in 1.0, with `requested_difficulty` recorded; Kids has
+  no band of its own here and is served as Easy, also labelled.

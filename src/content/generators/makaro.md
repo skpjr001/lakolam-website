@@ -72,3 +72,13 @@ puzzle books.
   in measurement, so Medium is unreachable too and a Medium request ships the
   nearest band found (Easy or Hard); and no Expert technique is used, so
   Expert requests ship Hard. `requested_difficulty` is always recorded.
+  Measured at the default spec (12 seeds a band), the served ladder is Easy,
+  Easy, Easy, Hard, Hard for Kids … Expert: two bands. Digging to a minimal
+  board at the Medium ceiling, about 500 boards across sizes 6, 8 and 10 all
+  finished on relation and singles — no pair was ever the step that unlocked
+  the board, because rooms of at most five cells with every arrow printed
+  leave pairs nothing to do that the arrows and singles have not done first.
+  Kids is reachable only on a board with no arrow at all (a few small boards,
+  size 6, are), so it is not served at the default size. Reaching Medium
+  would need a real middle-band deduction for makaro (or printing fewer
+  arrows), not a relabel.

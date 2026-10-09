@@ -2,7 +2,7 @@
 title: "Nurikabe"
 blurb: "Shade a connected wall around numbered islands, with no 2x2 block shaded"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Shade a connected wall around numbered islands: each number is an island of
 exactly that many white cells.
@@ -58,3 +58,19 @@ Cell Structure and Islands in the Stream.
   asked); the metadata reports `max_island_used`. Every board that generated
   before is unchanged. A cap of 8 is slow, since its first pass must fail
   before the second runs.
+- **Version 1.2 — Easy is reachable:** the rating is a proxy, the number
+  share (mean island size against the share of the board the islands
+  cover; `rating_basis` names it), and the grower's spread of island sizes
+  — one to the cap — lands most boards in Medium, so Easy requests came
+  back Medium on a quarter of seeds. Now, only when the first pass finds no
+  board in the band asked for, a second pass from fresh seeds grows islands
+  of one or two cells (one, for Kids). The first pass is unchanged, so
+  every board that matched its request before is byte-identical, as are all
+  Medium, Hard and Expert requests. **Reachable bands:** Easy and Medium,
+  each served as asked on almost every seed. Kids needs most of the board
+  covered by lone cells, which the wall's no-2×2 rule does not allow, and
+  Hard and Expert need large islands on a sparse board: aiming the second
+  pass there was measured (Hard on 2 seeds in 12, Expert on 1, with one
+  generation taking minutes, as big islands are slow to prove unique) and
+  dropped. Those requests get the nearest band, with
+  `requested_difficulty` recorded.

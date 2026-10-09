@@ -2,7 +2,7 @@
 title: "Hitori"
 blurb: "Shade cells until no number repeats in any row or column"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Shade out cells until no number repeats in any row or column — without ever
 shading two neighbours or cutting the board in two.
@@ -44,6 +44,17 @@ after the goal of making every number solitary in its lines.
   unchanged.
 - **Generation:** a near-Latin grid is built, duplicates are introduced
   deliberately, and the shading that fixes them is verified unique.
+- **Difficulty:** rated by the share of cells caught in a duplicate
+  (`rating_basis: duplicate_share`): under 20 % Kids, 32 % Easy, 45 %
+  Medium, 58 % Hard, above that Expert. Every shaded cell must repeat a
+  number in its line, and a valid shading is maximal — about a quarter of
+  the board — so even the leanest unique board has well over a third of its
+  cells in duplicates. Reachable bands are **Medium, Hard and Expert**; a
+  Kids or Easy request gets Medium, with `requested_difficulty` in the
+  metadata. **Version 1.2:** requests below Hard pick each shaded cell's
+  number to duplicate as few unshaded cells as possible; before, every
+  request drew it at random and Kids, Easy and Medium all came out Hard.
+  Hard and Expert boards are unchanged.
 - **Guarantees:** the shipped answer passes all three rules (checked against
   the rule definition before the solver runs), and `count(2) == Exact(1)` from
   a bounded search — hitori is NP-complete, so the budget exists, and running

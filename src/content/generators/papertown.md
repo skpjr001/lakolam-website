@@ -2,7 +2,7 @@
 title: "Paper town"
 blurb: "Paper town — fold-up cottages, shops, barns, churches and lighthouses at OO, HO or N scale or as village ornaments, every net fold-checked closed and every tab paired with its edge"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fold-up paper buildings — cottages, shops, barns, a church and a
 lighthouse — for a model railway or a Christmas village.
@@ -103,3 +103,4 @@ and later in ceramic.
   no two overlap. The tests re-derive the seams from the printed parts
   alone, check Euler's formula, and check that the folded solid is
   congruent to the building.
+- **Version 1.1:** nested and single clips now apply to live text in web SVG too — labels inside a clipped frame are cut at the frame, as they always were in print, PNG and PDF; print output is unchanged.

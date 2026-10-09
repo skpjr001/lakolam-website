@@ -2,7 +2,7 @@
 title: "Tapa"
 blurb: "Tapa — shade one connected wall; the numbers count the runs around each clue"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade cells to build one connected wall with no 2×2 block. The numbers in a
 clue cell count the runs of shaded cells around it.
@@ -49,3 +49,15 @@ GMPuzzles to become one of the most popular modern loop-free shading genres.
   clue the instant its whole ring is decided, verifying connectivity at the
   leaves, node-budgeted — proves exactly one wall fits (a truncated search is
   treated as ambiguous). Rated by clue density.
+- **Version 1.1 — the band steers the build:** the request used to be
+  ignored (every band got the same board, nearly always Hard). Now, after
+  the clues are trimmed to a minimal forcing set, an Easy or Medium request
+  prints trimmed clues back, in the order they were trimmed, until the
+  density reaches the band (34% of the board for Easy, 24% for Medium); a
+  Hard request does the same from a sparser set (16%); and a request whose
+  minimal set is still too dense for it digs up to 16 more walls for a
+  sparser one before serving the nearest. A clue added to a unique board
+  keeps it unique. **Reachable bands:** Easy, Medium and Hard on every seed
+  measured, Expert on most (10 seeds in 12 on the 6×6 default); Kids has no
+  band of its own and is served as Easy, with `requested_difficulty`
+  recorded, as is an Expert request that found no sparse enough wall.
