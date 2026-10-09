@@ -29,9 +29,9 @@ the answer key draws every electron, the brackets and the charges.
    order; an s sub-shell holds 2, p holds 6 and d holds 10. Chromium and
    copper move one 4s electron into 3d.
 3. **Ions.** The outer shell decides the ion. Metals with 1, 2 or 3 outer
-   electrons lose them and become positive ions (Na⁺, Mg²⁺, Al³⁺).
+   electrons lose them and become positive ions (Na+, Mg 2+, Al 3+).
    Non-metals with 5, 6 or 7 gain electrons to make 8 and become negative
-   ions (N³⁻, O²⁻, Cl⁻).
+   ions (N 3-, O 2-, Cl-).
 4. **Lewis symbols.** Write the symbol and put one dot for each outer
    electron round it, one on each side before any pair up.
 5. **Ionic dot and cross.** Show outer shells only. Use crosses for the

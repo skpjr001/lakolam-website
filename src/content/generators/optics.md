@@ -46,7 +46,7 @@ angles. The answer key draws the rays and fills in every answer.
 5. **Power** P = 1/f with f in metres (100/f with f in cm), in dioptres:
    positive for a converging lens, negative for a diverging one. Powers of
    lenses in contact add.
-6. **Refraction.** n = c/v with c = 3 × 10⁸ m/s. Snell's law: n₁ sin i =
+6. **Refraction.** n = c/v with c = 300,000,000 m/s. Snell's law: n₁ sin i =
    n₂ sin r. At the critical angle the refracted ray runs along the
    boundary, so sin C = n₂/n₁ (1/n into air).
 
