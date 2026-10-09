@@ -1,0 +1,74 @@
+---
+// One collection page per lane — /designs/, /mazes/, /puzzles/, /words/,
+// /maths/. They repeat a section of /generators/, which stays the indexed
+// list, so these are noindex (and left out of the sitemap).
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import GeneratorCard from '../components/GeneratorCard.astro';
+import { CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS, SITE } from '../lib/site';
+
+export function getStaticPaths() {
+  return Object.entries(LANE_SLUGS).map(([cat, lane]) => ({
+    params: { lane },
+    props: { cat },
+  }));
+}
+
+const { cat } = Astro.props;
+const items = (await getCollection('generators'))
+  .filter((g) => g.data.category === cat)
+  .sort((a, b) => a.id.localeCompare(b.id));
+const label = `${CATEGORY_LABELS[cat]}s`;
+const others = Object.entries(LANE_SLUGS).filter(([c]) => c !== cat);
+
+const title = `${items.length} ${label.toLowerCase()} generators | Lakolam`;
+const description = `${CATEGORY_BLURBS[cat]} ${items.length} generators, all deterministic.`;
+---
+
+<Base
+  title={title}
+  description={description}
+  pageType="CollectionPage"
+  robots="noindex, follow"
+  ogImage="/og/pages/generators.png"
+>
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <nav class="text-ink-muted text-sm" aria-label="Breadcrumb">
+      <a href="/generators/" class="hover:text-ink no-underline">Generators</a>
+      <span aria-hidden="true"> / </span>
+      <span class="text-ink">{label}</span>
+    </nav>
+
+    <h1 class="mt-6 text-3xl font-bold tracking-tight">
+      {items.length} {label.toLowerCase()}
+    </h1>
+    <p class="text-ink-muted mt-3 max-w-2xl">{CATEGORY_BLURBS[cat]}</p>
+    <p class="text-ink-muted mt-2 max-w-2xl text-sm">
+      Every preview was rendered by the engine at seed{' '}
+      <code class="font-mono text-sm">{SITE.artSeed}</code>.
+    </p>
+
+    <nav class="mt-6 flex flex-wrap gap-2" aria-label="Other lanes">
+      <a
+        href="/generators/"
+        class="border-line hover:border-accent-dim text-ink rounded-full border px-4 py-1.5 text-sm no-underline transition-colors"
+      >
+        All generators
+      </a>
+      {
+        others.map(([c, slug]) => (
+          <a
+            href={`/${slug}/`}
+            class="border-line hover:border-accent-dim text-ink rounded-full border px-4 py-1.5 text-sm no-underline transition-colors"
+          >
+            {CATEGORY_LABELS[c]}s
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      {items.map((g) => <GeneratorCard id={g.id} title={g.data.title} blurb={g.data.blurb} />)}
+    </div>
+  </div>
+</Base>

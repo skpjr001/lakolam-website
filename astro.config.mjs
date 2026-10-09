@@ -13,7 +13,14 @@ export default defineConfig({
   // Inline the CSS into every page: a refresh then never paints unstyled
   // HTML (a full-size logo, shifting layout) while a stylesheet loads.
   build: { inlineStylesheets: 'always' },
-  integrations: [sitemap()],
+  // The lane pages (/designs/, /mazes/ …) are noindex collection pages, so
+  // they stay out of the sitemap too.
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !/\/(designs|mazes|puzzles|words|maths)\/$/.test(new URL(page).pathname),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
     build: {

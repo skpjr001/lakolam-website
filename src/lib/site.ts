@@ -41,6 +41,15 @@ export const CATEGORY_LABELS: Record<string, string> = {
   maths: 'Maths worksheet',
 };
 
+/** Each lane's own collection page, e.g. /designs/ (noindex — /generators/ is the indexed list). */
+export const LANE_SLUGS: Record<string, string> = {
+  design: 'designs',
+  maze: 'mazes',
+  puzzle: 'puzzles',
+  word: 'words',
+  maths: 'maths',
+};
+
 export const CATEGORY_BLURBS: Record<string, string> = {
   design:
     'Mandalas, kolams, tilings and flow fields — colourable line art with mathematical bones.',
