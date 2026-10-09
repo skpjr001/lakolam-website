@@ -14,7 +14,7 @@ const generators = (await getCollection('generators')).sort((a, b) =>
 const featured = ['mandala', 'maze', 'sudoku', 'kolam', 'crossword', 'celtic', 'nonogram', 'tiling']
   .map((id) => generators.find((g) => g.id === id))
   .filter((g) => g !== undefined);
-const lanes = (['design', 'maze', 'puzzle', 'word', 'maths'] as const).map((cat) => ({
+const lanes = (['design', 'maze', 'puzzle', 'word', 'maths', 'paper'] as const).map((cat) => ({
   cat,
   label: CATEGORY_LABELS[cat],
   blurb: CATEGORY_BLURBS[cat],
@@ -67,7 +67,7 @@ const jsonLd = [
 
 <Base
   title="Free Printable Puzzle, Maze & Worksheet Generator | Lakolam"
-  description={`${SITE.stats.generators} generators for mandalas, kolams, mazes, logic and word puzzles and maths worksheets — reproducible from a seed, every puzzle proven uniquely solvable.`}
+  description={`${SITE.stats.generators} generators for mandalas, mazes, logic and word puzzles, maths worksheets and graph paper — reproducible from a seed, every puzzle proven unique.`}
   ogImage="/og/default.png"
   jsonLd={jsonLd}
   about={ld.ids.org}
@@ -139,12 +139,12 @@ const jsonLd = [
 
   <!-- ── lanes ── -->
   <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-    <h2 class="text-2xl font-bold tracking-tight">Five lanes, one engine</h2>
+    <h2 class="text-2xl font-bold tracking-tight">Six lanes, one engine</h2>
     <p class="text-ink-muted mt-2 max-w-2xl">
       Every generator emits the same display list and renders through the same
       backends — so a maze, a mandala and a crossword all export identically.
     </p>
-    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
         lanes.map((lane) => (
           <a

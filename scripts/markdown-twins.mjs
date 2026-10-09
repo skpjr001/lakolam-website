@@ -29,6 +29,7 @@ const LANES = [
   { cat: 'puzzle', slug: 'puzzles', label: 'Logic puzzles' },
   { cat: 'word', slug: 'words', label: 'Word puzzles' },
   { cat: 'maths', slug: 'maths', label: 'Maths worksheets' },
+  { cat: 'paper', slug: 'paper', label: 'Paper templates' },
 ];
 const LANE_OF = Object.fromEntries(LANES.map((l) => [l.cat, l]));
 
@@ -160,7 +161,7 @@ function llmsTxt(byLane, total) {
   const out = [
     '# Lakolam',
     '',
-    `> Lakolam is a free, open-source generative engine: ${total} deterministic generators for printable mandalas, kolams and other designs, mazes, logic puzzles, word puzzles and maths worksheets. Every page is reproducible from a seed, every logic puzzle is proven to have exactly one solution, and pages render as SVG, PNG or print-ready PDF with answer keys.`,
+    `> Lakolam is a free, open-source generative engine: ${total} deterministic generators for printable mandalas, kolams and other designs, mazes, logic puzzles, word puzzles, maths worksheets and printable paper (graph, dot, lined, music staff, log, polar, Smith chart and more). Every page is reproducible from a seed, every logic puzzle is proven to have exactly one solution, and pages render as SVG, PNG or print-ready PDF with answer keys.`,
     '',
     'Every page on www.lakolam.com has a markdown twin: request it with `Accept: text/markdown`, or add .md in place of the trailing slash (/about/ → /about.md, / → /index.md).',
     '',

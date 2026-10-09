@@ -1,7 +1,7 @@
 ---
 title: "Paper"
 blurb: "Specialty paper — lined, graph, dot, isometric, hex, polar, music, handwriting, calligraphy, Cornell, engineering, perspective"
-category: design
+category: paper
 version: "1.1.0"
 ---
 Specialty printable paper, ruled to the exact spacing you ask for — lined,

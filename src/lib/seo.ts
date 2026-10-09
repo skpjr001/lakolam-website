@@ -7,7 +7,7 @@
 
 import { SITE } from './site';
 
-type Lane = 'design' | 'maze' | 'puzzle' | 'word' | 'maths';
+type Lane = 'design' | 'maze' | 'puzzle' | 'word' | 'maths' | 'paper';
 
 interface LaneCopy {
   /** What the H1 and title call the generator: "Sudoku generator". */
@@ -32,6 +32,9 @@ const seed = {
   label: 'Reproducible',
   value: `Same seed, same page, byte for byte (this preview: seed ${SITE.artSeed})`,
 };
+
+/** "Dot Grid" → "Dot Grid paper"; "Graph Paper" stays as it is. */
+const paperNoun = (t: string) => (/paper$/i.test(t) ? t : `${t} paper`);
 
 const LANES: Record<Lane, LaneCopy> = {
   design: {
@@ -153,6 +156,31 @@ const LANES: Record<Lane, LaneCopy> = {
       seed,
     ],
   },
+  paper: {
+    noun: paperNoun,
+    tails: ['Free Printable PDF, A4 & Letter', 'Free Printable PDF', 'Free & Printable'],
+    pitches: [
+      ' Free in the browser: print it at exact spacing as PDF, PNG or SVG on Letter, A4, A5, Legal, Tabloid or A3.',
+      ' Free, printable at exact spacing on Letter, A4 and more.',
+      ' Free and printable.',
+    ],
+    keywords: [
+      '{p}',
+      'printable {p}',
+      '{p} PDF',
+      'free {p}',
+      '{t} template',
+      '{p} A4',
+      '{p} letter size',
+    ],
+    facts: [
+      { label: 'Spacing', value: 'Exact — print at 100% and it measures true' },
+      { label: 'Sheets', value: 'Letter, A4, A5, Legal, Tabloid and A3, portrait or landscape' },
+      formats,
+      free,
+      { label: 'Reproducible', value: 'The same settings always give the same sheet' },
+    ],
+  },
 };
 
 const TITLE_MAX = 60;
@@ -160,7 +188,12 @@ const DESCRIPTION_MAX = 160;
 
 /** "Sudoku Generator — Free Printable Puzzles with Answers", fitted to 60 chars. */
 export function generatorTitle(lane: Lane, title: string): string {
-  const head = lane === 'maths' ? `${title} Worksheet Generator` : `${title} Generator`;
+  const head =
+    lane === 'maths'
+      ? `${title} Worksheet Generator`
+      : lane === 'paper'
+        ? paperNoun(title).replace(/ paper$/, ' Paper')
+        : `${title} Generator`;
   for (const tail of LANES[lane].tails) {
     for (const brand of [` | ${SITE.name}`, '']) {
       const t = `${head} — ${tail}${brand}`;
@@ -188,7 +221,10 @@ export function generatorDescription(lane: Lane, blurb: string): string {
 /** Search phrases for the page, most specific first, de-duplicated. */
 export function generatorKeywords(lane: Lane, title: string): string[] {
   const t = title.toLowerCase();
-  return [...new Set(LANES[lane].keywords.map((k) => k.replaceAll('{t}', t)))];
+  const p = paperNoun(t);
+  return [
+    ...new Set(LANES[lane].keywords.map((k) => k.replaceAll('{p}', p).replaceAll('{t}', t))),
+  ];
 }
 
 export const generatorFacts = (lane: Lane) => LANES[lane].facts;

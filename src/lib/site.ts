@@ -5,7 +5,7 @@ export const SITE = {
   name: 'Lakolam',
   tagline: 'Deterministic generative designs, mazes and puzzles',
   description:
-    'Lakolam is a generative engine: 694 generators for mandalas, kolams, mazes, logic and word puzzles and maths worksheets, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
+    'Lakolam is a generative engine: 728 generators for mandalas, kolams, mazes, logic and word puzzles, maths worksheets and printable paper, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
   studio: 'https://app.lakolam.com',
   studioGpui: 'https://studio.lakolam.com',
   // How to reach the maker: shown in the contact band and footer, and
@@ -18,9 +18,9 @@ export const SITE = {
   // The seed behind every image on this site — determinism as a brand asset.
   artSeed: '0xa11ce',
   stats: {
-    generators: 694,
-    tests: 9384,
-    crates: 698,
+    generators: 728,
+    tests: 9683,
+    crates: 733,
     profiles: 10,
   },
 } as const;
@@ -39,6 +39,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   puzzle: 'Logic puzzle',
   word: 'Word puzzle',
   maths: 'Maths worksheet',
+  paper: 'Paper template',
 };
 
 /** Each lane's own collection page, e.g. /designs/ (noindex — /generators/ is the indexed list). */
@@ -48,6 +49,7 @@ export const LANE_SLUGS: Record<string, string> = {
   puzzle: 'puzzles',
   word: 'words',
   maths: 'maths',
+  paper: 'paper',
 };
 
 export const CATEGORY_BLURBS: Record<string, string> = {
@@ -59,4 +61,6 @@ export const CATEGORY_BLURBS: Record<string, string> = {
   word: 'Word searches, crosswords, cryptograms and ladders — built from curated wordlists and quotes.',
   maths:
     'Addition to algebra, abacus to angles — drills, visual models and number puzzles for US, UK and Indian classrooms, every answer checked.',
+  paper:
+    'Graph, dot, lined and isometric paper, music staves, Cornell notes, log and polar grids, Smith charts — printable at exact spacing on Letter, A4 and more.',
 };

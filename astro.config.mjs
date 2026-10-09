@@ -7,6 +7,7 @@ import { writeMarkdownTwins } from './scripts/markdown-twins.mjs';
 
 // After the build: a markdown twin of every page, /llms.txt, /llms-full.txt
 // and /sitemap.md, for AI agents (see scripts/markdown-twins.mjs, worker.ts).
+/** @type {import('astro').AstroIntegration} */
 const markdownTwins = {
   name: 'lakolam:markdown-twins',
   hooks: {
@@ -32,13 +33,15 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        !/\/(designs|mazes|puzzles|words|maths)\/$/.test(new URL(page).pathname),
+        !/^\/(designs|mazes|puzzles|words|maths|paper)\/$/.test(new URL(page).pathname),
       // Image sitemap entries: each generator page's engine-rendered preview,
       // so the pages can surface in image search ("printable sudoku").
       serialize(item) {
         const id = new URL(item.url).pathname.match(/^\/generators\/([^/]+)\/$/)?.[1];
-        if (id) item.img = [{ url: `https://www.lakolam.com/og/generators/${id}.png` }];
-        return item;
+        // `img` is passed through to the sitemap writer (not in SitemapItem's type).
+        return id
+          ? Object.assign(item, { img: [{ url: `https://www.lakolam.com/og/generators/${id}.png` }] })
+          : item;
       },
     }),
     markdownTwins,
