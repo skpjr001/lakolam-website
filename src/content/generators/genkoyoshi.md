@@ -30,8 +30,8 @@ Print at actual size ("Actual size" or "100%", not "Fit to page"); the
 Start in the rightmost column and write downward, one character per square,
 then move to the next column on the left. Put the title in the first column
 a few squares down, and your name in the next column toward the bottom.
-Begin each paragraph one square down. Small kana (ゃ, っ) and punctuation
-(、。) sit in their own square, in its upper-right corner; write furigana
+Begin each paragraph one square down. Small kana (the small ya and tsu)
+and punctuation (the comma and the full stop) sit in their own square, in its upper-right corner; write furigana
 small in the gutter to the right of the kanji. The faint cross in each
 square helps centre characters while you are learning.
 

@@ -5,7 +5,7 @@ export const SITE = {
   name: 'Lakolam',
   tagline: 'Deterministic generative designs, mazes and puzzles',
   description:
-    'Lakolam is a generative engine: 728 generators for mandalas, kolams, mazes, logic and word puzzles, maths worksheets and printable paper, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
+    'Lakolam is a generative engine: 771 generators for mandalas, kolams, mazes, logic and word puzzles, maths worksheets and printable paper, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
   studio: 'https://app.lakolam.com',
   studioGpui: 'https://studio.lakolam.com',
   // How to reach the maker: shown in the contact band and footer, and
@@ -18,9 +18,9 @@ export const SITE = {
   // The seed behind every image on this site — determinism as a brand asset.
   artSeed: '0xa11ce',
   stats: {
-    generators: 728,
-    tests: 9683,
-    crates: 733,
+    generators: 771,
+    tests: 10130,
+    crates: 776,
     profiles: 10,
   },
 } as const;
@@ -62,5 +62,5 @@ export const CATEGORY_BLURBS: Record<string, string> = {
   maths:
     'Addition to algebra, abacus to angles — drills, visual models and number puzzles for US, UK and Indian classrooms, every answer checked.',
   paper:
-    'Graph, dot, lined and isometric paper, music staves, Cornell notes, log and polar grids, Smith charts — printable at exact spacing on Letter, A4 and more.',
+    'Graph, dot, lined and isometric paper, music staves and tab, Cornell notes, log, polar and Smith charts, comic panels, answer sheets and more — printable at exact spacing.',
 };

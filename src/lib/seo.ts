@@ -33,8 +33,20 @@ const seed = {
   value: `Same seed, same page, byte for byte (this preview: seed ${SITE.artSeed})`,
 };
 
-/** "Dot Grid" → "Dot Grid paper"; "Graph Paper" stays as it is. */
-const paperNoun = (t: string) => (/paper$/i.test(t) ? t : `${t} paper`);
+/**
+ * What a paper page is called in search: "Graph Paper" stays as it is,
+ * "Dot Grid" gains "paper" ("Brick Grid paper"), and
+ * templates that are not paper by name keep their name ("Unit Circle").
+ * The all-in-one "Paper" is specialty paper.
+ */
+const paperNoun = (t: string) =>
+  t === 'Paper' ? 'Specialty paper' : /paper$/i.test(t) || !/grid$/i.test(t) ? t : `${t} paper`;
+
+/** The H1: a template whose name is not paper reads "Printable Unit Circle". */
+const paperHeading = (t: string) => {
+  const n = paperNoun(t);
+  return /paper$/i.test(n) ? n : `Printable ${n}`;
+};
 
 const LANES: Record<Lane, LaneCopy> = {
   design: {
@@ -205,7 +217,8 @@ export function generatorTitle(lane: Lane, title: string): string {
 }
 
 /** The visible H1: "Sudoku generator", "Fractions worksheet generator". */
-export const generatorHeading = (lane: Lane, title: string) => LANES[lane].noun(title);
+export const generatorHeading = (lane: Lane, title: string) =>
+  lane === 'paper' ? paperHeading(title) : LANES[lane].noun(title);
 
 /** Blurb plus the longest pitch that fits in 160 characters. */
 export function generatorDescription(lane: Lane, blurb: string): string {

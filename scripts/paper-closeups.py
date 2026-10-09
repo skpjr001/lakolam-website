@@ -19,7 +19,7 @@ from PIL import Image, ImageOps
 
 CLOSEUPS = (
     "graphpaper dotgrid isogrid isodot hexgrid trigrid crossgrid "
-    "diamondgrid brickgrid octagongrid beadgrid"
+    "diamondgrid brickgrid octagongrid beadgrid dotlined hexdot circlegrid axonometric"
 ).split()
 
 lako = os.environ.get("LAKO_BIN", "lako")
