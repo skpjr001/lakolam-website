@@ -28,6 +28,8 @@ interface Props {
   /** JSON-LD @id of the page's main entity, and of what it is about. */
   mainEntity?: string;
   about?: string;
+  /** False for pages without a markdown twin (the 404). */
+  markdownTwin?: boolean;
   /** Absolute URLs of related pages on this site (WebPage.relatedLink). */
   relatedLinks?: string[];
 }
@@ -44,7 +46,12 @@ const {
   mainEntity,
   about,
   relatedLinks,
+  markdownTwin = true,
 } = Astro.props;
+
+// The page's markdown twin for AI agents (scripts/markdown-twins.mjs):
+// /about/ → /about.md, / → /index.md.
+const markdownHref = (Astro.url.pathname.replace(/\/+$/, '') || '/index') + '.md';
 
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 // A noindex page (the 404) gets no canonical: it has no URL of its own.
@@ -91,6 +98,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
     {!noindex && <link rel="canonical" href={canonical} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    {markdownTwin && <link rel="alternate" type="text/markdown" href={markdownHref} />}
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdfdfc" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e100f" />

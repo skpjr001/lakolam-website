@@ -1,16 +1,22 @@
-// Cloudflare deployment — a Workers project serving only static assets, the
-// same pattern as the two studios.
+// Cloudflare deployment — static assets (dist/) behind a small Worker
+// (worker.js) that serves markdown twins to AI agents (Dualmark, AEO Spec).
 //
-//   npm run build          # → dist/
-//   npx wrangler deploy    # → https://lakolam-www.<account>.workers.dev
+//   npm run build          # → dist/ (pages, markdown twins, llms.txt)
+//   npx wrangler deploy    # → www.lakolam.com
 {
   "name": "lakolam-www",
+  "main": "./worker.js",
   "compatibility_date": "2026-08-01",
   "routes": [
     { "pattern": "www.lakolam.com", "custom_domain": true }
   ],
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    // Pages run the Worker first so it can negotiate HTML vs markdown;
+    // hashed build assets and images skip it (no Worker invocation).
+    "run_worker_first": ["/*", "!/_astro/*", "!/og/*"],
+    "html_handling": "auto-trailing-slash",
     // Serve dist/404.html (with a 404 status) for unknown paths.
     "not_found_handling": "404-page"
   }

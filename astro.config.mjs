@@ -2,6 +2,20 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import { fileURLToPath } from 'node:url';
+import { writeMarkdownTwins } from './scripts/markdown-twins.mjs';
+
+// After the build: a markdown twin of every page, /llms.txt, /llms-full.txt
+// and /sitemap.md, for AI agents (see scripts/markdown-twins.mjs, worker.ts).
+const markdownTwins = {
+  name: 'lakolam:markdown-twins',
+  hooks: {
+    'astro:build:done': ({ dir, logger }) => {
+      const n = writeMarkdownTwins(fileURLToPath(dir));
+      logger.info(`${n} markdown twins, llms.txt, llms-full.txt, sitemap.md`);
+    },
+  },
+};
 
 export default defineConfig({
   // `site` powers canonical URLs, the sitemap, OG URLs and JSON-LD ids —
@@ -20,6 +34,7 @@ export default defineConfig({
       filter: (page) =>
         !/\/(designs|mazes|puzzles|words|maths)\/$/.test(new URL(page).pathname),
     }),
+    markdownTwins,
   ],
   vite: {
     plugins: [tailwindcss()],

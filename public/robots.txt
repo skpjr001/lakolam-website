@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.lakolam.com/sitemap-index.xml
+
+# For AI agents: an index of the site, and every page as markdown
+# (Accept: text/markdown, or /about.md for /about/).
+# https://www.lakolam.com/llms.txt

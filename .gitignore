@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # engine render staging (regenerate via lako; synced copies are committed)
 assets-src/
+.wrangler/
