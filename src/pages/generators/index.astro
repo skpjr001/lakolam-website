@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import GeneratorCard from '../../components/GeneratorCard.astro';
-import { CATEGORY_LABELS, CATEGORY_BLURBS, SITE } from '../../lib/site';
+import { CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS, SITE } from '../../lib/site';
 import * as ld from '../../lib/jsonld';
 
 const generators = (await getCollection('generators')).sort((a, b) =>
@@ -62,7 +62,12 @@ const jsonLd = [
     {
       lanes.map((lane) => (
         <section id={lane.cat} class="scroll-mt-24 pt-14">
-          <h2 class="text-xl font-bold tracking-tight">{lane.label}s</h2>
+          <div class="flex flex-wrap items-baseline justify-between gap-3">
+            <h2 class="text-xl font-bold tracking-tight">{lane.label}s</h2>
+            <a href={`/${LANE_SLUGS[lane.cat]}/`} class="text-accent text-sm font-medium no-underline">
+              View all {lane.items.length} {lane.label.toLowerCase()}s →
+            </a>
+          </div>
           <p class="text-ink-muted mt-1 max-w-2xl text-sm">{lane.blurb}</p>
           <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {lane.items.map((g) => (

@@ -5,7 +5,7 @@ import Hero3D from '../components/Hero3D.astro';
 import MazeScene from '../components/MazeScene.astro';
 import CtaScene from '../components/CtaScene.astro';
 import GeneratorCard from '../components/GeneratorCard.astro';
-import { SITE, CATEGORY_LABELS, CATEGORY_BLURBS } from '../lib/site';
+import { SITE, CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS } from '../lib/site';
 import * as ld from '../lib/jsonld';
 
 const generators = (await getCollection('generators')).sort((a, b) =>
@@ -148,7 +148,7 @@ const jsonLd = [
       {
         lanes.map((lane) => (
           <a
-            href={`/generators/#${lane.cat}`}
+            href={`/${LANE_SLUGS[lane.cat]}/`}
             class="border-line bg-surface-raised hover:border-accent-dim rounded-xl border p-5 no-underline transition-colors"
           >
             <div class="text-accent font-mono text-2xl font-bold">{lane.count}</div>

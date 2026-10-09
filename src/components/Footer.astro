@@ -6,11 +6,12 @@ const columns = [
   {
     title: 'Generators',
     links: [
-      { href: '/generators/#design', label: 'Design' },
-      { href: '/generators/#maze', label: 'Mazes' },
-      { href: '/generators/#puzzle', label: 'Logic puzzles' },
-      { href: '/generators/#word', label: 'Word puzzles' },
-      { href: '/generators/#maths', label: 'Maths worksheets' },
+      { href: '/generators/', label: 'All generators' },
+      { href: '/designs/', label: 'Designs' },
+      { href: '/mazes/', label: 'Mazes' },
+      { href: '/puzzles/', label: 'Logic puzzles' },
+      { href: '/words/', label: 'Word puzzles' },
+      { href: '/maths/', label: 'Maths worksheets' },
     ],
   },
   {
@@ -43,7 +44,7 @@ const columns = [
         {SITE.tagline}.
       </p>
       <p class="text-ink-muted mt-3 text-xs leading-relaxed">
-        Every image on this site was rendered by the engine itself — seed
+        Every image on this site was rendered by the engine itself — seed{' '}
         <code class="font-mono">{SITE.artSeed}</code>. Same seed, same page, forever.
       </p>
     </div>
