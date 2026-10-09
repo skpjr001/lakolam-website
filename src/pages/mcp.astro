@@ -10,8 +10,8 @@ const repo = 'https://github.com/skpjr001/lakolam';
 const releases = `${repo}/releases`;
 const readme = `${repo}/tree/main/crates/lako-mcp#readme`;
 
-const title = 'Lakolam for AI agents — the MCP server';
-const description = `Give Claude, Cursor, VS Code, Codex or any MCP client ${SITE.stats.generators} deterministic generators: printable puzzles, mazes, worksheets and designs with answer keys, and whole KDP-ready books.`;
+const title = 'Lakolam MCP Server — Printable Puzzles for AI Agents';
+const description = `Give Claude, Cursor, VS Code, Codex or any MCP client ${SITE.stats.generators} generators: printable puzzles, mazes, worksheets and designs with answer keys.`;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const mcpId = `${pageUrl}#software`;
@@ -230,7 +230,21 @@ const recipe = `{
 }`;
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd} mainEntity={mcpId}>
+<Base
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  mainEntity={mcpId}
+  keywords={[
+    'MCP server',
+    'Model Context Protocol',
+    'Claude MCP server',
+    'AI puzzle generator',
+    'printable puzzles for AI agents',
+    'Cursor MCP',
+    'KDP book generator',
+  ]}
+>
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
     <p class="text-accent font-mono text-sm">MCP server · lako-mcp</p>
     <h1 class="mt-2 max-w-3xl text-3xl font-bold tracking-tight text-balance sm:text-4xl">

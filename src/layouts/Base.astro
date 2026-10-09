@@ -9,6 +9,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../lib/site';
+import { SITE_KEYWORDS } from '../lib/seo';
 import { organization, webPage, webSite } from '../lib/jsonld';
 
 interface Props {
@@ -28,6 +29,8 @@ interface Props {
   /** JSON-LD @id of the page's main entity, and of what it is about. */
   mainEntity?: string;
   about?: string;
+  /** Search phrases for <meta name="keywords"> (site-wide ones by default). */
+  keywords?: string[];
   /** False for pages without a markdown twin (the 404). */
   markdownTwin?: boolean;
   /** Absolute URLs of related pages on this site (WebPage.relatedLink). */
@@ -47,6 +50,7 @@ const {
   about,
   relatedLinks,
   markdownTwin = true,
+  keywords = SITE_KEYWORDS,
 } = Astro.props;
 
 // The page's markdown twin for AI agents (scripts/markdown-twins.mjs):
@@ -94,6 +98,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(', ')} />
     <meta name="robots" content={robots} />
     {!noindex && <link rel="canonical" href={canonical} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

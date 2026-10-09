@@ -33,6 +33,13 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !/\/(designs|mazes|puzzles|words|maths)\/$/.test(new URL(page).pathname),
+      // Image sitemap entries: each generator page's engine-rendered preview,
+      // so the pages can surface in image search ("printable sudoku").
+      serialize(item) {
+        const id = new URL(item.url).pathname.match(/^\/generators\/([^/]+)\/$/)?.[1];
+        if (id) item.img = [{ url: `https://www.lakolam.com/og/generators/${id}.png` }];
+        return item;
+      },
     }),
     markdownTwins,
   ],

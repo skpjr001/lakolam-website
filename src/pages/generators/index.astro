@@ -15,7 +15,7 @@ const lanes = (['design', 'maze', 'puzzle', 'word', 'maths'] as const).map((cat)
   items: generators.filter((g) => g.data.category === cat),
 }));
 
-const title = `All ${generators.length} generators — designs, mazes and puzzles | Lakolam`;
+const title = `${generators.length} Printable Puzzle, Maze & Design Generators | Lakolam`;
 const description = `Browse every Lakolam generator: ${lanes.map((l) => `${l.items.length} ${l.label.toLowerCase()}${l.items.length === 1 ? '' : 's'}`).join(', ')}. All deterministic, every puzzle proven unique.`;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;

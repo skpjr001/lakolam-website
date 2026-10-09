@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { SITE } from '../lib/site';
 import * as ld from '../lib/jsonld';
 
-const title = 'Lakolam Studio — the whole engine in your browser';
+const title = 'Lakolam Studio — Free Online Puzzle, Maze & Pattern Maker';
 const description =
   'Two free browser studios for the Lakolam engine, running client-side as WebAssembly: the schema-driven Astro studio and the fully-Rust GPUI studio.';
 
@@ -37,7 +37,23 @@ const features = [
 ];
 ---
 
-<Base title={title} description={description} jsonLd={jsonLd} ogImage="/og/pages/studio.png" mainEntity={ld.ids.app}>
+<Base
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  ogImage="/og/pages/studio.png"
+  mainEntity={ld.ids.app}
+  keywords={[
+    'online puzzle maker',
+    'free sudoku maker',
+    'maze maker',
+    'mandala maker',
+    'worksheet generator',
+    'printable puzzle maker',
+    'word search maker',
+    'puzzle book maker',
+  ]}
+>
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
     <h1 class="max-w-2xl text-3xl font-bold tracking-tight text-balance">
       The whole engine runs in your browser
