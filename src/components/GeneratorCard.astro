@@ -16,11 +16,18 @@ const thumbs = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/generators/*.png'
 );
 const thumb = thumbs[`../assets/generators/${id}.png`];
+// What the page search (GeneratorSearch) matches against: lower-case, accents
+// stripped, so "genko" finds Genkō Yōshi.
+const searchText = `${title} ${id} ${blurb}`
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase();
 ---
 
 <a
   href={`/generators/${id}/`}
-  class="group border-line bg-surface-raised hover:border-accent-dim block overflow-hidden rounded-xl border no-underline transition-colors"
+  data-search={searchText}
+  class="gen-card group border-line bg-surface-raised hover:border-accent-dim block overflow-hidden rounded-xl border no-underline transition-colors"
 >
   {
     thumb && (

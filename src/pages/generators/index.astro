@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import GeneratorCard from '../../components/GeneratorCard.astro';
+import GeneratorSearch from '../../components/GeneratorSearch.astro';
 import { CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS, SITE } from '../../lib/site';
 import * as ld from '../../lib/jsonld';
 
@@ -51,17 +52,20 @@ const jsonLd = [
         lanes.map((lane) => (
           <a
             href={`#${lane.cat}`}
+            data-lane-count={lane.cat}
             class="border-line hover:border-accent-dim text-ink rounded-full border px-4 py-1.5 text-sm no-underline transition-colors"
           >
-            {lane.label}s <span class="text-ink-muted">· {lane.items.length}</span>
+            {lane.label}s <span class="text-ink-muted">· <span data-count>{lane.items.length}</span></span>
           </a>
         ))
       }
     </nav>
 
+    <GeneratorSearch label={`${generators.length} generators`} />
+
     {
       lanes.map((lane) => (
-        <section id={lane.cat} class="scroll-mt-24 pt-14">
+        <section id={lane.cat} data-lane={lane.cat} class="scroll-mt-24 pt-14">
           <div class="flex flex-wrap items-baseline justify-between gap-3">
             <h2 class="text-xl font-bold tracking-tight">{lane.label}s</h2>
             <a href={`/${LANE_SLUGS[lane.cat]}/`} class="text-accent text-sm font-medium no-underline">

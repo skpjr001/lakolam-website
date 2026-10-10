@@ -1,0 +1,107 @@
+---
+// Search the generator cards on this page, as you type. Everything is already
+// on the page, so it runs in the browser with no index to fetch: a card
+// matches when it holds every word typed (in its name, id or description,
+// accents ignored). Lane sections (`[data-lane]`) with no match hide, and
+// lane chips (`[data-lane-count]`) show their counts. The query is kept in
+// the address (?q=) so a search can be shared; `/` focuses the box, Esc
+// clears it.
+interface Props {
+  /** What is being searched, for the placeholder: "694 generators". */
+  label: string;
+}
+const { label } = Astro.props;
+---
+
+<div class="gen-search mt-6" role="search">
+  <label for="gen-search-input" class="sr-only">Search {label}</label>
+  <div class="relative max-w-xl">
+    <svg
+      class="text-ink-muted pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input
+      id="gen-search-input"
+      type="search"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder={`Search ${label} — try "maze", "hexagon", "fractions"`}
+      class="peer border-line bg-surface-raised text-ink focus:border-accent w-full rounded-lg border py-2.5 pr-10 pl-10 text-sm outline-none"
+    />
+    <kbd
+      class="border-line text-ink-muted pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 rounded border px-1.5 font-mono text-xs peer-focus:hidden peer-[:not(:placeholder-shown)]:hidden"
+      aria-hidden="true">/</kbd
+    >
+  </div>
+  <p id="gen-search-status" class="text-ink-muted mt-2 mb-0 min-h-5 text-sm" aria-live="polite"></p>
+</div>
+
+<script>
+  const input = document.getElementById('gen-search-input') as HTMLInputElement | null;
+  const status = document.getElementById('gen-search-status');
+  const cards = [...document.querySelectorAll<HTMLElement>('.gen-card[data-search]')];
+  const lanes = [...document.querySelectorAll<HTMLElement>('[data-lane]')];
+  const chips = [...document.querySelectorAll<HTMLElement>('[data-lane-count]')];
+
+  const fold = (s: string) =>
+    s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+  function apply(query: string) {
+    const words = fold(query).split(/\s+/).filter(Boolean);
+    let shown = 0;
+    for (const card of cards) {
+      const hit = words.every((w) => card.dataset.search!.includes(w));
+      card.hidden = !hit;
+      if (hit) shown++;
+    }
+    const perLane = new Map<string, number>();
+    for (const lane of lanes) {
+      const n = [...lane.querySelectorAll<HTMLElement>('.gen-card')].filter((c) => !c.hidden).length;
+      perLane.set(lane.dataset.lane!, n);
+      lane.hidden = words.length > 0 && n === 0;
+    }
+    for (const chip of chips) {
+      const n = perLane.get(chip.dataset.laneCount!) ?? 0;
+      const count = chip.querySelector('[data-count]');
+      if (count) count.textContent = String(n);
+      chip.classList.toggle('opacity-40', words.length > 0 && n === 0);
+    }
+    if (status) {
+      status.textContent = !words.length
+        ? ''
+        : shown
+          ? `${shown} of ${cards.length} match “${query.trim()}”`
+          : `Nothing matches “${query.trim()}” — try a broader word, like “grid”, “maze” or “puzzle”.`;
+    }
+    const url = new URL(location.href);
+    if (words.length) url.searchParams.set('q', query.trim());
+    else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  }
+
+  if (input) {
+    const initial = new URL(location.href).searchParams.get('q') ?? '';
+    input.value = initial;
+    if (initial) apply(initial);
+    input.addEventListener('input', () => apply(input.value));
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        input.value = '';
+        apply('');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      const t = e.target as HTMLElement;
+      const typing = t instanceof HTMLInputElement || t instanceof HTMLTextAreaElement || t.isContentEditable;
+      if (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        e.preventDefault();
+        input.focus();
+        input.select();
+      }
+    });
+  }
+</script>

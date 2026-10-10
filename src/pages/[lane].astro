@@ -5,6 +5,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import GeneratorCard from '../components/GeneratorCard.astro';
+import GeneratorSearch from '../components/GeneratorSearch.astro';
 import { CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS, SITE } from '../lib/site';
 
 export function getStaticPaths() {
@@ -67,7 +68,9 @@ const description = `${CATEGORY_BLURBS[cat]} ${items.length} generators, all det
       }
     </nav>
 
-    <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+    <GeneratorSearch label={`${items.length} ${label.toLowerCase()}`} />
+
+    <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
       {items.map((g) => <GeneratorCard id={g.id} title={g.data.title} blurb={g.data.blurb} />)}
     </div>
   </div>
