@@ -19,7 +19,7 @@ export const SITE = {
   artSeed: '0xa11ce',
   stats: {
     generators: 771,
-    tests: 10130,
+    tests: 10164,
     crates: 776,
     profiles: 10,
   },

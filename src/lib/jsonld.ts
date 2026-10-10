@@ -102,6 +102,7 @@ export const softwareApplication = () => ({
     'Solver-proven unique solutions with technique-ladder difficulty',
     'Schema-driven controls generated from each generator’s own spec',
     'Export as SVG master, PNG up to 600 dpi, or fixed social canvases',
+    'Batch export of up to 1,000 pages as one ZIP or PDF, with answer keys',
     'Fully client-side: no upload, no account, no server',
   ],
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
