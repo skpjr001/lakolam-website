@@ -19,6 +19,12 @@ import tempfile
 SHOWCASE = {
     "parametric": {"style": "colour", "palette": "sunset"},
     "photoparametric": {"style": "colour", "palette": "ocean", "mode": "spiral"},
+    "quasicrystal": {"style": "colour"},
+    "complexart": {"style": "colour"},
+    "snowflake": {"style": "colour"},
+    "wagara": {"style": "colour"},
+    "damask": {"style": "colour"},
+    "walldrawing": {"style": "colour"},
 }
 
 lako = os.environ.get("LAKO_BIN", "lako")
