@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import Base from '../../layouts/Base.astro';
 import GeneratorCard from '../../components/GeneratorCard.astro';
+import SponsorSlots from '../../components/SponsorSlots.astro';
 import { CATEGORY_LABELS, LANE_SLUGS, SITE, studioUrl } from '../../lib/site';
 import * as ld from '../../lib/jsonld';
 import {
@@ -142,6 +143,7 @@ const jsonLd = [
           }
           </dl>
         </section>
+        <SponsorSlots variant="compact" class="mt-6" />
         </div>
       </aside>
     </div>

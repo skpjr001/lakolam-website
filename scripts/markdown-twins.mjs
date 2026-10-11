@@ -40,6 +40,7 @@ const PAGES = [
   { path: '/studio/', file: 'studio/index.html', title: 'The browser studio' },
   { path: '/mcp/', file: 'mcp/index.html', title: 'Lakolam for AI agents — the MCP server' },
   { path: '/brand/', file: 'brand/index.html', title: 'Brand kit' },
+  { path: '/sponsor/', file: 'sponsor/index.html', title: 'Sponsor a slot' },
 ];
 
 const abs = (path) => new URL(path, SITE_URL).href;
@@ -127,6 +128,8 @@ function htmlTwin(html, page) {
   const base = abs(page.path);
   const td = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced', bulletListMarker: '-' });
   td.remove(['script', 'style', 'svg', 'canvas', 'noscript', 'template', 'button', 'form']);
+  // Sponsor tiles are adverts, not content.
+  td.remove((node) => node.nodeType === 1 && node.getAttribute('data-twin') === 'skip');
   // Images are engine renders and page art: their URLs are build hashes, and
   // the generator twins already say how to make each page.
   td.addRule('noImages', { filter: ['img', 'picture'], replacement: () => '' });
