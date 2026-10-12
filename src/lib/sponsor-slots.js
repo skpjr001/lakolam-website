@@ -8,31 +8,34 @@
 // (SponsorSlots.astro) and at the edge (worker.js), so the two always match;
 // Tailwind sees the class names here because this file is under src/.
 //
-// sponsors.json:
+// sponsors.json — eight slots in reading order (1-4 the first row, 5-8 the
+// second), each with its own monthly price:
 //   {
-//     "slots": [ { "name": "Acme", "url": "https://acme.com/", "logo": "acme.png" },
-//                null, … ],                 // 8 entries; null = open
-//     "tiers": [ { "first": 1, "last": 4, "price": 49, "label": "First row" },
-//                { "first": 5, "last": 8, "price": 29, "label": "Second row" } ]
+//     "slots": [
+//       { "price": 49, "name": "Acme", "url": "https://acme.com/", "logo": "acme.png" },
+//       { "price": 49 },                       // open: no name/url
+//       …
+//     ]
 //   }
+// A slot with `name` and `url` is taken; one without is open at its price.
+// `price` may be left out (that slot's DEFAULT_PRICES entry applies).
 // `logo` is any of: a file in the bucket's logos/ folder (served at
 // /sponsors/logos/<file>), a full https:// URL, a data URL
 // (data:image/png;base64,…) or bare base64 of a PNG, JPEG, WebP, GIF or SVG
 // (the type is read from its first bytes), up to MAX_LOGO_BASE64 characters.
-// Leave it out for a letter tile. `tiers` is optional (defaults below).
+// Leave it out for a letter tile.
 
 export const SLOT_COUNT = 8;
 
-/** @typedef {{ name: string, url: string, logo?: string }} Sponsor */
-/** @typedef {{ first: number, last: number, price: number, label: string }} Tier */
+/** Prices when sponsors.json gives none (and for the build's open slots). */
+export const DEFAULT_PRICES = [49, 49, 49, 49, 29, 29, 29, 29];
 
-/** @type {{ slots: (Sponsor | null)[], tiers: Tier[] }} */
+/** @typedef {{ name: string, url: string, logo?: string }} Sponsor */
+/** @typedef {{ price: number, sponsor: Sponsor | null }} Slot */
+
+/** @type {{ slots: Slot[] }} */
 export const DEFAULT_SPONSORS = {
-  slots: Array(SLOT_COUNT).fill(null),
-  tiers: [
-    { first: 1, last: 4, price: 49, label: 'First row' },
-    { first: 5, last: 8, price: 29, label: 'Second row' },
-  ],
+  slots: DEFAULT_PRICES.map((price) => ({ price, sponsor: null })),
 };
 
 /** Longest base64 logo accepted (~150 KB of image), so pages stay light. */
@@ -83,9 +86,18 @@ export function parseSponsors(raw) {
     throw new Error(`"slots" must be an array of ${SLOT_COUNT} entries`);
   }
   const clean = slots.map((s, i) => {
-    if (s === null) return null;
     const at = `slot ${i + 1}`;
-    if (typeof s !== 'object') throw new Error(`${at}: must be null or an object`);
+    if (s === null || s === undefined) return { price: DEFAULT_PRICES[i], sponsor: null };
+    if (typeof s !== 'object' || Array.isArray(s)) throw new Error(`${at}: must be an object`);
+    let price = DEFAULT_PRICES[i];
+    if (s.price !== undefined) {
+      if (typeof s.price !== 'number' || !Number.isFinite(s.price) || s.price < 0 || s.price > 100_000) {
+        throw new Error(`${at}: "price" must be a number from 0 to 100000`);
+      }
+      price = s.price;
+    }
+    const taken = s.name !== undefined || s.url !== undefined || s.logo !== undefined;
+    if (!taken) return { price, sponsor: null };
     const name = typeof s.name === 'string' ? s.name.trim() : '';
     if (!name || name.length > 40) throw new Error(`${at}: "name" must be 1-40 characters`);
     if (!isHttp(s.url)) throw new Error(`${at}: "url" must start http:// or https://`);
@@ -94,34 +106,26 @@ export function parseSponsors(raw) {
       if (typeof s.logo !== 'string') throw new Error(`${at}: "logo" must be a string`);
       logo = logoSrc(s.logo.trim(), at);
     }
-    return { name, url: s.url, ...(logo ? { logo } : {}) };
+    return { price, sponsor: { name, url: s.url, ...(logo ? { logo } : {}) } };
   });
-  let tiers = DEFAULT_SPONSORS.tiers;
-  if (raw.tiers !== undefined) {
-    if (!Array.isArray(raw.tiers) || raw.tiers.length === 0) throw new Error('"tiers" must be a non-empty array');
-    tiers = raw.tiers.map((t, i) => {
-      const ok =
-        t && Number.isInteger(t.first) && Number.isInteger(t.last) && t.first >= 1 &&
-        t.last <= SLOT_COUNT && t.first <= t.last && typeof t.price === 'number' &&
-        t.price >= 0 && typeof t.label === 'string' && t.label.trim();
-      if (!ok) throw new Error(`tier ${i + 1}: needs first, last (1-${SLOT_COUNT}), price and label`);
-      return { first: t.first, last: t.last, price: t.price, label: t.label.trim() };
-    });
-  }
-  return { slots: clean, tiers };
+  return { slots: clean };
 }
 
-export const tierOf = (tiers, slot) =>
-  tiers.find((t) => slot >= t.first && slot <= t.last) ?? tiers[0];
-
 /** First open slot (1-based), or 0 when every slot is taken. */
-export const firstOpen = (slots) => slots.findIndex((s) => s === null) + 1;
+export const firstOpen = (slots) => slots.findIndex((s) => !s.sponsor) + 1;
 
-/** "Slot 6 — second row, $29/month" */
-export const slotOption = (tiers, slot) => {
-  const t = tierOf(tiers, slot);
-  return `Slot ${slot} — ${t.label.toLowerCase()}, $${t.price}/month`;
-};
+const money = (n) => `$${Number.isInteger(n) ? n : n.toFixed(2)}`;
+
+/** "Slot 6 — $29/month" */
+export const slotOption = (slots, n) => `Slot ${n} — ${money(slots[n - 1].price)}/month`;
+
+/** "$29–$49/month per slot", or "$49/month per slot" when all match. */
+export function priceSummary(slots) {
+  const prices = slots.map((s) => s.price);
+  const lo = Math.min(...prices);
+  const hi = Math.max(...prices);
+  return `${lo === hi ? money(lo) : `${money(lo)}–${money(hi)}`}/month per slot`;
+}
 
 /** The sponsor's link, tagged with where the visit came from. */
 export function sponsorHref(url) {

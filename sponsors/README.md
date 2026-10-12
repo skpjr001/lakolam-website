@@ -12,19 +12,25 @@ This folder is a working copy; the bucket is what counts.
 ```json
 {
   "slots": [
-    { "name": "Acme", "url": "https://acme.com/", "logo": "acme.png" },
-    null, null, null,
-    null, null, null, null
-  ],
-  "tiers": [
-    { "first": 1, "last": 4, "price": 49, "label": "First row" },
-    { "first": 5, "last": 8, "price": 29, "label": "Second row" }
+    { "price": 49, "name": "Acme", "url": "https://acme.com/", "logo": "acme.png" },
+    { "price": 49 },
+    { "price": 49 },
+    { "price": 49 },
+    { "price": 29 },
+    { "price": 29 },
+    { "price": 29 },
+    { "price": 29 }
   ]
 }
 ```
 
 - `slots`: exactly 8 entries in reading order (1–4 the first row, 5–8 the
-  second). `null` is an open slot ("Your logo here").
+  second).
+- `price`: that slot's monthly price in US dollars, shown in the booking
+  form on /sponsor/ (and the range of all eight in its text). Left out, the
+  slot uses the default ($49 first row, $29 second).
+- A slot with `name` and `url` is **taken** and shows the sponsor; a slot
+  with only a price (or `null`) is **open** ("Your logo here").
 - `name` (1–40 characters) is shown under the logo; `url` is the link
   (`?ref=lakolam` is added).
 - `logo` — any one of:
@@ -39,7 +45,6 @@ This folder is a working copy; the bucket is what counts.
 
   Leave it out for a tile showing the brand's first letter. Square PNG, SVG
   or WebP, about 128 px, looks best.
-- `tiers` (optional): monthly prices per row, shown on /sponsor/.
 
 If the file is invalid, the site ignores it and shows every slot open; the
 Worker logs why (`npx wrangler tail lakolam-www`). Check a file before

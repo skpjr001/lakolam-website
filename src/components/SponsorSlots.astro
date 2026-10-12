@@ -28,6 +28,6 @@ const open = firstOpen(slots);
     </a>
   </div>
   <ul class="m-0 grid list-none grid-cols-4 gap-2 p-0">
-    {slots.map((s, i) => <li class="min-w-0" data-sponsor-slot={i + 1} set:html={tileHtml(s, i + 1, variant)} />)}
+    {slots.map((s, i) => <li class="min-w-0" data-sponsor-slot={i + 1} set:html={tileHtml(s.sponsor, i + 1, variant)} />)}
   </ul>
 </aside>

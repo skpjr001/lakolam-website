@@ -18,8 +18,8 @@ import { createAEOWorker } from '@dualmark/cloudflare';
 import {
   firstOpen,
   parseSponsors,
+  priceSummary,
   slotOption,
-  tierOf,
   tileHtml,
 } from './src/lib/sponsor-slots.js';
 
@@ -51,10 +51,8 @@ async function loadSponsors(env) {
   return data;
 }
 
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-
 /** Write the live sponsors into a page as it streams through. */
-function fillSponsors(response, { slots, tiers }) {
+function fillSponsors(response, { slots }) {
   const open = firstOpen(slots);
   let variant = 'wide';
   const rewriter = new HTMLRewriter()
@@ -66,7 +64,7 @@ function fillSponsors(response, { slots, tiers }) {
     .on('li[data-sponsor-slot]', {
       element(el) {
         const n = Number(el.getAttribute('data-sponsor-slot'));
-        const sponsor = slots[n - 1];
+        const sponsor = slots[n - 1]?.sponsor;
         if (sponsor) el.setInnerContent(tileHtml(sponsor, n, variant), { html: true });
       },
     })
@@ -77,24 +75,19 @@ function fillSponsors(response, { slots, tiers }) {
     })
     .on('[data-sponsor-prices]', {
       element(el) {
-        const html = tiers
-          .map(
-            (t) =>
-              `${esc(t.label.toLowerCase())} (slots ${t.first}–${t.last}) <strong class="text-ink">$${esc(t.price)}/month</strong>`
-          )
-          .join(' · ');
-        el.setInnerContent(html, { html: true });
+        el.setInnerContent(priceSummary(slots));
       },
     })
     .on('option[data-sponsor-option]', {
       element(el) {
         const n = Number(el.getAttribute('data-sponsor-option'));
-        if (slots[n - 1]) {
+        const slot = slots[n - 1];
+        if (!slot || slot.sponsor) {
           el.remove();
           return;
         }
-        el.setAttribute('data-price', String(tierOf(tiers, n).price));
-        el.setInnerContent(slotOption(tiers, n));
+        el.setAttribute('data-price', String(slot.price));
+        el.setInnerContent(slotOption(slots, n));
       },
     });
   if (!open) {
