@@ -8,7 +8,20 @@
 //   type="text/markdown"` and `Vary: Accept`.
 // The twins, /llms.txt, /llms-full.txt and /sitemap.md are written at build
 // time by scripts/markdown-twins.mjs.
+//
+// Sponsor slots are filled here too: sponsors.json in the R2 bucket bound as
+// SPONSORS (see src/lib/sponsor-slots.js for its format) is read at most once
+// a minute per isolate and written into each HTML page as it streams out, and
+// the bucket's logos/ folder is served at /sponsors/logos/. If the file is
+// missing or invalid, pages keep the build's open slots.
 import { createAEOWorker } from '@dualmark/cloudflare';
+import {
+  firstOpen,
+  parseSponsors,
+  slotOption,
+  tierOf,
+  tileHtml,
+} from './src/lib/sponsor-slots.js';
 
 const aeo = createAEOWorker({
   upstream: { fetch: (request, env) => env.ASSETS.fetch(request) },
@@ -20,10 +33,122 @@ const aeo = createAEOWorker({
 
 const LLMS_FILES = new Set(['/llms.txt', '/llms-full.txt']);
 
+const SPONSORS_TTL_MS = 60_000;
+let sponsorsCache = { at: -Infinity, data: null };
+
+/** sponsors.json from R2, cleaned, or null (then pages keep their build). */
+async function loadSponsors(env) {
+  const now = Date.now();
+  if (now - sponsorsCache.at < SPONSORS_TTL_MS) return sponsorsCache.data;
+  let data = null;
+  try {
+    const object = await env.SPONSORS?.get('sponsors.json');
+    if (object) data = parseSponsors(await object.json());
+  } catch (error) {
+    console.error(`sponsors.json ignored: ${error.message}`);
+  }
+  sponsorsCache = { at: now, data };
+  return data;
+}
+
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+/** Write the live sponsors into a page as it streams through. */
+function fillSponsors(response, { slots, tiers }) {
+  const open = firstOpen(slots);
+  let variant = 'wide';
+  const rewriter = new HTMLRewriter()
+    .on('[data-sponsor-grid]', {
+      element(el) {
+        variant = el.getAttribute('data-sponsor-grid') || 'wide';
+      },
+    })
+    .on('li[data-sponsor-slot]', {
+      element(el) {
+        const n = Number(el.getAttribute('data-sponsor-slot'));
+        const sponsor = slots[n - 1];
+        if (sponsor) el.setInnerContent(tileHtml(sponsor, n, variant), { html: true });
+      },
+    })
+    .on('a[data-sponsor-advertise]', {
+      element(el) {
+        el.setAttribute('href', open ? `/sponsor/?slot=${open}` : '/sponsor/');
+      },
+    })
+    .on('[data-sponsor-prices]', {
+      element(el) {
+        const html = tiers
+          .map(
+            (t) =>
+              `${esc(t.label.toLowerCase())} (slots ${t.first}–${t.last}) <strong class="text-ink">$${esc(t.price)}/month</strong>`
+          )
+          .join(' · ');
+        el.setInnerContent(html, { html: true });
+      },
+    })
+    .on('option[data-sponsor-option]', {
+      element(el) {
+        const n = Number(el.getAttribute('data-sponsor-option'));
+        if (slots[n - 1]) {
+          el.remove();
+          return;
+        }
+        el.setAttribute('data-price', String(tierOf(tiers, n).price));
+        el.setInnerContent(slotOption(tiers, n));
+      },
+    });
+  if (!open) {
+    rewriter
+      .on('[data-sponsor-full]', { element: (el) => el.removeAttribute('hidden') })
+      .on('#sponsor-form', { element: (el) => el.remove() });
+  }
+  const out = rewriter.transform(response);
+  const headers = new Headers(out.headers);
+  // The page now depends on sponsors.json as well as the build.
+  headers.delete('ETag');
+  headers.delete('Last-Modified');
+  headers.set('Cache-Control', 'public, max-age=300');
+  return new Response(out.body, { status: out.status, statusText: out.statusText, headers });
+}
+
+/** A logo from the bucket's logos/ folder. */
+async function serveLogo(env, pathname) {
+  const name = pathname.slice('/sponsors/logos/'.length);
+  if (!/^[\w.-]+$/.test(name)) return new Response('Not found', { status: 404 });
+  const object = await env.SPONSORS?.get(`logos/${name}`);
+  if (!object) return new Response('Not found', { status: 404 });
+  const headers = new Headers();
+  object.writeHttpMetadata(headers);
+  if (!headers.has('Content-Type')) {
+    const ext = name.split('.').pop().toLowerCase();
+    const types = { png: 'image/png', svg: 'image/svg+xml', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp', gif: 'image/gif' };
+    headers.set('Content-Type', types[ext] ?? 'application/octet-stream');
+  }
+  headers.set('Cache-Control', 'public, max-age=3600');
+  headers.set('ETag', object.httpEtag);
+  headers.set('X-Content-Type-Options', 'nosniff');
+  return new Response(object.body, { headers });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
-    const response = await aeo.fetch(request, env, ctx);
+    if (pathname.startsWith('/sponsors/logos/') && (request.method === 'GET' || request.method === 'HEAD')) {
+      return serveLogo(env, pathname);
+    }
+    const sponsors = await loadSponsors(env);
+    // A page's sponsors can change without a deploy, so the build's ETag
+    // must not let a browser keep a stale copy with a 304.
+    if (sponsors) {
+      const headers = new Headers(request.headers);
+      headers.delete('If-None-Match');
+      headers.delete('If-Modified-Since');
+      request = new Request(request, { headers });
+    }
+    let response = await aeo.fetch(request, env, ctx);
+    if (sponsors && response.status === 200 && (response.headers.get('Content-Type') ?? '').startsWith('text/html')) {
+      response = fillSponsors(response, sponsors);
+    }
 
     if (LLMS_FILES.has(pathname) && response.ok) {
       const headers = new Headers(response.headers);

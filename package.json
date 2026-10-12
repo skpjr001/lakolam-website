@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sponsors:check": "node scripts/sponsors.mjs",
+    "sponsors:push": "node scripts/sponsors.mjs && wrangler r2 object put lakolam-sponsors/sponsors.json --file sponsors/sponsors.json --content-type application/json --remote",
+    "sponsors:pull": "wrangler r2 object get lakolam-sponsors/sponsors.json --file sponsors/sponsors.json --remote"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -24,7 +27,7 @@
   "allowScripts": {
     "esbuild": true
   },
-  "description": "Marketing website for Lakolam — deterministic generative designs, mazes and puzzles",
+  "description": "Marketing website for Lakolam \u2014 deterministic generative designs, mazes and puzzles",
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/three": "^0.185.4",

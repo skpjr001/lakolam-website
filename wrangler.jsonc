@@ -7,6 +7,8 @@
   "name": "lakolam-www",
   "main": "./worker.js",
   "compatibility_date": "2026-08-01",
+  // Sponsor slots: sponsors.json and logos/ (see src/lib/sponsor-slots.js).
+  "r2_buckets": [{ "binding": "SPONSORS", "bucket_name": "lakolam-sponsors" }],
   "routes": [
     { "pattern": "www.lakolam.com", "custom_domain": true }
   ],

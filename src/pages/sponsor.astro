@@ -6,9 +6,13 @@
 import Base from '../layouts/Base.astro';
 import SponsorSlots from '../components/SponsorSlots.astro';
 import { SITE } from '../lib/site';
-import { SPONSOR_EMAIL, SPONSOR_SLOTS, SPONSOR_TIERS, tierOf } from '../lib/sponsors';
+import { DEFAULT_SPONSORS, slotOption, tierOf } from '../lib/sponsor-slots.js';
 
-const open = SPONSOR_SLOTS.map((s, i) => (s ? null : i + 1)).filter((n): n is number => n !== null);
+const SPONSOR_EMAIL = SITE.contact.email;
+const { slots, tiers } = DEFAULT_SPONSORS;
+// Every slot is listed; the Worker drops the taken ones (and their prices
+// come from sponsors.json on R2), so this page is always current.
+const all = slots.map((_, i) => i + 1);
 const field =
   'border-line bg-surface focus:border-accent w-full rounded-lg border px-3 py-2 text-sm text-ink outline-none';
 const label = 'text-ink mb-1 block text-sm font-medium';
@@ -38,9 +42,9 @@ const label = 'text-ink mb-1 block text-sm font-medium';
           <li><strong class="text-ink">No tracking:</strong> no pixels, no pop-ups, no scripts — a link and a picture.</li>
           <li>
             <strong class="text-ink">Price:</strong>{' '}
-            {SPONSOR_TIERS.map((t, i) => (
+            <span data-sponsor-prices>{tiers.map((t, i) => (
               <span>{i > 0 && ' · '}{t.label.toLowerCase()} (slots {t.first}–{t.last}) <strong class="text-ink">${t.price}/month</strong></span>
-            ))}. Billed monthly, cancel any time.
+            ))}</span>. Billed monthly, cancel any time.
           </li>
           <li><strong class="text-ink">Going live:</strong> send the form, we reply with an invoice, and your slot goes live within one working day of payment.</li>
           <li><strong class="text-ink">What we accept:</strong> products and services for learners, teachers, makers and publishers. We may decline anything unsuitable for a family audience.</li>
@@ -53,21 +57,18 @@ const label = 'text-ink mb-1 block text-sm font-medium';
 
       <div class="border-line bg-surface-raised rounded-xl border p-6">
         <h2 class="text-xl font-bold tracking-tight">Book a slot</h2>
-        {
-          open.length === 0 ? (
-            <p class="text-ink-muted mt-4 text-sm leading-relaxed">
+            <p class="text-ink-muted mt-4 text-sm leading-relaxed" data-sponsor-full hidden>
               Every slot is booked right now. Email{' '}
               <a href={`mailto:${SPONSOR_EMAIL}?subject=${encodeURIComponent('Sponsor slot waiting list')}`}>{SPONSOR_EMAIL}</a>{' '}
               to join the waiting list.
             </p>
-          ) : (
             <form id="sponsor-form" class="mt-5 space-y-4" novalidate data-email={SPONSOR_EMAIL}>
               <div>
                 <label for="sp-slot" class={label}>Slot</label>
                 <select id="sp-slot" name="slot" class={field}>
-                  {open.map((n) => (
-                    <option value={n} data-price={tierOf(n).price}>
-                      Slot {n} — {tierOf(n).label.toLowerCase()}, ${tierOf(n).price}/month
+                  {all.map((n) => (
+                    <option value={n} data-price={tierOf(tiers, n).price} data-sponsor-option={n}>
+                      {slotOption(tiers, n)}
                     </option>
                   ))}
                 </select>
@@ -104,8 +105,6 @@ const label = 'text-ink mb-1 block text-sm font-medium';
                 <a href={`mailto:${SPONSOR_EMAIL}`}>{SPONSOR_EMAIL}</a> directly.
               </p>
             </form>
-          )
-        }
       </div>
     </div>
   </section>
