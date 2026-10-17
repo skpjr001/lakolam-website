@@ -2,7 +2,7 @@
 title: "Numberlink"
 blurb: "Join each numbered pair with a path, filling every cell"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Join each numbered pair with a path so that no paths cross and every cell is
 used.
@@ -74,3 +74,10 @@ optimisation target.
   (and Kids at `min_path` 2); pages at those bands change, Expert pages do
   not. Lower bands are also far quicker: the 200-carve search no longer runs
   dry looking for a band the walk could not make.
+- **Version 1.2 — an honest count.** The router could run out of nodes just
+  after finishing a branch and still report the search as complete, skipping
+  the branches left to try. The truncated count then read as `Exact(1)` (or
+  `Exact(0)`) for boards with two answers, and the result depended on the
+  order the pairs were taken in. Running out now always reports `Unknown`,
+  which the generator rejects, so every shipped board is proven unique;
+  some seeds now produce a different page.
