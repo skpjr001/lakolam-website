@@ -1,6 +1,6 @@
 ---
-title: "Waffle"
-blurb: "Waffle — swap scrambled, colour-marked tiles back into six interlocking words"
+title: "Letter Swap"
+blurb: "Letter Swap — swap scrambled, colour-marked tiles back into six interlocking words"
 category: word
 version: "1.0.0"
 ---

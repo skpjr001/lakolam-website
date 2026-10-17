@@ -2,7 +2,7 @@
 title: "Binairo"
 blurb: "Binairo — balance two symbols with no three alike and no twin lines"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill the grid with two symbols: no three alike in a line, equal counts in
 every line, and no two identical lines.
@@ -38,7 +38,14 @@ through Games Magazine's *Tohu wa Vohu*.
 
 ## This implementation
 
-- **Spec knobs:** `size` (even, 6–12), `difficulty`, `cell`, `line`.
+- **Spec knobs:** `size` (even, 4–12; 4 is the Kids board), `difficulty`,
+  `cell`, `line`.
+- **The 4×4 board (version 1.1):** the smallest board was 6; it is now 4,
+  a first board for children — two of each symbol per line. Its answer
+  needs only the pair and gap moves, so it is served as Kids or Easy
+  whatever band is asked for, and the metadata says so
+  (`requested_difficulty`). Requests of 6 and up are byte-identical to 1.0;
+  a request below 6 (clamped to 6 before) now gets the 4×4.
 - **Generation:** randomised depth-first fill of a full valid grid, then
   symbols are dug out one at a time while the technique ladder still finishes
   the board at the requested difficulty's ceiling.

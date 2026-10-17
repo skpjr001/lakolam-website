@@ -1,20 +1,21 @@
 ---
 title: "Dots and Boxes"
-blurb: "Dots and boxes — one to six game fields of evenly spaced dots, with score boxes for two players"
+blurb: "Dots and boxes — one to six game fields of evenly spaced dots, with score boxes for two to four players"
 category: paper
 version: "1.0.0"
 ---
 Game sheets for dots and boxes — one to six fields of evenly spaced dots to a
-page, each with score boxes for two players.
+page, each with score boxes for two to four players.
 
 ## What it is
 
-Dots and boxes is a pencil-and-paper game for two players played on a
-rectangle of dots. Each sheet here holds one, two, four or six games, every
-one a field of 3 × 3 up to 12 × 12 dots (a field of 6 × 6 dots makes a game
-of 5 × 5 boxes). Each game sits in a light frame headed GAME 1, GAME 2 …,
-with two score boxes, PLAYER 1 and PLAYER 2, underneath. All the dots on a
-page are the same distance apart, across and down.
+Dots and boxes is a pencil-and-paper game for two players (or three or
+four) played on a rectangle of dots. Each sheet here holds one, two, four
+or six games, every one a field of 3 × 3 up to 12 × 12 dots (a field of
+6 × 6 dots makes a game of 5 × 5 boxes). Each game sits in a light frame
+headed GAME 1, GAME 2 …, with a score box per player underneath: PLAYER 1
+and PLAYER 2, or up to PLAYER 4. All the dots on a page are the same
+distance apart, across and down.
 
 The field can start blank (the usual "American" board), with its whole
 border already drawn (a "Swedish" board) or with only the left and bottom
@@ -26,7 +27,8 @@ Write your names in the score boxes. Take turns joining two dots that sit
 next to each other, across or down, with one short line. Whoever draws the
 fourth side of a box writes their initial inside it, scores one point and
 must draw another line straight away. When every line has been drawn, the
-player with more boxes wins. Keep a tally in your score box as you go.
+player with the most boxes wins. With three or four players, take turns
+in order round the table. Keep a tally in your score box as you go.
 
 On a Swedish or Icelandic board the printed border lines count as already
 drawn. A small field (3 × 3 dots) is good for learning; 6 × 6 dots
@@ -64,7 +66,9 @@ which edges start drawn come from this literature.
   `spacing_mm` (0–30; 0, the default, picks the largest whole tenth of a
   millimetre that fits, up to 20 mm); `dot_mm` (dot diameter, 0.5–4,
   default 1.6); `board` (american, swedish, icelandic); `scores` (score
-  boxes on or off); `ink` (default charcoal); `weight` (0.25–3 pt, for
+  boxes on or off); `players` (2–4, default 2: one score box each, PLAYER 1
+  to PLAYER 4; ignored without score boxes); `ink` (default charcoal);
+  `weight` (0.25–3 pt, for
   drawn edges and score boxes).
 - **Generation:** the content box is split into equal cells — one column
   for one or two games, two by two for four, two by three for six, turned

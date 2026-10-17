@@ -1,6 +1,6 @@
 ---
 title: "Times Tables Grid"
-blurb: "Times-table grids — lookup charts, missing squares and hidden-edge puzzles"
+blurb: "Times-table and addition grids — lookup charts, missing squares and hidden-edge puzzles"
 category: maths
 version: "1.0.0"
 ---
@@ -40,6 +40,15 @@ out. When every edge number is known, fill in all the empty squares. At the
 youngest level the edge numbers are listed under the grid, and you only need
 to find where each one goes.
 
+**Addition grids.** The same pages work for adding: every square is the row
+number plus the column number (row 7, column 8 holds 15), and the corner
+shows + instead of ×. In a hidden-edge addition puzzle, one known edge
+number gives away its whole row or column (13 in a row that starts with 9
+means that column is 4). When no edge number is shown, use the range: the
+smallest sum in a grid must come from small numbers, and an edge number can
+never go below the lowest or above the highest printed number. The shaded
+squares are the doubles, a number plus itself.
+
 ## Purpose
 
 Times tables are the foundation for division, fractions, area and almost all
@@ -70,7 +79,21 @@ and puzzle-magazine invention.
   chart to fill); `highlight_squares` (shade the square numbers); `count`
   (puzzle grids on the page, 1-6); `locale` (`us`, `uk`, `in`: the title
   wording, e.g. "multiplication chart" or "multiplication square"); page
-  `width` and `height`; `line`.
+  `width` and `height`; `line`; `operation` (`multiply`, the default, or
+  `add`: an addition chart, missing-squares grid or hidden-edge puzzle
+  with the same levels and sizes — a times-table page is unchanged by it,
+  byte for byte).
+- **Addition grids:** every square is row + column; the corner prints +,
+  the shaded squares are the doubles, and the title and wording say
+  addition (meta `operation: add`, and `grade` gives the addition grade
+  bands: Kids kindergarten-grade 1 up to Expert grade 2-3). Hidden-edge
+  addition puzzles need more care than products: adding the same number
+  to every row and taking it from every column leaves every sum the same,
+  so with no edge number shown only the printed range can pin the answer
+  down. The same search counts the fits (sums for products, a known edge
+  number fixing its neighbour by subtraction), and a grid that a shift
+  would still fit is rejected like any other ambiguous one; the tests
+  re-count each small grid by brute force over every edge assignment.
 - **Generation:** chart and missing grids: Kids (grade 2) is 5 x 5 with 35%
   of squares empty; Easy (grade 3) 10 x 10, 45%; Medium (grade 3-4) 12 x 12,
   55%; Hard (grade 4) 12 x 12, 60%, with the edge numbers shuffled; Expert

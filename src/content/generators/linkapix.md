@@ -1,6 +1,6 @@
 ---
-title: "Link-a-Pix"
-blurb: "Link-a-Pix - join equal numbers with paths that long to reveal a pixel picture"
+title: "Link Picture"
+blurb: "Link Picture - join equal numbers with paths that long to reveal a pixel picture"
 category: puzzle
 version: "1.0.0"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Game Sheets"
-blurb: "Game sheets — pen-and-paper game pads (dots and boxes, tic-tac-toe, hangman, sprouts, connect four, MASH) and solved dots-and-boxes winning-move puzzles"
+blurb: "Game sheets — pen-and-paper game pads (dots and boxes, tic-tac-toe, hangman, sprouts, four in a row, MASH) and solved dots-and-boxes winning-move puzzles"
 category: puzzle
 version: "1.0.0"
 ---

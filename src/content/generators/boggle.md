@@ -1,6 +1,6 @@
 ---
-title: "Boggle Grid"
-blurb: "Boggle grid — find words through touching letter dice; the key lists every word"
+title: "Letter Dice Grid"
+blurb: "Letter dice grid — find words through touching letter dice; the key lists every word"
 category: word
 version: "1.0.0"
 ---

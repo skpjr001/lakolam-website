@@ -1,6 +1,6 @@
 ---
-title: "Quartiles"
-blurb: "Quartiles — rebuild five long words from twenty shuffled word-chunk tiles"
+title: "Word Quarters"
+blurb: "Word Quarters — rebuild five long words from twenty shuffled word-chunk tiles"
 category: word
 version: "1.0.0"
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Hidato"
-blurb: "Hidato — number the path 1 to N, each touching the next, diagonals allowed"
+title: "Number Trail"
+blurb: "Number Trail — number the path 1 to N, each touching the next, diagonals allowed"
 category: puzzle
 version: "1.0.0"
 ---

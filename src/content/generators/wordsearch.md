@@ -20,6 +20,11 @@ Sweep each row and column with the word's first two letters in mind, then
 check both diagonals. Circle finds and cross them off the list. On the harder settings, leftover letters can spell a hidden message once
 every word is found.
 
+Some lists show only part of each word: its first and last letters with a
+dash for every letter between (B – – – N), or just a dash per letter. Work
+out what the word could be from its length and letters, then hunt for it;
+starting with the longest words leaves the fewest choices.
+
 ## Purpose
 
 The most accessible puzzle in the catalogue — no rules to learn, playable by
@@ -39,7 +44,11 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
 
 - **Spec knobs:** `rows`, `cols`, your own `words` or a `theme`, `directions`
   (kids mode restricts to left-to-right and top-to-bottom), `difficulty`,
-  `filler` (`matched` or `uniform`), `hidden_message`, `word_list`.
+  `filler` (`matched` or `uniform`), `hidden_message`, `word_list`,
+  `list_style` (`full`, the default; `masked`, first and last letters with
+  a dash for each letter between, `B – – – N`; or `hidden`, a dash per
+  letter, shortest words first — the answer key lists the words in full in
+  the same places, and a page with the full list is unchanged by the knob).
   `theme` is `starter` (a fifteen-word space list, the default) or any of
   the sixty-odd themed lists of the shared lexicon: holidays and faith
   (`christmas`, `easter`, `hanukkah`, `diwali`, `eid`, `lunar_new_year`,

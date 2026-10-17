@@ -1,6 +1,6 @@
 ---
-title: "Letter Boxed"
-blurb: "Letter Boxed - chain words round a square of 12 letters, using them all in the fewest words"
+title: "Four Sides"
+blurb: "Four Sides - chain words round a square of 12 letters, using them all in the fewest words"
 category: word
 version: "1.0.0"
 ---

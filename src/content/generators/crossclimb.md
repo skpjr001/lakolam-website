@@ -1,6 +1,6 @@
 ---
-title: "Crossclimb"
-blurb: "Crossclimb — solve the scrambled clues, order the word ladder, unlock top and bottom"
+title: "Word Climb"
+blurb: "Word Climb — solve the scrambled clues, order the word ladder, unlock top and bottom"
 category: word
 version: "1.0.0"
 ---

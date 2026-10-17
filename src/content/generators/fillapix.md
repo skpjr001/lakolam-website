@@ -1,6 +1,6 @@
 ---
-title: "Fill-a-Pix"
-blurb: "Fill-a-Pix — shade cells so each clue counts its 3x3 block, revealing a picture"
+title: "Mosaic"
+blurb: "Mosaic — shade cells so each clue counts its 3x3 block, revealing a picture"
 category: puzzle
 version: "1.0.0"
 ---

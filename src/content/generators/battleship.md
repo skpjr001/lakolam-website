@@ -1,10 +1,10 @@
 ---
-title: "Battleship"
-blurb: "Battleship game sheet — MY FLEET and ENEMY FLEET grids with coordinates and a fleet checklist"
+title: "Sea Battle"
+blurb: "Sea Battle game sheet — MY FLEET and ENEMY FLEET grids with coordinates and a fleet checklist"
 category: paper
 version: "1.0.0"
 ---
-The pencil-and-paper Battleship sheet: a MY FLEET grid and an ENEMY FLEET
+The pencil-and-paper Sea Battle sheet: a MY FLEET grid and an ENEMY FLEET
 grid with lettered rows and numbered columns, and a fleet checklist beside
 each.
 

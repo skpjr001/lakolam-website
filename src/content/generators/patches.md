@@ -1,6 +1,6 @@
 ---
-title: "Patches"
-blurb: "Patches - tile the grid with rectangles, each holding one area-and-shape clue"
+title: "Patchwork"
+blurb: "Patchwork - tile the grid with rectangles, each holding one area-and-shape clue"
 category: puzzle
 version: "1.0.0"
 ---

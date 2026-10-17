@@ -1,5 +1,5 @@
 ---
-title: "KenKen"
+title: "Cage Sums"
 blurb: "Fill a Latin square so each cage reaches its target by its operation"
 category: puzzle
 version: "1.2.0"
@@ -17,7 +17,10 @@ Digits *may* repeat within a cage if the Latin rows and columns allow it.
 
 ## How to play
 
-Some pages change the clues. On a **product** page every cage is a
+Some pages change the clues. On a **sums** page every cage is an
+addition: the number is what its digits add up to — the place to start,
+and on the smallest 3 × 3 board (digits 1 to 3) a first puzzle for
+children. On a **product** page every cage is a
 multiplication: the number is what its digits multiply to. On a **mystery**
 page the cages show only the number — you must also work out whether the
 digits add, multiply, subtract or divide to reach it (subtraction and
@@ -46,10 +49,19 @@ daily. Also circulated as KenDoku, Calcudoku and Mathdoku.
 
 ## This implementation
 
-- **Spec knobs:** `size` (4–9), `max_cage`, `difficulty`, `givens`,
-  `subtraction_and_division` toggle, and `ops`: `standard` (the default —
-  target and operator), `multiply_only` (every multi-cell cage a product:
-  the Inshi no heya form) or `hidden` ("mystery" calcudoku: targets only).
+- **Spec knobs:** `size` (3–9; 3 is the Kids board), `max_cage`,
+  `difficulty`, `givens`, `subtraction_and_division` toggle, and `ops`:
+  `standard` (the default — target and operator), `multiply_only` (every
+  multi-cell cage a product: the Inshi no heya form), `hidden` ("mystery"
+  calcudoku: targets only) or `add_only` (every multi-cell cage a sum: the
+  single-operation beginner form).
+- **Sum boards (`add_only`):** clues are read off the answer as sums and
+  nothing else changes, except that a sum is the loosest clue there is, so
+  these boards get 160 carves (like hidden boards) to find a unique one.
+  The tests re-prove uniqueness with the independent naive search, told
+  only that every cage adds (3×3 to 6×6). A 3×3 sum board (digits 1–3,
+  three givens) is served as Kids (seeds 0–7 in the tests); spec and page are unchanged for every
+  other `ops`.
 - **Product boards:** clues are read off the answer as products; nothing
   else changes. Products are the tightest clue, so these boards rate low —
   mostly Kids/Easy — and the metadata says so rather than relabelling.
@@ -83,6 +95,7 @@ daily. Also circulated as KenDoku, Calcudoku and Mathdoku.
   | spec | served for a Kids … Expert request |
   |---|---|
   | 6×6, cages ≤ 4 (the default) | mostly Kids: asked for Medium or harder, 15 seeds in 20 still come out Kids, 3 Easy, 1–2 Medium, 1 Expert (a board past the ladder); Hard is not reached |
+  | 3×3 | Kids with `add_only`; Kids and Easy with standard clues |
   | 4×4 or 5×5, cages ≤ 3 | Kids and Easy |
   | 5×5 or 7×7, cages ≤ 5 | Kids, Easy, now and then Medium |
   | 9×9, cages ≤ 5 | Kids through Expert |

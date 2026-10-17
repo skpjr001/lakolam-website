@@ -1,6 +1,6 @@
 ---
-title: "Tango"
-blurb: "Tango - balance suns and moons, no three alike, obeying = and x marks"
+title: "Suns & Moons"
+blurb: "Suns & Moons - balance suns and moons, no three alike, obeying = and x marks"
 category: puzzle
 version: "1.0.0"
 ---

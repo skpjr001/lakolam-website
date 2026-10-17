@@ -1,6 +1,6 @@
 ---
-title: "Pips"
-blurb: "Pips - lay the given dominoes on the board so every coloured region meets its condition"
+title: "Domino Rooms"
+blurb: "Domino Rooms - lay the given dominoes on the board so every coloured region meets its condition"
 category: puzzle
 version: "1.0.0"
 ---

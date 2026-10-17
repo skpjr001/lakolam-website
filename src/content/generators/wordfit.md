@@ -20,7 +20,9 @@ Start where the list gives no choice: a length with only one word, or the
 longest slot. Each placement fixes letters in every crossing slot, narrowing
 their candidate lists; the puzzle cascades from a single confident entry.
 When two words could fill a slot, look one crossing further — one of them
-will contradict a neighbour.
+will contradict a neighbour. Letters already printed in the grid
+are free starting points: only words with that letter in that place fit
+there.
 
 ## Purpose
 
@@ -37,7 +39,16 @@ canonical inventor — none is recorded.
 
 ## This implementation
 
-- **Spec knobs:** `rows`, `cols`, `words`/theme, `difficulty`.
+- **Spec knobs:** `rows`, `cols`, `words`/theme, `slots`, `cell`, `line`;
+  `starters` (0–40, default 0: extra letters printed in the grid on top
+  of the one foothold letter every page has, never more than half the
+  letter cells — chosen on their own seeded stream, and since givens can
+  only rule arrangements out, the proven-unique fill stays unique);
+  `max_word_len` (5–40, unset by default: the short-word mode — only words
+  up to that length, so many words share a length and fewer slots have a
+  single candidate). With both left at their defaults a page is
+  byte-identical to before; meta reports `starters` and `max_word_len`
+  only when they are used.
 - **Generation:** the skeleton is generated first (a random walk of slots
   with intersections), then filled by backtracking with
   most-constrained-slot-first from a wordlist bucketed by length.

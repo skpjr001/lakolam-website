@@ -1,6 +1,6 @@
 ---
-title: "Str8ts"
-blurb: "Str8ts — no repeats in any row or column, and every white run a straight"
+title: "Straights"
+blurb: "Straights — no repeats in any row or column, and every white run a straight"
 category: puzzle
 version: "1.0.0"
 ---

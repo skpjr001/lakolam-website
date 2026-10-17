@@ -1,6 +1,6 @@
 ---
-title: "Spelling Bee"
-blurb: "Spelling Bee — words from seven letters, always using the centre, with a pangram"
+title: "Letter Hive"
+blurb: "Letter Hive — words from seven letters, always using the centre, with a pangram"
 category: word
 version: "1.0.0"
 ---

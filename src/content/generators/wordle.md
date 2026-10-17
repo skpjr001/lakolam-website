@@ -1,6 +1,6 @@
 ---
-title: "Wordle Deduction"
-blurb: "Wordle deduction — deduce the hidden word from guesses and their colour feedback"
+title: "Five-Letter Deduction"
+blurb: "Five-letter deduction — deduce the hidden word from guesses and their colour feedback"
 category: word
 version: "1.0.1"
 ---
