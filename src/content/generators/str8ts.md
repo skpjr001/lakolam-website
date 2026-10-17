@@ -51,8 +51,8 @@ name is a play on "straights" in poker.
   every surviving straight needs when only one cell can take it (a hidden
   single). Then naked pairs and triples, and hidden pairs.
 - **Guarantees:** deterministic per seed; exactly one answer, proven by the
-  inference ladder and checked by an independent solution count. Str8ts'
-  own bands: straight ranges and singles are Easy (Kids on a 6×6), naked
+  inference ladder and checked by an independent solution count. The
+  bands: straight ranges and singles are Easy (Kids on a 6×6), naked
   pairs Medium, triples and hidden pairs Hard. No rung reaches Expert, so an
   Expert request returns an honest Hard, with the request noted in the
   metadata.

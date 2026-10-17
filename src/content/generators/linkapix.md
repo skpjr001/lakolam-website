@@ -34,8 +34,8 @@ route is wrong.
 
 ## Purpose
 
-A picture puzzle built from paths rather than counts. Nonograms and Fill-a-Pix
-reason about rows and neighbourhoods; Link-a-Pix is about reach and routing,
+A picture puzzle built from paths rather than counts. Nonograms and Mosaic
+reason about rows and neighbourhoods; Link Picture is about reach and routing,
 the same skill as Numberlink, with the reward of a picture at the end. Short
 paths make it gentle for children; long ones make it a real search.
 
