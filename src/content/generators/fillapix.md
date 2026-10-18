@@ -2,7 +2,7 @@
 title: "Mosaic"
 blurb: "Mosaic — shade cells so each clue counts its 3x3 block, revealing a picture"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Shade the cells so every clue counts the shaded squares around it — and a
 picture appears.
@@ -38,13 +38,29 @@ Japanese Puzzle Quilt; Simon Tatham's collection carries it as Mosaic.
 
 ## This implementation
 
-- **Spec knobs:** `width` and `height` (5–30; 0 picks a size from the
-  difficulty), `difficulty`, `cell`, `line`.
+- **Spec knobs:** `width` and `height` (5–35; 0 picks a size from the
+  difficulty — 10, 15, 15, 20, 25 from Kids to Expert), `difficulty`,
+  `picture` (`blob`, the default; `sprite`; or a named picture), `cell`,
+  `line`.
 - **Generation:** a seeded picture is drawn first — random noise smoothed by a
   majority cellular automaton and mirrored left to right, so it reads as a
   shape rather than static. Every cell starts with its clue; clues are then
   removed one at a time while the solver still finishes the board by
   inference at or below the requested difficulty.
+- **Pictures (`picture`):** besides the seeded blob, ten pixel pictures
+  drawn for this generator — `heart`, `star`, `house`, `tree`, `cat`,
+  `fish`, `rocket`, `mushroom`, `boat`, `umbrella` — or `sprite`, which lets
+  the seed pick one. The picture is scaled to the board by nearest neighbour
+  (aspect kept, centred, symmetric pictures sampled symmetrically) and
+  mirrored on every other attempt; the clues are thinned exactly as for a
+  blob. A picture whose full clue set the requested rung cannot settle is
+  given the next rung up and rated by what it needed — fine detail shrunk
+  onto a 10×10 Kids board (cat, house, rocket, mushroom) comes out Medium;
+  heart, star, tree, fish, boat and umbrella reach Kids. Expert boards
+  (25×25) take 0.4–4 s. Metadata adds `picture` (the picture's name).
+- **Version 1.1:** sides up to 35 (requests of 31–35 were clamped to 30;
+  those pages change, every other page is byte-identical); 35×35 takes
+  1.5–5 s.
 - **Solving:** a technique ladder — *basic* (a clue met or a clue needing
   every open cell), *overlap* between neighbouring clues, *reach* (the same
   bound across clues whose blocks barely touch), and *trial* (assume a cell,

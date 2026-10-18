@@ -32,6 +32,16 @@ other region, that cell cannot hold a queen. On bigger boards, count groups:
 if two regions together only reach two rows, those two rows belong to them,
 and every other cell in those rows is empty.
 
+**Chess queens.** Some boards use the chess rule instead: one queen fewer
+than the board is wide (seven queens on an 8×8 board, nine on a 10×10), one
+in every coloured region, and no two queens may share a row, a column or any
+diagonal, so no two touch either. One row and one column stay empty. A queen crosses out
+her whole row, column, both diagonals and her region. Once some row can no
+longer take a queen, it is the empty one, so every other row must be filled
+— a row with one open cell left takes the queen (columns likewise). A region
+whose open cells all lie on one line (a row, column or diagonal) owns that
+line's queen.
+
 ## Purpose
 
 A colourful, number-free logic puzzle that anyone can start at once, with a
@@ -49,7 +59,10 @@ problem, with regions and the no-touching rule in place of diagonal attacks.
 ## This implementation
 
 - **Spec knobs:** `size` (5-10; 0 picks from the difficulty: Kids 5, Easy 6,
-  Medium 7, Hard 8, Expert 9 or 10 by seed), `difficulty`, `cell`, `line`.
+  Medium 7, Hard 8, Expert 9 or 10 by seed), `difficulty`, `rule` (`touch`,
+  the default; or `chess`: n - 1 queens, one per region, none sharing a row,
+  column or diagonal — sizes 6-10, 0 picks Kids 6, Easy 7, Medium 8, Hard 9,
+  Expert 10; 5 is raised to 6, since four queens on 5×5 never settle), `cell`, `line`.
 - **Generation:** a random valid queen arrangement is placed first, then a
   region is grown around each queen by a flood that favours the smaller
   regions. The regions are then walked: one non-queen border cell moves to a
@@ -70,6 +83,20 @@ problem, with regions and the no-touching rule in place of diagonal attacks.
   connected. Rated by the hardest technique and size: pointing on 5×5 is
   Kids, 6×6 Easy, 7×7 Medium, 8×8 Hard; sets on 9×9 and 10×10 is Expert.
   Generation takes under 150 ms up to Hard and roughly 0.03-0.9 s for
-  Expert. Regions are printed in distinct pastel fills, chosen so that
+  Expert.
+- **Chess rule:** the arrangement is n - 1 queens with one row skipped, no
+  two on a line or diagonal; n - 1 regions are grown and walked the same way
+  against a chess ladder — *basic* (a queen clears her row, column,
+  diagonals and region; a region with one open cell takes the queen; at most
+  one row and one column may die, after which every other row or column with
+  one open cell takes its queen), *pointing* (a region confined to one row,
+  column or diagonal claims that line; a must-fill row confined to one region
+  claims it; a cell whose queen would starve a region or kill a second row or
+  column is empty) and *sets* (k regions confined to k rows or columns). Every
+  board is settled by the ladder and re-proved by an independent row-by-row
+  count that skips one row. Rated like a touch board with as many queens
+  (8×8 with pointing is Medium, 9×9 Hard, 10×10 with sets Expert); Expert
+  takes 0.15-2 s, smaller boards under 0.3 s.
+- **Print:** regions are printed in distinct pastel fills, chosen so that
   neighbouring regions also differ in grey level, with bold borders so the
   board reads in black and white.

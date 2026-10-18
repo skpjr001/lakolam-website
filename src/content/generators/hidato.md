@@ -11,7 +11,9 @@ Fill in 1 to N so each number touches the next — across, down or diagonally.
 A grid, sometimes with a few cells blacked out, holding a scattering of
 numbers. Fill every open cell so the numbers 1 to N form one unbroken path:
 each number sits in one of the eight cells around the number before it. The
-first and last numbers are circled and always printed.
+first and last numbers are circled and always printed. Some boards are
+shaped — a heart, a diamond, a cross, or a big capital letter or digit — and
+the path fills exactly the cells inside the outline.
 
 ## How to play
 
@@ -40,7 +42,23 @@ Invented by the Israeli mathematician Dr. Gyora Benedek and published from
 
 - **Spec knobs:** `width` and `height` (3–11; 0 picks a size from the
   difficulty), `holes` (knock about one cell in twelve out of the rectangle),
-  `difficulty`, `cell`, `line`.
+  `shape` (`rectangle`, the default; `heart`, `diamond`, `cross` — a
+  silhouette on a 5–13 grid, by default Kids 7, Easy 8, Medium 9, Hard 10,
+  Expert 11 cells a side; `holes` is ignored), `letter` (a capital A–Z or
+  digit 0–9, lowercase accepted, the first such character of the text: the
+  board is that glyph from a 5×7 bitmap at two cells per pixel, 10×14 cells,
+  with the two cells beside every diagonal joint filled so each stroke is two
+  cells wide; overrides `shape`, `width`, `height` and `holes`; text with no
+  such character is refused), `difficulty`, `cell`, `line`.
+- **Shaped boards:** the outline is fixed, so each attempt only lays a new
+  path, from a tip of the shape (a cell with the fewest neighbours), by
+  Warnsdorff's order with pruning — the unvisited cells must stay connected
+  to the head and at most one may be a dead end. Cells outside the outline
+  are left blank and the outline is drawn bold. Every A–Z and 0–9 builds.
+  Bands are the rectangle's: Kids and Easy range, Medium chain, Hard trial;
+  silhouettes stay under 70 numbers, so an Expert request is served Hard and
+  labelled so (13-cell silhouettes would reach Expert, but digging them takes
+  10–30 s). Letter boards hold 60–90 numbers. Generation takes under 1 s.
 - **Generation:** a random Hamiltonian king-move path is laid through the open
   cells by Warnsdorff's rule with backtracking; every number starts printed,
   and numbers are erased (never 1 or N) while the solver still places them

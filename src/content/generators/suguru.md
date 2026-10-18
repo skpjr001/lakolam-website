@@ -13,6 +13,11 @@ A grid carved into irregular regions of up to five cells. A region of size k
 contains each digit 1..k exactly once, and identical digits never touch, not
 even at a corner. A handful of givens starts the chain.
 
+Boards come square or rectangular (up to 15×10 and beyond), with regions of
+up to five or six cells. A picture edition draws shapes instead of digits —
+circle, triangle, square, cross, star, diamond — and often uses regions of
+exactly five cells, each holding all five pictures once.
+
 ## How to play
 
 Singletons and pairs place themselves. From there the touch rule does the
@@ -20,6 +25,12 @@ work: a placed digit sweeps its eight neighbours clean, which often collapses
 a nearby region to one arrangement. Feel for the 2×2 blocks — four mutually
 touching cells always need four different digits, and that observation cracks
 most middle-game positions.
+
+On a picture board the shapes stand for 1, 2, 3 … in the order shown under
+the board: a region of three cells holds the first three pictures, a region
+of five holds the first five. The same two rules apply — every region holds
+its pictures once each, and two identical pictures never touch, not even at
+a corner.
 
 ## Purpose
 
@@ -37,7 +48,23 @@ Europe as Suguru or Tectonic, where it has become a daily-paper staple.
 
 ## This implementation
 
-- **Spec knobs:** `size` (5–9), `difficulty`, `cell`, `line`.
+- **Spec knobs:** `size` (5–9), `width` and `height` (5–15 each, for a
+  rectangle such as 12×10 or 15×10; 0 uses `size`), `max_region` (5, the
+  default, or 6), `region_size` (0 for mixed sizes; 4, 5 or 6 for every
+  region exactly that size — without a `height` the board takes the nearest
+  height from 5 to 15 whose area the size divides, e.g. 7×5 for fives on the
+  default 7; with an explicit height an indivisible area is refused), `symbols` (pictures for the digits, with the order shown
+  under the board), `difficulty`, `cell`, `line`.
+- **Beyond the classic squares** (any rectangle, square sides above 9,
+  six-cell regions, exact region sizes): a random carve is then almost never
+  fillable, so regions and digits are carved together — the first open cell
+  in reading order starts a region grown at random, its digits are placed at
+  once with no twin touching, and a cut that strands an open pocket under
+  three cells (or, for exact sizes, not a multiple of the size) is undone,
+  backtracking within a budget. The board so built is a valid answer by
+  construction; digging, the ladder, the rating and the uniqueness count are
+  the classic ones. Classic boards (5–9 squares, mixed regions up to five)
+  keep the original path and are byte-identical.
 - **Generation:** regions of three to five cells by seeded growth with
   boxed-in leftovers absorbed into neighbours; a Hall's-condition check on
   every 2×2 block rejects uncolourable partitions before any search; the

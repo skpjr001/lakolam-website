@@ -35,6 +35,12 @@ Work outward with these moves, easiest first:
 
 The board fills as a jigsaw of pinwheels.
 
+**Picture boards.** Some boards have two kinds of dots: dark (or coloured)
+and white. The rules are the same — and when the board is divided, shade
+every galaxy whose dot is dark (in its dot's colour) and a picture appears,
+mirror-symmetric left to right. Each galaxy is wholly one colour, so the
+picture's outline always runs along galaxy borders.
+
 ## Purpose
 
 The one puzzle in the catalogue whose generation is *native* to the engine.
@@ -53,7 +59,31 @@ West as Spiral Galaxies. A favourite of Simon Tatham's puzzle collection.
   `galaxy_share` (target coverage per whirl —
   smaller means more, tighter galaxies; null — the default — takes it from
   `difficulty`: 0.14 for expert, 0.25 for every other band), `difficulty`
-  (default expert), `cell`, `line`.
+  (default expert), `picture` (`none`, the default; `auto`, `heart`,
+  `diamond`, `ring`, `cross`, `tree`, `house`), `palette` (`mono`, the
+  default; `colour`), `cell`, `line`.
+- **Picture mode (`picture`):** a motif is drawn over the board from a
+  formula (so it fits any size and is left–right symmetric), one or two
+  colour classes plus the background; `auto` lets the seed pick. The carve
+  then keeps every galaxy inside one class — its core and every mirrored
+  pair it grows by share the first cell's class — so the shaded galaxies
+  are exactly the motif (checked). The dots' colours are a picture, not a
+  clue: uniqueness is proven without them, by the solving ladder at every
+  size (up to 9×9 the tests re-prove each board with the exhaustive
+  search), and every picture board is rated by the ladder's hardest rung
+  (`rating_basis: hardest_rung`) — galaxy density would put every picture
+  in the densest band. Served: 5×5 and 7×7 easy, medium and hard for most
+  seeds (expert now and then); 9×9 hard and expert; 12×12 hard and expert;
+  15×15 hard or expert. Under 0.4 s at every size. Metadata adds `picture`
+  (the motif) and `picture_galaxies`.
+- **Palette (`palette`):** `mono` prints black and white dots and shades the
+  picture grey in the key; `colour` gives the picture's dots and key their
+  colours (heart red, tree green with a brown trunk, house yellow with a
+  red roof …). On a board without a picture, `colour` tints the key's
+  galaxies in four soft colours, neighbours (almost always) differing; the
+  puzzle page is unchanged. Metadata adds `palette: "colour"`. With
+  `picture: none` and `palette: mono` every page is byte-identical to
+  before.
 - **Generation:** symmetric galaxies are grown to cover the board, each cell
   added together with its 180° image so symmetry holds by construction; dots
   are placed only where their whole core mirrors on-board. The dots are then

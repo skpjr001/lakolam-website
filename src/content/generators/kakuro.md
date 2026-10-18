@@ -22,6 +22,10 @@ runs share cells, so a placed digit narrows its crossing run. Work outward from
 those forced corners, using the combination tables and the no-repeat rule
 together. No guessing is ever required.
 
+Some boards come in a shape — a circle, a diamond, a heart, a grid with
+holes, or two grids joined at a corner. Only the cells inside the outline
+belong to the puzzle; the rules are exactly the same.
+
 ## Purpose
 
 The arithmetic sibling of the crossword — a staple of newspaper puzzle pages
@@ -39,7 +43,23 @@ cross"). It is Japan's second most popular pencil puzzle after sudoku.
 ## This implementation
 
 - **Spec knobs:** `rows`, `cols`, `block_density` (how much of the interior is
-  blocked before refinement), `difficulty`.
+  blocked before refinement), `difficulty`, `shape` (`rect`, the default;
+  `holey`, `round`, `diamond`, `heart`, `multi`), `cell`, `line`.
+- **Shaped outlines (`shape`):** the outline is fitted to the rows×cols box
+  — `round` an inscribed ellipse, `diamond` a rhombus, `heart` the curve
+  (x² + y² − 1)³ ≤ x²y³, `holey` the rectangle less four square holes at the
+  thirds, `multi` two overlapping grids of two thirds the box sharing a
+  corner block. A cell may take a digit only when it, the cell above it and
+  the cell to its left are all inside, so every clue sits in a board cell;
+  the carve and refinement are otherwise the rectangle's, with uniqueness
+  proven the same way. A narrow outline is easily eaten by refinement, so of
+  up to three boards in the requested band the one keeping the most digits
+  is served (at least a quarter of the outline's cells), and refinement
+  steps are cut off at 25,000 nodes. Cells outside the outline are not
+  drawn; its edge is the bold frame. Bands as for the rectangle (easy and
+  medium). 9×9 under 0.1 s (multi up to 2 s); 12×12 0.05–2.6 s; 16×16
+  1–13 s. Metadata adds `shape`. With `shape: rect` every page is
+  byte-identical to before.
 - **Generation:** refinement rather than sampling — carve a blank pattern,
   fill it with legal digits, then *refine* (add blocks) until the clue set
   admits exactly one filling. Random carves almost never start unique, so the

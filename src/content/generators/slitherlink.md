@@ -18,6 +18,12 @@ Variety boards use other cells. On a **hexagon** board the dots outline
 hexagons and a clue runs from 0 to 6; on a **triangle** board they outline
 small triangles inside one big triangle and a clue runs from 0 to 3.
 
+Tiling boards go further. **Cairo** boards are paved with pentagons that
+pair up like the streets of Cairo; **snub square** boards mix tilted squares
+and triangles; **floret** boards are pentagons gathered six at a time into
+flowers; and **Penrose** boards are cut from the famous never-repeating
+tiling of thick and thin diamonds.
+
 ## How to play
 
 Zeros are gifts: no edge touches them, and a 3 beside a 0 is nearly forced.
@@ -52,6 +58,16 @@ hexagon's 5 leaves just one side free. On triangles the 1s and 2s do the
 work: a 3 would close the loop around a single triangle, so it never appears
 on a real board.
 
+On the tiling boards — pentagons, squares with triangles, flowers of
+pentagons, Penrose diamonds — it is still the same rule: the number in a
+shape counts how many of its sides the loop uses, so a pentagon's clue runs
+up to 5 and a diamond's or a square's up to 4. The faint outlines show the
+shapes; the loop runs along them from dot to dot. Some dots meet three
+edges, some meet many (a Penrose star point meets five, a flower's centre
+six), and the dot rule is unchanged: a dot on the loop has exactly two
+lines. Look first for zeros and for shapes that can take only one more
+line, then work outward along the dots.
+
 ## Purpose
 
 The archetypal loop puzzle and one of Nikoli's "big four". In the workspace it
@@ -74,7 +90,8 @@ It remains one of the most-analysed pencil puzzles in computer science.
   `square` (the default), `hex` (a hexagonal board of hexagons; `rows` sets
   its radius as `rows ÷ 2`, 2–4, i.e. 19, 37 or 61 cells) or `triangular`
   (one big triangle of small ones; `rows` is its rows, 4–8, i.e. 16–64
-  cells). `cols` is ignored off the square grid.
+  cells). `cols` is ignored on hex and triangle boards; the tilings (`cairo`,
+  `snub_square`, `floret`, `penrose`) are described below.
 - **Generation:** answer first — a closed loop is grown on the dual grid as a
   random simple polygon (the `lattice` module, shared through `lako-grid`),
   every cell's edge count is read off it, then clues are removed while the
@@ -124,3 +141,40 @@ It remains one of the most-analysed pencil puzzles in computer science.
   exhaustive count, and `lako-loop` checks every rung against brute force on
   small boards. Boards up to 8×8, and hex and triangle boards, are
   byte-identical to 1.2 (clue-share rating, exhaustive count).
+- **Tilings — Cairo, snub square, floret, Penrose:** `grid: "cairo"`,
+  `"snub_square"`, `"floret"` or `"penrose"`. Each board is a patch of the
+  tiling built from exact coordinates (square roots only, no trigonometry,
+  so every platform lays it out identically) and read into the general
+  dot/edge/face graph. Cairo: equilateral pentagons from a `rows × cols`
+  block of squares (3–10 each; 6×6 = 60 pentagons, 10×10 = 180). Snub
+  square (3.3.4.3.4): unit squares and triangles in a window `rows × cols`
+  tile edges (3–10; 6×6 ≈ 67 tiles, 10×10 ≈ 171). Floret: the dual of the
+  snub hexagonal tiling — pentagons with sides 1 and 2, six round each
+  flower centre — in a window `rows × cols` (3–10; 6×6 ≈ 55, 10×10 ≈ 156).
+  Penrose (P3): a sun of Robinson triangles deflated six times and paired
+  into thick and thin rhombi; a round patch of radius `rows × ⅔` edges
+  (rows 3–10; 6 ≈ 61 rhombi, 10 ≈ 169) cut around a spot the seed picks
+  within three edges of the centre, so each seed gets its own patch; `cols`
+  is unused. Every patch is one piece with no holes (checked: Euler
+  characteristic 1 for every size). Generation is the large square board's
+  plan on the general graph: grow a connected hole-free set of tiles, take
+  its outline as the loop, clue every tile, and blank clues only while a
+  sound **general-graph ladder** still settles every edge: basics (dot
+  degree 0 or 2, face counts), patterns (one face with its corner dots, every
+  way at once), no small loops, inside/outside (face parity through chains,
+  and a clue counted class by class), what-if, both ways and deep what-if —
+  the same rungs and names as `lako-loop`. The band is the hardest rung the
+  solve needed (`rating_basis: "hardest_rung"`, `hardest_rung`, `rung_uses`,
+  `proof` in meta). An Expert request the ladder thins only to an easier band
+  gets one more pass where a clue may go when the exhaustive count (cap 2,
+  20,000-node budget) completes with exactly one loop — running out keeps
+  the clue — and such a board is rated Expert with `hardest_rung: "search"`
+  and `proof: "exhaustive_count"`. All five bands are reached at 6 and 10
+  on every tiling at the default seed; generation takes under 1 s at the
+  largest size (Expert), and milliseconds at the default size. The tests
+  re-prove the boards with the general edge search and, on small boards,
+  by enumerating every set of enclosed tiles; they also check every ladder
+  rung against brute force on random clue subsets (no mark ever disagrees
+  with any answer). Tiles are drawn with faint outlines under the dots;
+  clues are one size per board, from the smallest tile's inner circle. Square,
+  hex and triangle boards are byte-identical to before.

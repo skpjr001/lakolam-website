@@ -29,6 +29,14 @@ cells in a line than that line still needs must stay white, and a tile the
 line cannot do without must be shaded. When single tiles settle nothing,
 weigh the ways the open tiles of a line can add up to what it still needs.
 
+Some pages print two numbers for a line: the shaded-cell count and, in a
+circle beside it, how many separate blocks the shaded cells form — runs of
+shaded cells with at least one white cell between one block and the next. A
+line marked 5 and ② holds five shaded cells in exactly two blocks: 3 and 2, or
+1 and 4, but never one run of five. A ① gathers all of a line's shaded cells
+into one unbroken stretch, so once two shaded cells are known, everything
+between them is shaded too.
+
 ## Purpose
 
 Arithmetic and logic together: each line is a small sum to make from
@@ -45,7 +53,8 @@ finished shading draws a picture, in magazines and apps around the world.
 
 - **Spec knobs:** `size` (4–12; 0 picks from the difficulty — 5, 6, 8, 10,
   12 from Kids to Expert), `difficulty`, `max_tile` (largest tile in cells,
-  2–6, default 4), `cell`, `line`.
+  2–6, default 4), `clues` (`count`, the default, or `dual`), `cell`,
+  `line`.
 - **Generation:** a random tiling grows tiles from cells in seeded order to
   seeded sizes up to `max_tile`; tiles are shaded at random (40–60 %). With
   every total printed, any tile the ladder still leaves open is merged into
@@ -60,6 +69,17 @@ finished shading draws a picture, in magazines and apps around the world.
   up the rest is weighed with a subset-sum table; a tile in all of them or
   none settles) and *trial* (assume a tile, propagate the lower rungs, keep
   the opposite on a contradiction).
+- **Dual clues (`clues: dual`):** every printed line also shows its number
+  of shaded blocks (circled, next to the grid). The ladder gains one rule at
+  the *line sums* rung: every completion of a line's open tiles is weighed
+  against both numbers, and a tile with the same value in all that fit
+  settles. Totals are erased as pairs, so a line shows both numbers or
+  neither; generation is otherwise the same, consumes no extra randomness,
+  and the bands are reached as before (Kids and Easy boards are settled by
+  line bounds alone, so their circled numbers are a help, not a need). The
+  independent search judges a line's blocks once all its cells are settled.
+  Metadata adds `clues: "dual"` and `block_counts`. With `clues: count`
+  every page is byte-identical to before.
 - **Guarantees:** deterministic per seed; every tile shaded whole; exactly
   one shading, proven because the sound ladder settles every tile,
   confirmed by the engine's capped count when it fits its budget, and

@@ -22,6 +22,10 @@ it toward the tip. A full count fills the line, which forces mercury back
 toward the bulbs. Work the extremes first; the contiguity rule carries the
 deductions along each tube.
 
+Some pages have bent thermometers that turn corners. They work the same way:
+the mercury follows the tube around its bends, from the bulb toward the tip,
+and a bent tube can add cells to several rows and columns at once.
+
 ## Purpose
 
 The sibling of `lako-aquarium`: another puzzle whose every shape holds a
@@ -40,11 +44,21 @@ paired in variety collections.
 - **Spec knobs:** `size` (5–9), `max_length` (longest tube; null — the
   default — takes it from `difficulty`: kids and easy the grid side, medium 5,
   hard 3, expert 2, with hard and expert using 4 on 8×8 and 9×9), `difficulty`,
-  `cell`, `line`.
+  `curved` (bent tubes; off by default), `cell`, `line`.
 - **Generation:** the grid is packed with straight thermometers — from each
   free cell the longest available run is taken, so a few long tubes cover the
   board rather than many stubs — each given a random mercury level, and the
   row/column counts read off; kept only when the counts alone force one answer.
+- **Bent tubes (`curved: true`):** from each free cell six random
+  self-avoiding walks through free cells are tried (capped at the longest
+  tube, preferring to turn) and the longest kept, so tubes wind and bend;
+  each is drawn as one rounded tube, mercury following it round the corners.
+  The same exhaustive count proves the fill unique (it never assumed a
+  straight tube), the same density rating applies, and the bands come out as
+  for straight tubes: on 7×7 easy about half the seeds (else medium), medium,
+  hard and expert reliably; on 9×9 easy, medium, and hard or expert served
+  mostly as medium. Metadata adds `curved` and `bends`. With `curved` off
+  every page is byte-identical to before.
 - **Guarantees:** deterministic per seed; mercury is a contiguous run from each
   bulb and the counts match (checked); and an exhaustive search — thermometers
   longest-first, pruned so no line overshoots and every line's deficit stays
