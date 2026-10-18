@@ -2,7 +2,7 @@
 title: "Akari (Light Up)"
 blurb: "Place bulbs to light every cell, with no two bulbs shining on each other"
 category: puzzle
-version: "1.1.0"
+version: "1.2.0"
 ---
 Place light bulbs in white cells so every cell is lit and no two bulbs shine
 on each other.
@@ -22,6 +22,15 @@ forces them all. Cells that no candidate bulb can reach must themselves hold a
 bulb. Mark cells that *cannot* hold a bulb (lit cells, and neighbours of a
 satisfied number) — the answer falls out of the interaction.
 
+On the larger boards two further steps come up. **Shadows:** a cell cannot
+take a bulb if that bulb would shine on every cell that could still light
+some other dark cell, or would rule out so many of a number's neighbours that
+the number could no longer be met. **Trying a cell:** when nothing else
+moves, pick a cell beside an unfinished number (or one of only two cells left
+that could light a dark cell), suppose it holds a bulb, and follow the simple
+steps; if that runs into a contradiction, the cell is empty — and the other
+way round.
+
 ## Purpose
 
 A gentle, visual entry into constraint puzzles — beams are easy to see, and
@@ -38,8 +47,8 @@ twist.
 
 ## This implementation
 
-- **Spec knobs:** `rows`, `cols`, `wall_share`, `numbered_share`,
-  `difficulty`.
+- **Spec knobs:** `rows`, `cols` (3–20 each), `wall_share`, `symmetric`,
+  `difficulty`, `cell`, `line`.
 - **Generation:** answer first — walls are scattered, bulbs are placed by a
   greedy pass that provably lights everything, numbers are read off the walls,
   and numbers are thinned while the board keeps exactly one answer.
@@ -55,3 +64,29 @@ twist.
   second pass from fresh seeds retries it, then moves it in steps of 0.05
   toward 0.2; the metadata reports `wall_share_used`. Every board that
   generated before is unchanged.
+- **Big boards (W16): 12–20 a side.** Boards up to 11×11 are exactly as
+  before (a `u128` mask, an exhaustive count, rated by number share with
+  `rating_basis: "number_share"`). When either side is past 11 the board is a
+  448-bit mask and the proof is a ladder of sound deductions instead of a
+  count: **basic** (beams, numbers met or needing every open neighbour, a dark
+  cell with one candidate left), **shadow** (a bulb that would starve another
+  dark cell or a number), **trial** (suppose a bulb, or no bulb, beside a
+  number or in a two-candidate cell; the basic steps reach a contradiction).
+  Every wall is numbered first; if the ladder, capped at the requested band's
+  rung, cannot settle every cell, a stuck empty cell (and its symmetric
+  partner) becomes a wall, the answer is re-lit and the walls renumbered, up
+  to 40 times — so big boards end with somewhat more wall than `wall_share`
+  asked for (about a quarter at 20×20; `walls` in the metadata is the count).
+  Numbers are then blanked while the capped ladder still settles the board.
+  **Bands:** basic → Easy, shadow → Medium, trial → Hard, by the hardest rung
+  the solve needed (`rating_basis: "hardest_rung"`, `hardest_rung` in the
+  metadata). Kids is served as Easy and Expert as Hard, with
+  `requested_difficulty`. A 20×20 takes well under a second.
+- **Big-board guarantee:** the ladder settles every white cell, and the settled
+  bulbs are re-checked against the rules and against the constructed answer.
+  Tests re-prove uniqueness on 12×12 and 13×13 boards with an exhaustive
+  search that does not use the ladder, and every settled 3×3 wall pattern
+  against the count.
+- **v1.2:** sides 12–20 are new. A spec asking for more than 11 used to be
+  clamped to 11 and now gets the board it asked for, hence the minor bump;
+  every board of 11×11 or less is byte-identical.

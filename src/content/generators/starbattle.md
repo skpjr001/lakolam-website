@@ -1,8 +1,8 @@
 ---
 title: "Star Battle"
-blurb: "Star Battle — one or two stars in every row, column and region, none touching"
+blurb: "Star Battle — one, two or three stars in every row, column and region, none touching"
 category: puzzle
-version: "1.2.0"
+version: "1.3.0"
 ---
 Place a star in every row, every column and every region — no two stars
 touching, not even diagonally.
@@ -33,6 +33,27 @@ stars, so every other cell in those rows is empty. And if only two regions
 reach into two neighbouring rows at all, both regions must put both their
 stars there.
 
+Three-star boards (12×12 to 14×14) work the same way with three stars in
+every row, column and region. Two tools carry most of the big boards:
+
+- **Groups of groups.** Any number of regions whose open cells fit inside
+  the same number of rows (or columns) own all of those rows' stars, so
+  everything else in those rows is empty — and the same with rows inside
+  regions, or rows inside columns.
+- **2×2 blocks.** Any two cells of a 2×2 square touch, so a square holds at
+  most one star. If a row, a region or a pair of neighbouring rows can be
+  covered by exactly as many 2×2 squares as it still needs stars, every
+  square holds exactly one: a square with one open cell left is a star, and
+  any cell touching all of a square's open cells is empty.
+
+On the hardest boards, try a cell: suppose it holds a star, follow the
+counting, and if some row, column or region breaks, the cell is empty.
+
+**Shapeless** boards have no regions: one (or two, three) stars in every
+row and column, none touching, and the black cells are the clue — no star
+goes in a black cell. The same counting, blocks and trial moves apply, with
+rows and columns as the only groups.
+
 ## Purpose
 
 The most-requested modern logic genre the catalogue was missing — a staple of
@@ -49,8 +70,9 @@ from gentle 1★ 6×6s to the tournament-standard 2★ 10×10.
 
 ## This implementation
 
-- **Spec knobs:** `size` (5–9 with one star; 8–10 with two), `stars` (1 or
-  2 per row, column and region; other values are clamped), `difficulty`,
+- **Spec knobs:** `size` (5–9 with one star; 8–10 with two; 12–14 with
+  three), `stars` (1, 2 or 3 per row, column and region; other values are
+  clamped), `shapeless` (no regions; black cells instead), `difficulty`,
   `cell`, `line`.
 - **Generation:** place a valid star arrangement first (depth-first, no two
   touching), grow one region around each star by seeded random flood, then
@@ -103,3 +125,42 @@ from gentle 1★ 6×6s to the tournament-standard 2★ 10×10.
   (counting is the first rung any board needs), nor Expert below 8, nor
   Medium at 5–6 except by rare chance; such requests are served as the
   nearest band and `requested_difficulty` records the request.
+- **Version 1.3 — three stars, shapeless, and the k-star ladder:** a new
+  pipeline (`kstar.rs`) places `k` stars per row and column (row-by-row
+  search over non-touching column sets), grows one small region per star,
+  groups neighbouring small regions into the board's `n` connected regions
+  of `k` stars (regions of at most 20 cells, 26 with three stars), and
+  repairs the layout by local search until its own ladder finishes it. The
+  ladder names the genre's moves, cheapest first: **counting** (neighbours,
+  full groups, last open cells); **confinement** (one group's open cells in
+  one group of another family); **unions** (the same for unions of 2–4
+  groups, any family against any other — multi-region pressure);
+  **2×2 blocks** (a row, column, region or two-line band covered by exactly
+  as many disjoint 2×2 squares as it needs stars: each square holds one);
+  **enumeration** (a group's placements listed, including cells outside it
+  that every placement touches); **what-if** (suppose a cell, follow
+  counting and confinement, a broken rule fixes it). Every rung is sound
+  and the solve settles every cell, so the board is unique; the tests
+  re-prove it with the rules-only placement count. Pages from this path are
+  rated `hardest_rung` — counting Easy (Kids on 1★ shapeless 5–6),
+  confinement/unions/blocks Medium, enumeration Hard, what-if Expert — and
+  their meta carries `rung_uses`, `shapeless` and `blocked_cells`.
+  - **Three stars** (`stars: 3`) on 12×12 to 14×14 (an 11×11 grid has no
+    arrangement of three non-touching stars per row and column — the
+    placement search exhausts it).
+    Bands reached: **Medium**, **Hard**, **Expert**; Kids and Easy are served
+    as Medium (counting alone never finished a multi-star region board).
+    About 0.5–8 s at 14×14.
+  - **Two stars below Hard** now come from this path: Kids, Easy and Medium
+    requests on 8–10 get a real **Medium** board (the 2×2-block rung is what
+    makes it reachable), occasionally Hard or Expert when a layout settles
+    there. This is the one change to existing output, and the reason for
+    the version bump: those requests used to be served as a Hard board
+    (`requested_difficulty` recorded). Two-star Hard and Expert, and every
+    one-star board, are byte-identical to 1.2.
+  - **Shapeless** (`shapeless: true`, any star count, same sizes): stars are
+    placed, every other cell starts black, and blacks are lifted in seeded
+    order while the ladder at the band's ceiling still finishes the board —
+    a minimal-clue climb, so harder bands keep fewer blacks. All five bands
+    are reached (Kids at 1★ 5–6, Easy elsewhere at the bottom); under half a
+    second at 14×14 three-star.

@@ -2,7 +2,7 @@
 title: "Suns & Moons"
 blurb: "Suns & Moons - balance suns and moons, no three alike, obeying = and x marks"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Fill the grid with suns and moons: balanced lines, no three alike, and every
 = and x between neighbours kept.
@@ -47,8 +47,21 @@ the rule that no two lines may be identical.
 
 ## This implementation
 
-- **Spec knobs:** `size` (4, 6 or 8; 0 picks from the difficulty: Kids 4,
+- **Spec knobs:** `size` (even, 4–20; 0 picks from the difficulty: Kids 4,
   Expert 8, otherwise 6), `difficulty`, `cell`, `line`.
+- **The big boards (version 1.1):** the largest board was 8; 10 to 20 are
+  new (a request above 8 was clamped to 8 before). On them the *line* rung
+  enumerates a row or column by a dynamic programme over (moons so far,
+  last symbol, run length), checking each mark as it goes, instead of
+  listing every legal line — the same deductions, proved equal on random
+  lines in the tests. Their full grid is filled by random cells and values
+  with the basic and line rungs propagating after each (the depth-first
+  fill strands itself at these sizes). The trial rung re-propagates the
+  whole board for every open cell and makes digging take minutes, so the
+  big boards dig at the line rung at most: Kids, Easy and Medium requests
+  are served as Medium (basic) or Hard (line), Hard and Expert as Hard,
+  with `requested_difficulty`. 20×20 takes about 1 s (basic) to 3.5 s
+  (line). Requests of 4–8 are byte-identical to 1.0.
 - **Generation:** a full valid grid is filled by randomised depth-first
   search. Every cell is then given and every neighbouring relation marked;
   givens and marks are removed one at a time, in random order, while the

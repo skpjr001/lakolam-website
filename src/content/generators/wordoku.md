@@ -50,6 +50,9 @@ along a row or a diagonal.
 - **Out-of-range knobs (1.1.0+):** the shared size list offers twelve, which
   has no twelve-letter word list; it is now served as nine letters with
   `requested_size: 12` in meta instead of being refused.
+  The sizes the shared list gained later (five, seven, eight, ten, eleven,
+  sixteen) have no word lists either and are refused
+  with a clear message.
 
 - **Footer fit (1.2.0+):** the letter-set line under a nine-letter grid ran
   about 6 pt past both edges of the page at the default cell size; footer text

@@ -2,7 +2,7 @@
 title: "Stitches"
 blurb: "Stitches — sew every pair of neighbouring regions together; the edge numbers count stitched cells"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Sew the patchwork together: one stitch across every border between two
 pieces, and the numbers round the edge count the stitched cells.
@@ -22,7 +22,8 @@ Draw stitches: each stitch joins the centres of two cells that share a side
 and lie in different regions.
 
 - Every pair of regions that share a border is joined by exactly one
-  stitch (in the two-stitch version, exactly two) — no more, no less.
+  stitch (in the two- and three-stitch versions, exactly two or three) — no
+  more, no less.
 - A cell can hold at most one stitch end.
 - The number beside a row (or above a column) tells you how many of its
   cells hold a stitch end. A stitch lying along a row puts two ends in that
@@ -49,9 +50,21 @@ handmade examples, where it is sometimes set with two stitches per border.
 
 ## This implementation
 
-- **Spec knobs:** `size` (5–10; 0 picks from the difficulty — 5, 6, 7, 7, 9
-  from Kids to Expert), `difficulty`, `stitches` (per border, 1–2),
+- **Spec knobs:** `size` (5–15; 0 picks from the difficulty — 5, 6, 7, 7, 9
+  from Kids to Expert), `difficulty`, `stitches` (per border, 1–3),
   `cell` (14–100 pt), `line` (0.2–4 pt). Out-of-range numbers are clamped.
+- **Version 1.1 — big boards and three stitches.** The largest board was
+  10 and the most stitches per border 2; sizes 11–15 and three stitches
+  are new (requests above were clamped before). With three stitches,
+  regions sharing fewer than five border edges are merged, since no cell
+  may hold two stitch ends. On the big boards a region with more
+  neighbours (times the stitches per border) than cells — which can never
+  be sewn — is merged into its smallest neighbour, and the random sewing
+  search gets a larger budget. The ladder is unchanged; by its rating the big
+  boards come out Medium (local) or, far more often, Expert (trial), and an
+  easier request is served at the band reached with `requested_difficulty`.
+  15×15 takes about 0.5–1.6 s with one stitch and 4–5 s with two or three.
+  Requests within the old ranges are byte-identical to 1.0.
 - **Generation:** the grid is cut into random connected regions of about 3
   to `size + 1` cells (smaller leftovers join a neighbour; with two
   stitches per border, regions sharing fewer than three border edges are

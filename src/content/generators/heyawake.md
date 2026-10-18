@@ -2,7 +2,7 @@
 title: "Heyawake"
 blurb: "Paint each room its number of cells, keeping white connected and never running through three rooms"
 category: puzzle
-version: "1.2.0"
+version: "1.3.0"
 ---
 Paint cells by the room numbers — no two painted cells touching, white in one
 piece, and no white corridor running through three rooms.
@@ -22,6 +22,13 @@ before it crosses its second room border, which forces paint in rooms with no
 number at all. Alternate the two: paint from numbers, then scan rows and
 columns for corridors about to run too far.
 
+On the big boards (12×12 to 20×20) a few more habits help. Keep the white in
+one piece: a cell whose painting would cut some white cells off from the rest
+must stay white. List the ways a numbered room can be painted against the cells
+around it, and settle any cell that is the same in all of them. The hardest
+boards ask for one step of "what if": suppose a cell is painted, follow the
+consequences, and if they break a rule, the cell is white.
+
 ## Purpose
 
 The workspace's demonstration that **rooms can be the clue**: a typical board
@@ -38,7 +45,7 @@ boards lean on parity arguments researchers still write papers about.
 
 ## This implementation
 
-- **Spec knobs:** `rows`, `cols`, `max_room`, `difficulty`.
+- **Spec knobs:** `rows`, `cols` (4–20), `max_room`, `difficulty`.
 - **Generation:** rooms by guillotine cuts (rectangles by construction), an
   answer found by the same backtracking search that checks boards, then
   **densified** — cells painted until no more fit — because sparse answers
@@ -87,3 +94,33 @@ boards lean on parity arguments researchers still write papers about.
   the first pass built and that were unique are unchanged; 10×10 and larger
   boards, boards the first pass did not build, and the rare ambiguous board
   change.
+- **Version 1.3 — boards to 20×20, proved by a deduction ladder.** Up to
+  11×11 nothing changes: the same boards, the same count-based proof and the
+  same `numbered_room_share` rating. A `rows` or `cols` above 11 was clamped
+  to 11 and now gives the bigger board (so those specs change, hence the
+  version). Past 11 the count's node budget runs out, and a count that runs
+  out proves nothing, so those boards are proved by a **sound deduction
+  ladder** that must settle every cell: (1) *basic* — paint isolates its
+  neighbours, met and full room numbers, a three-room corridor with one open
+  cell; (2) *rooms and connection* — every painting of a numbered room listed
+  against its surroundings, and cells whose painting would cut the white;
+  (3) *trial* — one assumption followed through rung 1 to a
+  contradiction. Every rung is true of every answer, so settling every cell
+  leaves exactly one painting, and it is checked to be the one the numbers
+  were counted from. The answer itself comes from a small search that puts
+  paint in every three-room corridor, guided by the same rules (local repair
+  settled almost no 15×15 carve), then densified. Where the fully numbered
+  board still leaves cells open, a room holding one is cut in two — by a cut
+  the answer still obeys, so rooms stay rectangles within the cap — and the
+  ladder runs again. Small rooms are what make a big carve infeasible (every
+  pair of borders along a line needs paint between them), so when the
+  requested `max_room` finds nothing the cap steps toward 8 — up from 4 —
+  and `max_room_used` reports it: measured on 20 carves, 15×15 found answers
+  on 5 at cap 4 and 20 at cap 6; 20×20 none at cap 4 or 5, 18 at cap 8. Numbers are thinned while the ladder, capped at the requested
+  band's rung, still settles the board; the band is the hardest rung used
+  (`rating_basis: hardest_rung`, `hardest_rung` in the metadata): basic →
+  Easy, rooms and connection → Medium, trial → Hard. Kids and Expert have no
+  rung of their own on these boards and are served Easy and Hard with
+  `requested_difficulty`. Measured at seed 0xa11ce and 1–3: 12×12 and
+  15×15 take under 1 s in every band; 20×20 Easy and Medium about 1 s, Hard
+  2–3.5 s; 20×20 with `max_room` 12 and Hard 15–22 s.
