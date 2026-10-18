@@ -25,6 +25,14 @@ dash for every letter between (B – – – N), or just a dash per letter. Work
 out what the word could be from its length and letters, then hunt for it;
 starting with the longest words leaves the fewest choices.
 
+**One word.** Some pages hide a single word, and every letter in the grid is
+one of that word's letters — so no odd letter stands out to start from. The
+word appears exactly once, in a straight line in any of the eight
+directions, forwards or backwards. Pick one letter of the word (the rarest
+in the grid is best), and at each place it appears check every direction
+for the next letter, then the next. Most tries fail after two or three
+letters: keep going until one runs the whole length.
+
 ## Purpose
 
 The most accessible puzzle in the catalogue — no rules to learn, playable by
@@ -67,6 +75,22 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
   unset leaves your own words cleaned as before (A-Z only). `count` (0 =
   all of your words, or for a theme a random selection of about one word
   per thirteen cells).
+- **One-word mode:** `mode` (`words`, the default — everything above; or
+  `one_word`) and `word` (empty picks one by the seed from a
+  family-friendly list per band: Kids three-letter words with two or three
+  different letters such as SUN or MOM, Easy four letters, Medium five, Hard
+  six, Expert seven or eight; or give your own, cleaned to A–Z). The band
+  also sets the grid — Kids 6×6, Easy 8×8, Medium 10×10, Hard 12×12, Expert
+  15×15 — unless `rows`/`cols` are changed from 14×14, and the direction
+  ladder (or `directions`) sets the way the word runs: Kids reads across or
+  down, Expert any of the eight. The grid is filled only with the word's own
+  letters, in proportion. A word shorter than three letters, one made of a
+  single repeated letter (AAA would appear everywhere) or one too long for
+  the grid is refused as an invalid spec. The page says "Find the word WORD
+  — it appears exactly once" (`word_list: false` leaves the line off); the
+  key draws the line through it. `theme`, `count`, `filler`,
+  `hidden_message` and `list_style` do not apply; `word` is ignored in
+  `words` mode.
 - **Generation:** backtracking placement with controlled overlap density;
   fill letters sampled from the placed words' distribution, or, for a
   list in a language other than English, from that language's letter
@@ -78,5 +102,20 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
   located by scanning the finished grid (the answer key is drawn from that
   scan, so key and grid cannot disagree); words the filler accidentally
   duplicates are counted and reported as ambiguous_words in the metadata.
+- **One-word guarantee:** exactly one occurrence. An occurrence is a
+  straight line of cells, in any of the eight directions, that reads the
+  word forwards or backwards; each distinct set of cells counts once, so a
+  palindrome (NAN, LEVEL) read both ways along the same cells is one, and a
+  word that overlaps itself (ABAB inside ABABAB) is two. After placing the
+  word and filling the rest from its letters, the generator repairs every
+  other occurrence (min-conflicts: one of its free cells takes the letter
+  that leaves the fewest spellings through that cell), then scans every
+  cell and direction of the finished grid and refuses anything but the one
+  placement; tests recount with an independent scan over every pair of
+  cells on a line. Meta: `mode: "one_word"`, `word`, `word_source`
+  (`list` or `custom`), `unique: true`, `occurrences: 1`, `letters` (how
+  many different letters), `answer_reversed`, `rating_basis`
+  (`grid_size_word_length_and_directions`). Pages in `words` mode are
+  unchanged by the new options.
 - **Difficulty:** grid size, direction set, word length distribution and fill
   entropy, banded.

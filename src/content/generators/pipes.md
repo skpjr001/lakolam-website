@@ -30,6 +30,17 @@ bend.
   tile to any other.
 - Shaded tiles are fixed: copy them as they are.
 
+Two variations change the rules (the page says so under the boards):
+
+- **The edges join.** Little arrows all round the board mean it wraps: a
+  pipe that leaves one edge comes back in on the opposite edge, in the same
+  row or column, so no pipe ever points off the board. Everything else is
+  the same — one network, no loops.
+- **Closed loops.** Instead of one network, turn the tiles so the pipes make
+  closed loops: every pipe end meets another pipe end and nothing is left
+  loose. There may be several separate loops, and some squares are empty.
+  The tiles are straights and bends only.
+
 Good places to start: a tile in a corner or on the edge has fewer ways to
 turn, because no pipe may point outwards. A straight on the edge must run
 along it. Two ends next to each other can never point at each other, or
@@ -55,8 +66,13 @@ idea works on paper: you redraw each tile on an empty grid, the way other
 ## This implementation
 
 - **Spec knobs:** `size` (3–12; 0 picks from the difficulty — 4, 5, 6, 7, 9
-  from Kids to Expert), `difficulty`, `cell` (tile size, 18–90 pt), `line`
-  (0.2–4 pt). Out-of-range numbers are clamped and the value asked for is
+  from Kids to Expert; loop boards 4, 5, 6, 8, 10), `difficulty`, `cell`
+  (tile size, 18–90 pt), `line` (0.2–4 pt), `wrap` (default off: the board
+  is a torus, pipes cross the edges; drawn with an outward arrow beside every
+  edge square), `target` (`tree`, the default: one loop-free network;
+  `loops`: closed loops of straights and bends, empty squares allowed, any
+  number of loops). With both options off the page is exactly the classic
+  one. Out-of-range numbers are clamped and the value asked for is
   reported in meta (`requested_size`, `requested_cell`, `requested_line`).
 - **Generation:** a random spanning tree of the grid with no tile of more
   than three pipe ends (random edge order, joining pieces while the cap
@@ -67,13 +83,23 @@ idea works on paper: you redraw each tile on an empty grid, the way other
   every link from the tile shapes alone. If the swaps stall, tiles are fixed
   in place one at a time (the best of a sample each time) until the board
   settles, then unfixed where not needed. Every loose tile is then shown
-  turned a random number of quarter turns.
+  turned a random number of quarter turns. Wrapped boards do the same on the
+  torus (every tile has four neighbours). Loop boards grow loops instead: the
+  rings of 2×2 blocks (on a torus also the blocks across the edges and the
+  whole rows and columns) are toggled in random order, each kept with even
+  odds while every tile stays a straight, a bend or empty, until at least
+  three fifths of the squares carry pipe; they are reshaped by ring toggles
+  near the unsettled links (never below that cover) and fixed tiles are the
+  fallback, as above.
 - **Solving:** a ladder on yes/no variables, one per link between
   neighbouring tiles. *Local*: each tile's links are a turn of its shape and
   none points off the board. *Network*: a link between two tiles already
   joined would close a loop, so it is ruled out; every tile must still be
   reachable; and a link every remaining way round depends on (a bridge) is
   forced. *Trial*: assume a link, keep the opposite on a contradiction.
+  On a wrapped board the same rules run on the torus's links. Loop boards
+  have no network rung (loops are allowed and the pieces need not join):
+  local, then trial.
 - **Guarantees:** deterministic per seed; exactly one network, proven
   because the sound ladder settles every link (`uniqueness_proof`),
   confirmed by a capped exhaustive count when cheap (`count_confirmed`), and
@@ -81,7 +107,15 @@ idea works on paper: you redraw each tile on an empty grid, the way other
   reading order. Rated by the hardest rung needed with size as the
   tie-break (local: Kids up to 4×4, else Easy; network: Easy up to 5×5,
   else Medium; trial: Hard up to 8×8, else Expert). Every band is reached at
-  its default size. With a custom `size` the label states the band actually
+  its default size, wrapped or not. Loop boards settle by the local rung
+  alone (their tiles leave few choices once the empty squares and the
+  neighbours are known), so their band is by size: Kids up to 4×4, Easy
+  5×5, Medium 6–7, Hard 8–9, Expert 10 and up (a board that needed the trial
+  rung would be at least Hard); the meta then carries `target: "loops"`,
+  `loops` (the number of separate loops) and `empty_squares`. Wrapped
+  boards carry `wrap: true`. The independent search re-proves both variants
+  (on a torus it also matches the last row with the first and the last
+  column with the first; on a loop board it skips the one-network check). With a custom `size` the label states the band actually
   reached and `requested_difficulty` records the request: Kids from 5×5 up
   is Easy, Medium up to 5×5 is Easy, Expert up to 8×8 is Hard, Hard from
   9×9 up is Expert, a 3×3 board is always Kids, and on 4×4 and 6×6 Hard and
