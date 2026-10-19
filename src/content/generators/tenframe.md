@@ -23,6 +23,10 @@ page asks one of four things:
 - **Draw the counters.** Draw the number of counters asked for in the empty
   frame.
 
+A five frame is the same idea with one row of five squares, for numbers
+up to 5: a full five frame is 5, and the questions ask how many, how many
+more make 5, the number sentence (3 + 2 = 5), or to draw the counters.
+
 The easiest pages count up to ten in one colour, with counters filling the
 top row first. Harder pages scatter the counters, use two colours, and add
 two frames for the teen numbers and sums that cross ten.
@@ -44,6 +48,10 @@ then 10. With two frames, the full frame is 10: 10 + 3 = 13.
 To draw a number, put one counter in each square, filling the top row from
 left to right before the bottom row.
 
+On a five frame, count the counters the same way; the empty squares are the
+counters still needed to make 5, so 3 counters and 2 empty squares make
+3 + 2 = 5.
+
 ## Purpose
 
 Ten frames build number sense before written sums: seeing 7 as "5 and 2
@@ -53,6 +61,11 @@ some more", and the make-ten strategy for sums such as 8 + 5 (fill the frame
 with 2 of the 5, then 3 more) all come straight from the picture. The page
 suits kindergarten and first grade classrooms, homeschool and early-years
 workbooks.
+
+Grade notes: five frames suit pre-kindergarten and kindergarten (ages 4-5,
+UK Reception, India LKG/UKG), numbers to 5 before numbers to 10; one ten
+frame suits kindergarten to grade 1 (ages 5-6); two frames, the teen
+numbers and sums that cross ten, grade 1 into grade 2 (ages 6-7).
 
 ## History
 
@@ -67,7 +80,7 @@ India.
 ## This implementation
 
 - **Spec knobs:** `difficulty`; `tasks` (`mixed`, `how_many`, `make_ten`,
-  `number_sentence`, `draw`); `frames` (`auto`, `single`, `double`); `fill`
+  `number_sentence`, `draw`); `frames` (`auto`, `single`, `double`, `five`); `fill`
   (`auto`, `row_first`, `scattered`); `colours` (`auto`, `one`, `two`);
   `problems` (1-9 with one frame, 1-6 with two; 0 = 6 at Kids, 8 with one
   frame, 5 with two); `locale` (`us`, `uk`, `in`: the grade tag reads
@@ -75,6 +88,15 @@ India.
   Class 1-2 and "maths"); `colour` (blue and yellow counters, or black and
   open counters for black-and-white printing); `show_level`; `width`,
   `height` (Pt, default US letter); `line`.
+- **Five frames** (`frames: five`): one row of five squares, 1 to 5
+  counters; "make ten" asks how many more make 5 and a one-colour sentence
+  is counters + empty squares = 5. The page is a kindergarten page (served
+  at Kids, meta `requested_difficulty` when another level was asked, and
+  `five_frame: true`); the requested level still picks the question mix,
+  fill and colours. Six problems by default, at most nine, and never more
+  of one kind than there are different five-frame problems of it (5 to
+  count or draw, 4 to make 5, 4 one-colour and 10 two-colour sentences),
+  so no problem repeats. `auto` never picks a five frame.
 - **Generation:** difficulty maps to grade. Kids (kindergarten): one frame,
   1 to 10 counters in one colour, filled row first; how many, draw, make
   10. Easy (kindergarten-grade 1): one frame with two-colour number

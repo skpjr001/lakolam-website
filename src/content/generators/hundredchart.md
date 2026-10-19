@@ -20,7 +20,8 @@ ten. This page comes in three kinds:
   at the stripes and diagonals it makes, or colour listed numbers in listed
   colours to uncover a hidden picture.
 
-Harder pages blank out more numbers, cut bigger pieces with fewer clues, use
+The 120 chart adds two more rows, 101 to 120, so counting carries on past
+one hundred. Harder pages blank out more numbers, cut bigger pieces with fewer clues, use
 trickier skip counts, and move to the 0–99 or 101–200 charts.
 
 ## How to play
@@ -43,6 +44,9 @@ square with the colour named beside the list. On harder pages, 21-24 means
 every number from 21 to 24. When all the numbers are coloured, a picture
 appears.
 
+On the 120 chart the rows below 100 work the same way: the square below 95
+is 105, and the square to the right of 109 is 110.
+
 ## Purpose
 
 The hundred chart is one of the most used tools in early-grades maths: it
@@ -52,6 +56,12 @@ make children reason with "+1, +10" moves instead of copying from a chart;
 skip-counting pages turn multiplication tables into pictures; and the
 mystery pictures reward careful number finding. Teachers, homeschoolers and
 activity-book makers use all four.
+
+Grade notes: the 1-100 chart suits kindergarten to grade 2 (ages 5-8),
+missing numbers and multiples of 10 and 5 first; the 120 chart is the
+grade 1 chart (ages 6-7), where children learn to count, read and write
+numbers to 120; skip counting by 3s to 12s and the 0-99 and 101-200 charts
+suit grades 2-3 (ages 7-9).
 
 ## History
 
@@ -65,7 +75,7 @@ familiar worksheet genres of their own.
 
 - **Spec knobs:** `mode` (`missing`, `pieces`, `pattern`), `pattern` (`auto`,
   `multiples`, `picture` — used in pattern mode), `range` (`auto`, `1-100`,
-  `0-99`, `101-200`), `difficulty`, `cell` (chart cell side in Pt; the page is
+  `0-99`, `101-200`, `1-120`), `difficulty`, `cell` (chart cell side in Pt; the page is
   ten cells plus margins wide, letter proportions), `line`.
 - **Generation:** difficulty maps to grade level. Missing: 12 / 24 / 40 / 55
   / 70 blanks from Kids to Expert; Kids blanks never touch, so every blank has
@@ -77,7 +87,13 @@ familiar worksheet genres of their own.
   7, 8, 9, 11 or 12 (Expert); hidden pictures are chosen from twelve vendored
   10×10 pixel pictures (one or two colours at Kids and Easy), with runs of
   three or more numbers written as ranges at Hard and Expert. Auto range is
-  1–100 up to Medium, 0–99 at Hard and 101–200 at Expert.
+  1–100 up to Medium, 0–99 at Hard and 101–200 at Expert; `auto` never
+  picks the 120 chart. The 120 chart (`range: "1-120"`) has twelve rows of
+  ten in the same page height (smaller squares); missing pages blank the
+  same share of it (14 / 28 / 48 / 66 / 84), pieces are grown and checked
+  over all twelve rows, skip counts run to 120, and a hidden picture sits
+  in the middle ten rows (numbers 11-110). Meta adds `rows: 12` and
+  `range: "1-120"`.
 - **Solving:** the chart itself determines every blank. For pieces, each
   fragment's shape is tried at every position on the chart and the printed
   numbers must match at exactly one of them; a piece with no printed number

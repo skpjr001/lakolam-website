@@ -22,6 +22,9 @@ of four kinds:
   multiplication for each: 3 x 4 = 12 and 4 x 3 = 12.
 - **Sharing.** A row of objects to share equally into circles, then the
   division: 12 shared into 3 groups is 12 / 3 = 4, with 4 in each group.
+- **Split arrays** (a page of their own). A line splits a big array into
+  two smaller ones: 4 rows of 7 becomes 4 rows of 3 and 4 rows of 4. Work
+  out each part, then add them: 4 x 7 = 12 + 16 = 28.
 
 The easiest pages use two or three rows of up to five; the hardest use
 arrays up to ten rows of twelve and sharing into as many as eight groups.
@@ -45,6 +48,11 @@ dealing cards, until none are left. You can cross each one off as you draw
 it in a circle. Every circle ends up with the same number. Write the
 division and how many are in each group.
 
+For split arrays, look at the line: it cuts every row into the same two
+pieces. Multiply the left part (rows x the columns left of the line), then
+the right part, and add the two answers. That is the whole array: 4 x 7 is
+4 x 3 plus 4 x 4. Splitting at a 5 or a 10 makes the parts easy facts.
+
 ## Purpose
 
 Arrays turn multiplication from a list of facts into something a child can
@@ -53,7 +61,10 @@ the same number of objects. Sharing into equal groups is the first meaning
 of division, and doing both on one page shows that the two are opposites.
 The same picture later becomes the area model for multiplying larger
 numbers. The page suits second and third grade (Years 3 and 4 in the UK),
-with an easier level for younger children meeting equal groups.
+with an easier level for younger children meeting equal groups. Split
+arrays (the distributive property, "break apart" facts) belong to grade 3
+(Common Core 3.OA.5 and 3.MD.7; Year 4 in the UK) and help with the 6, 7, 8
+and 9 times tables at Hard and Expert.
 
 ## History
 
@@ -68,7 +79,8 @@ Curriculum uses arrays and "lots of" language from Year 2.
 ## This implementation
 
 - **Spec knobs:** `difficulty`; `tasks` (`mixed`, `rows_of`,
-  `repeated_addition`, `commutative`, `sharing`); `objects` (`mixed`,
+  `repeated_addition`, `commutative`, `sharing`, `distributive` — a page of
+split arrays, never part of `mixed`); `objects` (`mixed`,
   `dots`, `stars`, `hearts`, `squares`); `problems` (1-8, 0 = 5, or 4 at
   Expert); `locale` (`us`: "groups of", Kindergarten / Grade 1-3 and "math";
   `uk`: "lots of", Year 1-4 and "maths"; `in`: "groups of", UKG / Class 1-3
@@ -84,7 +96,12 @@ Curriculum uses arrays and "lots of" language from Year 2.
   picture stay readable. A problem is kept only if the page still obeys
   every rule and does not repeat an earlier problem; products are kept
   different where the range allows, and when a small range runs out of new
-  problems the next size up is used.
+  problems the next size up is used. Split arrays (`distributive`): Kids 2-3
+  rows of 4-6, Easy 2-5 rows of 4-7, Medium 2-6 rows of 5-9, Hard 3-8 rows of
+  6-12, Expert 4-10 rows of 8-15; the line leaves at least two columns on
+  each side, and from Hard up it falls after 5 or 10 columns six times in ten
+  where it can (otherwise anywhere). The right part is drawn in a second
+  colour, a little apart, with a black line between.
 - **Solving:** answers are exact whole-number products and quotients;
   sharing problems are built as groups times the number in each group, so
   they always divide exactly.
@@ -93,7 +110,10 @@ Curriculum uses arrays and "lots of" language from Year 2.
   draws both arrays in full); the sharing row holds exactly the total; the
   answer key draws the same number in every circle, and the circles add up
   to the total (tested); repeated additions add up to the product and
-  turned arrays give the same product both ways; every array has at least 2
+  turned arrays give the same product both ways; a split array's two parts
+  are counted object by object on the drawn page and equal rows x left
+  columns and rows x right columns, and add to the whole (meta `split` gives
+  the columns left of the line); every array has at least 2
   rows and 2 columns; no problem repeats on a page (`answers_checked`,
   `objects_counted`). Rating basis: grade level and array size. Every
   difficulty is reachable with every task.

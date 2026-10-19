@@ -12,7 +12,8 @@ way.
 
 Every digit in a number is worth something different depending on where it
 stands: in 4,352 the 4 is worth four thousand and the 5 is worth fifty. The
-page practises that idea in six ways:
+page practises that idea in six ways, and a seventh page shows it with
+place-value disks:
 
 - **Place-value chart.** Write a number in the chart, one digit per column,
   or read the number a filled chart shows.
@@ -23,6 +24,9 @@ page practises that idea in six ways:
 - **Underlined digit.** Write what the underlined digit is worth.
 - **Compare.** Write <, > or = between two numbers.
 - **Order.** Put four or five numbers in order, smallest or largest first.
+- **Place-value disks.** Round counters worth 1, 10, 100 or 1000 sit in
+  the columns of a mat: write the number they show, or draw disks to show a
+  number.
 
 Numbers are written the way the reader's school writes them. In the US and
 the UK digits are grouped in threes (1,234,567 is one million two hundred
@@ -61,6 +65,16 @@ digit by digit from the left until two digits differ. The wide end of < or
 **Order.** The signs between the blanks show the way: < means smallest
 first, > means largest first.
 
+**Place-value disks.** Each disk is worth the number printed on it, and it
+sits in the column for its place: ones, tens, hundreds, thousands. To read
+the mat, count the disks in each column and write that many in that place:
+3 thousands, 0 hundreds, 4 tens and 2 ones make 3,042. To show a number,
+draw one disk for each unit of each digit: 2 disks in the thousands, 4 in
+the hundreds, and so on, leaving a column empty for a zero. On harder pages
+a column can hold ten or more disks. Ten disks in one column are worth one
+disk in the next column to the left, so trade them: 12 tens are 1 hundred
+and 2 tens. Make the trades first, then write the number.
+
 ## Purpose
 
 Place value underpins every written calculation and reading big numbers.
@@ -70,6 +84,13 @@ the value of a digit, comparing and ordering. Indian classrooms learn the
 lakh-and-crore system and the international system side by side, so the
 page draws both correctly, with the right commas, chart and words; US and
 UK pages differ in their words ("and") and their terms.
+
+Grade notes: the disks page follows the usual order of teaching. Kids
+(grades 1-2) has tens and ones; Easy (grade 2-3) adds hundreds; Medium
+(grades 3-4) has four-digit numbers; Hard and Expert (grades 3-4, the year
+regrouping is taught for addition and subtraction) put ten to fifteen disks
+in one or two columns, so the reader has to trade ten for one before
+writing the number.
 
 ## History
 
@@ -85,7 +106,7 @@ words across South Asia, where numbers are grouped 12,34,567 to match them.
 
 - **Spec knobs:** `difficulty`, `locale` (`us`, `uk`, `in`), `tasks`
   (`mixed`, `chart`, `expanded`, `words`, `underlined`, `compare`,
-  `order`), `decimals` (`auto`, `none`, `tenths`, `hundredths`,
+  `order`, `disks`), `decimals` (`auto`, `none`, `tenths`, `hundredths`,
   `thousandths`), `problems` (single-task pages; 0 fills the page, and a
   larger count is cut to what fits), `width` and `height` (Pt, default US
   letter), `line`.
@@ -102,6 +123,14 @@ words across South Asia, where numbers are grouped 12,34,567 to match them.
   can run to seven or more digits, decimals included), two expanded-form
   and two words problems, two or four underlined digits and comparisons,
   and one ordering; its size is fixed in advance so that it fits the page.
+  A `disks` page (6 problems by default) alternates reading a mat and
+  drawing a number, on a mat of two (Kids), three (Easy) or four columns;
+  it ignores `decimals` and is always whole numbers. Draw problems use the
+  digits as they are (no column over nine); on Hard one lower column of
+  each read problem holds 10-15 disks, on Expert two, and the thousands
+  column stays at most 8 so the number keeps four digits. Disks are tinted
+  by place and labelled with their value; the key draws the disks for draw
+  problems.
 - **Solving:** numbers are exact integers scaled by a power of ten; every
   answer is computed from them: grouped digits, expanded parts, words (US
   without "and"; UK with "and" after hundreds and before a last group under
@@ -112,7 +141,11 @@ words across South Asia, where numbers are grouped 12,34,567 to match them.
   or three then twos) on thousands of numbers; the words for every number
   on every page, and for thousands of random numbers in all three locales,
   parse back to the digits with an independent parser; comparisons and
-  orders match an independent digit-string comparison; the underlined
+  orders match an independent digit-string comparison; a disks answer
+  matches a written column addition with carries, and a draw answer's
+  counts are the number's digits; the underlined
   character is the digit whose value is asked; every printed word is in the
-  page's font (`answers_checked`). Rating basis: digits and decimal places.
+  page's font (`answers_checked`). Rating basis: digits and decimal
+  places (disk pages: digits and regrouped columns, `rating_basis:
+  digits_and_regrouping`, meta `regrouped_columns`).
   Every difficulty is reachable with every locale and task.
