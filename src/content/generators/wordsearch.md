@@ -20,6 +20,12 @@ Sweep each row and column with the word's first two letters in mind, then
 check both diagonals. Circle finds and cross them off the list. On the harder settings, leftover letters can spell a hidden message once
 every word is found.
 
+Some pages say how many letters are left over and give a dash for each:
+once every word is found and crossed out, read the letters still uncrossed
+row by row, left to right, and they spell more words on the theme. A word
+in the list may be two or more words long (NEW YORK, ICE CREAM): in the
+grid it runs as one word, with no gap.
+
 Some lists show only part of each word: its first and last letters with a
 dash for every letter between (B – – – N), or just a dash per letter. Work
 out what the word could be from its length and letters, then hunt for it;
@@ -75,6 +81,36 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
   unset leaves your own words cleaned as before (A-Z only). `count` (0 =
   all of your words, or for a theme a random selection of about one word
   per thirteen cells).
+- **Added in wave 22** (each off by default; a page without them is
+  unchanged): the shared lexicon's hundred-odd new English themes
+  (occasions such as `birthday`, `wedding`, `st_patricks`; places such as
+  `city`, `castles`, `landmarks`, `countries`, `world_rivers`; kids' topics
+  such as `pirates`, `toys`, `bugs`, `robots`, `feelings`; hobbies and
+  sports; `tools`, `hospital`; foods of the world; and public-domain books:
+  `wonderland`, `oz`, `shakespeare`, `dickens`, `sherlock`, `greek_myths`,
+  `norse_myths`, `king_arthur`, `robin_hood`, `peter_pan`,
+  `treasure_island`, `jungle_book`, `nursery_rhymes`, `aesop`,
+  `arabian_nights`); in another language each falls back to the nearest
+  of the ten shared themes, as above. `density` (`normal`, about one theme
+  word per thirteen cells; `dense`, one per seven, 32 at 15×15; `packed`,
+  one per five, 45 at 15×15, as many as fit — a 15×15 `us_states` page
+  places about 35). `large_print`: a 14 × 17 grid (when `rows`/`cols` are
+  left at 14×14), letters at three quarters of the cell instead of 0.6,
+  and the list at 0.8 of the cell. `auto_message`: the leftover letters,
+  read row by row, spell one to six more words — unused theme words (the
+  starter list draws them from the space theme, your own list from
+  everyday words). More theme words are hidden first until at most 21
+  cells are left, then the fewest words whose lengths fill the leftover
+  cells exactly are chosen, refusing any that would spell a second copy of
+  a listed word; the list ends with "The N leftover letters spell a hidden
+  message of K words:" and a dash per letter (wrapped to the page), the key
+  prints the words. It takes the place of `hidden_message`; a grid with
+  more leftover cells than six words can fill (a big grid on a short list)
+  is refused as an invalid spec. `spaced_list`: multi-word entries print
+  with their spaces (the lexicon marks them; your own words keep the
+  spaces, hyphens and apostrophes you typed, as spaces), each part in the
+  list style. Meta, only when used: `density`, `large_print`,
+  `hidden_message` and `message_words`, `spaced`.
 - **One-word mode:** `mode` (`words`, the default — everything above; or
   `one_word`) and `word` (empty picks one by the seed from a
   family-friendly list per band: Kids three-letter words with two or three
@@ -98,6 +134,10 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
   and answer key rendered from the same placement, so they cannot disagree.
   A theme list is a pool: the words for a page are drawn from it on their
   own seed stream, so pages without a theme are unchanged.
+- **Auto-message guarantee:** the message words are exactly the cells no
+  listed word covers, in reading order (tests read them back), none is a
+  listed word, and the message spells no copy of a listed word that was not
+  there without it (tests blank the message cells and recount).
 - **Guarantees:** every listed word is findable and its occurrences are
   located by scanning the finished grid (the answer key is drawn from that
   scan, so key and grid cannot disagree); words the filler accidentally

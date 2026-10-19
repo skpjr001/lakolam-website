@@ -9,7 +9,7 @@ letters.
 
 ## What it is
 
-A 4×4 (or 5×5) grid of letter dice. Make words by moving from die to die —
+A 4×4 (or 5×5) grid of letter dice, or a small 3×3 or a big 6×6 to 8×8 one. Make words by moving from die to die —
 across, up, down or diagonally — using each die at most once in a word. Words
 must be at least three letters long (four, or five, on harder grids). The
 "Qu" die counts as the two letters together. The page says how many words and
@@ -40,7 +40,17 @@ the 5×5 version, followed in 1979.
 
 - **Spec knobs:** `difficulty` (4×4 with three-letter words for Kids and Easy,
   four-letter minimum for Medium, 5×5 with four- and five-letter minimums for
-  Hard and Expert), `cell`.
+  Hard and Expert), `cell`, `size` (added in wave 22: 0, the default,
+  lets the difficulty choose; 3 to 8 asks for that grid, outside clamped
+  and noted as `requested_size`).
+- **Other sizes:** 3×3 rolls nine of the classic sixteen dice and counts
+  words of three letters (rated Kids); 6×6 to 8×8 roll from two classic
+  and two big sets shuffled together (82 dice) and keep the difficulty's
+  shortest word, rated like 5×5 by it (three letters Medium, four Hard,
+  five Expert); a band served other than the one asked for is noted as
+  `requested_difficulty`. Rolls are drawn on their own streams until the
+  word count lands in the difficulty's band scaled to the grid's area.
+  Asking for the side the difficulty already uses gives the old page.
 - **Generation:** the grid is rolled from the real dice sets — the sixteen
   classic dice for 4×4, the twenty-five Big Boggle dice for 5×5 — shuffled
   into place and each showing a random face. Rolls are drawn until the word

@@ -36,6 +36,12 @@ flipped over, and no two pieces may overlap. Pieces touch along their sides.
 There is often more than one way to make a shape. Any way that uses all
 seven pieces without overlaps is right.
 
+Some pages use a smaller puzzle instead of the seven tans: four pieces that
+make a letter T, H, L or F, or a cross. Cut them out and fit them together
+the same way - every piece once, turned or flipped as you like, none
+overlapping. When only one piece is drawn in, it is the biggest one: start
+there.
+
 ## Purpose
 
 Tangrams build spatial reasoning: seeing how shapes turn, flip and fit
@@ -64,7 +70,9 @@ proved that exactly thirteen convex shapes can be made from the seven tans.
   full size; Hard: four outlines at half size; Expert: four convex shapes
   at half size), `figure` (`auto`, `classic`, `assembled`, `convex`),
   `unit` (Pt per tangram unit; the cut-out square is four units across),
-  `colour`, `cutouts`, `line`, `width`, `height`.
+  `colour`, `cutouts`, `line`, `width`, `height`, `set` (`tangram`, the
+  default, or a dissection set: `letter_t`, `letter_h`, `letter_l`,
+  `letter_f`, `cross`).
 - **Generation:** targets come from three places. A curated table of 16
   picture figures (boat, house, fish, cat, swan, fir tree, castle...) and
   9 convex shapes, stored as outlines only (coordinates). The pieces of a
@@ -100,3 +108,21 @@ proved that exactly thirteen convex shapes can be made from the seven tans.
   classic` or `assembled` is served as Hard, and a page too small to print
   the target at full size is rated Hard; meta keeps `requested_difficulty`.
   The table's convex shapes are 9 of the 13 possible ones.
+- **Dissection sets** (`set` other than `tangram`): a letter T, H, L or F or
+  a Greek cross, each cut into four pieces along the lines of the same 45°
+  lattice. A set is stored as its target outline and its cut segments; the
+  pieces are derived as the connected parts of the target's quarter cells
+  that the cuts leave, so they fill the target exactly, each cell once, and
+  the target's own layout is the key. The page checks (`answers_checked`)
+  that the pieces are pairwise disjoint, each one simple shape, together
+  exactly the target with exactly its area, and that every cut-out is its
+  piece turned (cut-outs are printed at fixed turns, never in the answer's
+  layout as a whole). Tests re-check every set by shoelace areas on the
+  outlines alone and by sampling points in floating point (each point of
+  the target in exactly one piece, none outside). Bands: Kids every piece
+  line, Easy the biggest piece drawn, Medium the outline at full size, Hard
+  the outline at half size; Expert is served as Hard (`requested_difficulty`
+  in meta). One target per set, nothing random: a set's page is the same at
+  every seed; meta carries `set`, `pieces`, `piece_areas`, `target_area`.
+  Curved sets (the egg, the broken heart) and the Stomachion's slopes are
+  not on this lattice and are not offered.

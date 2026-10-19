@@ -9,7 +9,8 @@ number underneath.
 
 ## What it is
 
-A grid ten squares wide and a few rows deep. Some digits are printed; under
+A grid ten squares wide (or, in smaller versions, five to nine) and a few
+rows deep. Some digits are printed; under
 each column, in a grey box, is that column's total. Fill the empty squares so
 the rules below hold. There is exactly one way to do it.
 
@@ -25,6 +26,14 @@ Start with a row that is missing only one digit, or a column with only one
 empty square: the total minus the digits already there is the missing one.
 Then look for a digit that can fit in only one square of its row, and use the
 touching rule to cross digits off the squares around every digit you place.
+
+Narrower grids work the same way with fewer digits: a grid five squares wide
+uses the digits 0 to 4 in every row, a grid seven wide 0 to 6, and so on.
+
+In the "drop sums" variant there is no touching rule: every row still holds
+each digit once and every column still adds up to its total, but equal digits
+may sit side by side between rows. Those boards print more digits to make up
+for the missing rule.
 
 ## Purpose
 
@@ -42,8 +51,12 @@ them.
 
 ## This implementation
 
-- **Spec knobs:** `difficulty`, `rows` (3–8; the grid is always 10 wide),
-  `cell`, `line`.
+- **Spec knobs:** `difficulty`, `rows` (3–8), `width` (5–10, default 10:
+  each row holds 0 to width−1; a clamp is reported as `requested_width`),
+  `no_touch` (default on; off is the "drop sums" variant, rows and column
+  totals only), `cell`, `line`. The classic 10-wide board with the touching
+  rule is generated exactly as before; `width` and `no_touch` appear in meta
+  only off it.
 - **Generation:** answer-first. Each row is a random arrangement of 0–9 that
   avoids the digits touching it in the row above (randomised backtracking);
   the column totals are read off; then printed digits are removed one at a
@@ -65,4 +78,8 @@ them.
   column totals, Medium naked or hidden pairs. **Hard and Expert are not
   reachable** — with full rows and sums there is nothing for X-Wing-style
   reasoning to bite on — so those requests are served at Medium, and meta
-  records `requested_difficulty`.
+  records `requested_difficulty`. Narrower boards (5–9 wide) reach the same three
+  bands. Drop sums boards reach Kids and Medium at width 10; Easy is not
+  reliably reached without the touching rule (requests are served at the
+  nearest band, usually Kids), and at widths 5–7 Medium and above are mostly
+  served at Easy.

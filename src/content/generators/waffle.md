@@ -28,6 +28,13 @@ swap tiles two at a time to reach them; the challenge is to finish in the
 printed number of swaps, which is the fewest possible — every swap should put
 at least one tile in its right place, and the best put two.
 
+**The square grid.** Some pages use a full 5 x 5 square of 25 tiles with no
+holes: every row and every column is a word, and the five words read the
+same across and down (the top row is also the left column, and so on). The
+colours work the same way, each tile belonging to its row and its column.
+Because each word appears twice, a letter you place in row three, column
+one tells you the letter in row one, column three.
+
 ## Purpose
 
 A deduction puzzle made of words: the colours narrow each square down, the
@@ -43,7 +50,22 @@ uses a larger grid.
 
 ## This implementation
 
-- **Spec knobs:** `puzzles` (1-4 per page), `difficulty`, `cell`.
+- **Spec knobs:** `puzzles` (1-4 per page), `difficulty`, `cell`, `shape`
+  (`waffle`, the default, or `square`; added in wave 22, and a six-word
+  page is unchanged by it).
+- **Square shape:** a symmetric 5 x 5 word square of five distinct words
+  from the same dictionary (found by a prefix-indexed random search: row
+  `i` must start with the letters the rows above put in column `i`), 25
+  tiles and ten lines. Greens and swaps per band: Kids 13 and 6, Easy 11
+  and 8, Medium 9 and 10, Hard 7 and 12, Expert 5 and 14 (six cycles each,
+  rated by the same greens-against-swaps rule). The scramble, colouring
+  and swap minimum work as below; uniqueness is proven over every
+  arrangement whose five rows and five columns are all dictionary words —
+  symmetric or not — by a row/column-alternating line search at
+  generation, and re-proven in the tests by an independent tile-by-tile
+  search (20 million node budget, running out counts as a failure). Meta:
+  `shape: "square"`, `tiles: 25`, and `words` per puzzle lists the five
+  rows then the five columns.
 - **Dictionary:** a vendored list of about 1,200 common five-letter English
   words; answers are drawn from it and uniqueness is proven against it.
 - **Generation:** six distinct words that interlock are found (a top word,

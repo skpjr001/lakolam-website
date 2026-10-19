@@ -8,8 +8,8 @@ Crack the hidden code from a few earlier guesses and how close each one came.
 
 ## What it is
 
-A deduction puzzle with numbers. Each puzzle hides a code of three, four or
-five digits. Below the padlock are some guesses that have already been
+A deduction puzzle with numbers. Each puzzle hides a code of three, four,
+five or six digits. Below the padlock are some guesses that have already been
 tried, and each guess comes with feedback: how many of its digits are right
 and in the right place, and how many are right but in the wrong place. Put
 the clues together and only one code fits them all.
@@ -32,6 +32,10 @@ BAGELS when no digit is right.
   if the code has one 3 and a guess has two, only one of them can count.
 - The feedback does not say *which* digits are right. In the Bagels words,
   the order of FERMI and PICO tells you nothing.
+- On a two-code page each puzzle hides two codes, A and B. Every guess was
+  tried on both, so it has two clues: clue A tells how close it came to code
+  A, clue B how close it came to code B. Write both codes beside their
+  padlocks; one pair of codes fits all the clues.
 
 Start with the easy wins. "Nothing is correct" rules out every digit in that
 guess, everywhere. A guess with no digit in the right place tells you each
@@ -59,10 +63,13 @@ sentence clues, became a widely shared puzzle image online.
 
 ## This implementation
 
-**Spec knobs:** `difficulty`; `digits` (3-5); `repeats` (whether a digit may
-appear more than once); `feedback` (`sentences`, `counts`, `words`);
-`count` (1-8 puzzles; sentences print one per row, the others two per row);
-page `width`/`height`; `line`.
+**Spec knobs:** `difficulty`; `digits` (3-6; others are refused);
+`repeats` (whether a digit may appear more than once); `feedback`
+(`sentences`, `counts`, `words`); `count` (1-8 puzzles; sentences print one
+per row, the others two per row, six-digit and two-code puzzles one per
+row); `two_codes` (two hidden codes per puzzle, every guess scored against
+both); page `width`/`height`; `line`. The 3-5 digit single-code pages are
+generated exactly as before.
 
 **Generation:** a secret code is drawn, then guesses are added one at a
 time. Each step proposes a handful of random guesses from the same code
@@ -72,6 +79,17 @@ ones take middling guesses and no blank clues. Once one code is left, every
 clue the answer does not need is removed (in a seeded random order), so each
 printed clue is necessary. Puzzles are redrawn until one lands in the
 requested band, up to a budget, keeping the nearest. No page repeats a code.
+
+Six-digit codes (151,200 without repeats, a million with) rank the proposed
+guesses on an evenly strided sample of the codes still alive and filter
+exactly only the guess they keep; clue removal tests each clue on per-clue
+bitsets over the whole space; the ladder prunes a partial code whose
+in-place count can no longer match a clue. They get 8 draws per puzzle
+(two-code puzzles 12, the classic sizes 40).
+
+Two codes: codes A and B are drawn (different), and guesses are added while
+either is still open, each scored against both; then every guess that both
+codes can do without is removed. No page repeats a code across puzzles.
 
 **Solving:** uniqueness is exhaustive: all 10^k codes (or the codes with no
 repeated digit) are scored against every clue, and exactly one must survive.
@@ -95,8 +113,19 @@ band (`rating_basis`: `hardest_deduction_step_and_clue_count`). Expert is
 the rarest band; when the budget runs out the nearest band is printed and
 labelled as such.
 
+Two-code puzzles are rated by the harder of their two codes, each solved
+from its own clue column (meta keeps `code_b`, `clues_b`,
+`hardest_step_b`, `difficulty_b` beside code A's fields, and
+`two_codes: true`). Bands actually served at the default count of four:
+six digits without repeats reach Kids, Easy, Hard and Expert, and a Medium
+request comes out Hard; six digits with repeats reach Hard and Expert
+reliably, Kids to Medium only now and then (the page is labelled by its
+hardest puzzle). Two codes of three or four digits reach every band; with
+five or six digits, Kids to Medium requests mostly come out Hard.
+
 **Guarantees:** deterministic per seed; every puzzle has exactly one code,
 proven by the exhaustive filter in the generator and re-proven in tests by
-an independent string-based scorer over every number 0 to 10^k − 1; every
-printed clue is necessary (removing any one leaves more than one code); the
-ratings are recomputed in tests from the clues alone.
+an independent string-based scorer over every number 0 to 10^k − 1 (for
+two codes, both codes separately); every printed clue is necessary
+(removing any one leaves more than one code — for two codes, more than one
+for A or for B); the ratings are recomputed in tests from the clues alone.

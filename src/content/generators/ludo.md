@@ -16,7 +16,10 @@ triangles. Each arm carries a home column of five squares in its player's
 colour, and each player's start square is coloured and arrowed. The track
 round the outside is 52 squares long. For six players the board has six arms
 round a central hexagon, a triangular yard between each pair of arms and a
-78-square track. Print it in the classic colours (red, green, yellow and
+78-square track. A pachisi board is offered too: longer arms of eight
+squares (a 68-square track for four), a nest circle in each corner, three
+safe squares on every arm marked with a circle and cross, and the rules for
+two dice. Print it in the classic colours (red, green, yellow and
 blue, with orange and purple added for six), or in black ink for home
 printers, where each player is told apart by a number and a hatching
 pattern. A second page holds four counters per player and a die to cut out
@@ -51,6 +54,24 @@ yards each for a longer game. The six-arm board plays the same way with a
 78-square track: five or six can play, or fewer in yards spread round the
 board — three players taking every other yard keeps it fair.
 
+**Pachisi rules** (the longer board):
+
+1. You need four counters each and two dice. Put your counters in your
+   nest, the corner circle of your colour.
+2. Roll both dice. A 5 on either die, or two dice adding up to 5, brings a
+   counter out onto your start square (the one with your arrow). Move one
+   counter by each die, or one counter by both. A double gives you another
+   roll; a third double in a row sends your counter nearest home back to
+   its nest.
+3. Two of your counters on one square make a blockade: no counter, not even
+   your own, may pass it or land on it.
+4. Land on a single enemy counter to capture it: it goes back to its nest
+   and you move any one of your counters 20 squares. Counters on a circled
+   square or a start square are safe, and two colours may share one.
+5. At the end of your own arm, turn into your home column of seven squares
+   and go on to the centre by the exact roll. Each counter that gets home
+   earns a bonus move of 10. The first to bring all four home wins.
+
 ## Purpose
 
 A first strategy game for children: counting moves, choosing which counter
@@ -73,7 +94,11 @@ six (and even eight) players appeared later for larger families.
   `requested_players`), `style` (`classic` colours or black `ink` with
   numbers and patterns), `safe_squares` (stars on the safe squares and the
   safe-square rule), `counters` (the cut-out page of counters and a die
-  net), `rules` (the how-to-play panel), `page` (`letter` or `a4`).
+  net), `rules` (the how-to-play panel), `page` (`letter` or `a4`),
+  `variant` (`ludo`, the default, or `pachisi`: arms of 3 × 8, a 68- or
+  102-square track, home columns of 7, nests drawn as circles, three safe
+  squares an arm marked with a circle and cross, two die nets on the
+  counter page; meta adds `variant`, `dice: 2`, `enter_on: 5`).
 - **Generation:** the board is built for one arm and turned about the centre
   in exact 90° or 60° steps. The centre is a regular polygon of side 3 (a
   3 × 3 square, or a hexagon); each side carries an arm 3 squares wide and
@@ -95,7 +120,10 @@ six (and even eight) players appeared later for larger families.
   runs 5 squares from its entry square to its triangle; each start square
   lies along its own yard; each yard holds four separate circles; arms are
   exactly 90° or 60° apart and each is the first one rotated; start and star
-  squares are all distinct (8 safe squares for four, 12 for six); the die
+  squares are all distinct (8 safe squares for four, 12 for six; on the
+  pachisi board 12 or 18, three an arm: the fourth square out, the square
+  across the arm's end where its player turns home, and the start four
+  squares in, symmetric about the arm); the die
   net's opposite faces sum to 7; the counter sheet holds four counters per
   player, each no wider than a square. In ink every fill and line is black,
   white or grey.

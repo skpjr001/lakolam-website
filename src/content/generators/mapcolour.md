@@ -23,6 +23,10 @@ There is exactly one way to do it.
    that meet only at a single corner point do not count as touching.
 3. The regions already shaded stay as they are.
 
+In the "keep away" version, rule 2 is stricter: two regions that meet even
+at a single corner point count as touching and must be different. The note
+under the map says which rule applies.
+
 Look for a blank region that already touches three different patterns: it
 can only take the fourth. Each region you finish narrows down its
 neighbours. On harder maps, look for two touching regions that are left
@@ -50,7 +54,11 @@ difficulty levels follow the same deductions as here.
 
 - **Spec knobs:** `difficulty`; `regions` (6–40, 0 = picked from the
   difficulty: 9 Kids, 16 Easy, 22 Medium, 24 Hard, 36 Expert); `cell` (one
-  step of the 30 × 22 map lattice, in points); `line`.
+  step of the 30 × 22 map lattice, in points); `line`; `adjacency`
+  (`side`, the default and the classic rule, or `corner` — "keep away":
+  regions meeting at a corner point are neighbours too; meta then carries
+  `adjacency: corner`, and the side rule's pages are generated exactly as
+  before).
 - **Generation:** answer first. Regions grow from seeds spread across the
   lattice, each step claiming the most enclosed of a few sampled border
   cells for the region holding most of its sides, which keeps borders
@@ -74,3 +82,7 @@ difficulty levels follow the same deductions as here.
   pairs are Medium; trial is Hard up to 28 regions and Expert above. A size
   that cannot reach the requested band is rated honestly at the nearest
   band, with `requested_difficulty` and `requested_regions` in meta.
+  The corner rule reaches every band at the default sizes; its maps are
+  four-coloured like the rest (an attempt whose map needs a fifth pattern is
+  discarded), and the independent count reads corner points off the
+  lattice itself.

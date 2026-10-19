@@ -29,6 +29,12 @@ one way to fit them all, apart from turning the whole finished square.
 Start with the shapes that appear least often: a half shape whose partner
 is printed on only one other card tells you where that card goes.
 
+Some sets use pictures instead of shapes. With card suits, each edge shows
+the top or the bottom of a spade, heart, club or diamond: a solid top must
+meet the pale bottom of the same suit in the same colour. With fish, each
+edge shows a head or a tail: a head must meet the tail of a fish of the
+same colour.
+
 ## Purpose
 
 A tabletop puzzle to make at home: the retail "scramble square" genre,
@@ -53,7 +59,13 @@ difference.
   `size` (pieces per side, 2–5; null: 3 for kids to medium, 4 for hard, 5
   for expert), `kinds` (motif kinds 2–8; null: from the band and size),
   `rotation` (null: allowed except for kids), `cell` (piece side, 60–200
-  pt), `line` (0.5–4 pt). Each size has a smallest number of kinds that
+  pt), `line` (0.5–4 pt), `motif` (`shapes`, the default; `suits`: a card
+  suit centred on the edge, its top solid on one piece and its bottom pale
+  on the other — four suits, kinds 5–8 recoloured; `heads_tails`: a fish
+  centred on the edge, head on one piece and tail on the other, eight
+  colours). The motif only changes the drawing: the board, its proof and
+  its rating are the same as with shapes, and meta records `motif` when it
+  is not `shapes`. Each size has a smallest number of kinds that
   reliably gives one solution (2 to 6, measured); fewer are raised and
   reported as `requested_kinds`. Other clamps are reported as
   `requested_*`; an explicit knob that matches the band's choice is noted
