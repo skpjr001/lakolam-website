@@ -2,7 +2,7 @@
 title: "Memphis"
 blurb: "Memphis pattern — 80s confetti of squiggles, zigzags, triangles and dots on a seamless repeat tile"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Eighties Memphis-style confetti: squiggles, zigzags, triangles, dots and
 half-circles scattered on a tile that repeats without a seam.

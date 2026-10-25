@@ -2,7 +2,7 @@
 title: "Photo Parametric"
 blurb: "A picture (an upload or a built-in silhouette) redrawn as one Fourier-series curve with its epicycles, rows of darkness-modulated waves, or one modulated spiral"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Your picture redrawn as mathematics: one Fourier curve spun by circles, rows
 of waves that swell with shadow, or a single spiral that wiggles into a

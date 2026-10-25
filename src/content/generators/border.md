@@ -2,7 +2,7 @@
 title: "Border"
 blurb: "Ornamental borders — frieze-group motif bands and Greek key frames"
 category: design
-version: "1.3.0"
+version: "1.3.1"
 ---
 Ornamental bands and page frames built from the seven frieze groups.
 

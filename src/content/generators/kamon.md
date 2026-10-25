@@ -2,7 +2,7 @@
 title: "Kamon"
 blurb: "Kamon - Japanese family crests with exact rotational symmetry, as silhouettes or colouring outlines"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Japanese family crests — blossoms, leaves, swirling tomoe, waves, feathers
 and diamonds, drawn with the exact symmetry of the real thing.

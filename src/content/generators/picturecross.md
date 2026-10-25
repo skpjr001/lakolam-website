@@ -2,7 +2,7 @@
 title: "Picture Crossword"
 blurb: "Picture crossword — numbered pictures are the clues; write each name in the grid, the fill proven unique over every name a child might use"
 category: word
-version: "1.0.0"
+version: "1.0.1"
 ---
 A crossword where the clues are pictures: name each one and write it in the grid.
 

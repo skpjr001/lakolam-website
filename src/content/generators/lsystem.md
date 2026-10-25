@@ -2,7 +2,7 @@
 title: "L-System"
 blurb: "Ferns, vines and fractals from stochastic L-systems, with fillable leaves"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Ferns, vines and fractals grown from rewriting rules, drawn by a turtle with
 fillable leaves.

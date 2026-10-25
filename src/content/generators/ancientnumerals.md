@@ -2,7 +2,7 @@
 title: "Ancient Number Systems"
 blurb: "Ancient number systems — Egyptian hieroglyphs, Mayan dots, bars and shells, and Babylonian cuneiform drawn as signs: read, write, add and compare, every numeral written and read back"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Egyptian hieroglyphs, Mayan dots and bars, and Babylonian wedges: read
 them, write them, add them and compare them.

@@ -2,7 +2,7 @@
 title: "Mystery Grid Drawing"
 blurb: "Mystery grid drawing — copy scrambled, labelled squares into a lettered grid to reveal a hidden picture"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Copy the squares one by one into the grid — and a hidden picture appears.
 

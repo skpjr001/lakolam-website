@@ -2,7 +2,7 @@
 title: "3D Shapes"
 blurb: "3D shapes — name the solid, count faces, edges and vertices, Euler's rule, and which solid a net folds into, every count read from the solid's hull"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Name the solid, count its faces, edges and vertices, check Euler's rule, and find the solid a net folds into.
 

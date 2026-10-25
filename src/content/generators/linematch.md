@@ -2,7 +2,7 @@
 title: "Draw a Line"
 blurb: "Draw-a-line matching — pictures to pictures, groups to numbers, letters to pictures, halves to halves"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Two columns of pictures. Draw a line from each one on the left to its
 partner on the right.

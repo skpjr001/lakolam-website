@@ -2,7 +2,7 @@
 title: "Anglers"
 blurb: "Anglers — a fishing line from every angler on the edge to a fish, lengths given, every cell used once"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Every angler on the bank casts one line, and every fish in the pond is
 caught — with each line exactly as long as its angler says.

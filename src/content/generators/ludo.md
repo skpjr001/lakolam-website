@@ -2,7 +2,7 @@
 title: "Ludo"
 blurb: "A printable Ludo board — the classic four-player cross or the six-arm hexagonal board — in colour or black ink, with star safe squares, rules, cut-out counters and a die net; the geometry is checked to tile exactly"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The race-round-the-cross board game, ready to print — the classic board for
 four, or the six-arm board for a bigger family.

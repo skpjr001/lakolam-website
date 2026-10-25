@@ -2,7 +2,7 @@
 title: "Planner Sticker Sheets"
 blurb: "Planner sticker sheets — headers, checklists, date dots, trackers, tabs, washi and icons, with kiss-cut lines checked for bleed, gap and cut area"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A full sheet of planner stickers — headers, checklists, date dots, habit
 trackers, weekday tabs, washi strips and little picture badges — laid out

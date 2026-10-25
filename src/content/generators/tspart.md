@@ -2,7 +2,7 @@
 title: "TSP Art"
 blurb: "TSP art — a stippled picture drawn as one continuous line that never crosses itself"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A shaded picture drawn as one continuous line that visits thousands of dots,
 returns to where it started and never crosses itself.

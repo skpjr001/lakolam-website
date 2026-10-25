@@ -2,7 +2,7 @@
 title: "Venation"
 blurb: "Leaf veins, trees, roots and sea fans grown by space colonisation, with closed areoles to colour"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Leaf veins, trees, roots and sea fans that grow themselves, branch by
 branch, into the space around them.

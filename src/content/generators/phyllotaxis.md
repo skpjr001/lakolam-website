@@ -2,7 +2,7 @@
 title: "Phyllotaxis"
 blurb: "Phyllotaxis — golden-angle floret spirals, sunflower heads and petal disks"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Florets placed by the golden angle: floret `n` sits at angle `n · 137.507…°`
 and radius `c·√n`, and the sunflower's spiral arms appear without ever being

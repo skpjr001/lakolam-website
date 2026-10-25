@@ -2,7 +2,7 @@
 title: "Optical toys"
 blurb: "Optical toys — phenakistiscope discs, zoetrope drums, flip books and thaumatropes from geometric animations whose loop closes exactly, slits registered with frames"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Phenakistiscope discs, zoetrope drums, flip books and thaumatropes to print,
 cut out and spin, with geometric animations that loop without a jump.

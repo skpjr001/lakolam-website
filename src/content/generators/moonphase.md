@@ -2,7 +2,7 @@
 title: "Moon Phases"
 blurb: "Moon phases — a year of the Moon, one drawn disc per day, with the times of every new, quarter and full moon"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A whole year of the Moon on one page: a drawn moon for every day, with the
 date and time of every new, quarter and full moon.

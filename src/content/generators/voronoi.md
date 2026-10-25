@@ -2,7 +2,7 @@
 title: "Voronoi"
 blurb: "Cellular and stained-glass patterns from relaxed Voronoi cells"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Cellular and stained-glass patterns from relaxed Voronoi cells.
 

@@ -2,7 +2,7 @@
 title: "Stained Glass"
 blurb: "Stained glass — a rose window in lead and jewel-coloured glass"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 A cathedral rose window: concentric rings of glass cut by heavy black lead
 lines, around a central rosette. Colour the panes, or admire the jewel tones.

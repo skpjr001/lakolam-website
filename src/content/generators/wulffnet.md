@@ -2,7 +2,7 @@
 title: "Wulff Net"
 blurb: "Stereonet — Wulff equal-angle or Schmidt equal-area net at 2°, 5° or 10° intervals, at an exact diameter"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 A stereonet for crystallography and structural geology — the equal-angle
 Wulff net or the equal-area Schmidt net, at an exact printed diameter.

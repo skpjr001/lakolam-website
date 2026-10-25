@@ -2,7 +2,7 @@
 title: "Cone wraps"
 blurb: "Cone wraps: tapered tumbler wraps, lampshades, cup sleeves, party cones and pot covers unrolled exactly, with seamless whole-number pattern repeats"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Exact unrolled templates for tapered tumbler wraps, lampshades, cup sleeves, party cones and plant-pot covers, with a pattern that meets itself invisibly at the seam.
 

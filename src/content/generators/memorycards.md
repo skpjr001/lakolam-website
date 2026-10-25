@@ -2,7 +2,7 @@
 title: "Memory Pairs"
 blurb: "Memory pairs — cut-out card sheets of picture, word, shadow, number and fact pairs, every card with exactly one partner"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Turn over two cards: a pair? Keep them! A printable memory game of
 pictures, words, shadows, numbers and sums.

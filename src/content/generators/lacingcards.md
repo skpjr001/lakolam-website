@@ -2,7 +2,7 @@
 title: "Lacing Cards"
 blurb: "Lacing cards — a big picture ringed with evenly spaced punch holes and a cut line, spacing and edge margins measured"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A big picture with a ring of holes to punch and a lace to thread all the
 way round.

@@ -2,7 +2,7 @@
 title: "How to Draw"
 blurb: "How to draw, step by step — a picture built up in numbered panels, big shapes first, with room to practise"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Draw a cat, a car or a rocket one easy step at a time.
 

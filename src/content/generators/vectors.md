@@ -2,7 +2,7 @@
 title: "Vectors"
 blurb: "Vectors — column vectors on a grid, adding and scaling, magnitudes, vector geometry with midpoints and ratios"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Column vectors on a grid, adding and scaling them, magnitudes, and vector geometry with midpoints and ratios.
 

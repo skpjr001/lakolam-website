@@ -2,7 +2,7 @@
 title: "Sonobe assembly maps"
 blurb: "Sonobe modular origami — assembly maps for 3- to 90-unit models with a proven colour plan and the unit's folding steps"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Colour plans for Sonobe modular origami balls, from the 3-unit jewel to the
 90-unit ball, with no two touching units the same colour.

@@ -2,7 +2,7 @@
 title: "Parametric Art"
 blurb: "Parametric art: Yeganeh line families, Farris wheels, Maurer roses, Fay's butterfly and polar curves, as line art or palette gradients"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Birds, flowers and ribbons drawn by a few lines of trigonometry — line
 families, wheels on wheels, Maurer roses and the butterfly curve.

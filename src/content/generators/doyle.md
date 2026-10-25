@@ -2,7 +2,7 @@
 title: "Tangent Circles"
 blurb: "Tangent circles — Doyle spirals, nested Steiner and Pappus chains, Ford circles"
 category: design
-version: "1.3.0"
+version: "1.3.1"
 ---
 Circles that only ever touch: Doyle spirals winding out from a centre,
 rings of circles inside circles, chains shrinking into a point, and the

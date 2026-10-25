@@ -2,7 +2,7 @@
 title: "Wave Function Collapse"
 blurb: "Wave function collapse — circuit boards, pipes, knots, road maps and dungeons assembled tile by tile from socket rules"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Circuit boards, plumbing, knotwork, kids' road maps and dungeon plans,
 assembled tile by tile so that every connection meets its match.

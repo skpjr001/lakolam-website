@@ -2,7 +2,7 @@
 title: "Perspective Grid"
 blurb: "Perspective grid — one-, two- or three-point vanishing points with rays, horizon and vertical guides"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 Guide paper for drawing in perspective — one, two or three vanishing points
 with rays, a horizon line and vertical guides.

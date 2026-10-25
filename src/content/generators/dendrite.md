@@ -2,7 +2,7 @@
 title: "Dendrites"
 blurb: "Dendrites — diffusion-limited coral and frost, hyphae bubbles and lightning"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Branching growth from random motion: coral, frost and snowflakes, chains of
 bubbles, and lightning.

@@ -2,7 +2,7 @@
 title: "Geodesic Domes"
 blurb: "Geodesic domes 1V-6V: builder's strut cut lists and assembly plans, paper-model nets and wireframes, chord factors checked against the published tables"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Build Buckminster Fuller's dome: a strut cut list and assembly plan for any
 size, a paper model to fold, or a wireframe to frame.

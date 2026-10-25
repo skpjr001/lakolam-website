@@ -2,7 +2,7 @@
 title: "Polar Grid"
 blurb: "Polar graph paper — concentric rings and angle rays, labelled in degrees or radians"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 Polar coordinate graph paper — concentric rings and equally spaced rays,
 centred on the sheet, with the rim labelled in degrees or radians.

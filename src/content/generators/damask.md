@@ -2,7 +2,7 @@
 title: "Damask"
 blurb: "Damask and arabesque ornament: mirror-symmetric medallions of S- and C-scrolls, acanthus leaves, buds and a central vase or palmette, alone or as a half-drop wallpaper"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Mirror-symmetric damask medallions of curling scrolls, acanthus leaves and
 buds, alone or repeated as an all-over half-drop wallpaper.

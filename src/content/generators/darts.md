@@ -2,7 +2,7 @@
 title: "Darts"
 blurb: "Darts — throw darts at different numbered spaces to hit each target score; every target has one answer"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Throw darts at a numbered board: find the one set of spaces that hits each
 target score.

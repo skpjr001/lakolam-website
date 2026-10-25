@@ -2,7 +2,7 @@
 title: "Ice-Ray Lattice"
 blurb: "Ice-ray lattice — Chinese cracked-ice window tracery, with plum blossoms"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The cracked-ice window of Chinese gardens: a lattice of wooden bars that
 splits the window into irregular panes like ice breaking on a pond, with

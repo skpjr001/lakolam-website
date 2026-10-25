@@ -2,7 +2,7 @@
 title: "Pie Charts"
 blurb: "Pie charts — read fractions, counts and percentages, work out the angles, draw from a table and compare two charts, every angle a whole number of degrees summing to 360"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Read, work out, draw and compare pie charts — every angle a whole number of degrees, and the angles always add up to 360°.
 

@@ -2,7 +2,7 @@
 title: "I Spy and Count"
 blurb: "I Spy and count — pictures scattered over the page, turned and never overlapping; count each kind and write the number in the tally"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Pictures scattered all over the page. How many cars can you find? How many
 keys?

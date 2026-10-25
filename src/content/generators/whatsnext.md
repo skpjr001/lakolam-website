@@ -2,7 +2,7 @@
 title: "What Comes Next?"
 blurb: "What comes next? — continue picture patterns (AB, AAB, ABC, turning, growing) by drawing or circling"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Rows of pictures that repeat in a pattern. Spot the pattern and say what
 comes next.

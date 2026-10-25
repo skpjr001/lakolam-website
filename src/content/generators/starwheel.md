@@ -2,7 +2,7 @@
 title: "Star Wheel"
 blurb: "Planisphere (star wheel) for any latitude, to cut out and pin, or a sky chart for a date, time and place"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Make a planisphere for your own latitude — a turning star map that shows
 the sky for any date and hour — or print the sky above a place at a moment.

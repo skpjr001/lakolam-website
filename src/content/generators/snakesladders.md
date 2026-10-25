@@ -2,7 +2,7 @@
 title: "Snakes and Ladders"
 blurb: "Snakes and ladders boards balanced by an exact Markov-chain game length"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 A printable board whose game length is worked out exactly — short games for
 little ones, long ones for the patient.

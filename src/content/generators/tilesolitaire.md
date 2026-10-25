@@ -2,7 +2,7 @@
 title: "Tile Solitaire"
 blurb: "Tile Solitaire — remove free matching pairs from a stacked layout until it is clear"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Take matching pairs of free tiles off a stacked layout until nothing is left.
 

@@ -2,7 +2,7 @@
 title: "Follow the Directions"
 blurb: "Following directions — colour the 3rd balloon red, circle the last fish, draw an X on the cat above the sun; every instruction proven to pick exactly one picture"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Colour the 3rd balloon red. Circle the last fish. Draw an X on the cat above
 the sun.

@@ -2,7 +2,7 @@
 title: "Guilloché"
 blurb: "Guilloché — woven families of phase-shifted waves: banknote rosettes, bands and certificate frames"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The fine woven line-work of banknotes, share certificates and watch dials:
 families of waves, each one a step ahead of the last, laced into rosettes,

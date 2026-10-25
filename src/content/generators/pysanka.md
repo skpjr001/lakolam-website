@@ -2,7 +2,7 @@
 title: "Pysanka"
 blurb: "Pysanka designs: Ukrainian Easter eggs divided and filled with roses, suns, wheat and wolf's teeth"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Designs for Ukrainian Easter eggs: the egg divided by lines into fields,
 the fields filled with stars, suns, wheat and wolf's teeth.

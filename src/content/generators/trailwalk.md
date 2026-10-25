@@ -2,7 +2,7 @@
 title: "Trail Walk"
 blurb: "Trail walk — join 1-A-2-B-3-C… in order; the trail never crosses itself"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Join the circles in order — 1, A, 2, B, 3, C — with one unbroken line.
 

@@ -2,7 +2,7 @@
 title: "Wall Drawing"
 blurb: "Instruction-based line drawings in the spirit of Sol LeWitt: the seed writes the instruction, the page executes it and prints it as the caption"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A written instruction and the drawing that carries it out: conceptual line art in the spirit of Sol LeWitt.
 

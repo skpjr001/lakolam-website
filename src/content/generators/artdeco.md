@@ -2,7 +2,7 @@
 title: "Art Deco"
 blurb: "Art deco panels: stepped sunbursts, fan scales, arches and chevrons in mirror symmetry"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Mirror-symmetric panels in the style of the 1920s and 30s: stepped
 sunbursts, fan scales, nested arches, chevrons and speed lines inside a

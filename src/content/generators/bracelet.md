@@ -2,7 +2,7 @@
 title: "Friendship Bracelets"
 blurb: "Friendship-bracelet patterns — normal chevron, diamond and zigzag knot diagrams worked out by moving every string through every knot, and alpha patterns with names and motifs"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Friendship-bracelet patterns: chevrons, diamonds and zigzags knotted on the
 diagonal, and alpha bands with names and pictures. Every knot's colour is

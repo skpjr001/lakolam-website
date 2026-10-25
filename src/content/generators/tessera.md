@@ -2,7 +2,7 @@
 title: "Roman Mosaic"
 blurb: "Roman mosaics — opus tessellatum colour-by-number pages, tesserae laid in rows that follow a central emblem, every gap and number checked"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A colour-by-number Roman floor: hundreds of little stones laid in rows that
 flow round a central emblem, every one numbered, every gap true.

@@ -2,7 +2,7 @@
 title: "Circles"
 blurb: "Circles worksheet — parts of a circle, circumference, area, semicircles and sectors, in terms of pi or rounded"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Name the parts of a circle, then find circumferences, areas, arcs and
 sectors — exactly in terms of pi, or rounded with no doubt about the last

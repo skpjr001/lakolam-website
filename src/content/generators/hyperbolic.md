@@ -2,7 +2,7 @@
 title: "Hyperbolic Tiling"
 blurb: "Regular hyperbolic tilings {p,q} in the Poincare disc, Escher Circle Limit style"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Infinitely many identical tiles in a single circle, shrinking towards an edge
 they never reach. This is the geometry behind M. C. Escher's "Circle Limit"

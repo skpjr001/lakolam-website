@@ -2,7 +2,7 @@
 title: "Masyu"
 blurb: "One closed loop turning at black circles and running straight through white"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Draw one closed loop through the circles: turn on every black pearl, run
 straight through every white one.

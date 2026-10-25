@@ -2,7 +2,7 @@
 title: "Superformula"
 blurb: "Gielis supershapes as layered flowers, stars and shells — every layer simple and nested, ready to colour"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Flowers, stars and shells grown from one equation — Gielis's supershapes,
 layered and ready to colour.

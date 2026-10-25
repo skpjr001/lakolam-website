@@ -2,7 +2,7 @@
 title: "Ghost Leg"
 blurb: "Ghost leg (amidakuji) ladder — draw the one missing rung that sends every animal to its own food, or follow the ladder down"
 category: maze
-version: "1.0.0"
+version: "1.0.1"
 ---
 A ladder of lines and rungs that sends everyone somewhere new — draw the one
 rung that sends every animal to its own food.

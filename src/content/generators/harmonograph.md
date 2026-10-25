@@ -2,7 +2,7 @@
 title: "Harmonograph"
 blurb: "Damped pendulum figures, with frequencies nudged off exact ratios so they precess"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 The figures a swinging table draws: damped pendulums, slightly detuned so
 the curve precesses instead of retracing itself.

@@ -2,7 +2,7 @@
 title: "Angle Facts"
 blurb: "Angle facts — parallel lines and transversals, triangles between parallels, polygons and algebraic angles, every angle proven deducible"
 category: maths
-version: "1.1.0"
+version: "1.1.1"
 ---
 Parallel lines, transversals and polygons — find the marked angles, and say why.
 

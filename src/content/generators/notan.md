@@ -2,7 +2,7 @@
 title: "Notan"
 blurb: "Notan, the expanded square — shapes cut from a dark square's edges and flipped out as exact mirrors, dark area conserved, as a two-tone design, cut template or colouring page"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The expanded square: shapes cut from the edges of a dark square and flipped
 outward, so the square grows into a balanced pattern of dark and light.

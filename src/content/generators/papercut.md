@@ -2,7 +2,7 @@
 title: "Papercut"
 blurb: "Folded papercuts — stars, snowflakes, banners and silhouette frames that unfold from one designed wedge, proven to stay one piece with bridges no thinner than a set width"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Folded papercuts in the folded-paper tradition: lace-like stars, snowflakes,
 banners and silhouette frames, each unfolding from one small designed piece

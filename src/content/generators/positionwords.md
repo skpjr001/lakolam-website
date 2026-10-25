@@ -2,7 +2,7 @@
 title: "Where Is It? Position Words"
 blurb: "Position words — pictures on shelves; circle what is above, below, next to, between, left or right of a named picture"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Pictures on a set of shelves. What is above the cat? What is between the cup
 and the bell?

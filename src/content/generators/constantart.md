@@ -2,7 +2,7 @@
 title: "Constant Art"
 blurb: "Constant art — π, e, φ and √2 as skylines, chord circles, digit walks and colour-by-digit grids, plus Ulam prime spirals; digits computed exactly and checksummed"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Maths art from the digits of pi, e, the golden ratio and root 2 — a
 digit skyline, a chord circle, a digit walk, a colour-by-digit grid — and

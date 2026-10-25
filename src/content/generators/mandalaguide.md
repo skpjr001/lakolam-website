@@ -2,7 +2,7 @@
 title: "Mandala Guide"
 blurb: "Mandala guide paper — concentric rings and equal symmetry sectors, with intersection dots and a centre mark"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 Blank radial guide paper for drawing your own mandalas — concentric rings,
 equal symmetry sectors, dots where they cross and a centre mark.

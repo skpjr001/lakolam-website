@@ -2,7 +2,7 @@
 title: "Cosmati"
 blurb: "Cosmatesque pavements: tessellated roundels, guilloche bands and opus sectile panels"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Cosmatesque pavements: great stone roundels ringed with tiny triangles,
 tied together by white marble bands, set in fields of geometric inlay.

@@ -2,7 +2,7 @@
 title: "Knots"
 blurb: "Knot and link diagrams — torus knots, Lissajous knots and closed braids as ribbons or broken lines"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Mathematical knots and links drawn as ribbons that weave over and under
 themselves: torus knots, Lissajous knots and closed braids.

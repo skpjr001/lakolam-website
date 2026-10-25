@@ -2,7 +2,7 @@
 title: "Path Game"
 blurb: "Roll-and-move board games on a winding path, with action squares and question cards, the expected game length solved exactly"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A roll-and-move board game on a winding road, with action squares, question
 cards and a game length worked out exactly.

@@ -2,7 +2,7 @@
 title: "Batik"
 blurb: "Batik-inspired ceplok repeats: four-fold medallions with dotted and lined isen fills"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Batik-inspired ceplok repeats: four-fold medallions on a square grid,
 filled with dots and fine lines and outlined with a double wax line.

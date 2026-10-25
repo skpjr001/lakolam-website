@@ -2,7 +2,7 @@
 title: "Circle Theorems"
 blurb: "Circle theorems — angles at the centre, in the same segment and a semicircle, cyclic quadrilaterals, tangents and the alternate segment, every angle proven deducible"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Angles at the centre, in a semicircle, in cyclic quadrilaterals and at
 tangents — find the marked angles, and say why.

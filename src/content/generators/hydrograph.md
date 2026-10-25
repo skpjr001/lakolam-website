@@ -2,7 +2,7 @@
 title: "Storm Hydrograph"
 blurb: "Storm hydrographs — read or plot rainfall bars and river discharge, find peak discharge, lag time, base flow and the limbs, and compare an urban and a rural river"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Read (or plot) how a river rises and falls after a storm — peak discharge, lag time, base flow and the limbs, and an urban river against a rural one.
 

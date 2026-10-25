@@ -2,7 +2,7 @@
 title: "Probability Paper"
 blurb: "Normal probability paper — a 0.01-99.99 % axis spaced by the inverse normal CDF, linear x divisions"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 Normal probability paper — a cumulative-percentage scale from 0.01 % to
 99.99 %, spaced so that normally distributed data plots as a straight line.

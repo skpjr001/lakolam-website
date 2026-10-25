@@ -2,7 +2,7 @@
 title: "Wallpaper"
 blurb: "Surface patterns and seamless repeat tiles from the 17 wallpaper groups"
 category: design
-version: "1.2.0"
+version: "1.2.1"
 ---
 Surface patterns and seamless repeat tiles built from the seventeen
 wallpaper groups: leaves, petals, stars and small florals placed once and

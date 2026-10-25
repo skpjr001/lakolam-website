@@ -2,7 +2,7 @@
 title: "Contour Map"
 blurb: "Contour maps — heights, slopes, river flow, summits and cols, and cross-sections from a seeded landscape, every answer checked against the height field"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Read the brown lines: heights, steep slopes, which way the river runs, summits and cols, and a cross-section to draw — every answer checked against the land itself.
 

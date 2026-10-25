@@ -2,7 +2,7 @@
 title: "Iris Folding"
 blurb: "Iris-folding card patterns — a true-size template of numbered strip lines spiralling into a circle, square, hexagon, oval, heart or star, with a coloured preview and strip list; every line a chord of the opening before it and the centre piece covering the last"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Iris-folding card patterns: a true-size template of numbered strip lines
 spiralling into a shape, with a preview of the finished card.

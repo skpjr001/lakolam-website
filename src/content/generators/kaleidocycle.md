@@ -2,7 +2,7 @@
 title: "Kaleidocycle"
 blurb: "Kaleidocycles to cut, fold and glue — a ring of six tetrahedra that turns endlessly, four pictures continuous across every hinge, the turning simulated"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A ring of six paper tetrahedra that turns through its own middle forever,
 showing four different pictures in turn.

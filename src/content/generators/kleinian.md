@@ -2,7 +2,7 @@
 title: "Indra's Pearls"
 blurb: "Indra's Pearls — Kleinian limit sets: nested circles from two Möbius maps, every generation disjoint and inside its parent"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Circles inside circles inside circles, made by two simple maps — a print of
 the limit set of a Kleinian group, the necklace of pearls from Indra's net.

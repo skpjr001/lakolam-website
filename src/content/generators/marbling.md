@@ -2,7 +2,7 @@
 title: "Marbling"
 blurb: "Marbled paper: ink drops, gel-git, nonpareil, chevron, bouquet and swirl from exact marbling maps"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Marbled paper in vector form: rings of ink dropped on a bath, then raked,
 combed, waved and stirred into stone, gel-git, nonpareil, chevron, bouquet

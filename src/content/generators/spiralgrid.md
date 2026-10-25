@@ -2,7 +2,7 @@
 title: "Spiral Guide Paper"
 blurb: "Spiral guide paper — an evenly spaced Archimedean or a golden (logarithmic) spiral, with spokes and turn rings"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 A spiral as large as the page — evenly spaced like a coiled rope, or
 widening like a shell in the golden ratio — with optional spokes and rings.

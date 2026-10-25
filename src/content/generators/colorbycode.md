@@ -2,7 +2,7 @@
 title: "Colour by Code"
 blurb: "Colour by code — number, letter or maths-fact codes in the closed spaces of a mandala, stained glass, tiling or other design, with the coloured picture as the key"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A design full of numbered spaces and a colour legend. Colour each space by
 its code, or by the answer to its sum, and the picture appears.

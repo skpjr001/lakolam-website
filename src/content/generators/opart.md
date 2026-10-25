@@ -2,7 +2,7 @@
 title: "Op Art"
 blurb: "Op art — Vasarely and Riley figures: bulging checkerboards, movement in squares, currents, tunnels, zebras, moiré"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Black-and-white figures that seem to bulge, ripple and spin — op art in the
 manner of Victor Vasarely and Bridget Riley.

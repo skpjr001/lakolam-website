@@ -2,7 +2,7 @@
 title: "Gear Trains"
 blurb: "Gear trains — which way does it turn, how many turns, will it jam? Gears and belts drawn exactly, every answer checked"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Which way does it turn, how many times, and will it turn at all?
 

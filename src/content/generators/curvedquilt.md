@@ -2,7 +2,7 @@
 title: "Curved Quilt Templates"
 blurb: "Curved-seam quilt templates — Drunkard's Path, Dresden plate and Orange Peel at true size with a test square, seam allowance as an exact offset and matching notches, plus a layout sheet with counts; mating curves re-measured equal"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 True-size templates for curved-seam quilt blocks: Drunkard's Path,
 Dresden plate and Orange Peel. Each comes with seam allowances, matching

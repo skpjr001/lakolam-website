@@ -2,7 +2,7 @@
 title: "Metamorphosis Tiling"
 blurb: "Metamorphosis tiling — square, hexagonal or triangular tiles that bend, step by step across the page, into interlocking creatures"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A tiling that changes as you read it: plain squares, hexagons or triangles
 at one end of the page bend, row by row, into interlocking creature-like

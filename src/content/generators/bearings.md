@@ -2,7 +2,7 @@
 title: "Bearings"
 blurb: "Bearings worksheet — three-figure bearings, measuring, back bearings, angles between bearings, maps with a scale bar and journeys"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Three-figure bearings: read them, measure them, turn them round and use them on maps.
 

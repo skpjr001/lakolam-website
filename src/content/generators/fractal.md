@@ -2,7 +2,7 @@
 title: "Fractal Bands"
 blurb: "Fractal bands — Mandelbrot, Julia, Burning Ship and Newton level sets as fillable loops"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The Mandelbrot set and its cousins drawn as nested, fillable bands: the
 classic fractal poster turned into vector line art.

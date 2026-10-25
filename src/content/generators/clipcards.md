@@ -2,7 +2,7 @@
 title: "Count and Clip"
 blurb: "Count-and-clip cards — count pictures, ten frames, dice or tally marks, or solve a fact, and clip the one right numeral"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Count the pictures, then clip a peg on the right number — task cards for
 early counting and number facts.

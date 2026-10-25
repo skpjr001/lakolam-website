@@ -2,7 +2,7 @@
 title: "Gothic Tracery"
 blurb: "Gothic window tracery — pointed arches, sub-lancets, tangent oculi and foils, in glass or line art"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A Gothic window drawn with compass and straightedge: a pointed arch, lancets
 inside it, a round window between their heads and a foil inside that, in

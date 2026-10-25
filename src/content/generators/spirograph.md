@@ -2,7 +2,7 @@
 title: "Spirograph"
 blurb: "Layered spirograph roulettes, closed exactly by their tooth ratios"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Layered roulette curves — hypotrochoids and epitrochoids — closed exactly by
 their integer tooth ratios.

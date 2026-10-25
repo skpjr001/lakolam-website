@@ -2,7 +2,7 @@
 title: "Starry Night"
 blurb: "Starry Night — a star, a sun and a moon in every row and column; edge clues say which is nearer the star"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Hang one star, one sun and one moon in every row and column — the symbols
 at the edge tell you which of sun and moon sits nearer the star.

@@ -2,7 +2,7 @@
 title: "Similarity and Congruence"
 blurb: "Similarity and congruence — similar triangles (turned, nested, bow-tie, proportionality), length, area and volume scale factors, and congruence conditions, every answer checked by an independent construction"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Similar triangles, scale factors for length, area and volume, and the congruence conditions — every answer checked by building the figure.
 

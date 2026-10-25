@@ -2,7 +2,7 @@
 title: "Fantasy Map"
 blurb: "Fantasy maps — islands, archipelagos and continents with rivers that drain downhill to the sea, road-linked towns, invented names and a hexcrawl mode, with a key"
 category: design
-version: "1.2.0"
+version: "1.2.1"
 ---
 An invented island, archipelago or continent for your story or campaign —
 coasts, rivers, peaks, forests, towns and roads, every place with a name of

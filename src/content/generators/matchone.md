@@ -2,7 +2,7 @@
 title: "Find the Match"
 blurb: "Find the match — a printable card deck where any two cards share exactly one picture, built from a finite projective plane"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 A deck of picture cards where any two cards share exactly one picture. Be
 the first to spot it!

@@ -2,7 +2,7 @@
 title: "Sacred Geometry"
 blurb: "Sacred geometry - flower of life, Metatron's cube, Sri Yantra, golden spiral, Platonic solids - constructed exactly"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The Flower of Life, Metatron's Cube, the Sri Yantra, the golden spiral and
 the Platonic solids — drawn from their true constructions, as colouring

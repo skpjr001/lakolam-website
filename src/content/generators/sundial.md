@@ -2,7 +2,7 @@
 title: "Sundial"
 blurb: "Paper horizontal sundials for your latitude — exact hour lines (tan θ = sin φ tan h), a true-size gnomon template with glue tabs, and an equation-of-time table"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A paper sundial made for your latitude: cut out the gnomon, fold it, glue it
 on the noon line, and read the time from the sun.

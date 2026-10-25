@@ -2,7 +2,7 @@
 title: "Picture Sudoku"
 blurb: "Picture sudoku for young children — 4×4 or 6×6 with pictures and cut-and-paste tiles"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 A little sudoku with pictures instead of numbers — cut out the missing
 pictures and glue them in.

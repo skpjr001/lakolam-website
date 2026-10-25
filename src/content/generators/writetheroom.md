@@ -2,7 +2,7 @@
 title: "Write the Room"
 blurb: "Write the room — lettered cards to post round the classroom, a recording sheet and a key"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Lettered cards go up round the classroom; children hunt for each one and
 write its answer on their sheet.

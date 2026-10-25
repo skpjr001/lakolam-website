@@ -2,7 +2,7 @@
 title: "Hex Signs"
 blurb: "Hex signs: compass-drawn stars and rosettes in rings of scallops, rays and folk motifs"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Round painted stars and rosettes in the Pennsylvania Dutch manner, drawn
 with a compass and a straightedge.

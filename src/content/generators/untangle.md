@@ -2,7 +2,7 @@
 title: "Untangle"
 blurb: "Untangle — move the numbered points of a tangled drawing until no two lines cross"
 category: puzzle
-version: "1.0.0"
+version: "1.0.2"
 ---
 A drawing of numbered points and lines, tangled up: move the points until no two lines cross.
 
@@ -74,5 +74,9 @@ mid-2000s and has been widely copied since.
   graph connected), and the start's crossings, recounted with
   floating-point geometry, must equal the exact count in
   `crossings_at_start` (always > 0). Meta also gives `nodes`, `edges`,
-  `grid`, `edge_list` (1-based) and the key's `solution` coordinates.
+  `grid`, `edge_list` (1-based), the key's `solution` coordinates and the
+  printed `start` positions — `[x, y]` per point in the same grid units as
+  `solution` (y down, the circle filling 0..grid − 1), to four decimals — so
+  the start and the answer can be animated or replayed without reading the
+  drawing (added in 1.0.1; the page and key are unchanged).
   Generation takes well under a millisecond (30 points: ~0.5 ms).

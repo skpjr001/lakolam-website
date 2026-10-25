@@ -2,7 +2,7 @@
 title: "Low-Poly Art"
 blurb: "Low-poly art — mountains, sunsets, gems and gradients rebuilt from flat Delaunay triangles, every triangulation checked"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A picture rebuilt from flat triangles: mountains, a sunset, a gem or a
 sweep of colour, faceted like folded paper.

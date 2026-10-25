@@ -2,7 +2,7 @@
 title: "Quasicrystal"
 blurb: "Quasicrystal wave art: n plane waves at equal angles summed and contoured into equal-area bands — ordered, n-fold symmetric, never repeating — as line art to colour or palette bands"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Waves from many directions added together: a pattern that is ordered
 everywhere and never repeats, as line art to colour or bands of colour.

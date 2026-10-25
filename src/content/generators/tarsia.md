@@ -2,7 +2,7 @@
 title: "Tarsia Jigsaw"
 blurb: "Tarsia jigsaw — cut-out triangles that rebuild a triangle or hexagon when every question meets its answer"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Cut out the triangles and fit them back together — every question must touch its answer.
 

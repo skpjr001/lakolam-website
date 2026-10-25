@@ -2,7 +2,7 @@
 title: "Ridgelines"
 blurb: "Ridgelines — stacked profiles with exact hidden lines: pulsar plots, surfaces, mountains"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Stacked profiles that hide one another: the Unknown Pleasures pulsar plot,
 wire-frame landscapes and layered mountains.

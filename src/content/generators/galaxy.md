@@ -2,7 +2,7 @@
 title: "Galaxies"
 blurb: "Galaxies from the density-wave construction: spiral arms where nested, twisted ellipses crowd; barred spirals, ellipticals and deep fields, as line art to colour or starry colour"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Spiral arms that nobody drew: nested ellipses, each turned a little more
 than the one inside, crowd together into the arms of a galaxy.

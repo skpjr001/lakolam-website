@@ -2,7 +2,7 @@
 title: "Gift Boxes"
 blurb: "Gift boxes and envelopes — true-size cut-and-fold templates for tuck, gable and pillow boxes and envelopes, fold-checked"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Print, cut, fold, glue: true-size templates for tuck boxes, gable boxes,
 pillow boxes and envelopes, with every tab checked against the edge it

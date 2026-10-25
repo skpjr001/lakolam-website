@@ -2,7 +2,7 @@
 title: "Cityscape"
 blurb: "Cityscape — layered skylines of towers, domes and brownstones, with reflections"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A city skyline in layers: towers and spires behind, art-deco crowns and
 domes in the middle, a row of brownstones in front, all reflected in the

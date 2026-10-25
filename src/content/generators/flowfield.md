@@ -2,7 +2,7 @@
 title: "Flow Field"
 blurb: "Evenly spaced streamlines through a noise field"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Evenly spaced streamlines through a noise field — hair, water, wind, made of
 lines.

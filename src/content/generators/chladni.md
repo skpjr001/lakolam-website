@@ -2,7 +2,7 @@
 title: "Chladni Figures"
 blurb: "Chladni figures — the nodal lines of a vibrating plate, as a two-colour pattern or sand"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The patterns sand draws on a singing metal plate: nodal lines of vibration,
 as a two-colour pattern, as sand, or as a colouring page.

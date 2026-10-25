@@ -2,7 +2,7 @@
 title: "Telling Time"
 blurb: "Telling time — read, draw and advance analogue clocks"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 A page of clock faces: read the hands, draw the hands, and work out what time
 it will be later.

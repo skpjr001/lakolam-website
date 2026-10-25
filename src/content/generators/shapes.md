@@ -2,7 +2,7 @@
 title: "2D Shapes"
 blurb: "2D shapes — name them, count sides and vertices, right angles and parallel sides, classify triangles and quadrilaterals, regular or irregular"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Name the shape, count its sides and corners, and sort out squares, rhombuses, kites and trapezoids.
 

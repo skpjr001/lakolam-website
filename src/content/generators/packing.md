@@ -2,7 +2,7 @@
 title: "Circle Packing"
 blurb: "A page of circles, each grown until it touches a neighbour or the wall"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A page of circles, each grown until it touches a neighbour or the wall.
 

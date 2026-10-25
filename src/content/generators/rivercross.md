@@ -2,7 +2,7 @@
 title: "River Crossings"
 blurb: "River crossings — the farmer's boat, hunters that must not outnumber, the night bridge; the fewest crossings or minutes proven by search"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Get everyone safely to the other side - in the fewest crossings.
 

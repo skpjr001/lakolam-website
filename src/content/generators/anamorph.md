@@ -2,7 +2,7 @@
 title: "Anamorphic Art"
 blurb: "Anamorphic art — cylinder-mirror pictures, a drawing grid and 3D trick drawings, every mapping checked by tracing rays back"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Pictures that only look right from one place: a smudge round a circle that
 turns into a smiling face in a mirrored tube, and drawings that seem to

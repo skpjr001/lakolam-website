@@ -2,7 +2,7 @@
 title: "Bode Plot Paper"
 blurb: "Bode plot paper — a dB magnitude grid above a phase grid on a shared 1-6 decade log frequency axis"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 Bode plot paper — a decibel magnitude grid above a phase grid in degrees,
 sharing one logarithmic frequency axis.

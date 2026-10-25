@@ -2,7 +2,7 @@
 title: "Suns & Moons"
 blurb: "Suns & Moons - balance suns and moons, no three alike, obeying = and x marks"
 category: puzzle
-version: "1.1.0"
+version: "1.1.1"
 ---
 Fill the grid with suns and moons: balanced lines, no three alike, and every
 = and x between neighbours kept.

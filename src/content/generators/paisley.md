@@ -2,7 +2,7 @@
 title: "Paisley"
 blurb: "Paisley art: curled boteh teardrops filled with nested henna ornament bands, as one motif, a pair or a half-drop repeat"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The curled teardrop of Persian and Kashmiri ornament, filled ring by ring
 with henna-style bands: scallops, dots, petals, chevrons, lattice and tiny

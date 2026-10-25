@@ -2,7 +2,7 @@
 title: "Mandala"
 blurb: "Circular, square and polygonal rosettes from a symmetric fundamental domain"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Circular, square and polygonal rosettes built from a symmetric fundamental
 domain — colouring pages with mathematical bones.

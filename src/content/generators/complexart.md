@@ -2,7 +2,7 @@
 title: "Complex Function Art"
 blurb: "Complex-function art: phase portraits of rational and trigonometric functions as colour tiles, or their level curves as a colouring page"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A formula of a complex number, drawn as a map: colours that wheel round its
 zeros and poles, or the curved square grid that its level lines make.

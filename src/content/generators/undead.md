@@ -2,7 +2,7 @@
 title: "Haunted Mirror Maze"
 blurb: "Haunted mirror maze — place ghosts, vampires and zombies so every line of sight sees its number"
 category: puzzle
-version: "1.0.0"
+version: "1.0.1"
 ---
 Ghosts, vampires and zombies hide among the mirrors — count what each
 doorway sees to find them all.

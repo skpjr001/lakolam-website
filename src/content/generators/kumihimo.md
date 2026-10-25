@@ -2,7 +2,7 @@
 title: "Kumihimo"
 blurb: "Kumihimo disk braids — kongo gumi on 8, 12 or 16 strands: a numbered loading chart, colour key with strand lengths, and an unrolled and side-view braid preview made by simulating every move, with the pattern repeat found and checked"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Kongo gumi round braids for the foam kumihimo disk, on 8, 12 or 16
 strands, with a loading chart and a preview made by working every move.

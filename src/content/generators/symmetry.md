@@ -2,7 +2,7 @@
 title: "Symmetry"
 blurb: "Symmetry — complete the mirror picture on a grid, draw lines of symmetry, find the order of rotational symmetry, each count computed from the drawn figure"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Finish the mirror picture, find every line of symmetry, and count how often a shape fits onto itself in a turn.
 

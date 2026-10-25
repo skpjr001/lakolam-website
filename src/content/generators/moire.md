@@ -2,7 +2,7 @@
 title: "Moiré"
 blurb: "Moiré op art: overlaid line, ring, spoke, wave and spiral gratings, slightly turned, stretched or shifted so large interference fringes appear"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Two sets of fine lines laid over each other, and broad bands appear that
 neither set contains.

@@ -2,7 +2,7 @@
 title: "Unit Circle"
 blurb: "Unit circle — the 16 standard angles in degrees and radians with exact (cos, sin) pairs, filled in or blank"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 The unit circle for trigonometry — the sixteen standard angles in degrees
 and radians with their exact coordinates, filled in or blank for practice.

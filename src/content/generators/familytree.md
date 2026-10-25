@@ -2,7 +2,7 @@
 title: "Family tree charts"
 blurb: "Family tree charts — fan charts of a half, three-quarter or full circle and pedigree charts, 4 to 7 generations with Ahnentafel numbers"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 Fan charts and pedigree charts to fill in, four to seven generations, with
 every ancestor's place numbered the way genealogists number them.

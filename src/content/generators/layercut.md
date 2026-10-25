@@ -2,7 +2,7 @@
 title: "Layered papercut"
 blurb: "Layered shadow-box papercuts — a mandala, heart, tunnel or landscape in three to eight nested card layers, each proven one piece with bridges at least the minimum width and visible in the stack"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A shadow-box picture in three to eight layers of cut card — a mandala, a
 heart, a tunnel or a hilly landscape — that builds up in depth.

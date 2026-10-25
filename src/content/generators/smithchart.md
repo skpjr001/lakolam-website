@@ -2,7 +2,7 @@
 title: "Smith Chart"
 blurb: "Smith chart — impedance, admittance or ZY chart with exact resistance circles and reactance arcs"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 A blank Smith chart for radio-frequency work — exact resistance circles and
 reactance arcs, as an impedance chart, an admittance chart or both at once.

@@ -2,7 +2,7 @@
 title: "Zentangle"
 blurb: "Zentangle — a partitioned page, each region filled with its own tangle"
 category: design
-version: "1.2.0"
+version: "1.2.1"
 ---
 A page cut into regions, each filled with a different line texture — a
 *tangle*.

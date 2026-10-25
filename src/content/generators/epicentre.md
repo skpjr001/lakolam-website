@@ -2,7 +2,7 @@
 title: "Locating an Earthquake"
 blurb: "Locate an earthquake — read S-P lags off drawn seismograms, turn them into distances with a stated constant-speed model, and draw three compass circles on a km map that meet at exactly one grid point; plus lag, distance and origin-time drills"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Read the seismograms, turn each S-P lag into a distance, and swing three compass circles to find where the ground shook.
 

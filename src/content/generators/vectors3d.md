@@ -2,7 +2,7 @@
 title: "Vectors in 3D"
 blurb: "3D vectors and lines — magnitudes, unit vectors, direction cosines, scalar and vector products, angles, areas, equations of lines, skew lines and shortest distances, every answer exact and re-checked"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 Magnitudes, unit vectors, scalar and vector products, equations of lines, and skew lines in three dimensions — every answer exact.
 

@@ -2,7 +2,7 @@
 title: "Fisheye Grid"
 blurb: "Curvilinear perspective grid — four- and five-point fisheye arcs or a six-point equirectangular sphere"
 category: paper
-version: "1.0.0"
+version: "1.0.1"
 ---
 Curvilinear perspective grids — four-point and five-point fisheye circles
 and a six-point panorama, every line an exact curve through its vanishing

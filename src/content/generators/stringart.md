@@ -2,7 +2,7 @@
 title: "String Art"
 blurb: "String art — modular chord envelopes, cardioids and their kin"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Threads between pins on a circle: pin `i` connects to pin `i·k mod n`, and
 the chords envelope a curve the thread never draws.

@@ -2,7 +2,7 @@
 title: "Labyrinth"
 blurb: "Unicursal labyrinths — one corridor, classical or seeded, proven single-path"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 One corridor, folded into concentric circuits, leading from the entrance to
 the centre. No junctions, no dead ends, no decisions — a labyrinth is walked

@@ -2,7 +2,7 @@
 title: "Tessellation"
 blurb: "Interlocking tiles whose wiggly edges match exactly, laid by translation or glide"
 category: design
-version: "1.1.0"
+version: "1.1.1"
 ---
 Interlocking tiles whose wiggly edges match exactly — Escher's construction,
 parameterised.

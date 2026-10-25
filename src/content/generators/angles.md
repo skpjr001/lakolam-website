@@ -2,7 +2,7 @@
 title: "Angles"
 blurb: "Angles — measure with a protractor, draw, classify and find missing angles"
 category: maths
-version: "1.0.0"
+version: "1.0.1"
 ---
 A page of angles to measure, draw, name and calculate, from reading a
 protractor to algebra around a point.

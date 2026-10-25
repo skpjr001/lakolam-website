@@ -2,7 +2,7 @@
 title: "Letter Hive"
 blurb: "Letter Hive — words from seven letters, always using the centre, with a pangram"
 category: word
-version: "1.0.0"
+version: "1.0.1"
 ---
 Seven letters in a honeycomb — make as many words as you can, and every one
 must use the letter in the middle.
