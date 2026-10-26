@@ -1,8 +1,8 @@
 ---
 title: "Sundial"
-blurb: "Paper horizontal sundials for your latitude — exact hour lines (tan θ = sin φ tan h), a true-size gnomon template with glue tabs, and an equation-of-time table"
+blurb: "Paper sundials for your latitude — horizontal, vertical, declining, polar or equatorial, exact hour lines, a true-size gnomon template with glue tabs, and an equation-of-time table"
 category: design
-version: "1.0.1"
+version: "1.1.0"
 ---
 A paper sundial made for your latitude: cut out the gnomon, fold it, glue it
 on the noon line, and read the time from the sun.
@@ -39,6 +39,25 @@ clock time through the year.
    by the dashed meridian line instead; the hour lines already allow for
    your distance from the time-zone meridian.
 
+The page can also make four other kinds of dial; the template and the
+setting-up note on the page change to suit:
+
+- **Vertical:** fix the face on a wall that faces due south (due north in
+  the southern hemisphere), the noon line plumb, and glue the gnomon on the
+  thick line hanging from the dot.
+- **Declining:** the same, for a wall turned away from due south by the
+  angle printed under the face. The gnomon line then leans away from the
+  noon line — glue the gnomon on the thick line, not on XII.
+- **Polar:** tilt the face up from level by your latitude, facing due south
+  (north), and glue the fin upright along the thick noon line. Its top
+  edge casts the shadow; the hour lines are parallel.
+- **Equatorial:** cut out both faces and glue them back to back, then push a
+  straight rod (a skewer) through both dots, square to the card, at least as
+  long as the page says on each side. Rest the dial on the folded stand so
+  the rod points to true north (south) and rises by your latitude. Read the
+  upper face from March to September and the lower face the rest of the year
+  (the other way round in the southern hemisphere).
+
 ## Purpose
 
 Making a sundial that works is one of the most satisfying ways to see the
@@ -67,7 +86,36 @@ longitude and equation-of-time corrections to agree with a watch.
   ±30°), `marks` (hours, half_hours, quarter_hours), `numerals` (roman,
   arabic), `palette` (auto, parchment, slate, terracotta, verdigris),
   `line_art` (black on white for printing), `equation_table`, `width`,
-  `height` (page size in points).
+  `height` (page size in points), `kind` (horizontal — the default —
+  vertical, declining, polar, equatorial), `declination` (declining dials:
+  the wall's turn from due south, degrees west positive, clamped to ±75 and
+  recorded as `requested_declination_deg`; ignored by the other kinds).
+- **Other kinds (Waugh, *Sundials: Their Theory and Construction*; Rohr,
+  *Sundials*):** one vector construction serves them all. With `n` the
+  plate's outward normal, `g` the style (the polar axis pointed out of the
+  plate), `m` the equator's meridian point and `w` west, the hour line at
+  hour angle h is `n × (g × q)`, `q = cos h · m + sin h · w`, on the side
+  away from the sun. That is tan θ = cos φ · tan h on a vertical dial
+  (style height 90° − φ) and tan θ = cos φ / (cos D · cot h + sin D · sin φ)
+  on one declining D west (style height asin(cos φ · cos D), the substyle
+  leaning off the noon line). A polar plate contains the axis, so its lines
+  are parallel at x = H · tan h for a fin of height H, drawn to ±75° (five
+  hours either side of noon) with H as large as the face allows; the fin
+  template is H tall. An equatorial plate is square to the axis: both faces
+  have lines 15° an hour apart, mirror images, the upper face lit while the
+  sun is north of the equator, the lower face the rest of the year, with a
+  stand template tilted 90° − φ and a rod at least r · tan 23.44° each side
+  (r the face's half-width) so the rod tip's shadow reaches the lines at the
+  solstice. On every kind a line is drawn only for clock times at which the
+  sun can be both above the horizon and in front of the plate on some day of
+  the year (checked every quarter degree of declination); a vertical dial
+  then runs six to six at most. The root sits where the lines and the
+  substyle reach furthest into the face. Meta adds `kind`,
+  `style_height_deg` (also `gnomon_angle_deg`), `declination_deg` and
+  `substyle_angle_deg`, `fin_height_mm`, `face_tilt_deg`,
+  `stand_angle_deg`, `rod_min_cm_each_side` and the lower face's
+  `lower_face_hour_lines`; hour lines give `line_angle_deg` clockwise on the
+  page from the noon line (`offset_mm` on a polar dial).
 - **Generation:** for each clock time the sun's hour angle is
   h = 15° × (time − 12) + (longitude − zone meridian) when the correction is
   on, and the hour line makes the angle θ with the meridian given by
@@ -98,4 +146,14 @@ longitude and equation-of-time corrections to agree with a watch.
   equation of time is within 30 seconds of published values; the scale
   bar is 5 cm; line art is black only. Near the equator a horizontal dial
   is a poor instrument — its lines crowd round noon — but it is still drawn
-  exactly.
+  exactly. The other kinds carry the same `hour_lines_exact` guarantee,
+  tested on every drawn line of every kind and both hemispheres: its
+  direction measured on the page matches the shadow of a point of the style
+  moved along a sunbeam onto the plate (a direct construction, not the
+  plane intersection the lines are drawn from); vertical lines match
+  tan θ = cos φ · tan h, declining lines the closed form above, polar lines
+  sit at H · tan h and agree with the shadow of the fin's edge, equatorial
+  lines are 15° an hour on both faces and the faces mirror each other; the
+  templates have the style height (or stand tilt) at the foot; the polar fin
+  is exactly H tall. The default (`kind: horizontal`) draws every earlier
+  page byte for byte.

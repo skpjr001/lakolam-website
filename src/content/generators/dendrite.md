@@ -1,11 +1,11 @@
 ---
 title: "Dendrites"
-blurb: "Dendrites — diffusion-limited coral and frost, hyphae bubbles and lightning"
+blurb: "Dendrites — diffusion-limited coral and frost, hyphae bubbles, lightning, and chiral and tip-splitting bacterial colonies"
 category: design
-version: "1.0.1"
+version: "1.1.0"
 ---
 Branching growth from random motion: coral, frost and snowflakes, chains of
-bubbles, and lightning.
+bubbles, lightning, and bacterial colonies.
 
 ## What it is
 
@@ -25,6 +25,10 @@ lightning all grow like this. This generator grows three kinds:
   field is strongest, as a bolt to the ground, a Lichtenberg figure (the
   branching scar lightning burns into wood) or the filaments of a plasma
   globe.
+- **Bacterial colonies:** the branching patterns some bacteria make as they
+  spread over a dish of firm jelly with little food. In one kind every branch
+  tip splits in two as it grows; in the other, thin branches all curl the
+  same way, like a pinwheel, because the cells swim with a twist.
 
 ## How to use it
 
@@ -40,6 +44,9 @@ lightning all grow like this. This generator grows three kinds:
 - **Bubbles:** a colouring page. Colour each circle on its own, or colour
   along the chains, from the big circles where growth began to the small
   ones at its tips.
+- **Colonies:** `chiral` or `tip_splitting` mode. With a `point` seed the
+  colony grows across a round dish; `line` grows it up from a streak along
+  the bottom, `ring` inward from the dish's edge.
 - **Stickiness:** lower values let particles creep further in before they
   stick, which gives denser, furrier coral.
 
@@ -59,15 +66,19 @@ about 1.71. In 1984 Lucien Niemeyer, Luciano Pietronero and Hans Wiesmann
 modelled electrical breakdown in the same spirit: the discharge grows where
 the field is strongest. Their model draws the branching figures that Georg
 Christoph Lichtenberg first saw in 1777, in dust settling on a charged plate.
-Generative artists took up both models, and the bubble form comes from
+In the 1990s Eshel Ben-Jacob and colleagues grew *Paenibacillus* colonies on
+hard, poor agar and found two branching forms, tip-splitting and chiral, and
+explained them with "communicating walkers" that move up a diffusing food
+gradient. Generative artists took up these models, and the bubble form comes from
 hyphae and "circle growth" drawings in the plotter-art community.
 
 ## This implementation
 
-- **Spec knobs:** `mode` (`coral` | `bubbles` | `lightning`, default
-  `coral`); `seed_shape` (`point` | `line` | `ring`); `palette` (`auto` |
+- **Spec knobs:** `mode` (`coral` | `bubbles` | `lightning` | `chiral` |
+  `tip_splitting`, default `coral`); `seed_shape` (`point` | `line` | `ring`); `palette` (`auto` |
   `ink` | `coral` | `frost` | `moss` | `storm`; with `auto`, coral uses
-  coral, bubbles use ink and lightning uses storm). Coral: `detail` (domain
+  coral, bubbles use ink, lightning uses storm and colonies use moss).
+  Colonies also read `detail` (domain side) and `particles` (node cap). Coral: `detail` (domain
   width in particle radii, 80–800, default 420), `particles` (cap,
   500–30000), `stickiness` (0.05–1; negative = seeded in 0.35–1), `arms`
   and `anisotropy` (bonds turned toward `arms` directions by this fraction),
@@ -126,6 +137,28 @@ hyphae and "circle growth" drawings in the plotter-art community.
     branches by subtree size. Cell centres get a seeded jitter, and the
     strokes stay straight and jagged, with a glow drawn underneath on dark
     palettes.
+  - **Colonies** (Ben-Jacob's morphotypes, reduced to a biased walker per
+    branch tip). Tips start from the seed (five from a point, seven along a
+    line, twelve round a ring, heading out of it) and each round step
+    1.5 units. A heading keeps its persistence, turns a share of the way up
+    the nutrient gradient (0.12 chiral, 0.22 tip-splitting), takes seeded
+    noise (±0.1, ±0.18 rad) and, for `chiral`, a constant twist of
+    2.0–2.6° per step whose sign — the colony's handedness — the seed picks
+    once for every tip. Nutrient lives on a 6-unit grid, eaten (0.35) where a
+    tip steps and diffused by one Jacobi step per round, with the domain's
+    edge a full reservoir away from the inoculation (every edge for a point,
+    the top for a line, none inside a ring). A tip dies on too little food
+    (< 0.08), on leaving the domain (or the ring), or where it would come
+    within 2.6 units of growth that is neither its last four nodes nor
+    younger than three rounds (a fork's sibling, still diverging). After a
+    seeded run (26 or 34 units × 0.6–1.4) a tip forks: symmetrically by
+    ±0.35–0.6 rad for tip-splitting, or keeping its heading and throwing a
+    side branch 1.4 × that far to its twisting side for chiral. Growth stops
+    at the target extent (as coral), the node cap, or when every tip has
+    died; it is drawn like coral (one smoothing round), chiral branches at
+    60 % width, in a dish outline for a point seed. Meta: `nodes`, `roots`,
+    `splits`, `handedness`, `twist_deg_per_step`, `mean_turn_deg_per_step`,
+    `branches`, `reached_extent`.
 - **Solving:** nothing to solve. This is a design.
 - **Guarantees (tested):**
   - Pages are deterministic per seed, and different seeds give different
@@ -147,6 +180,12 @@ hyphae and "circle growth" drawings in the plotter-art community.
     adult colouring floor. Ink bubble pages pass the ADULT colourability
     gate (`colorable: true`), and a broken control (overlapping circles and
     a tiny circle) fails both checks.
+  - Colonies are forests rooted at their seeds whose every bond is exactly
+    one step long; every seed shape reaches its extent. In a chiral colony at
+    least 95 % of forks put the side branch on the colony's twisting side
+    and the mean turn along branches has the handedness's sign, and both
+    handednesses occur across seeds; tip-splitting forks lean either way
+    between 30 % and 70 % of the time.
   - The thinnest stroke is 0.6 pt, so every page passes vector preflight,
     and coral and lightning strokes taper by more than 4×.
   - A page takes well under 0.2 s in release builds.
