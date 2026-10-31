@@ -76,3 +76,8 @@ it remains one of the most played patience games online.
   independent rules engine, re-prove every band's deals winnable with an
   independent recursive search that works out which cards are free from the
   geometry, and confirm that deals the engine calls lost are lost.
+
+- **Structured data:** the page's `data` is `patience`: the 28 `layout`
+  cards (rows of 3, 6, 9, 10, top to bottom), `covers` (the positions lying on
+  each), the `waste` card, the `stock` in turning order, `wrap`, and the
+  winning line as `solution` — `{"play": position}` or `"draw"`.

@@ -77,3 +77,5 @@ skips.
   on 9×9 and 10×10 boards usually come out as Expert. Those requests try
   the easier rungs only briefly on big boards before moving up. The board served is always the
   nearest band reached, labelled as the band it is.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the printed black cells (`cells`: `true`, null elsewhere), the outlined regions of white cells (`regions`), and the answer — the loop as its cells in order (`loop`) and as joined neighbours (`edges`). Cells are numbered row by row from 0 where the data is a grid.

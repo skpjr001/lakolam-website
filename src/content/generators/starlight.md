@@ -78,3 +78,5 @@ large collections of handmade examples online.
   states the band actually reached (for example Kids at 6×6 is Medium,
   Expert below 7×7 is Hard, and at 4×4 and 5×5 an attempt at Hard may only
   find boards the local rung settles, which are labelled Kids or Easy).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the numbers and `solution` each `star`, `block` or empty cell.

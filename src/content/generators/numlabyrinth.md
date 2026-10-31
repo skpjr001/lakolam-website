@@ -84,3 +84,5 @@ of each row and column are filled.
   at 5×5, Easy at 6×6, else Medium; whole corridor: Easy at 5×5, Medium at
   6×6, else Hard; trial: Hard at 5×5, else Expert). Every band is served at
   its default size; with a custom `size` the label states the band reached.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed numbers (`cells`), the answer (`solution`: `0` empty, else 1..`numbers`), the corridor as its cells in order from the circled start (`corridor`), with its open sides as `edges` and every other side between two cells as `walls`. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

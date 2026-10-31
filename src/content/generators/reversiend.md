@@ -88,3 +88,8 @@ staple of reversi clubs.
   `apply_move` (forced passes applied), `move_values`, `best_move` (the
   computer's reply and the hint: perfect play, lowest square on ties),
   `judge`, `count`.
+- **Structured data:** the page also carries the position as JSON (`kind:
+  "grid"`, 8 × 8 with file a in column 0): the discs (`cells`/`givens`:
+  `"B"` black, `"W"` white), `to_play` and `goal`, and the answer: the one
+  winning square (`answer`), the exact final disc difference of every legal
+  move (`move_values`), and the perfect-play `line` with its `final` count.

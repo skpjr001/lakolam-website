@@ -110,3 +110,5 @@ can still be fiendish.
   search over worker steps and pushes with no pruning, check the dead-end
   tests never fire along a solution, and follow the play API's hints to
   the end. Defaults take a few milliseconds; Expert rooms up to about 3 s.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — The room as structured data, on its full grid (border walls included): `cells` `"#"` for a wall, `null` for floor; `targets` (cell, the crate kind it needs), `crates` (cell, kind) and the `player` at the start; `fixed` symbols printed on walls (equation mode); and the answer as `pushes` (crate cell, direction 0 up, 1 right, 2 down, 3 left) and the player's `route` (lower case walks, capitals push).

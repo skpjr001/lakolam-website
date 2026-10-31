@@ -71,3 +71,5 @@ traditional set-up; countless layouts followed.
   stacked, each raised by one tile edge with a shadow; covered tiles are
   hidden, as on a real table. The key lays every layer out on its own with
   each tile's removal step.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "tile_layout"`: the layout's shape, every tile's position (tier, then x and y in half-tile units) and face, and the solution as one clearing order of tile-index pairs, first removal first.

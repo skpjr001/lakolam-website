@@ -85,3 +85,6 @@ for preschoolers.
   can swap. Every level is reached as asked; the page is rated by its mode's
   structure (`rating_basis: mode_structure`). The key shows every piece
   glued in place.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "cut_paste"`): the `mode`, the `pieces` in strip order, the `boxes` on the
+  board, and `solution`, the box each piece is glued into.

@@ -48,3 +48,5 @@ each spelled a theme. It predates the crossword by decades.
   to the page's width inside the margins; on one line the instruction ran
   79 pt off the right of the default page. Puzzle pages change; answer keys
   whose line fits do not.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "double_acrostic"`): each row's scrambled letters as printed and its answer word, and the two words the first and last letters of the answers spell.

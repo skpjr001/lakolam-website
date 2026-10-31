@@ -74,3 +74,5 @@ some using a single letter repeated, others several.
   generator cannot reach at a custom size (Kids above 4×4, for instance) is
   served as the nearest band reached and reported beside
   `requested_difficulty`.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the printed letters (`cells`), and the answer as `regions` (cell lists) and `solution` (each cell's region).

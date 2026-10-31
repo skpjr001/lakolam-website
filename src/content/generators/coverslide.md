@@ -77,3 +77,7 @@ pencil and paper.
   route, replay the route square by square, and check a 2×2 room counts as
   two routes. The answer key draws the route with each slide's stop
   numbered and lists the directions.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` marks walls (null = open), `start` the head's square, and
+  the answer as `solution` (the slides in order) and `stops` (the square each
+  ends on).

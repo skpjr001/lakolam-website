@@ -91,3 +91,9 @@ lessons.
   (FORT and FOUGHT, SORT and SOUGHT) and the reverse; the pages follow
   American pronunciation. Words with apostrophes (THEY'RE, WHO'S) are not
   in the dictionary and do not appear.
+- **Structured data:** the page also carries the sheet as JSON (`kind:
+  "homophones"`, with its `task`): a match page lists the `left` and `right`
+  words and, as `solution`, the index into `right` of each left word's
+  sound-alike; a write page lists the `prompts` and, as `solution`, each
+  one's sound-alike; a same page lists the word `pairs` and, as `solution`,
+  whether each pair sounds the same.

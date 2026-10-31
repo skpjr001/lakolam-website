@@ -87,3 +87,8 @@ This page uses its own cards and its own name.
   feature with two alike and one different) or `Invalid`; `solved`; `hint(deal,
   found, level)` → one card of an unfound triad, then a second, then all
   three.
+
+- **Structured data:** the page's `data` is `cards`: each card's feature
+  values (`0..3`, the first `features` of number, shape, colour, fill), in the
+  printed order (card `i` is printed `i + 1`), and the `solution` — every
+  triad as card indices.

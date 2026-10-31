@@ -66,3 +66,8 @@ mobile puzzle games.
   start may be hidden because uniqueness is proved over all starts. Rated by
   grid size (`rating_basis: grid_size_and_start`); an explicit `size` is rated
   by the size actually drawn, and the request is recorded.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): dark squares as `true` in `cells`, `start` (the starting square
+  when the page shows it, else null), and the answer both as `path` (cell
+  indices `r * cols + c` in order) and as `solution` (each white square's
+  step number from 1).

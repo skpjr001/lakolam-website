@@ -113,3 +113,10 @@ of the skeleton turned 45 degrees at scale 1/√2.
   layouts and knob extremes; meta reports `regions`, `pockets_inked`,
   `smallest_region_mm2`, `path_width_pt` and `colorable`. Neighbouring
   paths never share a colour. A page builds in well under 0.1 s.
+- **Transparent backgrounds:** the vellum page fill of the Insular colouring
+  is kept apart as the page's background, ready to be tagged as a
+  background layer, so a rendering asked for a transparent background can
+  leave it out; page bytes are unchanged.
+- **Clamps:** a knob held to its range (`turns`, `depth`, `cut_share`,
+  `stroke`, `width`, `height`, like `cells`) is reported as
+  `requested_<field>` in meta, so a recipe describes the page it made.

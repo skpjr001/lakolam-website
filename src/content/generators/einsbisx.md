@@ -71,3 +71,5 @@ of them, from 6×6 up to 12×12.
   Expert a 9×9 that needs trial). The sums rung is almost always needed. Every band is
   served at its default size; with a custom `size` the label states the
   band reached.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the printed numbers (`cells`, null where blank), the answer (`solution`), the outlined regions (`regions`), and the sums printed beside the grid (`clues.rows` left of each row, `clues.cols` above each column). Cells are numbered row by row from 0 where the data is a grid.

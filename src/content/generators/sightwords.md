@@ -88,3 +88,5 @@ first-grade workbooks.
   Checked for every word of every list in tests. Capitals are the
   default; `lowercase` draws the words in the canvas's mixed-case face,
   and pages without it are unchanged byte for byte.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `sight_words`: per panel the word, the find row with the positions to circle, the missing-letter row and the tiles.

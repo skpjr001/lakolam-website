@@ -80,3 +80,5 @@ its own and the crossing of rows and columns more important.
   Expert). Every band is reached at its default size. With a custom `size`
   the label states the band reached — Kids from 7×7 up is Easy, and a
   large Kids grid may need printed cells.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): cells printed in the grid (`cells`: `true` black, `false` white, null blank), the answer (`solution`: `true` = black), and the run clues (`clues.rows` / `clues.cols`: `[longest black run, longest white run]` per line; black left and top, white right and bottom on the page). Cells are numbered row by row from 0 where the data is a grid.

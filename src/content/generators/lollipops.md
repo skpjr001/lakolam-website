@@ -75,3 +75,7 @@ binary puzzles (Takuzu), where no three equal symbols may stand in a row.
 - **Guarantees:** `unique: true`; the tests re-count boards up to 8×8 with
   an independent plain search. The answer key draws every lollipop, printed
   parts in black and the rest in red.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): each cell as `"head"`, `"h"` (horizontal stick), `"v"` (vertical
+  stick) or `"empty"` — the printed cells in `cells`/`givens` (blank
+  otherwise) and every cell in `solution`.

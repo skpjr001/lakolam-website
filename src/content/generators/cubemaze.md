@@ -66,3 +66,8 @@ generators for 3D-printed cube mazes.
   (`rating_basis: face_size`); a size that rates differently from the
   requested band reports `requested_difficulty`, and clamped knobs report
   `requested_<field>`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "cube_maze"`): 6n² squares numbered face by face, `net` each square's column
+  and row on the printed net, `edges` the open passages and `walls` the closed
+  ones (pairs of squares, across folds and glued seams too), `start`, `goal`,
+  and `solution` the one route.

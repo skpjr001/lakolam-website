@@ -81,3 +81,7 @@ reaching the same rules independently.
   default size; with a custom `size` the label states the band actually
   reached (Kids from 6×6 up is Easy; Medium at 5×5 and 6×6 is Easy; Expert
   at 5–7 is Hard and Hard from 8×8 up is Expert).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens`, and the answer both as
+  the loop's cells in order (`loop`) and as a per-cell flag (`solution`, true
+  on the loop).

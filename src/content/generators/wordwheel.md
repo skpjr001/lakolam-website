@@ -47,3 +47,8 @@ form descends from the older "how many words" letter games.
   set (checked by an independent re-scan in the tests); a nine-letter answer
   always present. Rated by how many words there are to find — more is easier —
   with the basis named in the metadata.
+
+- **Structured data:** the page's `data` is `word_wheel`: the `centre`
+  letter, the eight `ring` letters in printed order (clockwise from the
+  top), and the answer — every valid word (`solution`) and the `nine`-letter
+  word.

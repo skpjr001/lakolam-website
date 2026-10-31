@@ -67,3 +67,7 @@ the idea has long been a favourite of brain-game books for seniors and of
   12 Easy, 16 Medium, 20 Hard, more Expert. A hand-set `count` sets the band,
   and the request is kept as `requested_difficulty`; clamps are reported as
   `requested_count`, `requested_width`, `requested_height`.
+
+- **Structured data:** the page's `data` is a `trail`: the circle centres
+  (`points`, in pt) and `labels` in trail order, `printed` (null for the
+  empty circle), `solution` (the visiting order) and `missing`.

@@ -70,3 +70,5 @@ published as Letter Path and (with digits) as Number Path.
   Kids → Easy, Easy → Easy, Medium → Medium, Hard → Hard, Expert → Hard (the
   clue-count rating has no Kids or Expert band; `requested_difficulty` always
   records the request).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the grid with A's cell printed, the answer (letters as strings), and the edge clues (`side`, line `index`, `letter`) in `clues.edges`.

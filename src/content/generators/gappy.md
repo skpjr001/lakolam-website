@@ -70,3 +70,7 @@ no two touching; the distance clues are its own.
   size. A band a chosen size cannot reach (Hard on 12×12, where trial means
   Expert) is not searched for: the nearest band that size reaches is served
   and labelled as such.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the outside numbers as `clues` (`rows`, left of each row, and
+  `cols`, above each column; null where blank) and the answer as `solution`
+  (`true` for a shaded cell, row-major).

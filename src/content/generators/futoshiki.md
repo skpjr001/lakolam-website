@@ -86,3 +86,9 @@ Hutosiki and Unequal.
   text for vertical pairs and the embedded font had neither, so every
   vertical sign silently vanished. A path cannot go missing.
 - Rating basis: `technique_ladder` — a measurement of the work, not a proxy.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): printed digits as `cells`/`givens`, the filled grid as
+  `solution`, `marks` (`inequality` or `consecutive`), and either `signs`
+  (`[smaller, larger]` cell-index pairs, index `r * cols + c`) or `dots`
+  (the neighbour pairs whose values are one apart; every other neighbour
+  pair is not).

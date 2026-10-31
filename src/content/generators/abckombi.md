@@ -84,3 +84,5 @@ ban on equal neighbours.
   and 5×5 is Kids; Medium at 4×4 and 5×5 is Easy; Expert up to 6×6 is Hard
   and Hard from 7×7 up is Expert; with four or more letters a few small
   Hard boards settle at Easy).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the grid (letters as strings, printed letters as givens), the answer, and each line's letter counts (`clues.rows[r][l]`, `clues.cols[c][l]`: how many of letter `l`).

@@ -80,3 +80,8 @@ books.
   least two dots each way, and on mirror and turn pages the reader has at
   least half as much to draw as is shown. Rated by grid size, element count,
   slanted lines and symmetry (`rating_basis`).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "pattern"`): the grid size `n` (dots run 0..=n), the `pattern` kind and
+  `symmetry`, the printed `given` elements and the whole pattern as
+  `solution`, each element a pair of dots (a segment, or a cell's opposite
+  corners).

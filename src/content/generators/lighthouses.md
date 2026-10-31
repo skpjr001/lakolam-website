@@ -63,3 +63,7 @@ onto the lighthouses inside it.
   by the hardest rung needed (local: Kids up to 6×6, else Easy; packing:
   Medium; trial: Hard up to 9×9, else Expert). If a band is not reached in
   40 attempts the nearest band found is returned and labelled as such.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): each lighthouse's number in `cells`/`givens`, and the answer both
+  as a per-cell flag (`solution`, true on a ship) and as the list of ship
+  cells (`ships`).

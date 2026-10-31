@@ -77,3 +77,7 @@ such as Signpost, but asks for the arrows rather than giving them.
   detours: Easy up to 5×5, Medium at 6×6, else Hard; trial: Hard up to 5×5,
   else Expert). Every band is served at its default size; with a custom
   `size` the label states the band reached.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed arrows (`cells`/`givens`, as `U`, `R`, `D`, `L`,
+  with `"ROME"` on Rome's cell), the regions (`regions`), `rome`, and the
+  answer: every cell's arrow (`solution`).

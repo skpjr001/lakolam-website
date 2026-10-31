@@ -73,3 +73,7 @@ archive carries a collection of them.
   at 5×5, Easy above; trial is Easy up to 6×6, Medium at 7×7, Hard at 8×8
   and Expert from 9×9. With a custom `size` the band of that size and rung
   is served, and the request is reported beside it.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the printed numbers as `cells`/`givens`, `printed_black` (the
+  numbered cells printed black), and the colouring as `solution` (`true` =
+  black, row-major).

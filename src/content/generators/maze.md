@@ -66,6 +66,13 @@ crate implements.
 - **Difficulty:** solution-path length ratio, branching factor along the
   path, and dead-end depth distribution — measured on the carved maze, not
   assumed from the algorithm.
+- **Structured data:** the generator attaches the maze as JSON. A rectangle
+  (and a multi-floor plan, its floors side by side with gap columns between)
+  is `kind: "grid"` with `rows`/`cols`; the other topologies are `kind:
+  "maze_graph"` with the cell count in `cols` and the `topology`. Either way:
+  `walls` and `edges` (closed and open neighbour pairs of live cells), `live`
+  when a mask hides cells, `start`, `goal`, the solution `path`, the floors'
+  `stairs` and the weave's `tunnels` (`[from, under, to]`).
 
 ## Weave mazes
 

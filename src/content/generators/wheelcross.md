@@ -69,3 +69,8 @@ make" puzzles found in newspapers and puzzle books.
   served at the nearest reachable band and labelled so
   (`requested_difficulty` in the metadata).
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+- **Structured data:** the page's `data` is a `grid` with the `wheel`
+  letters (clockwise from the top): `cells`/`givens` the printed starters,
+  `solution` every letter (null off the words), and `words` — each slot's
+  `row`, `col`, `dir`, `len` and `answer`.

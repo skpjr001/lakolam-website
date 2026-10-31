@@ -68,3 +68,8 @@ original, family-friendly take with invented suspects and settings.
   for map facts, one for description facts — 0 Kids, 1–2 Easy, 3 Medium,
   4–5 Hard, 6 Expert (`rating_basis` `suspects_and_clue_families`); a band
   the case does not reach is reported as `requested_difficulty`.
+
+- **Structured data:** the page's `data` is `logic`: the `suspects`,
+  `rooms` (with `room_rects` on the plan's unit grid) and `objects`, the
+  `evidence` and `statements` as printed, and the `solution` — the `culprit`
+  and each suspect's `room_of` / `object_of` (indices).

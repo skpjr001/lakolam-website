@@ -80,3 +80,5 @@ built.
   `unique`, `difficulty` with `rating_basis: wall_size_and_grouping`, the
   search nodes used and the answer words.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — an empty `size × size` wall, its `solution` (letters, `"#"` for a block), the `groups` of rows each box covers and each box's jumbled `bank` of bricks (strings, `#` a block), and the `answers` across then down.

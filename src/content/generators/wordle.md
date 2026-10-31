@@ -55,3 +55,7 @@ paper code game *Jotto* (1955) and the peg game *Mastermind* (1970).
   pinned before the last one; no answer repeats on a page. Rated by rows shown
   (five Easy, four Medium, three Hard) and greens given (three rows with three
   greens or fewer is Expert).
+
+- **Structured data:** the page's `data` is `wordle`: per puzzle, the
+  printed `rows` — each `guess` and its `marks` (`"green"`, `"yellow"`,
+  `"grey"` per letter) — and the `answer`.

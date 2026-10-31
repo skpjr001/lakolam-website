@@ -84,3 +84,9 @@ different way, are the genre's own.
   Every band is reached at its default size; with a custom `size` the label
   always states the band actually reached (Kids from 5×5 up is Easy; Easy
   at 4×4 is Kids; Hard from 6×6 up is Expert).
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` hold
+  the mirrors (`"/"`, `"\\"`), `solution` the monster in each empty square
+  (`"ghost"`, `"vampire"`, `"zombie"`), `totals` how many of each, and
+  `clues.edge` the edge numbers (top left to right, right top to bottom,
+  bottom left to right, left top to bottom).

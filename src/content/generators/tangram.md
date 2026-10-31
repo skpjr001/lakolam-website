@@ -126,3 +126,5 @@ proved that exactly thirteen convex shapes can be made from the seven tans.
   every seed; meta carries `set`, `pieces`, `piece_areas`, `target_area`.
   Curved sets (the egg, the broken heart) and the Stomachion's slopes are
   not on this lattice and are not offered.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "tangram"`: which piece lines are shown, and every target figure — its name and outline corners in tan units — with the solution: the seven tans that make it (kind, eighth turns, mirrored, corners).

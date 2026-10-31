@@ -80,3 +80,5 @@ Otto Janko's online archive carries a large collection, in both the
   at 5×5, Easy above; trial is Easy up to 6×6, Medium at 7×7, Hard at 8×8
   and Expert from 9×9. With a custom `size` the band of that size and rung
   is served, and the request is reported beside it.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the arrows by compass point, `clues` the row and column counts, `rule` and `solution` the stars.

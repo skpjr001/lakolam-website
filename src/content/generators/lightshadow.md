@@ -83,3 +83,7 @@ collections.
   reached at the default sizes; Expert is reached for roughly five seeds in
   eight, and otherwise the nearest band found (usually Medium) is returned
   and labelled (`requested_difficulty` in meta).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens` with the cells printed on
+  grey in `clues.shadow`, the answer as `"light"` or `"shadow"` per cell in
+  `solution`, and the answer's `regions`.

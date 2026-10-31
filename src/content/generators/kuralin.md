@@ -86,3 +86,7 @@ rather than in the cells.
   `size` the label states the band actually reached (Kids from 6×6 up is
   Easy; Medium at 5×5 and 6×6 is Easy; Expert below 8×8 is Hard and Hard
   from 8×8 up is Expert).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): `clues.circles` (each circle's touching `cells` and its `shade`,
+  black, white or grey), the answer as `"black"` or `"loop"` per cell in
+  `solution`, and the loop's cells in order in `loop`.

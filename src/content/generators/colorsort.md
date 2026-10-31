@@ -73,3 +73,7 @@ pouring and stacking puzzles in which only the top item can move.
   Kids–Medium deals and for capacity-3, one-spare deals. A shortest solution
   is usually not unique (independent pours can swap order), so
   `unique_optimal` is not reported.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "tubes"`): each tube's balls bottom first (colour k is printed as the k-th
+  letter), the `capacity`, and `solution`, an optimal pour list as `[from,
+  to]` tube indices counted from 0.

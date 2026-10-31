@@ -88,3 +88,8 @@ are built on. Renju adds restrictions on Black to balance the game.
   otherwise a line-counting choice), `defend` (the reply that holds out
   longest in a puzzle) and `hint` (the next stone of the fastest forced five
   within 5, else the computer's choice), plus `cell_name`.
+- **Structured data:** the page also carries the position as JSON (`kind:
+  "grid"`, intersections row-major from the top, index `r * cols + c`): the
+  stones as `cells`/`givens` (`"B"`, `"W"`, null empty), `to_move`, the
+  `depth` to win within, the one winning intersection as `solution` (`cell`
+  and its printed `name`), and the main `line` against the longest defence.

@@ -106,3 +106,8 @@ the tick-grid presentation into a durable magazine genre from the 1960s on.
   a what-if, so their Hard and Expert usually serve Medium, reported as
   `requested_difficulty`. The engine is vendored from `lako-zebra` (same
   file).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "logic_grid"`): `attributes` (each one's `name` and printed `values`), the
+  `clues` as printed, and the answer: per entity in anchor order, the index of
+  its value in every attribute (`solution[e][a]`) and the same as labels
+  (`solution_labels`).

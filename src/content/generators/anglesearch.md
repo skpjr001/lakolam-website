@@ -91,3 +91,5 @@ search manageable: the answer is still two straight lines, not a free path.
   length. Difficulty is rated by the shape set, grid size and word count
   (`rating_basis` in the metadata), and the tests confirm Hard really uses
   backward starts and Expert really uses 45 degree bends.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the letter grid (`cells`, every one printed) and the hidden `words`, each with its cells in reading order, the index of its `bend` letter and its `shape`.

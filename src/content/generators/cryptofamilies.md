@@ -78,3 +78,7 @@ own.
   dictionary). Meta carries `unique`, `difficulty` with
   `rating_basis: revealed_letters_and_word_count`, how many letters were
   given and how many the proof added, the category, and the answers.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "cipher_words"`): the `family`, the printed `cipher` words, the revealed
+  letters as `givens` (`[cipher, plain]`), and the answer — `solution` the
+  plain words and `key` the plain letter of every cipher letter used.

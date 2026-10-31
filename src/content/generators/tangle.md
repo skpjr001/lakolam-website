@@ -74,3 +74,5 @@ poles and the result is a permutation.
   the band is rated, as always, from the crossings actually drawn. Pages that
   generated before are unchanged. A page too short for its lines (Expert on
   a 396 pt page, 6 lines on 1224 × 396) still reports that no tangle fits.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "tangle"`: the start letters top to bottom, the plot box and each line's Hermite control heights (the curves as drawn), the crossing count, and the solution — the end (1-based, top to bottom) each letter's line reaches.

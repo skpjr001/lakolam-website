@@ -84,3 +84,5 @@ boards of this size can be solved exactly.
   breadth-first search over whole boards (every colour playable) on small
   boards and every Kids page. Shortest plans are often not unique, so
   `unique_optimal` is not reported.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the board's colours as printed (`cells`, 1 to `colours`, row by row; the top-left cell is where every move floods from), the move limit, and the answer — a shortest plan, the colours to play in order (`plan`), and the move that floods each cell (`solution`, 0 for the starting region). Cells are numbered row by row from 0 where the data is a grid.

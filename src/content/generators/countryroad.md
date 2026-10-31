@@ -90,3 +90,7 @@ championships and online collections such as puzz.link.
   board in the nearest reachable band — the board it would have returned
   anyway, so the output is unchanged; Hard at 9×9 dropped from over 30 s to
   about a second.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `regions` the rooms (cell indices), `cells`/`givens` each printed
+  number in its room's first cell, and `solution` the loop as cell indices in
+  order.

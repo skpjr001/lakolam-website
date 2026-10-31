@@ -86,3 +86,5 @@ solving and generating puzzles with a connectivity rule.
   Expert up to 7×7 is Hard and Hard from 8×8 up is Expert).
   Real Fobidoshi boards sometimes need longer chains of reasoning than one
   trial step; those are not generated here.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): what is printed (`cells`: `true` a given circle, `false` a cross, null blank) and the answer (`solution`: `true` for a circled cell). Cells are numbered row by row from 0 where the data is a grid.

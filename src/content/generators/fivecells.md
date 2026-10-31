@@ -80,3 +80,5 @@ Collection.
   not reached in eight attempts the nearest band found is returned and
   labelled (`requested_difficulty` in meta); at the default sizes every
   band is reached for every region size.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the numbers as printed (`cells`, null where blank) and the answer — the regions as cell lists (`regions`) and each cell's region number (`solution`). Cells are numbered row by row from 0 where the data is a grid.

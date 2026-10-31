@@ -83,3 +83,5 @@ saying how the loop turns they say where its straight pieces are centred.
   Kids from 6×6 is Easy and from 7×7 Medium (the local rung alone does not
   settle boards that large), Easy from 7×7 is Medium, Medium up to 6×6 is
   Easy, Expert up to 7×7 is Hard and Hard from 8×8 is Expert.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the dots (`cell_dots` by cell index, `edge_dots` as the pair of cells whose shared side holds the dot), the answer loop as its cells in order (`loop`) and as joined cell pairs (`edges`). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

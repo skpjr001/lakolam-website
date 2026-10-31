@@ -75,3 +75,5 @@ built on words read around a flower of petals.
   set and came out hard whatever was asked. Hard (the new default) and expert
   requests, and so the default page, are byte-identical to 1.1; bold pages now
   report `requested_difficulty` when the band differs.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "flower_power"`): the ring of letter circles clockwise from the top (`ring`: the answer letter in each, `given`: whether it is printed), each petal's five circles in reading order (`petals`, indices into `ring`; neighbours share an end), and the petal words — the answer.

@@ -75,3 +75,9 @@ conditions go back further, but Pips made the region-and-badge format popular.
   confirmed by the independent counter. Rated by board size: Kids 4 dominoes,
   Easy 6, Medium 9, Hard 12, Expert 15, with Medium and above also merging and
   loosening conditions.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"` over the bounding grid): the board's cells (`active`), the regions
+  (`regions`) with their conditions (`conditions`: `{"sum": n}`, `{"less":
+  n}`, `{"more": n}`, `"equal"` or `"different"`), the domino set
+  (`dominoes`), and the answer: the pips on every board cell (`solution`)
+  and each domino's cells and pips (`layout`: `[a, b, pips_a, pips_b]`).

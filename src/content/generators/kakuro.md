@@ -89,3 +89,8 @@ cross"). It is Japan's second most popular pencil puzzle after sudoku.
   whose carves all stayed under it are unchanged (126 of 126 sampled,
   including 16×9 and 12×12). 16×9 and 12×12 went from 1–2.5 minutes to
   seconds; 16×16 from about 18 minutes to one or two.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): `cells` with blocks and clue cells as `"#"` and entries blank,
+  `solution` (digits in entry cells), `clues.across`/`clues.down` as `[row,
+  col, sum]` at each clue cell, `runs` (each sum with the cells it covers),
+  and `inside` on shaped boards.

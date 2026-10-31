@@ -75,3 +75,8 @@ drawings are a long-standing art-class favourite.
   it has no ink. The rating is the grid size (`rating_basis: grid_size`).
   The answer page shows the finished picture in the lettered grid and
   names it.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`, index `r * cols + c`, columns lettered from A and rows numbered
+  from 1): the printed `squares` in page order (each its `label` and the
+  `cell` it copies into), the `blanks` listed instead, the `icon`, and as
+  `solution` which cells hold ink.

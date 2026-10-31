@@ -66,3 +66,9 @@ share of academic English.
   items or fewer) or Easy; level 2 at most → Medium; some advanced roots →
   Hard, more than half → Expert. A band or item count the settings cannot
   reach is reported as `requested_difficulty` or `requested_items`.
+
+- **Structured data:** the page's `data` is `word_roots`: per section, what
+  is printed and its answers — `match` (the roots, the meanings in printed
+  order, and each root's meaning index as `answer`), `circle` (each word and
+  the root to circle), `build` (each word, its root and that root's meaning)
+  and `sort` (the roots, and the word bank with each word's root).

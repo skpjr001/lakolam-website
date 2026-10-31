@@ -83,3 +83,8 @@ Janko's online archive carries a collection of them.
   8×8, Expert from 9×9; a board the local rung settles alone would be Kids
   up to 6×6, else Easy). With a custom `size` the band of that size is
   served whatever is asked, and the request is reported beside it.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): the `regions`, each region's number as
+  `region_numbers` (null where none is printed) and as printed in its first
+  cell (`cells`/`givens`), and the bars as `solution` (`"V"` vertical, `"H"`
+  horizontal).

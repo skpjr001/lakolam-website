@@ -93,3 +93,5 @@ own idea.
 - **Play API** (`play`): `puzzle`, `puzzle_from`, `check` (wrong marks, lines
   missing, solved) and `hint` (a wrong mark first, else the easiest rung that
   settles an undecided edge from the player's current marks, and that edge).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid` of dots: `cells` the circles (`W`, `B`, with any number, `W4`) and `edges` the loop as joined dot pairs.

@@ -84,3 +84,5 @@ structure is shared with Easy as ABC; the distance clues are its own.
   reached at its default size. The trial rung is not offered from 8×8 up
   (too slow to dig with), so Expert on an 8×8 or 9×9 is served as Hard,
   and Kids from 6×6 up is labelled with the band it reaches.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` any printed symbols, `solution` every cell (`star`, `sun`, `moon`) and `clues` the row and column clues.

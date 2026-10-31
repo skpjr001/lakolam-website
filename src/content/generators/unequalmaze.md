@@ -70,3 +70,7 @@ in 2014 (including the individual playoffs) and 2017.
   through all the open squares, checked against the rules only when
   finished. Rated by board size (`rating_basis: grid_size`): 4×4 Kids, 5×5
   Easy, 6×6 Medium, 7×7 Hard, 8×8 Expert.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` mark
+  the blocked squares (`true`), `start` and `end` the entry and exit squares,
+  and `solution` the one path as square indices, in order.

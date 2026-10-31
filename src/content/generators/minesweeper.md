@@ -53,3 +53,5 @@ published by puzzle magazines and in dedicated books.
   deduction is sound and the ladder settles every cell — confirmed by an
   independent backtracking count in the tests; open cells are never mines.
   Rated by the hardest technique needed.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the open cells' counts (`cells`, `null` = closed) and the mines as the solution (`true` = mine). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

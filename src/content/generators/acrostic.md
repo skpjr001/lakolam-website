@@ -49,3 +49,5 @@ its famous crossword.
   initials provably spell the hidden word — all three checked at build time,
   not assumed. Rated gently by the hidden word's length (more rows to solve),
   and the metadata names the basis.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — each row's scramble (as printed) and its answer, and the hidden word the answers' initials spell.

@@ -81,3 +81,8 @@ Prix and on Grandmaster Puzzles, usually with the digit range and the
   the meta's `hardest_technique` states. When none of the 60 attempts finds a grid at all
   (rare: seen at 6×6 Expert with digits 1-5), up to 120 more run from fresh
   seeds and the nearest band is served and labelled (v1.1.0).
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the outside clues as `clues` (`rows` and `cols`, each line's run
+  sums in order, null for a `?`; an empty list prints as 0), the digit range
+  (`digits`, and `every_digit`), and the grid as `solution` (null for an
+  empty cell).

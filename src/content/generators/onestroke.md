@@ -78,3 +78,5 @@ the method for actually finding such a stroke in 1873.
   every verdict on small figures with an exhaustive search for a stroke, an
   independent method. Rated by the average number of lines per figure
   (`lines_per_figure`), each band being exactly the window its level enforces.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the page's content, one graph per figure: the lattice size, every vertex's position in cell units (`nodes`: lattice points row-major, then the centres of crossed cells), the lines (`edges`), the verdict (`possible`), a one-stroke trail when there is one (vertex sequence) and the odd points. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

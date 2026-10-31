@@ -100,3 +100,5 @@ coordinates); spatial rules on the picture's features are tested to draw
 exactly what turning or mirroring the drawn geometry gives. Meta: `unique`,
 `answers_checked`, `difficulty`, `rating_basis`, and every question's type,
 answer letter, band and rule, codes or figure size.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the page's content as JSON: the questions in order, each with its type, answer label and answer index among the choices. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

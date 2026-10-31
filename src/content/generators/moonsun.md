@@ -90,3 +90,5 @@ puzz.link.
   board in the nearest reachable band — the board it would have returned
   anyway, so the output is unchanged; Hard at 9×9 dropped from over 30 s to
   about a second.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed symbols (`"sun"`, `"moon"`, `null`), the rooms as `regions`, the answer loop as its cells in order (`loop`) and as joined cell pairs (`edges`), and per room whether the loop takes its suns (`sun_rooms`, else its moons). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

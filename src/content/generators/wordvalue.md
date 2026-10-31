@@ -66,3 +66,8 @@ values come from word games where rare letters score more.
   target. The answer key fills in every letter value, total, sign and
   circle.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+- **Structured data:** the page's `data` is `word_value`: the `scoring`,
+  and per section what is printed with its answer — `compute` (each word and
+  its `value`), `compare` (each pair and the `sign` between them) and `find`
+  (each row's `target`, its `words`, and the index of the one worth it).

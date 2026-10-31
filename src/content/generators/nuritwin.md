@@ -82,3 +82,5 @@ connected wall, no 2×2 square) and adds the twin blocks in each region.
   board, so the gentler bands are told apart by size. With a custom `size`
   the label states the band actually reached (for example Medium at 6×6 is
   served as Hard, and Kids at 8×8 as Medium).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): each region's number printed in its first cell in reading order (`cells`), the regions, the per-region block sizes (`region_clues`, `null` unnumbered) and the shading (`solution`). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

@@ -86,3 +86,5 @@ begin "Simon says".
   — the tests replay them again with an independent interpreter that
   reads the printed instruction text. The key fills in every intermediate
   row.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `letter_steps`: the starting letters, the instructions, the letters after each and the saying as `solution`.

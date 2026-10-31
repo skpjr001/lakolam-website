@@ -90,3 +90,8 @@ uses a larger grid.
   Rated by greens given against swaps needed: Kids 11 greens and 5 swaps,
   Easy 9 and 7, Medium 7 and 9, Hard 6 and 10 (the original's target), Expert
   4 and 12.
+
+- **Structured data:** the page's `data` is `waffle`: per puzzle, each
+  tile's `[row, col]` in `cells`, the printed `scramble` letters and their
+  `marks` (`"green"`, `"yellow"`, `"grey"`), the fewest `swaps`, and the
+  `solution` letters with its `words` (`across` of them first, then down).

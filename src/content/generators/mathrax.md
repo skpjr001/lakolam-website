@@ -76,3 +76,7 @@ Championship and national championship rounds.
   ships an Easy board and records `requested_difficulty: kids`. Expert
   (Swordfish) boards are rare and come mainly from 8×8 and 9×9; the closest
   band found is shipped and recorded honestly.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed digits in `cells`/`givens`, the `solution`, and
+  `clues.points`, each clue at the grid point below-right of cell `(row, col)`
+  with its printed `label` and `kind`.

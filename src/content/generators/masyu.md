@@ -90,3 +90,6 @@ president misread the kanji for *shinju* (pearl) — and the misreading stuck.
   run the ladder path at 8×8 and re-prove it with the loop count, and
   `lako-loop` checks every rung against brute force on small boards. Boards
   up to 10×10 are byte-identical to 1.0 (count proof, density rating).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the circles (`"white"` or `"black"`) in `cells`/`givens`, and the
+  answer, the loop, as the pairs of neighbouring cells it joins (`edges`).

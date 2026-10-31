@@ -68,3 +68,5 @@ genre in 2026.
   `size_and_words`); a band the page does not reach is reported as
   `requested_difficulty`, and a word count the theme or grid cannot supply
   as `requested_words`.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the letter grid (`cells`, all printed), the listed `words` and, per word, its box (`row`, `col`, `h`, `w`, the edge cell it starts on as an index round the edge, and `clockwise`) and its `cells` in reading order; `example` is the word shown worked.

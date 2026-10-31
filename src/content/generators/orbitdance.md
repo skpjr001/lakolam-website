@@ -76,3 +76,10 @@ valid 1800–2050.
   figure within a few degrees; a widened step or a clamped start year is
   reported (`requested_step_days`, `requested_start_year`); everything stays
   inside the page.
+- **Transparent backgrounds:** the page fill is kept apart as the page's
+  background and the title and caption as its captions, ready to be tagged
+  as background and caption layers, so a rendering asked for a transparent
+  background can leave out the fill and the words; page bytes are
+  unchanged.
+- **Clamps:** a `width` or `height` held to its range is reported as
+  `requested_width` / `requested_height` in meta.

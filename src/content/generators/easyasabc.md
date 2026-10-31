@@ -54,3 +54,5 @@ German and Dutch puzzle magazines before it became a championship regular.
   reasoning is sound and settles every square — confirmed by an independent
   branching count in the tests. Rated Kids (4×4) to Hard (7×7); an Expert
   request returns an honest Hard.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): letters printed inside the grid (`cells`, null where blank), the answer (`solution`: a letter, or null for a blank cell), the letters in play, and the edge clues (`clues.left`/`right` per row, `clues.top`/`bottom` per column; null where none is printed). Cells are numbered row by row from 0 where the data is a grid.

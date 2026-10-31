@@ -78,3 +78,8 @@ checking and rotational symmetry.
   list, and every entry has a clue; the fill is deterministic per seed.
 - **Difficulty:** wordlist scoring tier and grid openness (block count,
   average entry length), banded.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `blocks` (black squares), `cells`/`givens` the printed clue
+  numbers, `solution` every square's letter (null for a block), and
+  `clues.across`/`clues.down` with each entry's number, start cell, length and
+  clue text.

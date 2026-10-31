@@ -50,3 +50,5 @@ same shape are much older staples of puzzle magazines.
   words there are to find (Kids up to 11, Easy up to 17, Medium up to 27, Hard
   up to 41, Expert beyond). A word missing from the list is still a real word
   a solver may find; the count is of words in the list.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `word_hive`: the centre and outer letters, `solution` every word the hive makes, and the pangrams.

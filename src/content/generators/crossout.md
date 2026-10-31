@@ -81,3 +81,7 @@ pupils cross out words or letters by rule to reveal a message.
   `rules` can move the rating away from the asked level; meta then records
   `requested_difficulty`.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "crossout"`): the numbered `rules`, the grid's `columns` and `words` in
+  reading order, and the answer — `solution` (true for each crossed-out word)
+  and the `message` the rest spell.

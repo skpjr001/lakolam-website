@@ -80,3 +80,7 @@ them together so that nothing is left empty.
   Expert). Nearly every grid is settled at rung 1, so in practice the grid
   size sets the band; when a covering cannot reach the requested band, the
   nearest band is returned and labelled honestly.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed letters in `cells`/`givens`, the lettered `solution`,
+  and `words` (each word's `number`, the `word`, its `start` square and, as
+  the answer, the `cells` it covers in order).

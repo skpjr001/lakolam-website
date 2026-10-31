@@ -85,3 +85,5 @@ published online.
   with a custom `size` the label states the band actually reached (for
   example Kids at 6×6 and above is Easy, Medium at 7×7 is Hard, and the
   hard bands at 4×4 and 5×5 are usually Easy).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` mark the fish (`"fish"`, else `null`); `anglers` stand outside the grid (`side` 0 top, 1 bottom, 2 left, 3 right; `index` the column or row; `number` the cells its line passes through; `entry` the cell beside it); `lines` is the answer, each angler's line as cells from its entry to its fish, and `solution` the angler (index into `anglers`) whose line covers each cell.

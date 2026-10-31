@@ -70,3 +70,7 @@ of coloured squares.
   and colouring by the key reproduces the sprite placement square for square.
   Checked before a page is emitted and re-checked in the tests by
   recolouring every grid from its clues alone.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the clue printed in every cell (`cells`/`givens`), the legend
+  (`legend`: code, printed label, colour key and name), and the answer: each
+  cell's code (`codes`) and colour name (`solution`).

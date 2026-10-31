@@ -88,4 +88,10 @@ of each move changes.
   one), twelve fresh attempts each, until one route is carved; it is checked
   and rated exactly as before, so a longer route earns its honest band.
   Every maze that generated before is byte-identical.
-
+- **Structured data:** the page also carries the maze as JSON (`kind:
+  "grid"`, index `r * cols + c`): `mode` and `diagonal`, the squares as
+  printed in `cells` (numbers mode: each square's jump, `"GOAL"` on the
+  goal; Alice mode: `"+1"`, `"-1"` or null), Alice mode's `arrows` (the
+  directions each square may be left by: N, E, S, W, NE, SE, SW, NW),
+  `start` and `goal`, and the one route as `path` (each state's `cell` and,
+  in Alice mode, the `stride` held there).

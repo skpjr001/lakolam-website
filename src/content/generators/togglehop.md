@@ -83,3 +83,5 @@ take on the idea, with printed hop limits and proven shortest answers.
   landings by island name. The answer is replayed by the rules written out
   afresh before the page is returned, and tests re-prove the optimum and the
   uniqueness with an independent breadth-first search.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "toggle_hop"`: the island grid and names, the bridges that exist (island pairs, and whether each is down at the start), the carrot islands, the burrow, the hopper's start, the hop limit, and the solution as the islands landed on in order.

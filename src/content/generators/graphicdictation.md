@@ -79,3 +79,9 @@ charts, and the same counting underlies the clues of nonograms.
   directions from scratch and compare, and check with an independent
   point-in-polygon test that the outline encloses exactly the picture's
   squares (apart from the squares a diagonal cuts).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "graphic_dictation"`): `mode` and the paper size (`paper_cols` ×
+  `paper_rows`); in path mode the `start` point and the `moves` (`[dx, dy,
+  len]`, y down, points being grid-line crossings `[x, y]`) with the outline
+  they trace as `solution`; in rows mode the `runs` of each row (`[shaded,
+  count]`, left to right) with the shaded squares, row-major, as `solution`.

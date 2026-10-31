@@ -50,3 +50,5 @@ kind of thing this workspace insists on proving absent rather than assuming.
   deduplicates them, which an earlier test learned the hard way.
 - Rating basis: `deepest_column_pool` (2 Easy, 3 Medium, more Hard). The
   answer key ships the filled grid.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the grid as printed (`cells`: `"#"` for a black square, null for a box to fill), the answer (`solution`: a letter or `"#"`), the letters hanging over each column as printed (`clues.cols`, alphabetical), the quote and its attribution.

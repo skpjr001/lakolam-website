@@ -82,3 +82,7 @@ puzzle magazines and in printable collections such as Krazydad's.
 - **Play API** (`play`): `puzzle`, `puzzle_from`, `check` (wrong marks, lines
   missing, solved) and `hint` (a wrong mark first, else the easiest rung that
   settles an undecided edge from the player's current marks, and that edge).
+
+- **Structured data:** the page's `data` is a `grid`: `walls` between
+  neighbouring cells (cell index `r * size + c`) and the loop as `solution`,
+  the pairs of neighbouring cells it joins.

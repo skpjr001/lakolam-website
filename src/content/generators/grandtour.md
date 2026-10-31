@@ -82,3 +82,7 @@ which is why a grid with an odd number of dots never has one.
   above 42 dots is Easy, Medium on small boards is Easy, Expert up to 72
   dots is Hard, Hard above 72 dots is Expert, and on a 4 × 4 board the
   trial rung is rarely needed, so Hard and Expert usually come out Easy.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"` of dots, index `r * cols + c`): the printed segments as `segments`
+  (dot pairs), and the loop as `path` (every dot in loop order, closing back
+  to the first) and `edges` (each step a dot pair).

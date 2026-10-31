@@ -92,3 +92,5 @@ Metzler (1971).
   least Easy, six at least Medium). The page takes its hardest row's band,
   and `requested_difficulty` records what was asked. The key rings each
   answer.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): each row's task (`odd_one`, or `match`: the first picture is the one to match), how the pictures differ, the pictures' icons in printed order and the answer's index among them. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

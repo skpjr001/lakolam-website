@@ -112,3 +112,9 @@ block became famous through the Flash game *Bloxorz* (Damien Clarke, 2007).
 
   A split block (two cubes moving separately) is not offered: its state
   space and rules are a different puzzle from the one this page prints.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): every square (`cells`: `null` floor, `"grey"`, `"hole"`, a
+  number to match, `"fragile"`, `"switch"`, `"bridge"`), the `mode`,
+  `start`, `goal` and (forbidden mode) `forbidden`, and the answer: the one
+  shortest route as rolls (`moves`, `N` up the page) and, after each, the
+  square and the die's top face or the block's lie (`route`).

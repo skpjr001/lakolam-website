@@ -75,3 +75,5 @@ Otto Janko's collection.
   requests come out Hard and say so in `requested_difficulty`). A 3×3 or
   4×4 board, and so the card version, can only be Kids or Easy — the nearest
   band is served.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): each cell's pair as `[number, letter]` (both 1-based: letter 1 is A; with card symbols number 1–4 are A, K, Q, J and letter is the suit), printed (`cells`, null where blank) and solved (`solution`). Cells are numbered row by row from 0 where the data is a grid.

@@ -86,3 +86,7 @@ boards.
   arise, so **Hard and Expert are not reached**: those requests return the
   hardest board found — Medium (hidden and naked pairs), occasionally
   Easy — and say so in `difficulty` beside `requested_difficulty`.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): black cells print as `"#"` with their sums in `clues.sums` (`[row,
+  col, sum]`), printed digits as themselves; `solution` holds a digit per
+  white cell and null on black.

@@ -67,3 +67,7 @@ who died in 1945 or earlier, so every one is in the public domain.
   letters decoded for you: three or more Easy, two Medium, one Hard, none
   Expert (`rating_basis` `letters_decoded_for_you`); Kids is served as
   Easy, and a page that needed more letters reports `requested_difficulty`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "cipher"`): the quote words and clue answers as their printed numbers, the
+  clue texts, the decoded `givens` (`[number, letter]`), and the `solution` —
+  each number's letter, the quote, its author and the answers.

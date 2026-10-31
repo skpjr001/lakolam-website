@@ -73,3 +73,8 @@ followed under names such as Tile Link and pair connect.
   link before the page is returned (`answers_checked`). Boards usually have
   many clearing orders; the key shows one, with each pair's step number and
   its link drawn through the empty squares and the border.
+- **Structured data:** the generator attaches the deal as JSON (`kind:
+  "grid"`, the playing area only): a tile kind per square in `cells` (`faces`
+  labels kind `k` at index `k - 1`) and a clearing order in `solution`, as
+  pairs of `[row, col]` squares, first removal first. Links may also run
+  through the empty ring around the area.

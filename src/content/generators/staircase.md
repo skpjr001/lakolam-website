@@ -63,3 +63,5 @@ given as a themed list.
   5 letters) or Easy, two is Medium, three Hard, four or more Expert. When a
   theme cannot reach the requested band, the nearest band is returned and
   labelled honestly.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid` over the staircase's bounding box: `cells` the printed letters, `solution` every letter, `boxes`, `shaded` steps, `words` and `mystery`.

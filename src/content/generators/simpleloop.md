@@ -67,3 +67,5 @@ in puzzle collections and apps.
   8×8, else Expert). Expert boards are 10×10 and occasionally fall back to
   the nearest band found; the label always states the band actually
   reached.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the black cells, `edges` the loop as joined cell pairs and `loop` the cells in loop order.

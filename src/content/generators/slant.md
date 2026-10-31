@@ -50,3 +50,5 @@ open-source implementation of it.
   the brute-force sweep corrected. Difficulty bands were re-centred on the
   measured clue-density spread after by-eye thresholds put every board in
   Hard and cost 8× in retries.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `solution` each cell's diagonal (`\\` or `/`) and `clues.points` the numbers on the (rows + 1) × (cols + 1) lattice points.

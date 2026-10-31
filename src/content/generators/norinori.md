@@ -69,3 +69,5 @@ shaded squares stick together in pairs.
   independent branching count in the tests. Basic logic rates Kids/Easy on a
   6×6 and Medium on a 7×7; trial boards rate Hard on an 8×8 and Expert on a
   9×9.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the regions, and the shading (`solution`: `true` shaded). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

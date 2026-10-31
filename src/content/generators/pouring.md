@@ -82,3 +82,7 @@ and ends at the goal in exactly that many steps; the key says whether it
 is the only shortest plan. Meta: `unique`, `answers_checked`, `difficulty`,
 `rating_basis`, `plans_unique`, and every puzzle's sizes, goal, fewest
 steps, plan count and plan.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "pouring"`): each puzzle's kind, jug capacities, starting contents, tap
+  and goal, and the answer: the fewest steps, the number of shortest plans,
+  and one shortest plan step by step (`plan`).

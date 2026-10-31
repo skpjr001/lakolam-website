@@ -43,3 +43,6 @@ books.
   vocabulary word (checked against the full list, so a skeleton with two
   readings is refused) and every answer genuinely drops at least one vowel.
   Rated by how many words are on the page.
+
+- **Structured data:** the page's `data` is `words`: one row per word, the
+  printed consonant `clue` and the one `answer` it restores to.

@@ -66,3 +66,7 @@ Magnets.
   budget is treated as not unique). Rated by the hardest technique needed and
   the board size: Kids and Easy need at most line reasoning, Medium is a 6x6
   that needs trial, Hard an 8x8 and Expert a 10x10 that need trial.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the slots as `regions` (cell pairs), the printed counts in `clues`
+  (`row_plus`, `row_minus`, `col_plus`, `col_minus`; null where not shown) and
+  the answer as `"+"`, `"-"` or null (blank) per cell in `solution`.

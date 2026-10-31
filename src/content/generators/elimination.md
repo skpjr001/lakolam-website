@@ -86,3 +86,5 @@ to eliminate names until a single culprit remains.
   over the whole list before the page ships, and the tests re-check them
   by parsing the printed clue text with an independent reader.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "elimination"`): the suspects as printed (alphabetical), the clues in order, and the answer — the one suspect every clue fits (`answer`, and its index in `suspects`) and, for every other suspect, the number of the first clue it fails (`crossed_by`).

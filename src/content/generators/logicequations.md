@@ -87,3 +87,6 @@ collections and puzzle magazines.
   clues, repeats, solved; `hint` → a mistake first, else the next sound step
   from the current marks (`only_value_left`, `only_letter_left`, `taken`,
   `clue`, `subset`, `trial`, `deep_trial`) with the cells to mark.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "logic_equations"`): the `letters`, the range of `values`, the printed
+  `clues` in order and the `solution`, each letter's value.

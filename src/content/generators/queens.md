@@ -100,3 +100,8 @@ problem, with regions and the no-touching rule in place of diagonal attacks.
 - **Print:** regions are printed in distinct pastel fills, chosen so that
   neighbouring regions also differ in grey level, with bold borders so the
   board reads in black and white.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the coloured regions (`regions`), the `rule` (`classic` or
+  `chess`), and the answer: whether each cell holds a queen (`solution`) and
+  the queen's column in each row (`queens`, `null` for the chess rule's
+  empty row).

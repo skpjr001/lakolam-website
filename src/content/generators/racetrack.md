@@ -86,3 +86,9 @@ versions and "optimal line" puzzles followed.
   more. The generator tries tracks at the requested
   level and then its neighbours; if no track lands in the band, the nearest
   band is served and `requested_difficulty` is recorded.
+- **Structured data:** the page also carries the race as JSON (`kind:
+  "grid"`, one cell per graph-paper square): the track (`cells`, `true` =
+  track), the start point and the start and finish lines (grid points from
+  the top-left corner; a line is the vertical grid line `x` from `y0` to
+  `y1`), the `shape`, and the answer: the `par` and one best `line` of grid
+  points (the last move crosses the finish after `last_t` of its length).

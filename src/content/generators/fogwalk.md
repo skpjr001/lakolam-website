@@ -85,3 +85,5 @@ that idea into a pencil puzzle with a log instead of a view.
   log (Kids up to 3, Easy 4–5, Medium 6–7, Hard 8–9, Expert 10 or more;
   `rating_basis: log_legs`); a band not reached is served as the nearest,
   labelled honestly with `requested_difficulty`.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the map as printed (`cells`: `true` on furniture, null on open floor; `walls`: pairs of neighbouring squares a wall separates), the question (`ask`: `"start"` or `"end"`), the log (walls felt at the start, then each leg's direction, steps, whether it ended on a bump and the walls felt), and the answer — the start, the end and the square asked for (`answer`), as cell indices. Cells are numbered row by row from 0 where the data is a grid.

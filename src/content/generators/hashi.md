@@ -94,3 +94,7 @@ degree sequences made playable.
   Kids is not served on big boards (the gentlest rung is the Easy band);
   such a request gets Easy and `requested_difficulty`. A band no attempt
   reached is served as the nearest one, also with `requested_difficulty`.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the island numbers as `cells`/`givens` (index `r * cols + c`),
+  and the answer as `bridges`, each `[a, b, count]` joining island cells `a`
+  and `b` with one or two bridges.

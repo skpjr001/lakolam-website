@@ -80,3 +80,5 @@ swaps of neighbours.
   rungs, the average of the two bands (`rating_basis: lines_and_rungs`);
   every band is reached at its level. The key draws every trail in its own
   colour, with the missing rung in red.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `lines`, rung `heights` running 0..=`max_height`, the printed `rungs` (`[height, gap]`, gap `g` joining lines `g` and `g + 1`), where each start ends (`target`), and in one-rung mode the missing `answer` rung and the stretch (`place`: gap, exclusive heights `lo`..`hi`) it may slide in.

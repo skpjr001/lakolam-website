@@ -116,3 +116,5 @@ only twice and the king must survive to the end. "Capture Chess", "Ranger",
   piece count, the largest board found is served at its own band with
   `requested_difficulty` (and `requested_pieces` / `requested_size` for
   explicit counts that were clamped or not reached).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the board, row 0 at the top, `cells` the men (`"K"`, `"Q"`, `"R"`, `"B"`, `"N"`, `"P"`, `null` empty); the `rules`; and an answer — `captures` as `[from, to]` cell pairs in order and the same line in `notation` (the only one when `unique`).

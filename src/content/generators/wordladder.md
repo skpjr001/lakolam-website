@@ -32,3 +32,7 @@ one letter, arriving at the bottom word in the printed number of steps.
 - ~590 common four-letter words ship built-in; custom lists work if all words
   share one length.
 - Rating basis: `rung_count` (≤3 Easy, 4 Medium, more Hard).
+
+- **Structured data:** the page's `data` is `word_ladder`: the printed
+  `start` and `end` words, the number of blank `rungs`, and the `solution` —
+  the one shortest ladder, endpoints included.

@@ -84,3 +84,5 @@ followed as toys and, later, computer games.
   optima with an independent breadth-first search (with its own road
   check) and 4×4 optima with an independent IDA* using the plain Manhattan
   distance.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the printed labels, `moves` the tiles to slide in order and `solution` where they end; track boards add `roads` and the start and goal rows.

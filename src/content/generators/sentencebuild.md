@@ -77,3 +77,5 @@ century.
   ball") never appears. The tests re-check every row by brute force over
   every arrangement of its cards. The page is rated by words per sentence
   (`rating_basis`).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `sentences`: each row's cards in printed order, `solution` the printed positions in sentence order, and the sentence.

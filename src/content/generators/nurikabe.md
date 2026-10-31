@@ -141,3 +141,5 @@ Cell Structure and Islands in the Stream.
     state equals the layout, and the layout passes every rule; tests re-prove
     uniqueness with an independent island-shape count (and, at ≤ 11×11, the
     classic search).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed island sizes (`cells`) and the answer (`solution`: `true` wall, `false` island, `null` off a shaped board). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

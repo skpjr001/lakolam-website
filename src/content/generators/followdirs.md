@@ -92,3 +92,5 @@ are still among the most used kindergarten worksheets.
   instructions mark the same picture; pictures sharing a row or grid are
   pairwise distinct on pixels and in name. The answer key shows every
   picture coloured or marked.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "follow_directions"`): the picture rows, top to bottom (icon ids, read left to right), the picture grid if any (`grid`: rows, cols and icon ids row by row), and the numbered instructions in order, each with its text, its mark (a colour word, or `circle`, `cross`, `underline`, `box`), where it applies (`row` index, or `grid`) and the answer — the one picture it picks (`target`: index in the row, or cell in the grid).

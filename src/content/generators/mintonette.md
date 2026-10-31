@@ -79,3 +79,5 @@ any number above zero.
   only-fit and shared-cells rungs have settled every board planted so far,
   so those requests are served at Medium and labelled as such beside
   `requested_difficulty` (a `?` still appears on them).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed clues (`cells`: the number of turns, `"?"` for at least one), the answer's lines as cells end to end (`lines`), and `solution`: each cell's line index. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

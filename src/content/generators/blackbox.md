@@ -82,3 +82,5 @@ Gilbert's clickmazes.
   The page is rated by atom count (`rating_basis: atoms_and_rays_shown`). A
   6×6 or smaller box with 4 or more atoms counts one band harder, and so
   does a thinned page. Every band is reachable from the defaults.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the box's `solution` (`true` for an atom), and its `4n` ports, numbered clockwise from the top-left (top side left to right, right side top to bottom, bottom right to left, left bottom to top): `shown` is the printed result (`null` when thinned out), `outcome` every port's true result, `labels` the printed text.

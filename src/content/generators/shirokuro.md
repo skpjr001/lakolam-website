@@ -76,3 +76,5 @@ to 17×17.
   basic rung settles nearly every generated grid, so the bands mostly
   follow size. Every band is served at its default size; with a custom
   `size` the label states the band reached.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the circles (`B`, `W`) and `edges` the answer's joined pairs.

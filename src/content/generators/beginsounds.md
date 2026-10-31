@@ -112,3 +112,5 @@ worksheets.
   appear, and only about fifteen pictures have a middle sound to ask. The
   pronunciations are American: in other accents a word or two may sound
   different (the middle of DOG, for example).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the `task`, the `sound` asked, and per picture its name, the sound's position, the `answer` letter, the letters offered (`choices`, circle task) and the printed word (`shown`, middle sounds); `columns` (sort) and `target` (colour) when the task has them.

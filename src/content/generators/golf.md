@@ -82,3 +82,8 @@ patience books and later in many computer card-game collections.
   re-prove every band's deals winnable with an independent recursive search
   over whole positions (no memo dominance, no prune), and confirm that deals
   the engine calls lost are lost by the independent search too.
+- **Structured data:** the page also carries the deal as JSON (`kind:
+  "cards"`): the seven `columns` (top card first; the last is free to play),
+  the first `waste` card, the `stock` in turning order, `wrap`, and the
+  winning line as `solution` (`{"move": "play", "column", "card"}` or
+  `{"move": "turn", "card"}`), cards as labels such as `10H`.

@@ -81,3 +81,6 @@ must connect.
   that size can be, which is the board that would have been served anyway
   (Hard above 8×8 used to try every attempt first — tens of seconds at
   10×10 — for the same board).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the circled numbers in `cells`/`givens` and the answer as a
+  per-cell flag in `solution` (true = shaded).

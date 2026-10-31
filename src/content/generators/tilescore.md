@@ -73,3 +73,5 @@ word games remain a staple of puzzle apps.
   by exactly one word (`unique`), re-checked by rescoring before the page
   ships; the tests re-check it by an independent search over every
   arrangement of the tiles with separately written scoring.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "word_problems"`: each problem's rack and bonus strip (square labels in order), and the solution — the top word, its score and every placement (first strip square) that reaches it.

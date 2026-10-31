@@ -2,7 +2,7 @@
 title: "Galaxies"
 blurb: "Galaxies from the density-wave construction: spiral arms where nested, twisted ellipses crowd; barred spirals, ellipticals and deep fields, as line art to colour or starry colour"
 category: design
-version: "1.0.1"
+version: "1.0.2"
 ---
 Spiral arms that nobody drew: nested ellipses, each turned a little more
 than the one inside, crowd together into the arms of a galaxy.
@@ -73,7 +73,8 @@ described by Lynds and by Roberts in the 1960s and 1970s.
 ## This implementation
 
 - **Spec knobs:** `layout` (`single` default, `field`), `hubble` (`auto`
-  default: the seed picks, spirals favoured; `elliptical`, `sa`, `sb`, `sc`,
+  default: the seed picks a spiral or barred spiral — ellipticals only when
+  asked for; `elliptical`, `sa`, `sb`, `sc`,
   `sba`, `sbb`, `sbc`; in a field it sets the largest galaxy), `style`
   (`line` default, `colour`), `background` (`white` default, `night`;
   colour style), `arms` (1-4, default 2), `orbits` (8-60, default 30: nested
@@ -111,7 +112,9 @@ described by Lynds and by Roberts in the 1960s and 1970s.
   draws; pink knots where crowding is high); bulge stars are exponential
   about the centre; ellipticals sample a de Vaucouleurs profile. Dust lanes
   follow each arm's crowding crest, 3.5% inside it, as broken strokes. The
-  meta records each galaxy's type, arms, orbit axes, axis ratio, twist
+  meta records each galaxy's type (`hubble`, spelled as the spec takes it,
+  e.g. `sbc`, so it can be fed back in; `hubble_class` gives the
+  astronomer's `SBc`), arms, orbit axes, axis ratio, twist
   (signed by winding), pitch, phase, core, bar, inclination, position
   angle, placement and the construction formula.
 - **Solving:** nothing to solve. This is a design.
@@ -130,3 +133,15 @@ described by Lynds and by Roberts in the 1960s and 1970s.
   colourability check with no findings and is black only; colour pages
   report `colorable: false` (a finished picture). Extreme and non-finite
   specs are clamped, never a panic.
+- **Versions:** 1.0.2: `auto` picks only spirals and barred spirals (it
+  draws as before and draws again on an elliptical, so every seed that
+  picked a spiral keeps its page; seeds that picked an elliptical, seed 0
+  among them, now get a spiral — plain concentric isophotes made a weak
+  default). Meta's `hubble` now uses the spec's spelling (`sbc`, not
+  `SBc`), with the class in `hubble_class`.
+- **Transparent backgrounds:** in the colour style the night page fill and
+  every orbit glow (each glow is already mixed with the page colour) are
+  kept together as the page's background, ready to be tagged as a
+  background layer, so a rendering asked for a transparent background can
+  leave them out instead of painting a page-coloured halo; stars and dust
+  stay. Page bytes are unchanged.

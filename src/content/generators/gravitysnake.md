@@ -81,3 +81,7 @@ the snake must fold itself to climb and reach an exit.
   re-prove the optimum, and that the level cannot be finished without
   eating, with an independent breadth-first search, and follow the play
   API's hints into the portal. Every band generates in well under 0.1 s.
+- **Structured data:** the page also carries the level as JSON (`kind:
+  "grid"`, index `r * cols + c`): `cells` marking `"ground"`, `"spike"`,
+  `"apple"` and `"portal"` (null is open air), the `worm` (cells head
+  first), and the winning moves as `solution` (`"U"`, `"R"`, `"D"`, `"L"`).

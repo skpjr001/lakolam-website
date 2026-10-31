@@ -79,3 +79,5 @@ Yubotu and Battleship Solitaire.
   served as Hard; both report `requested_difficulty`. Expert requests, and
   any request whose trimmed board already rates at or easier than asked, get
   the same board as before.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` the revealed squares (`"ship"`, `"water"`, `null` hidden), the ship counts as `clues.rows`/`clues.cols`, the `fleet` lengths, and the answer as `ships` (top-left `cell`, `len`, `horizontal`) and `solution`, `true` for each ship cell.

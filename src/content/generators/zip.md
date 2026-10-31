@@ -51,3 +51,7 @@ such as Hidato and Numbrix.
   exhaustive count (a search that runs out of budget counts as ambiguous).
   Rated by grid size and how few checkpoints and walls remain per square.
   Expert boards (8×8) take a few seconds to prove.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  numbered checkpoints, `walls` between neighbouring cells, and the
+  `solution` path through every cell, in order.

@@ -82,3 +82,7 @@ collection of logic puzzles, where it has a large following.
   and then Kids), and
   from 8×8 up some boards settle at Easy; Expert up to 6×6 is Hard and Hard
   from 7×7 up is Expert; at 5×5 a few Hard boards settle at Easy).
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the edge numbers as `clues` (`left` and `right` per row, `top`
+  and `bottom` per column, null where blank) and the circles as `solution`
+  (`"black"`, `"white"`, null for empty; row-major).

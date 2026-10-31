@@ -81,3 +81,5 @@ list of puzzles; Otto Janko's online archive carries about 150 of them.
   board does not reach is served as the nearest one and labelled
   honestly beside `requested_difficulty`; small custom sizes tend to come
   out Kids, and a 4×4 Hard often comes out Medium.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the circles as printed, `regions` the countries, `solution` where each circle comes to rest and `moves` each circle's `[start, end]`.

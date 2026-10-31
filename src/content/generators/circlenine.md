@@ -66,3 +66,7 @@ dressed as a sudoku.
   nested what-if. Every band was served as asked on 8 of 8 seeds; a page
   builds in under 200 ms (Easy and Medium are the slowest, as they show
   circles until the ladder is easy enough).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the printed digits, `circled` the cells printed circled,
+  `regions` the nine boxes, and `solution` the circling row-major (`true` =
+  circled).

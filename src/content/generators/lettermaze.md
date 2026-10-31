@@ -75,3 +75,9 @@ from puzzle magazines.
   by maze size (`rating_basis: maze_size`): up to 9 squares a side Kids, 12
   Easy, 15 Medium, 19 Hard, larger Expert; the carver does not change the
   rating.
+- **Structured data:** the generator attaches the maze as JSON (`kind:
+  "grid"`, cell index `row × size + col`): the letters in `cells`, `walls` and
+  `edges` (closed and open neighbour pairs), `start` and `goal` (each a cell
+  and the outer side opened there, `n`/`e`/`s`/`w`), `path` (the one route as
+  a list of cells), the `message` it spells and the riddle's `question` when
+  there is one.

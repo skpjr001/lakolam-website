@@ -75,3 +75,8 @@ to build about 500 primary-grade words, is still quoted on teaching sites.
   Checked before the page is returned and re-checked in the tests; meta
   carries `answers_checked`, the band and the families used. The answer key
   fills in every word (build, sort) or crosses out each odd word.
+
+- **Structured data:** the page's `data` is `word_families`: the `task`,
+  per house the family's `rime`, its `words` and their `onsets` (the build
+  tiles), the sort `bank` as printed, and per odd-one-out row the four
+  printed `words` and the index of the `odd` one.

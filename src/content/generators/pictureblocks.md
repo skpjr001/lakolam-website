@@ -94,3 +94,8 @@ cells became a staple of logic-puzzle magazines and apps in the 2000s.
   clue cells are tinted and lettered, and a legend names each letter, so a
   black-ink print still says which blocks to paint. Tests re-prove
   uniqueness with an independent exhaustive search.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): each clue's area as printed (`cells`/`givens`), every clue with
+  its colour and letter (`clues`), the palette names, and the answer: each
+  clue's block (`blocks`, parallel to `clues`), every cell's block index
+  (`solution`) and the blocks' cells (`regions`).

@@ -83,3 +83,6 @@ numbers give areas or bounds rather than perimeters.
   serve Kids or Easy whatever is asked; Kids at 6×6 is Easy, and Kids and
   Easy from 7×7 up need the blocking rung and serve the larger board's
   band; Medium and Hard at 6×6 and 7×7 are Medium).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed perimeters in `cells`/`givens`, and the answer both as
+  a region number per cell (`solution`) and as cell lists (`regions`).

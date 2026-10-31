@@ -63,3 +63,5 @@ Computer Science Unplugged.
   holds). Tests re-derive the tree with Prim's algorithm and, on Kids and
   Easy, count cheapest trees over every set of streets. Meta: `unique`,
   `rating_basis: houses_and_streets`. Streets never cross.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the page's content, a graph: the houses (`nodes`, positions in the unit square, y down), the streets (`edges`: `[a, b, stones]`), and the answer — the streets to pave (`solution`, indices into `edges`) and the stones they take (`total`). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

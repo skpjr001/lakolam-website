@@ -28,3 +28,8 @@ letters for the payoff answer.
   a fine word and an impossible answer on the built-in list, because no other
   word can donate a Q.
 - Rating basis: `longest_word`. The answer key fills every box.
+- Structured data: the page also carries its content as JSON (`kind:
+  "words"`): per word its printed `scramble`, the `circled` positions (from
+  0) whose letters feed the final answer, and the word as `solution`; then
+  the final answer's letters as printed (`answer_letters`) and the `answer`
+  itself.

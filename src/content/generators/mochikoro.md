@@ -82,3 +82,5 @@ a shaded wall that must be connected.
   8×8, Expert from 9×9). Every band is reached at its default size; a band
   the chosen size cannot reach is served at the nearest band found and
   labelled as such (`requested_difficulty` in the metadata).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed numbers and the shading (`true` = shaded), with the answer's white rectangles as `regions`. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

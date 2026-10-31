@@ -63,3 +63,5 @@ the 5×5 version, followed in 1979.
   re-checked in the tests by tracing every dictionary word directly. A real
   word missing from the list may still be found; the count is of words in the
   list.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the dice faces (`cells`, `"Qu"` for the Q face), the shortest word that counts, and the answer — every dictionary word the grid makes, sorted, with its score.

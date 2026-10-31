@@ -78,3 +78,7 @@ Nikoli*. Otto Janko's online collection has dozens of them, from 5×5 up to
   6×6, else Expert). The basic rung settles nearly every generated grid,
   so the bands mostly follow size. Every band is served at its default
   size; with a custom `size` the label states the band reached.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed numbers (`cells`/`givens`), the regions (`regions`),
+  and the answer: the number in every cell that holds one (`solution`,
+  `null` = empty).

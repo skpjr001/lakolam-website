@@ -75,3 +75,7 @@ outside).
   connectivity is Medium; trial is Hard up to 8×8 and Expert above. Every
   band is reached at its default size; a band a chosen size cannot reach is
   served as the nearest band that size reaches, and labelled as such.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `clues.rows` and `clues.cols` the printed run lengths (sorted;
+  null for a line printed blank) and `solution` the shading row-major (`true`
+  = coral).

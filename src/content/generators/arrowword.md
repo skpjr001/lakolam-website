@@ -57,3 +57,5 @@ Puzzler Arrowords, Lovatts — in dozens of languages.
   clamped to 4 before). Before, every request was served medium on a 5×5.
   Pages that set `size` to 4 or 5, medium-and-above requests, and the default
   page are byte-identical to 1.0.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — an `n × n` grid of blank answer cells, its `solution` letters, and the clues — `clues.rows[r]` for the word across row `r`, `clues.cols[c]` for the word down column `c`.

@@ -81,3 +81,10 @@ version of that idea.
   the only one (`unique: true`) and no guess is ever needed; the tests
   re-count each band with an independent search over the covered cells.
   The answer key shades the mines in red.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "hex_grid"`): the `radius` and the `cells` in axial coordinates `[q, r]`
+  (flat-topped hexagons; neighbours differ by (±1, 0), (0, ±1) or ±(1, −1)),
+  the open cells' clues as `cell_clues` (`cell`, `count` of neighbouring
+  mines, `mark`: together, apart or null), the shown `line_clues` (the
+  line's `cells` in order, its `count` and `mark`), the `mines` total, and
+  the mines as `solution`.

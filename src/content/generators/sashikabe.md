@@ -78,3 +78,5 @@ Janko's online archive carries a collection of them.
   rung alone settles is Easy from 6×6; one built at the trial fallback is
   Medium up to 6×6, Hard at 7×7 and Expert above). With a custom `size`
   the band of that size is served and the request is reported beside it.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the clues (`O`, `O3`, `^ > v <`), `solution` the shading and `regions` each white L.

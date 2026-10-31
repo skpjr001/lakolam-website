@@ -63,3 +63,5 @@ sometimes called "gems" or "treasure".
   `requested_difficulty`.
 - **Guarantees:** `unique: true`; the tests re-count every band with an
   independent cell-by-cell search. The answer key marks the gems in red.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the arrows by compass point (`N`, `NE`, …), `clues` the row and column gem counts and `solution` the gems.

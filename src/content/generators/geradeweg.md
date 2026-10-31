@@ -73,3 +73,7 @@ where clues also talk about the straight stretches of the loop.
   5–6, Hard from 8×8, Expert below 8×8, and the local rung rarely settles
   a board from 7×7 up), and the board served is the nearest band reached,
   labelled as the band it is.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the printed numbers as `cells`/`givens`, and the loop as `path`
+  (cell indices `r * cols + c` in loop order, closing back to the first) and
+  as `edges` (each step a pair of neighbouring cells).

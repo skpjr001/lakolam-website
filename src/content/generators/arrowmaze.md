@@ -93,3 +93,5 @@ number of reachable states (`rating_basis`
 below the level asked for. Tests re-check uniqueness with an independent
 method — "can still reach OUT" by fixpoint iteration, then a depth-first
 count of simple routes, capped at two.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — each square's printed `arrows` as `[direction, distance]` (direction 0 north, 1 east, 2 south, 3 west; distance 1 unless jumps), traffic `signs` per square in traffic mode, the `entry` and `exit` squares, the one `route` as squares, and `solution` each square's step number on the route (`null` off it).

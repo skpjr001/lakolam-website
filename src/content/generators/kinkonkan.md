@@ -79,3 +79,9 @@ and has been shown to be NP-complete in its general form.
   be Kids or Easy (served as Medium), Hard is out of reach from 8×8 up
   (served as Expert, or Medium), and boards under 6×6 rarely need the
   trial rung, so Medium, Hard and Expert there often come out as Kids.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the rooms as `regions`, `clues.pairs` (each letter with its two
+  `ports` and its number of `bounces`; ports are numbered clockwise from the
+  top-left corner — top edge left to right, right edge top to bottom, bottom
+  edge right to left, left edge bottom to top) and `solution`, `"/"` or `"\\"`
+  in each mirror cell and null elsewhere.

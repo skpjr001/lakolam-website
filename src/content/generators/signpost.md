@@ -67,3 +67,5 @@ arrow-path number puzzles of this kind appear in several puzzle magazines.
   and treats running out of its node budget as ambiguous. Rated by grid size
   and the hardest technique needed; Expert is a 7×7 that needs a what-if (a
   few fresh paths are tried to find one before settling for an honest Hard).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the printed numbers, `solution` every number and `arrows` each cell's arrow by compass point.

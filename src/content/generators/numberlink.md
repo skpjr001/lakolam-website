@@ -81,3 +81,5 @@ optimisation target.
   order the pairs were taken in. Running out now always reports `Unknown`,
   which the generator rejects, so every shipped board is proven unique;
   some seeds now produce a different page.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed pair numbers (`cells`), the answer as each cell's pair number (`solution`), and each pair's path as its cells from one end to the other (`paths`, in pair order). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

@@ -87,3 +87,8 @@ name the skill "positional language".
   its hardest idea — above/below, then next to and between, then left and
   right, then two steps — and by the size of the shelves
   (`rating_basis: hardest_position_idea_and_shelf_size`).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "shelves"`): each scene's shelves (`rows`, `cols`) with the picture in
+  every cubby (`cells`), and its questions: the text, the asked relation
+  (`ask`), the cubbies offered (`choices`) and the answer cubby (`answer`)
+  with its picture.

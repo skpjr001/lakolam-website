@@ -85,3 +85,8 @@ early-years activity books.
 - **Limits:** about a hundred pictures, so long words are few and Expert
   grids repeat favourites (BUTTERFLY, SNOWFLAKE, UMBRELLA). Pictures with
   two-word names (ICE CREAM, TEDDY BEAR) are not used.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): each word's clue number in its first square (`cells`/`givens`),
+  the answer letter in every square (`solution`, `null` where there is
+  none), every word with its number, direction, start and picture (`words`),
+  and the word bank when one is printed.

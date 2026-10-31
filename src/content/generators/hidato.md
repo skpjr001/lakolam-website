@@ -74,3 +74,8 @@ Invented by the Israeli mathematician Dr. Gyora Benedek and published from
   branching count on large ones. Rated by the hardest technique
   needed; trial boards of 70+ numbers rate Expert, smaller ones Hard. The
   answer key traces the path.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): `blocked` cells (off the board), the
+  printed numbers as `cells`/`givens`, and the full path as `solution` (each
+  open cell's number, 1 to N, each touching the next, diagonals included;
+  null on blocked cells).

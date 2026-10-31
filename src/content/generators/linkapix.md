@@ -90,3 +90,8 @@ and white and in colour.
   logic with paths of 11–12 cells. When no cut of a picture reaches the
   requested band in 32 tries, the nearest band found is returned and labelled
   as such. Boards build in well under a second.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens`, each clue's colour key in
+  `clues.colours` (`[row, col, key]`, `w` stays white) with the names in
+  `palette`; the answer as each path's cells end to end (`paths`) and each
+  cell's colour key (`solution`, null where no path runs).

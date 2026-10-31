@@ -86,3 +86,5 @@ even though counters may also move backwards.
   agree on every small position, that retrograde analysis leaves no drawn
   Northcott position, and that a wrong answer is caught. Rated by the size
   of the position (`rating_basis: rows_and_position_size`).
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "game_positions"`: the game and take limit, and every problem's position (as in the meta), its one winning move (`solution`) and that move in words.

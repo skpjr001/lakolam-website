@@ -66,3 +66,6 @@ solver crate.
   what a thinned board needs, because the spacing rule does that work — and
   Expert has no rung here, so both are served as the nearest band with
   `requested_difficulty` recorded.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed numbers (`cells`/`givens`), the rooms (`regions`),
+  and the answer (`solution`).

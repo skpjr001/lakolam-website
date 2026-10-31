@@ -89,3 +89,5 @@ fewest-move answers.
   tests re-prove the optimum with an independent breadth-first search (tilt,
   and push up to Medium) and an independent iterative-deepening search (push
   Hard and Expert).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the board as printed (tile numbers, `null` empty), the wall cells, the rules, the target and the shortest answer as moves. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

@@ -77,3 +77,5 @@ collection, and at the World Puzzle Championship in 2016 and 2019.
   beyond. Every band is reached at its default size; with a custom `size`
   the label states the band actually reached (`requested_difficulty`
   records the request).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the letters as printed (`cells`, `"A"`… or null) and the answer (`solution`: `true` for a shaded cell). Cells are numbered row by row from 0 where the data is a grid.

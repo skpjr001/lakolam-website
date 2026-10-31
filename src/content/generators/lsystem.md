@@ -2,7 +2,7 @@
 title: "L-System"
 blurb: "Ferns, vines and fractals from stochastic L-systems, with fillable leaves"
 category: design
-version: "1.0.1"
+version: "1.0.2"
 ---
 Ferns, vines and fractals grown from rewriting rules, drawn by a turtle with
 fillable leaves.
@@ -49,3 +49,5 @@ the turtle interpretation borrows from Logo (Papert, 1967).
 - **Guarantees:** deterministic per seed — stochastic rule choices draw from
   the seeded stream; degenerate grammars (unbounded or empty output) are
   rejected with an explanation rather than drawn.
+- **Version 1.0.2:** drawn in order for motion: the stems sit in one ordered
+  layer per branch depth (trunk first, leaves last); the picture is unchanged.

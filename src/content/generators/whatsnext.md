@@ -76,3 +76,8 @@ to "continue, copy and create repeating patterns".
   (`rating_basis: hardest_pattern_kind_and_task`); a level whose rows happen
   to be easier is labelled with the band it actually reaches. The key draws
   the answer in place and rings the right choice.
+
+- **Structured data:** the page's `data` is `sequence_rows`: per row, the
+  `task`, the `pattern`, the pictures `shown` (null marks the gap), the
+  `choices`, and the `answer` picture (`icon`, `pose`, `fill`, `count`) with its
+  1-based `answer_choice` (0 when there are no choices).

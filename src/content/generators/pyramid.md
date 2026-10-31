@@ -79,3 +79,9 @@ through the stock.
   independent rules engine (stock and waste as real piles), re-prove every
   band's deals clearable with an independent recursive search over whole
   positions, and confirm that deals the engine calls lost are lost.
+- **Structured data:** the page also carries the deal as JSON (`kind:
+  "patience"`, `game: "pyramid"`): the pyramid row by row from the top and
+  the stock in turning order (card labels such as `KS`, `10H`), the passes
+  allowed, and the answer: the clearing line as text (`solution`) and as
+  moves (`moves`: `"turn"`, `"redeal"`, or the cards removed, `{"pyramid":
+  i}` by position from the top or `{"waste": k}` by stock position).

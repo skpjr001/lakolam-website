@@ -58,3 +58,7 @@ dictionary independently. The app game (`play`): words by band (Kids 3–5 basic
 Medium 6–8, Hard 8–10, Expert 9 and up) and theme with a hint each, seven misses, and a hint that
 names the hidden letter leaving the fewest dictionary words fitting (`narrows`), or a hidden vowel
 once only the answer fits (`vowel`).
+- **Structured data:** the page also carries the sheet as JSON (`kind:
+  "words"`): per game the word's `pattern` as printed (`_` for a blank), the
+  letters found (`hits`) and missed (`misses`) in the order guessed, the
+  `theme`, and the word as `solution`.

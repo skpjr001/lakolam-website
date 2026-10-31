@@ -100,3 +100,7 @@ the hallmark of a good problem.
   (worst 1.4 s).
 - Draws by repetition, the fifty-move rule and insufficient material are
   not modelled; they never change whether a mate in three exists.
+- **Structured data:** the generator attaches the problem as JSON (`kind:
+  "grid"`, 8 × 8, rank 8 first, files a–h): the pieces as FEN letters in
+  `cells` (upper case White), the `fen`, `to_move` (White), `mate_in`, and
+  `solution` — the key move and the main line in SAN and UCI.

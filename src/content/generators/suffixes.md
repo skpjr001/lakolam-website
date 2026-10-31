@@ -91,3 +91,5 @@ the US and the UK.
   word; each base-word row has exactly one base; no base or answer
   repeats on a page. Meta carries `answers_checked`, the rules used and
   the answers.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "worksheet"`: the task, the rules in legend order, and every row — base word, ending, the answer word, its rule (name and legend letter), the circle task's printed options and the correct one's index, and `answer` (the word, or the base on the base-word task).

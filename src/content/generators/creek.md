@@ -68,3 +68,6 @@ in Slant, set it apart.
   Medium up to 7×7 and Hard above; trial is Hard up to 7×7 and Expert
   above. Every band is reached at its default size; a band a chosen size
   cannot reach is served at the nearest band found and labelled as such.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `solution` the shading row-major (`true` = shaded) and `points`
+  the printed counts on the (n + 1)² grid points, row-major (null when blank).

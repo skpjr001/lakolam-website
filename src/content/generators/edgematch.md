@@ -95,3 +95,5 @@ difference.
   directly, no symmetry breaking — a unique turning board shows exactly
   four raw arrangements), check the two counts agree on random boards,
   read the key back, and sweep every boundary.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "edge_match"`): the pieces by their printed number, each with its edge labels `[top, right, bottom, left]` as printed (a label is `kind * 2 + half`; two edges match when they are the same kind and opposite halves), whether pieces may be turned, and the answer — per square of the `size × size` board, row by row, the piece number and its clockwise quarter turns from the printed orientation.

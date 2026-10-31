@@ -79,3 +79,7 @@ printable version under a generic name.
   family-friendly word the columns spell (`answers_checked`; a solver may
   also find rarer words).
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "letter_slide"`): `columns` (each a string of its letters, top to bottom),
+  `mode` (`cover` or `find_all`) and `solution`, the key words (cover) or
+  every listed word the columns spell (find all).

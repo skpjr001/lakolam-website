@@ -71,3 +71,7 @@ Grabarchuk family of puzzle designers and is published under several names
   Expert does not occur and is served as Hard. Any band served other than
   the one asked is recorded as `requested_difficulty`. A 7×7 Hard board
   builds in about 25 ms.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells`/`givens` the printed numbers, `solution` the filled
+  square, `regions` the chains (cell indices in link order) and `edges` their
+  links.

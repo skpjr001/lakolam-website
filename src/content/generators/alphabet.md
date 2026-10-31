@@ -114,3 +114,5 @@ kindergarten worksheets.
   similarity below 0.95 for every pair), and every same-case pair that is
   close on pixels (0.78 or more, such as a and o) is a listed look-alike,
   so ratings miss no near-twin.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — The sheet as structured data, one entry per section in printed order: `match` (left and right columns, `answer[i]` the right-hand row of left row `i`'s partner), `circle` (prompt, choices, `answer` the choice's index), `missing`/`neighbours` (each run's letters with `null` for a box to fill, and the letters that fill them) and `hunt` (the grid row-major, the target letters, the cells holding them and the count).

@@ -60,3 +60,8 @@ and by Grandgames/Puzzle-Team under the names Kakurasu and Index Sums.
   so they are always served Easy (before, thinning ran to the end for every
   request and Easy came up only by chance). Medium, Hard and Expert boards
   are unchanged.
+- Structured data: the page also carries the board as JSON (`kind:
+  "grid"`): the clues as `clues` (`rows`, printed on the right, and `cols`,
+  printed below; null where thinned away), each the sum of the shaded
+  cells' positions (1 to n) along its line, and the shading as `solution`
+  (`true` = shaded, row-major).

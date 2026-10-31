@@ -93,3 +93,5 @@ vary from school to school: 8 by 10 squares is the common one.
   reached on every size tested. The answer key draws the scoring line in red
   and numbers its moves. Board mode is the same empty pitch for every seed
   (meta `dots` counts its points); it has no answer key.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the page's content, on the pitch's dot lattice (`x` 0..=width left to right, `y` 0..=height top to bottom, the goals at y = -1 and height + 1): the line already drawn (`drawn`, dots in order), the ball, and the one shortest scoring turn as directions (`moves`, indices into `directions`) and as the dots it visits (`path`). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

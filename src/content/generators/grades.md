@@ -72,3 +72,7 @@ than a hundred of them from 6×6 upward.
   Expert a 9×9 that needs trial). The sums rung is always needed (counts alone never tell
   the digits). Every band is served at its default size; with a custom
   `size` the label states the band reached.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the edge numbers as `clues` (`rows` and `cols`, each `[count,
+  sum]`: counts printed left and top, sums right and bottom) and the digits
+  as `solution` (row-major, null for an empty cell).

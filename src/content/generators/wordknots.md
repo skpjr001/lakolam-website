@@ -86,3 +86,8 @@ idea for print.
   capped at 7×7:** denser grids rarely fill from common words, and the
   exhaustive count grows quickly with region size.
 - **Version 1.2:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` mark
+  the blocks (`"#"`), `regions` the outlined regions with `region_letters`
+  the letters printed in each, `solution` every letter (null on a block),
+  and `answers` the words, across then down.

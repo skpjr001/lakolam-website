@@ -99,3 +99,8 @@ minutes for 1-2-5-10); the key's plan is replayed under the printed rules
 and costs exactly the answer; the key says whether it is the only shortest
 plan. Meta: `unique`, `answers_checked`, `difficulty`, `rating_basis`, and
 every puzzle's rules, answer, plan count and plan.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "river_crossings"`): each puzzle's story and question as printed, its kind
+  and rules, and the answer: the fewest crossings or minutes (`answer`, in
+  `unit`), how many shortest plans there are, and one shortest plan,
+  crossing by crossing (`plan`).

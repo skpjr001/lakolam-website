@@ -75,3 +75,8 @@ in the 2010s, and are now a staple of teacher resource sites.
   unreachable; the nearest band is then served and labelled honestly, with
   the request recorded. The robot may pass over the flag before it has every
   gem; the program ends when it stands on the flag holding them all.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` marks rocks (null = open), with `start`, the robot's
+  `heading` (0 north … 3 west), `goal`, `gems`, the `commands` set and
+  `repeat`; `solution` is the one shortest program and `route` the squares it
+  visits.

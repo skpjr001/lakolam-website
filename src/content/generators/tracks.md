@@ -60,3 +60,8 @@ magazines for decades.
   Easy on about 1 seed in 4 (seeds 1–8), every other band as asked. The page
   and key are unchanged; the metadata now adds `requested_difficulty` when
   the served band differs.
+
+- **Structured data:** the page's `data` is a `grid`: printed pieces in
+  `cells`/`givens` and the solved track in `solution`, each a side mask (up 1,
+  right 2, down 4, left 8; 0 = no track), the counts in `clues.rows` /
+  `clues.cols`, and the two `exits` as `[cell, side]`.

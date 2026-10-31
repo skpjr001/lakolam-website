@@ -83,3 +83,5 @@ playable online in collections such as puzz.link.
   band is reached at its default size. With a custom `size` some bands
   cannot exist — Expert needs 9×9 or more, Medium at most 8×8, Kids exactly
   6×6 and Easy at least 7×7 — and the nearest band is served and labelled honestly.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed marks (`cells`: `"S"`, `"G"`, `"circle"`, `"triangle"`, `null`), the regions, the shading (`solution`: `true` shaded) and the white route from S to G (`route`, cells in order). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

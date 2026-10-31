@@ -77,3 +77,5 @@ and game sites.
   search depth 1/3/5/7/9 plies by band, after any forced win it can prove),
   `defend` (the longest-holding reply in a puzzle) and `hint` (the next drop
   of the fastest forced win within 5, else the computer's best drop).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the board as printed, top row first (`cells`: `"red"`, `"yellow"` or null), who is to move, the win depth, and the answer — the one winning column (1-based) and the main line of columns to four (`line`, the winning drop first). Cells are numbered row by row from 0 where the data is a grid.

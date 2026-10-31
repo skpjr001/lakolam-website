@@ -86,3 +86,5 @@ classroom staple for decades.
   hand-written feature rules, recount each gap's possible answers by brute
   force, and rasterise a creature with each feature switched to prove
   every asked feature is visible in the picture.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "dichotomous_key"`): the creatures by their printed letter with their features, the key as a tree (`question` with `yes`/`no` branches, each ending at a creature's `name`), the task and its gaps with their answers.

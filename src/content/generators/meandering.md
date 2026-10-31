@@ -79,3 +79,6 @@ the no-touching rule, and adds the path through each region.
   Hard and Expert come from size with whole-region reasoning; every band is
   served at its default size, and with a custom `size` the label states the
   band reached.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens`, the filled `solution` and
+  the outlined regions as `regions`.

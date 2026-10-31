@@ -74,3 +74,5 @@ give a fixed board and pieces with a target, as here: clear it all.
   shows the board before each piece, the piece in place and the lines it
   clears. Tests re-count solutions with an independent search written from
   the rules.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the board's filled squares (`cells`, `true` filled, `null` empty), the `pieces` (cells as `[row, col]` offsets, as drawn), whether they may `rotate`, and an answer: `steps`, each a piece index and the board squares it covers, in order.

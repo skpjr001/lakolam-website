@@ -64,3 +64,5 @@ Japanese-style logic canon.
   The exhaustive count also prunes a branch once the tanks left, filled to
   the brim, could not reach a row or column count — the same count, found
   far faster (a 9×9 board of small tanks went from minutes to milliseconds).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the tanks as `regions`, the water counts as `clues` (`rows`, `cols`), and `solution`, `true` for a water cell.

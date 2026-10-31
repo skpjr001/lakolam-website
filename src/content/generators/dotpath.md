@@ -89,3 +89,5 @@ books.
 - **Play API** (`play`): `puzzle`, `puzzle_from`, `check` (legal so far,
   solved, steps on track) and `hint` (the next dot, named `forced` when every
   other step breaks a pruning rule, else `path`; or how far to undo).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the lattice as printed (`cells`: `"dot"`, `"start"`, `"end"`, or null for a gap) and the answer — the dots in order from START to END (`path`), as joined pairs (`edges`) and as each dot's step number (`solution`, 1 = START; null on a gap). Cells are numbered row by row from 0 where the data is a grid.

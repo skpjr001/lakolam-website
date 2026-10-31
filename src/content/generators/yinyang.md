@@ -58,3 +58,7 @@ and a regular at world puzzle championships.
   below about 40% of the board at 6×6, 7×7 or 8×8 — so they get the first
   board, exactly as in 1.0, with `requested_difficulty` recorded; Kids has
   no band of its own here and is served as Easy, also labelled.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed circles and `solution` every cell's colour, as `"black"` /
+  `"white"`.

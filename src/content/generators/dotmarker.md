@@ -89,3 +89,5 @@ most common preschool activity pages.
   font has capitals only, so there are no lowercase pages. The page has no
   difficulty levels; meta reports `kids` (`rating_basis:
   toddler_activity`).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "dot_marker"`): every dot's centre in Pt (`dots`, in drawing order), the dot diameter and gap in Pt, the answer (the number of dots, or of target pictures on a count page), and on a count page every picture (`cells`: icon id and centre) with the indices of the targets.

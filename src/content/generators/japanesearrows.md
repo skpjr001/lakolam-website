@@ -79,3 +79,8 @@ different numbers are counted to the edge of the grid).
   counting back is Medium; trial is Hard up to 6×6 and Expert above. Every
   band is reached at its default size; a band a chosen size cannot reach is
   served as the nearest band that size reaches, and labelled as such.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): every cell's `arrows` direction (`"U"`, `"UR"`, `"R"`, `"DR"`,
+  `"D"`, `"DL"`, `"L"`, `"UL"`), the printed numbers as `cells`/`givens`,
+  and every cell's number as `solution` (how many different numbers its
+  arrow points at).

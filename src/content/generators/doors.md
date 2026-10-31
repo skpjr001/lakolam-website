@@ -72,3 +72,5 @@ puzzle site has some 270 of them.
   to 6×6, else Expert). Every band is reached at its default size; with a
   custom `size` the label states the band actually reached
   (`requested_difficulty` records the request).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the numbers as printed (`cells`, null in a room without one) and the answer as the shut doors (`walls`: the pairs of rooms each separates; every other pair of neighbours is open). Cells are numbered row by row from 0 where the data is a grid.

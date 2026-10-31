@@ -81,3 +81,6 @@ curved banana.
   labelled as such (`requested_difficulty` in the metadata). Expert defaults
   to 9×9 because the independent re-proof grows steeply at 10×10; 10×10 is
   still available through `size`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the printed numbers (null = empty), `givens`, and
+  `solution` the shading row-major (`true` = shaded).

@@ -69,3 +69,8 @@ is served as Hard with `requested_difficulty: "expert"`. Meta: `theme`, `hint`, 
 reader (a prefix set, not the trie) and an independent cover search (fewest-options-first). The
 app's play API (`play`) checks traced paths and gives a hint that names the square only one word
 can still cover (`only_fit`), else reveals a word (`reveal`).
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed letters, the theme `hint`, the stated `lengths` (null when the band
+  does not print them), and the answer — `words`, the theme word first, each
+  with the `path` of squares it runs through, in reading order.

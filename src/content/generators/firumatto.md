@@ -71,3 +71,5 @@ online archive carries a collection of them.
   is Kids at 5×5 and Easy above; blocking is Easy at 6×6, Medium at 7×7,
   Hard at 8×8 and Expert from 9×9. With a custom `size` the band of that
   size is served and the request is reported beside it.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the numbers as printed (`cells`, null where blank) and the answer — the mats as cell lists (`regions`, each a straight run) and each cell's mat number (`solution`). Cells are numbered row by row from 0 where the data is a grid.

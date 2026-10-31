@@ -123,3 +123,5 @@ already gone wrong.
   moves with full capture paths, White's move judged (won, good, mistake,
   refused) with Black's longest defence as the reply, and a hint that names
   the next move of the quickest winning line.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "draughts_problems"`): the rules and board size, and per problem (in page order) the pieces in the rules' square notation, White to move, the win depth, the one winning first move and the main line to the win.

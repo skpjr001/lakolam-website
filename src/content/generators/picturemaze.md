@@ -62,3 +62,8 @@ since the 2000s.
 mazes cover more of the grid and usually rate Hard). Both modes generate in
 under 0.2 s at the default size; the maze itself is the same tree in colour
 mode as without it.
+- **Structured data:** the page also carries the maze as JSON (`kind:
+  "grid"`): every neighbouring cell pair with a wall between (`walls`) or a
+  passage (`edges`), the doorways (`entry`, `exit`), the route (`path`,
+  entrance to exit) and, per cell, whether the route passes through it
+  (`solution`).

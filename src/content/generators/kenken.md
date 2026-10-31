@@ -111,3 +111,7 @@ daily. Also circulated as KenDoku, Calcudoku and Mathdoku.
   default spec). A swap that moves the rating is now undone like one that
   breaks uniqueness. Pages whose every swap kept the band are unchanged
   (42 of 60 sampled across the five bands at the default spec).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): an empty `cells` grid, the `solution`, the cages as `regions`, and
+  `cages` (each cage's `cells`, `target` and `op` — `+ x - /`, or null when
+  operators are hidden or the cage is one cell).

@@ -90,3 +90,5 @@ twist.
 - **v1.2:** sides 12–20 are new. A spec asking for more than 11 used to be
   clamped to 11 and now gets the board it asked for, hence the minor bump;
   every board of 11×11 or less is byte-identical.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` as printed (`"#"` a blank wall, a number a numbered wall, `null` a white cell) and `solution`, `true` where a bulb goes.

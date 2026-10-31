@@ -84,3 +84,5 @@ fewest-slide answers.
   source) before the page is returned; tests re-prove the optimum for Kids
   to Hard boards, plain and wrapping, with an independent breadth-first
   search.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` each tile's open sides (`NE`, …), the `source` cell, `wrap`, and `moves` the fewest-slide answer.

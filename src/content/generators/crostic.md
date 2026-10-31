@@ -68,3 +68,8 @@ keep the form popular with adult and senior solvers.
   claimed. Difficulty is the printed share (`rating_basis`); an Expert
   search that finds no exact fit within its budget is served as Hard and
   reported as `requested_difficulty`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`, the quote grid): `numbers` each square's printed number (null for
+  black), `cells` the letters printed, `solution` every letter; `clues` each
+  answer's label, clue and the square numbers its letters go to; plus the
+  `answers`, `quote`, `author` and `initials`.

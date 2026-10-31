@@ -74,3 +74,8 @@ for numbers.
   Expert come from larger grids with crossing reasoning rather than from
   guessing; a size given explicitly keeps its tier, so the nearest honest
   band is returned when the requested one is out of reach.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): `cells` with black cells as `"#"`, the starting digit if one is
+  printed and white cells blank, `solution` (a digit per white cell, null on
+  black) and `clues.across`/`clues.down` (the listed numbers as strings, in
+  printed order).

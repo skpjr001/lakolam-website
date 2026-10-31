@@ -80,3 +80,5 @@ exercise found in many STEM workbooks.
   squares, fewer are used and `requested_choices` records the request. The
   key draws the beam in red, with the tilted mirrors (rotate) or the exit
   number (trace) marked.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the board as printed (`cells`: `"/"` and `"\\"` mirrors, `"#"` blocks, `"?"` a dotted square to tilt, `null` empty), the solved board (`solution`), the edge ports (numbered clockwise from the top-left corner: top edge left to right, right edge top to bottom, bottom edge right to left, left edge bottom to top) of the torch and the exit, and the beam's squares in order. Trace pages add the printed exit numbers by port. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

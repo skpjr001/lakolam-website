@@ -71,3 +71,6 @@ row and column totals, but the shapes are rectangles of any size.
   up to 8×8 and Expert above. Every band is reached at its default size; a
   band a chosen size cannot reach is served at the nearest band found and
   labelled as such.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `clues.rows` and `clues.cols` the printed totals (null when blank)
+  and `solution` the shading row-major (`true` = cloud).

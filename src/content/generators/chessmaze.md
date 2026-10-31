@@ -89,3 +89,7 @@ pieces, and may not capture.
   from the route; a Medium request is served Easy on about 3 seeds in 8
   (seeds 1–8), every other band as asked. The page and key are unchanged;
   the metadata now adds `requested_difficulty` when the served band differs.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the black pieces by name (null = empty square), `piece`,
+  `start` and `goal` squares, and `solution` the one shortest route as square
+  indices (row 0 is the top rank).

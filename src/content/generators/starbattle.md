@@ -164,3 +164,5 @@ from gentle 1★ 6×6s to the tournament-standard 2★ 10×10.
     a minimal-clue climb, so harder bands keep fewer blacks. All five bands
     are reached (Kids at 1★ 5–6, Easy elsewhere at the bottom); under half a
     second at 14×14 three-star.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `regions` the outlined regions (or `cells` the black cells on a shapeless board), `stars` per line and `solution` the stars.

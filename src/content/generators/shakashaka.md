@@ -69,3 +69,5 @@ of the pudding". It is among the youngest puzzles Nikoli made canonical.
   Kids is served as asked, and Easy through Expert requests are served Easy
   on 5 seeds, Medium on 2 and Kids on 1. Hard and Expert boards were not
   found within the 24 attempts; the miss is recorded, never relabelled.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the black cells (`#`, or their number), `solution` every cell with its triangle (`nw`, `ne`, `se`, `sw`) or `.` for empty white.

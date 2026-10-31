@@ -85,3 +85,8 @@ waits somewhere before it. One-way doors are a staple of Robert Abbott's
   from the route, and now and then a seed lands one band below or above the
   request (seeds 1–8: 2 of 40 off). The page and key are unchanged; the
   metadata now adds `requested_difficulty` when the served band differs.
+- **Structured data:** the generator attaches the maze as JSON (`kind:
+  "grid"`, cell index `row × size + col`): `walls` and `edges` (closed and
+  open neighbour pairs), `start`, `goal`, `mode`, the items (`doors` and
+  `keys` by letter, `stars`, or `gates` with the cell each lets you into) and
+  `path`, the one shortest route as a list of cells.

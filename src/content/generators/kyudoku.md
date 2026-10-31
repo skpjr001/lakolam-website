@@ -64,3 +64,7 @@ published daily online and in printable collections.
   what-if. A nested what-if was never needed on any grid measured, so Expert
   is served as Hard and reported as `requested_difficulty`. Kids to Hard
   were served as asked on 8 of 8 seeds each; a page builds in under 15 ms.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): every printed digit in `cells`, the cells printed circled in
+  `circled`, and the answer both as a per-cell flag (`solution`, true where
+  circled) and as the nine cells in `answer`.

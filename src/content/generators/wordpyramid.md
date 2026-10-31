@@ -62,3 +62,9 @@ players hunt for words that extend by one letter.
   letter, rearranged; uniqueness re-checked in the tests by independent full
   scans of the dictionary (no anagram index). Difficulty is set by row
   lengths and which clues are printed (`rating_basis`: `rows_and_clues`).
+
+- **Structured data:** the page's `data` is `word_pyramid`: the `form`,
+  each row's length (`lengths`), what is `printed` (the top row, and the
+  bottom one when given; null for blank rows), the letter each lower row
+  adds (`added`, letters-given form), and the `solution`, every row top
+  first.

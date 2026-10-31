@@ -74,3 +74,5 @@ use; the classroom version swaps letters for friendly pictures.
   catalogue look alike — the tests compare every pair of drawn outlines and
   require them to differ clearly. Rated by the look-alike content and the
   number of targets and symbols (`rating_basis`), not by a solver.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "find_and_circle"`): the target symbols in header order, the distractor symbols, every symbol placed on the field (`items`: its name and centre in Pt) and the answer — how many of each target there are (`counts`) and which items are targets (`circled`).

@@ -70,3 +70,5 @@ of Kurodoko.
   such. A board whose confirming count runs out of its node budget is
   treated as ambiguous and the next attempt is tried (v1.1.0; before, such a
   board — seen at 10×10 Hard — aborted the whole page).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the printed numbers (`cells`) and the answer, `solution` `true` for each shaded canal cell.

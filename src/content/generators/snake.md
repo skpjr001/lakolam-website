@@ -73,3 +73,5 @@ no head and tail; this one gives both ends.
   as soon as it holds a helper-free board in the nearest reachable band —
   the board it would have returned anyway, without the wasted attempts
   (Hard at 10×10 used to run past a minute).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the printed ends and helper cells, `clues` the row and column counts, `solution` the body and `snake` its cells head to tail.

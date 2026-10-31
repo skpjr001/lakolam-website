@@ -90,3 +90,5 @@ puzzle with a single answer and an explicit crossing rule.
 - **Play API** (`play`): `puzzle`, `puzzle_from`, `check` (replay: legal,
   first broken step, colours now, solved) and `hint` (the next tile, named
   `start`, `straight_on` on a green tile, or `path`; or how far to undo).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the tiles as printed (`cells`: `"start"`, `"end"`, `"blue"` — enter once — or `"green"` — leave alone, or cross), and the answer — the tiles the path visits in order from START to END (`path`; a crossed tile appears twice), also as joined pairs (`edges`). `blue` gives every tile's colour, START and END included. Cells are numbered row by row from 0 where the data is a grid.

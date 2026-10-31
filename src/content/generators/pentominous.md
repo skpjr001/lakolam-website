@@ -76,3 +76,6 @@ online puzzle collections.
   a band missed was recorded as `difficulty_requested`, a spelling no other
   generator uses. Meta only: every page and answer key is byte-identical to
   1.0.0.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed letters as `cells`/`givens`, the answer's letter in
+  every cell as `solution`, and each pentomino's cells as `regions`.

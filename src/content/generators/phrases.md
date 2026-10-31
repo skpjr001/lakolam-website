@@ -80,3 +80,8 @@ been a staple of newspapers, radio games and reminiscence sessions.
   judged by the recorded endings). Write pages list each phrase's other
   accepted endings in `also_accepted`. American and British spellings are
   avoided where they differ.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "worksheet"`): the task and the phrase kind, each row's phrase with its
+  blank (`prompt`), the choices offered, the answer and every other word
+  accepted (`alternates`), and the order of the match column or word bank
+  (`order`).

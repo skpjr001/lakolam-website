@@ -2,7 +2,7 @@
 title: "Strange Attractors"
 blurb: "Strange attractors — Lorenz, Aizawa, Thomas, Halvorsen and Rössler flows through a seeded camera, and de Jong and Clifford flow fields, as plotter strokes"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 The shape of chaos: the Lorenz butterfly and its cousins, drawn as one long
 unbroken line, or as swirling flow fields from two famous maps.
@@ -101,3 +101,8 @@ the method of Bruno Jobard and Wilfrid Lefer (1997).
   integrator, step, camera, map parameters, stroke and point counts, and ink
   length in metres; `colorable` is false, as these pages are line drawings,
   not colouring pages.
+- **Version 1.0.1:** drawn in order for motion: the strokes keep their
+  depth order on the page, and each run of them sits in an ordered layer
+  naming its place in time (up to 200 chunks along the trajectory), so an
+  animation traces the curve as it was integrated; the picture is
+  unchanged, the bytes of every page change.

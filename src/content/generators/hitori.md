@@ -67,3 +67,6 @@ after the goal of making every number solitary in its lines.
   Latin square admits many legal shadings, and "no duplicates" alone is
   nowhere near a puzzle. The generator works from that fact rather than
   against it.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): the printed numbers as `cells`, and the answer as `solution`
+  (`true` where a cell is shaded, row-major).

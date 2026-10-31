@@ -64,3 +64,8 @@ paths of graph theory, studied by William Rowan Hamilton in the 1850s.
   square by square and re-splits the letters read so far from scratch. The
   answer key draws the snake with each word in its own colour. Difficulty is
   rated by grid size (`rating_basis`: `grid_size`).
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed letters, the `start` square, the word list as printed (`listed`),
+  and the answer — the `words` in snake order and the `solution` path (square
+  indices, every square once).

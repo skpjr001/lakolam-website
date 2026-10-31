@@ -97,3 +97,5 @@ reached and is served as Hard or Medium. The served band is recorded with
 thinning stops at the same boards; sampled 12 of 12), with `relation` now in
 the metadata's technique trace; other requests change on about half their
 seeds.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` any printed heights, `solution` every height and `clues` the edge numbers (`top`, `bottom`, `left`, `right`).

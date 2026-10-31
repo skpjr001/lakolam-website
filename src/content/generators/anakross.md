@@ -75,3 +75,5 @@ grid.
   placements with an independent search and re-derive every jumble's
   answers by scanning the dictionary.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — The puzzle as structured data, on the square grid before it is turned 45°: `cells` are the ring squares as printed (a starter letter, `""` to fill, `null` no square), `solution` their letters; `centres` are the numbered squares (number = index + 1), `rings` each one's eight squares clockwise from the top (cell indices), `words` the answers in centre order and `jumbles` the printed clues.

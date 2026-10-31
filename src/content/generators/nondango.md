@@ -68,3 +68,5 @@ playable on puzz.link.
   choices are Medium; trial is Hard up to 8×8 and Expert above. Every band
   is reached at its default size; a band a chosen size cannot reach is
   served as the nearest band that size reaches, and labelled as such.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the circles as printed (`cells`: `"circle"` or `null`), the regions, and the answer colour of every circle (`solution`: `"black"`, `"white"`, `null` where there is none). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

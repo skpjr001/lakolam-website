@@ -75,3 +75,6 @@ Otto Janko's online collection has many examples.
   are reached through board size; every band is served at its default
   size. With a custom `size` the label states the band reached (Kids from
   7×7 up is Easy or Medium).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens`, the filled `solution` and
+  the outlined rooms as `regions`.

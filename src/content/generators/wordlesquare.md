@@ -86,3 +86,8 @@ version under a generic name.
   — a square whose minimal guesses always settle by crossing is served as
   Medium and labelled so.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+- **Structured data:** the page's `data` is a `grid`: the guesses printed
+  beside each row in `clues.rows` (each `word` and its `marks`, `"green"`,
+  `"yellow"`, `"grey"` per letter, scored against that row) and the
+  `solution` square, letter by letter.

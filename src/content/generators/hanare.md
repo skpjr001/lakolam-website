@@ -78,3 +78,7 @@ Nikoli*. Otto Janko's online collection has over a hundred of them, from
   line: Easy at 5×5, Medium up to 7×7, Hard up to 10×10, else Expert;
   trial: Hard at 5×5, else Expert). Every band is served at its default
   size; with a custom `size` the label states the band reached.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): the `regions`, the printed numbers as
+  `cells`/`givens`, and as `solution` the number in every cell that holds
+  one (its region's size; null elsewhere).

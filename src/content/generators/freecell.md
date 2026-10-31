@@ -98,3 +98,8 @@ open patience, named for its thirteen piles.
   search over whole positions (its own score, no canonical forms), and check
   determinism, every card dealt once, kings at the bottom in Baker's Dozen,
   and that every band is served at the default seed.
+- **Structured data:** the page also carries the deal as JSON (`kind:
+  "cards"`): `game`, `free_cells`, the `piles` as dealt (bottom card first,
+  labels such as `10H`), and the winning line as `solution`, one move per
+  entry with its `card`, `from` and `to` as printed (piles `1`.., free cells
+  `C1`.., `F` for the foundations) and whether it is an `auto` move.

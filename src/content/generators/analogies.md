@@ -67,3 +67,5 @@ children's reasoning tests.
   rated by its hardest pair's grade (`rating_basis`). The relation table
   is a curated list written for Lakolam; meanings outside it are kept out
   of the options by the close-pair list, not by proof.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — per row, the `stem` pair, the `cue`, the `answer`, the four `options` (choice task; empty for write-in) and the `relation` both pairs share.

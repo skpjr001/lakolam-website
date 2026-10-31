@@ -2,7 +2,7 @@
 title: "Moonscape"
 blurb: "Moonscape: power-law craters laid down oldest first, each rim erasing the line work inside it, hatched away from the light"
 category: design
-version: "1.0.0"
+version: "1.0.1"
 ---
 A cratered lunar surface engraved impact by impact, oldest first, so every
 young crater cuts cleanly through the older ones beneath it.

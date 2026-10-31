@@ -72,3 +72,9 @@ single long route through a large one.
   band, and the request is kept as `requested_difficulty`. Clamped knobs are
   reported as `requested_size`, `requested_starts`, `requested_width` and so
   on.
+
+- **Structured data:** the page's `data` is a `grid`: `walls` between
+  neighbouring squares (closed passages; the rim is walled but for the
+  openings), the `starts` (top row, lettered A, B, … left to right), the
+  `goal`, `steps` from each start (null: no way through), and the answer —
+  `winner` (a start index) and its `solution` route.

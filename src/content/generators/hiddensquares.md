@@ -71,3 +71,8 @@ searches.
   them; every word in a hidden square is an everyday, family-friendly
   word. The tests recount the squares with an independent window scan.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Structured data:** the page also carries the puzzle as JSON (`kind:
+  "grid"`): the letter grid as `cells`, the word `square` size, the
+  `example` square shown outlined (an index into the answer, or null), and
+  as `solution` the hidden squares' top-left corners `[row, col]`, with
+  their row words as `words`.

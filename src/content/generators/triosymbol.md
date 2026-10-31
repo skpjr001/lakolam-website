@@ -77,3 +77,8 @@ variants and children's editions with cut-out tiles.
   served other than the one asked is recorded as `requested_difficulty`.
   Timings: under 30 ms for most pages; 9×9 Hard about 0.1–0.25 s; 12×12
   Hard about 0.8 s, and about 3 s with both extra rules.
+
+- **Structured data:** the page's `data` is a `grid` (symbols 1 ring,
+  2 triangle, 3 cross): `cells`/`givens` as printed, the `solution`, the 3×3
+  boxes as `regions` when used, and every ruled row, column and diagonal in
+  `lines`.

@@ -50,3 +50,5 @@ pairing the ancient magic square with wordplay and a hidden-message payoff.
   must) to the grid's width; on one line it ran 129 pt off the right of the
   default page. Every page with the default instruction changes; the answer
   key, whose line fits, does not.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — a 3×3 grid whose `cells` are the printed scrambles and `solution` the answers; `numbers` is the magic square in the corners (the reading order) and `hidden` the word the answers' initials spell in that order.

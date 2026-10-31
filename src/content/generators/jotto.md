@@ -79,3 +79,7 @@ guesses are already made, and you deduce the word.
   the answer; no answer repeats on a page. Meta records the technique each
   puzzle needed, its clue count and how the field of words shrinks clue by
   clue.
+- **Structured data:** the page also carries its puzzles as JSON (`kind:
+  "words"`): per puzzle its `clues` (each a `guess` and the number of
+  letters it `shared` with the hidden word, any position) and the hidden
+  word as `solution`.

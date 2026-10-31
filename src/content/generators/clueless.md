@@ -83,3 +83,7 @@ filled from.
   `rating_basis: grid_size_and_technique`, `technique`, the number of
   givens and the answer words.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `blocks` (indices of the black squares), `cells`/`givens` the
+  printed letters and `solution` every square's letter (null for a block),
+  row-major.

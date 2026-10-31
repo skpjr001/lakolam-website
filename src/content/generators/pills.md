@@ -75,3 +75,8 @@ hundred of them on grids from 6×6 to 10×10.
   at 6×6, else Medium; trial: Hard up to 8×8, else Expert). Every band is
   reached at its default size; with a custom `size` the label states the
   band actually reached.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the digit in every cell (`cells`/`givens`), the row and column
+  sums (`clues.rows`, `clues.cols`), the number of pills (`pills_count`),
+  and the answer: each pill by value with its three cells (`pills`) and, per
+  cell, the value of the pill covering it (`solution`, `null` = uncovered).

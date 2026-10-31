@@ -84,3 +84,8 @@ and it is still sold today.
   is served as the nearest one, labelled with `requested_difficulty`. The key
   lists the moves and draws the swamp after each, the moved plank in red and
   its old place dashed.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"` over the lattice of stump points, row 0 the far bank): the stumps
+  (`cells`, `true`), `start` and `end`, the planks as they lie (`edges`,
+  pairs of points), and the answer: the shortest sequence of moves (`moves`:
+  the plank picked up and where it is laid, as point pairs and in words).

@@ -75,3 +75,7 @@ numbers describe the path instead of walls.
   from scratch at each step and checks finished paths against the rules.
   Rated by board size (`rating_basis: grid_size`): 4×4 Kids, 5×5 Easy, 6×6
   Medium, 7×7 Hard, 8×8 Expert.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the printed numbers (null = empty), `count` what they
+  count, the `doors` (direction into the start square and out of the goal),
+  and `solution` the one path as square indices, start to goal.

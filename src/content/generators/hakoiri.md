@@ -73,3 +73,7 @@ diagonally, and all symbols one orthogonally connected area.
   above. Boards whose size cannot reach the requested band (say a 10×10 at
   Kids) are rated honestly at the nearest band they reach, and meta records
   `requested_difficulty`.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): the printed shapes as `cells`/`givens`
+  (`"circle"`, `"triangle"`, `"square"`), the `regions`, and the filled
+  board as `solution` (null for an empty cell).

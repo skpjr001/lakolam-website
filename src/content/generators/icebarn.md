@@ -88,3 +88,10 @@ and it is playable on puzz.link. It is the Nikoli genre closest to a maze.
   `requested_difficulty` records the request: Easy and Medium up to 6×6 are
   Kids, Kids and Medium at 7×7 are Easy, Kids and Easy from 8×8 are Medium,
   Expert up to 8×8 is Hard and Hard from 9×9 is Expert.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): ice cells printed as `"ice"` and grouped
+  into `regions` (the ice areas), the `arrows` (each `[from, to]`, the
+  neighbouring cells the path must cross between in that direction), the
+  `entry` and `exit` (a border cell and the side facing out of the grid:
+  `"U"`, `"D"`, `"L"` or `"R"`), and the answer as `path` (the cells in
+  order; an ice cell crossed twice appears twice).

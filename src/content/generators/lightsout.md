@@ -74,3 +74,7 @@ as *Flip*.
   band picks the size, so every band is reachable with the classic rule. A
   wrapping `star` board starts at 4×4: on a 3×3 torus every star press
   switches all nine lamps.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the lamps lit at the start in `cells` (true = lit), `rule` and
+  `wrap`, the printed marks in `clues.marks` (`[row, col, press]`) and the
+  answer, the presses, in `solution` (true = press).

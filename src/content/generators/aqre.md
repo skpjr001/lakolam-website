@@ -71,3 +71,5 @@ shading genre.
   above, Connect is Medium, Trial is Hard up to 8×8 and Expert above. A
   request whose band the chosen size cannot reach ships the nearest band
   found, with `requested_difficulty` recorded.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `regions` (cell lists), each region's printed number in `region_clues` (`null` when it has none; the number sits in the region's first cell, which `cells` shows), and `solution`, `true` for a shaded cell.

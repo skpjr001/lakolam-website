@@ -66,3 +66,5 @@ part of primary language-arts workbooks for generations.
   one letter earlier, so the deeper letter is really needed. Checked when
   the page is built and re-checked in the tests by an independent
   letter-by-letter comparison and sort. Meta carries `answers_checked`.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the word bank as printed, the key (the bank in ABC order), and each "which comes first?" pair with its answer.

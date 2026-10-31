@@ -91,3 +91,9 @@ addition or subtraction — is the rule set used here.
   or by the overlay operation; the page carries the rating of its easiest
   matrix (`rating_basis: varying_attributes_and_rule_kinds_easiest_matrix`).
   The key draws the missing figure in place and rings the right choice.
+- **Structured data:** the generator attaches the page as JSON (`kind:
+  "matrices"`): per matrix its `dim`, the `shapes` and `fills` palettes, the
+  `cells` row-major (each `{"Figure": [shape, count, fill, turn, size]}` with
+  shape and fill as palette indices, or `{"Lines": mask}`; the missing last
+  cell null), the lettered `options`, and the answer (`solution` letter and
+  `solution_index`).

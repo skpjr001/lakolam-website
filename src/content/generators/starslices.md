@@ -58,3 +58,5 @@ columns, appeared among children's browser games in the 2010s.
 - **Guarantees:** exactly one set of cuts leaves one star per piece
   (`unique: true`), re-checked in tests by literally cutting the grid for
   every cut subset. The answer key draws the cuts in red.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the stars, `row_cuts` / `col_cuts` the answer and `regions` the pieces they make.

@@ -109,3 +109,5 @@ primary-classroom staple ever since.
   when it is in the name, town, day or month lists, and no frame word or
   common noun is in them (tested from the raw lists, as is the corrected
   sentence's capitalisation).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the task, the parts it uses, the sort page's word bank, and each row's words (sentence rows: the sentence's index in the curated list and its words), the part asked, and the answers' indices. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

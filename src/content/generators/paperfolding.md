@@ -82,3 +82,5 @@ questions are a regular part of 11+ non-verbal reasoning.
   problem is rated by what it is - folds, diagonal folds and holes
   (`rating_basis: folds_diagonal_folds_and_holes`) - and every level is
   reached as asked; the page reports the hardest of its problems.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the page's content, on the integer lattice the generator works in: per problem the sheet before each fold and after the last (`shapes`, point lists), the folds (`line`: `x2` is x = c/2, `y2` is y = c/2, `x_minus_y` is x − y = c, `x_plus_y` is x + y = c; `keep`: the side that stays), the punched holes, the options' holes in print order, and the answer index. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

@@ -80,3 +80,8 @@ newspapers and online since the 2000s.
   (`rating_basis: features_and_cards`) and each level's count range is
   always met; meta also reports how many triples differ in every feature,
   the kind people find hardest. The key lists every triple.
+
+- **Structured data:** the page's `data` is `cards`: each card's feature
+  values (`0..3`; the first `features` of number, shape, fill and
+  colour/corners) in printed order (card `i` is lettered `A + i`), and the
+  `solution` — every triple as card indices.

@@ -121,3 +121,8 @@ idea works on paper: you redraw each tile on an empty grid, the way other
   9×9 up is Expert, a 3×3 board is always Kids, and on 4×4 and 6×6 Hard and
   Expert sometimes come out easier (small boards rarely need the trial
   rung).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): every tile as shown, as the letters of the sides its pipes leave
+  by (`U`, `D`, `L`, `R`) in `cells`/`givens`, the fixed tiles (`fixed`),
+  `wrap` and `target`, and the answer: every tile turned the right way
+  (`solution`) and the joined neighbours (`edges`).

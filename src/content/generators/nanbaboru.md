@@ -82,3 +82,5 @@ line is empty.
   through board size: every band is served at its default size. With a
   custom `size` the label states the band reached — a 4×4 never needs more
   than Easy, and Kids from 6×6 up is Easy.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed cells (a given number, `"circle"` for a number to find, `"cross"` for an empty cell, `null` blank), the answer (`0` empty, else the number) and the numbers' range 1..`numbers`. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

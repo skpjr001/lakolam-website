@@ -79,3 +79,7 @@ around them.
   sits on a black cell and equals the lines it touches; meta records
   `unique`, `difficulty`, `requested_difficulty`, `rating_basis`,
   `hardest_technique`, the grid, black cells and numbers.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` hold
+  the black squares (their number, or `"#"` without one) and `solution` each
+  white square's line, `"h"` or `"v"`.

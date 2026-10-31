@@ -84,3 +84,8 @@ five-year-olds.
   `kinds` or `max_count` raises the rating honestly. An Expert page that
   finds no family with enough clearly different pictures mixes families;
   it still rates Expert by its kinds and flips.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "counting"`): every picture (`icon`, centre `x` and `y`, and inked `box`
+  `[x0, y0, x1, y1]` in points), the `tally` (the kinds to count, in order),
+  the `decoys` (kinds on the page that are not counted), and as `solution`
+  the count of each tally kind.

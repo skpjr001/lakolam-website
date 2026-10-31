@@ -108,3 +108,5 @@ A Nikoli puzzle, first published in 1994. The name blends "fill" with
   pages that had a second answer change (about one Medium or Hard page in
   ten). Tests count answers with an independent cell-by-cell search of any
   region size. The wide boards below were already proved without a cap.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the numbers as printed (`cells`, null where blank) and the answer — every cell's region size (`solution`) and the regions as cell lists (`regions`). Cells are numbered row by row from 0 where the data is a grid.

@@ -85,3 +85,5 @@ Championship in 2010 and is a regular in puzzle contests since.
   rung), serving the nearest band reached and labelling it. Grids that
   generated before are unchanged. Expert on boards near 11×11 is still slow
   (its bracket widening runs an exhaustive count per step).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the printed numbers (`cells`), and the answer as `regions` (cell lists) and `solution` (each cell's region).

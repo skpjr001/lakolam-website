@@ -89,3 +89,8 @@ puzzle with exactly one solution.
   solved; `hint` → a wrong card first, else the next forced placement from
   the current position (`only_card`, `only_cell`, or `subset` / `trial`
   when those were needed to reach it).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the pool `cards` in printed order (card number = index + 1, each
+  with its shape, count, fill and frame codes), the `row_labels` and
+  `col_labels`, `cells` the printed card numbers (null = empty) and `solution`
+  every square's card number, row-major.

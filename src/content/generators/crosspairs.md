@@ -72,3 +72,7 @@ their common middle letter, with one pair looped to start.
   tests recount the pairs with an independent scan of every full row,
   column and diagonal.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the printed letters, `example` the looped pair (if any),
+  and `solution` every pair — its two `words` and the cell indices each covers
+  in reading order.

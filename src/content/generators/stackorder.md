@@ -84,3 +84,5 @@ of many screen games about stacked paper, sticks and stamps.
   piece)`; `hint(puzzle, removed)` → `TakeOff { piece, rule: "nothing on top"
   }`, the next piece to lift off the top, or `Undo { keep }` after a wrong
   removal.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `stack`: each piece by letter (centre, size, angle, corner radius on a 0..1 board), the visible `lies_on` pairs and `solution`, the placing order.

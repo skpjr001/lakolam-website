@@ -83,3 +83,8 @@ about 200 of them. Janko's rules state that paths may cross a pot.
   Easy (Kids on 5×5 or smaller), area Medium, overlap Hard, trial Expert.
   A requested band the board does not reach is served as the nearest one
   and labelled honestly beside `requested_difficulty`.
+
+- **Structured data:** the page's `data` is a `grid`: `regions` the pots,
+  `totals` each pot's printed total (null: hidden), `cells`/`givens` the
+  circles' numbers where they start (`circles`: `[start, value]` in reading
+  order), and the `solution` — the cell each circle slides to.

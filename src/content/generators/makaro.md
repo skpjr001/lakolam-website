@@ -82,3 +82,7 @@ puzzle books.
   size 6, are), so it is not served at the default size. Reaching Medium
   would need a real middle-band deduction for makaro (or printing fewer
   arrows), not a relabel.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): black cells as `"#"` and printed digits in `cells`, the arrows on
+  black cells in `clues.arrows` (`[row, col, direction]`), the rooms as
+  `regions`, and the filled `solution` (null on black).

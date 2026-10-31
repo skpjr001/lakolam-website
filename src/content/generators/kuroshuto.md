@@ -72,3 +72,6 @@ connected.
   8×8 and Expert above. Every band is reached at its default size. A band a
   chosen size cannot reach is not searched for: the nearest band that size
   reaches is served and labelled as such.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens` and the answer as a
+  per-cell flag in `solution` (true = shaded).

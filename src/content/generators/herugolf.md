@@ -82,3 +82,8 @@ not stop in it, and that the last shot need not be a 1.
   course does not reach is served as the nearest one and labelled
   honestly beside `requested_difficulty`; small custom sizes tend to come
   out Kids.
+- **Structured data:** the page also carries the course as JSON (`kind:
+  "grid"`, index `r * cols + c`): `cells` as printed (a ball's first shot
+  length as a number, `"H"` a hole, `"W"` water, null grass), and as
+  `solution` each ball's route in reading order of the balls: the cells it
+  stops on, from its own cell to its hole.

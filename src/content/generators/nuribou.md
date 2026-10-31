@@ -74,3 +74,5 @@ Nuribou ("painted bars") appeared in Puzzle Communication Nikoli No. 68
   often failed to find a grid the ladder settles. With a custom `size` the
   band of that size and rung is served, and the request is reported beside
   it.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed numbers (`cells`) and the shading (`solution`: `true` shaded). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

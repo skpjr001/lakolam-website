@@ -103,3 +103,6 @@ Nikoli in 2004 — the name is simply the four usable tetromino letters.
   Earlier versions wrote `difficulty_requested`, which nothing else in the
   catalogue reads. Pages and keys are unchanged. Over seeds 1–8 every band is
   reached; Medium is the thin one (served Easy or Hard on 7 seeds of 8).
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the outlined `regions`; the answer as a per-cell flag (`solution`,
+  true = shaded) and the piece each region holds (`pieces`: L, I, T or S).

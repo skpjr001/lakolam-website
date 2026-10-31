@@ -72,3 +72,6 @@ necessarily in order.
   above. A band a size cannot reach (Expert below 8×8, Hard from 8×8, the
   harder bands on 4×4) is served at the nearest band found and labelled as
   such beside `requested_difficulty`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed digits (`cells`/`givens`), the regions (`regions`),
+  and the answer (`solution`).

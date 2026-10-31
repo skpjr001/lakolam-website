@@ -85,3 +85,8 @@ lists it as "Reflect", and the puzz.link site hosts a solver for it.
   default size; with a custom `size` the label states the band actually
   reached (Kids from 7×7 up is Easy or Medium; Medium up to 6×6 is Easy;
   Expert below 8×8 is Hard and Hard from 8×8 up is Expert).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): each printed mark (`cells`/`givens`: `"cross"`, or `{"triangle":
+  open sides, "number": n}` with sides as `U`, `D`, `L`, `R`), and the
+  answer: the sides by which the loop leaves every cell (`solution`, `null`
+  off the loop) and its links between neighbouring cells (`edges`).

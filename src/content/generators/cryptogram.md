@@ -58,3 +58,7 @@ Cryptogram Association (1929) standardised the hobby form it still has.
   every band from Kids to Expert is served as asked. Medium, Hard and Expert
   pages are byte-identical to 1.0 (12 of 12 sampled per band); their meta
   gains `rating_basis` (`letter_flatness_length_short_words_hints`).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "cryptogram"`): the printed `cipher` text, the hinted letters as `givens`
+  (`[cipher, plain]`), the `author`, and the answer — `solution` the plain
+  text and `key` the plain letter of every cipher letter used.

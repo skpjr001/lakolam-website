@@ -83,3 +83,5 @@ tiles that need two or three visits, which is the form printed here.
 - **Speed:** Kids to Medium in milliseconds; Hard about 0.2 s; Expert about
   1 s (up to ~4 s on the slowest of 30 tested seeds); `size: 9` at Expert
   takes up to ~10 s.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the floor as printed (`cells`: how many times each tile must be stepped on, 1-3, null for a gap), the START and EXIT squares, and the answer — the walk square by square from START to EXIT (`path`, also as joined pairs in `edges`). Cells are numbered row by row from 0 where the data is a grid.

@@ -89,3 +89,7 @@ where coloured circles describe the shape of the loop.
   rung alone does not settle boards that large), Easy from 7×7 is Medium,
   Medium up to 6×6 is Easy, Expert up to 7×7 is Hard and Hard from 8×8 is
   Expert.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the circles in `cells` (`"black"` or `"white"`), and the answer
+  both as the loop's cells in order (`loop`) and as a per-cell flag
+  (`solution`, true on the loop).

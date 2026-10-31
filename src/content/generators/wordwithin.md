@@ -74,3 +74,8 @@ the longest-word scoring turns it into a game.
   `rating_basis: common_words_containing_chunk`, the chunks, their word
   counts and the key words.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+- **Structured data:** the page's `data` is `word_within`: per row the
+  printed `chunk`, the `good` / `great` / `best` targets, how many common
+  words contain it, and the `answers` — the longest such words, longest
+  first.

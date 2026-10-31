@@ -56,3 +56,7 @@ placements left, capped at two.
 **Guarantees:** `unique` — exactly one placement of the words fits. `rating_basis:
 size_and_directions`. Tests re-count with an independent search (words in list order, a fresh grid
 per branch). Meta: `size`, `directions`, `words`, `word_count`, `theme`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the shown first letters (`cells`/`givens`), the `words` and
+  allowed `directions`, and the answer: the filled grid (`solution`) and
+  each word's start, direction and cells (`placements`).

@@ -73,3 +73,8 @@ mixes "hetero" (different) and "tromino" (a three-cell polyomino).
   reaches, and labelled as such. From 7×7 up, cover and clash alone
   practically never settle a division, so only trial is searched there:
   every 7×7 board is Hard and every 8×8 board Expert.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): black cells printed as `true`, and the
+  answer as `regions` (each tromino's three cells, in order of their first
+  cell), `shapes` (each tromino's fixed orientation, 0–5) and `solution`
+  (each white cell's tromino index, null on black cells).

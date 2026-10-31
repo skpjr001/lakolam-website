@@ -75,3 +75,5 @@ publisher Nikoli, published in Puzzle Communication Nikoli since the late
   attempts — for instance Kids or Easy on a large board, where the first rung
   alone cannot settle every cell — the ladder is raised one rung at a time and
   the nearest band found is returned and labelled as such.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the circles as printed (`cells`: the number in a numbered circle, `"circle"` for a plain one, `null` none) and the shading (`solution`: `true` shaded). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

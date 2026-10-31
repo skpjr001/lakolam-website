@@ -69,3 +69,5 @@ Japanese Puzzle Quilt; Simon Tatham's collection carries it as Mosaic.
   deduction is sound and the ladder settles every cell — and confirmed by an
   independent backtracking count in the tests. Rated by the hardest technique
   needed; Expert is reach-level logic on a 25×25 board.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the clue numbers as printed (`cells`, null where blank) and the picture they force (`solution`: `true` = shaded). Cells are numbered row by row from 0 where the data is a grid.

@@ -74,3 +74,8 @@ form.
   level with an independent breadth-first enumeration over the
   dictionary.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "network"`): each box with its grid `row`/`col`, `letters` and printed
+  `word` (null when blank; `first` the printed first letter), the arrows as
+  `edges` (`[from, to]`: from-word + to-word is a compound), and `solution`,
+  every box's word.

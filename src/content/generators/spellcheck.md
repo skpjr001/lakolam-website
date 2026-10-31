@@ -74,3 +74,5 @@ quizzes and style guides.
   are distinct; no word repeats on a page. Meta carries `answers_checked`,
   the difficulty and its basis (`word_list_grade`), the answers and a count
   of the mistake rules used.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `choices`: each row's options and the correctly spelled one (`solution`, its place, and `answer`).

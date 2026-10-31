@@ -74,3 +74,5 @@ and the Minesweeper number clue.
   size plus the hardest rung used (`rating_basis:
   board_size_and_hardest_rung`). Kids is a 6×6 board solved by local counting
   alone, and Expert is a 10×10 board that needs trial.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the printed numbers (`cells`), the `fleet` (ship lengths), the answer `ships` (top-left `cell`, `len`, `horizontal`) and `solution`, `true` for each ship cell.

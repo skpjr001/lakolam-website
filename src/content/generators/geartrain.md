@@ -82,3 +82,9 @@ every other gear; every answer is rechecked by an independent union-find
 with parity and, for speeds, by multiplying tooth ratios along a path.
 Meta: `unique`, `answers_checked`, `difficulty`, `rating_basis`, and every
 question's gears, teeth, belts, target and answer.
+- **Structured data:** the page also carries its questions as JSON (`kind:
+  "gear_trains"`): per question its `type`, the `gears` (label, centre and
+  teeth, in gear modules: a gear of n teeth has pitch radius n/2), the
+  `links` read back from the drawing (`flip` where two wheels turn opposite
+  ways), the `belts`, gear A's turn (`first`), the `target` gear, and the
+  answer as printed on the key (`solution`).

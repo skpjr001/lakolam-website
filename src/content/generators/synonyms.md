@@ -73,3 +73,5 @@ schoolbooks and vocabulary tests ever since.
   (`answers_checked`). The guarantee is only as wide as the curated graph:
   a pair of everyday words that the graph does not link is treated as
   unrelated.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "worksheet"`: the task and relation, every row (word, link, answer, the choice task's three words), every accepted answer per row, and for the match task each block's right-hand column in printed order.

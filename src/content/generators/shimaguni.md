@@ -85,3 +85,5 @@ popular in online collections of handmade puzzles in Japan and Europe.
   as Medium, Kids above 6×6 as Easy, Medium at 9×9 and 10×10 as Hard,
   Expert below 9×9 as Hard, and at 10×10 an easy request occasionally ends
   up Expert when no board within the search settles with the easy rung).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` each region's number on its first cell, `regions` the countries and `solution` the shading.

@@ -89,3 +89,5 @@ invented names, rooms and furniture.
   8 seeds; a case builds in under 0.6 s. A band not reached is reported
   as `requested_difficulty`. The app gets the board, a check and a hint
   that names the next suspect to place, the rung and the clues read.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the plan as printed (`cells`: `"floor"`, the furniture's name, or `"treat"` for the table the treat was on), the rooms (`regions`, named in `room_names`; `scene_room` is where the treat was taken), the suspects, the clues in order, and the answer — each suspect's square (`at`, indices into `cells`), the initial on each square (`solution`, null where nobody stands) and who took it. Cells are numbered row by row from 0 where the data is a grid.

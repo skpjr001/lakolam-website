@@ -54,3 +54,5 @@ Path needs sixteen edge labels.
   every board came out hard. Now kids, easy, medium and hard are each served
   (a kids rung was added). Hard (the new default) and expert requests, and
   so the default page, are byte-identical to 1.0.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed numbers (`cells`, `null` blank) and the filled grid (`solution`, 1 to n² snaking one step at a time), cells numbered row-major (`row * cols + col`).

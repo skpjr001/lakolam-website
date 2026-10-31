@@ -70,3 +70,5 @@ automatically points at numbered cells.
   Hard up to 6×6 and Expert above. A size that cannot reach the requested
   band (a 3×3 at Expert) is rated honestly at the nearest band, and meta
   records `requested_difficulty`.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the square's numbers (`cells`, all printed) and the border `arrows`, each at `row`/`col` (the square spans `0..n`, the border sits at `-1` and `n`), its `answer` direction as a `[dr, dc]` step, and `printed` true where the arrow is given.

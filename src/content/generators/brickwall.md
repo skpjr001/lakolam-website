@@ -62,3 +62,5 @@ Deutschland puzzle portal.
   clues settle boards before Swordfish-level reasoning is ever needed, so
   Expert requests are served at Hard and meta records
   `requested_difficulty`.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the printed digits (`cells`), the answer (`solution`), and the bricks as `regions` (each two cells; a brick at a row's end wraps round to its start).

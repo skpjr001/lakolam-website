@@ -86,3 +86,9 @@ difficulty levels follow the same deductions as here.
   four-coloured like the rest (an attempt whose map needs a fifth pattern is
   discarded), and the independent count reads corner points off the
   lattice itself.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`, the map's 30 × 22 lattice): the `regions` (cell lists; region `i`
+  is `regions[i]`), the neighbouring pairs (`adjacent`) under the page's
+  `adjacency` rule, the regions printed shaded (`clues.given`, `[region,
+  pattern]`, patterns 0–3 in legend order) and the answer, a pattern per
+  region (`colours`) and per cell (`solution`).

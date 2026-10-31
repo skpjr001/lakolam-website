@@ -68,3 +68,8 @@ teams here are invented.
   goal total, the table recomputed at the end) and check that every shown
   result at Expert is needed.
 - **App:** printable only.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "league_table"`): `teams` (names), the printed `table` (played, won, drawn,
+  lost, goals for and against, points per team), `matches` (home and away team
+  index, and the `score` when printed, null when open) and `solution`, every
+  match's score as `[home, away]`.

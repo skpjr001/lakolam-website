@@ -89,3 +89,8 @@ games played on hexagons.
   app's pig is deterministic: of its allowed steps it takes the first in a
   direction order (a permutation of east, north-east, north-west, west,
   south-west, south-east) shuffled from the seed (`tie_order`).
+
+- **Structured data:** the page's `data` is a `hex_board`: `coords`
+  (axial `[q, r]` per cell index), the `walls` already down, the `pig`'s cell,
+  `walls_to_trap`, and the `solution` — the one `first` wall, a winning
+  `plan` and the `pig_path` it answers (cell indices).

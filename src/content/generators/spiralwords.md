@@ -76,3 +76,5 @@ shiritori. This version replaces the clues with a themed list to order.
   words links correctly and fits the given letters (`unique`); every word
   passes the family-friendly filter. The answer page fills the spiral,
   tints the shared squares and numbers the list in chain order.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the printed letters, `solution` every letter on the spiral, `path` the spiral's cells, `words`, `chain` (the answer) and `overlap`.

@@ -84,3 +84,8 @@ game. This is an original version with pets and pictograms of our own.
   `requested_difficulty`. Pictures are black ink and light greys, safe to
   print in black and white. The app gets the board, a check and a hint
   that names the next pet to place, the rung and the clues read.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`, one cell per room, floor 0 at the top): the guests (`pets`),
+  every clue as structured data (`clues`) and in words (`clue_text`), and
+  the answer as the pet in each room (`solution`, `null` = empty) and each
+  pet's room (`rooms`).

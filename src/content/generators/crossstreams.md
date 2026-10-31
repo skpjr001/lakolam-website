@@ -83,3 +83,7 @@ and its wall from Nikoli's Nurikabe.
   that size can be, which is the board that would have been served anyway
   (Hard above 8×8 used to try every attempt first — tens of seconds at
   10×10 — for the same board).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed line clues as `clues.rows`/`clues.cols` (a number is a
+  run of that many shaded cells, `"?"` one run of unknown length, `"*"` any
+  runs) and `solution` the shading row-major.

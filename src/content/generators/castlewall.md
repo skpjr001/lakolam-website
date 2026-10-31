@@ -89,3 +89,5 @@ its own.
   reached at its default size; with a custom `size` the label always
   states the band actually reached (Kids from 6×6 up is Easy; Medium at
   5×5 and 6×6 is Easy; Hard from 8×8 up is Expert).
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the walls (`cell`, `inside` white or black, the printed `arrow` as `[direction, total]` — direction 0 up, 1 down, 2 left, 3 right — or `null`; `cells` shows `"white"`/`"black"`), the answer `loop` as cells in order, `edges` its steps, and `solution`, `true` for each cell the loop passes through.

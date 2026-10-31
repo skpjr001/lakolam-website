@@ -97,3 +97,5 @@ original version with shapes of our own.
   balances are level, unknown or broken; `play::hint` names a wrong guess
   first, else the next balance (or balances, with how many times each) to
   use, its rule and a sentence saying why.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `balances`: per puzzle the shapes, each balance's shape counts and plain weights on both pans, and `solution`, the weight of each shape.

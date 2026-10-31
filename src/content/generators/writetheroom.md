@@ -71,3 +71,7 @@ classroom resource shops in themed seasonal sets.
   Clamps are reported as `requested_cards`, `requested_width`,
   `requested_height`.
 - **Data:** the Dolch sight-word lists (1948) are in the public domain.
+
+- **Structured data:** the page's `data` is `cards`: the `mode`, and per
+  card its `label` (A, B, … on the cards and the sheet), what it `shows` (a
+  picture, word, fact or number) and the `answer` the child writes.

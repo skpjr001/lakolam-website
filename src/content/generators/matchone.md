@@ -89,3 +89,8 @@ card games in the world.
   `requested_order` records it. Symbols on a card never overlap and stay
   inside the rim (tested). The key lists every pair of cards on the page with
   the symbol they share.
+- **Structured data:** the generator attaches the deck as JSON (`kind:
+  "match_one"`): every symbol's label (`symbols`), every card's symbols as
+  indices into that list (`cards`, deck order), the cards printed on this page
+  (`cards_on_page`, numbered as on the cards) and `solution`: for every pair
+  of cards on the page, the one symbol they share (`[card, card, symbol]`).

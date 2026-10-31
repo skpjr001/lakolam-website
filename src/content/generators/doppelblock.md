@@ -65,3 +65,5 @@ under several names: Doppelblock in German, Tren or Blocks elsewhere, and
   needs a what-if (a few fresh answers are tried to find one before settling
   for an honest Hard). Sums alone rarely settle a 7×7 or 8×8 with line logic,
   so those boards usually print a handful of digits.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): digits printed in the grid (`cells`, null where blank), the answer (`solution`: 0 for a shaded cell, else the digit), and the outside sums (`clues.rows` left of each row, `clues.cols` above each column; null where none is printed). Cells are numbered row by row from 0 where the data is a grid.

@@ -67,3 +67,5 @@ direction, became a mobile hit in the 2020s under many names.
   `requested_difficulty`, and a clamped size as `requested_size`. The tests
   rebuild the blocking by sliding each piece cell by cell and re-count the
   orders with their own search.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` gives the piece (index into `pieces`) covering each square, `null` if none; each piece lists its cells tail to head and the step `[dr, dc]` it slides along; `order` is a removal order that clears the board (the only one when `unique`).

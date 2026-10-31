@@ -90,3 +90,5 @@ in a daily crossword, gives the solver a firm place to start.
   is already Easy work): a Kids request is served as Easy and labelled so
   (`requested_difficulty` in the metadata).
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the grid to restore with its printed column (`cells`: the revealed column's letters, `"#"` for its blocks, null elsewhere), the answer (`solution`: a letter or `"#"` per square), the letters fallen from each column as printed, top to bottom (`dropped`), the revealed column (0-based) and the answer words. Cells are numbered row by row from 0 where the data is a grid.

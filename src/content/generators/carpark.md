@@ -90,3 +90,5 @@ trademark Rush Hour; unblock games for phones followed.
   so `unique_optimal` is usually false there; it is often true for small
   block trays. Default generation takes about 0.2 s; Hard and Expert car
   parks up to about 1–2 s (the local search); block trays about 0.1–0.25 s.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` give the piece label covering each square (`"X"` the marked piece, `null` empty); `pieces` list each piece's top-left `row`/`col`, `w` and `h`; the answer is `moves`, each a piece index, a direction (`up`, `down`, `left`, `right`) and a distance.

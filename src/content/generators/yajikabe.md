@@ -72,3 +72,7 @@ cells lie in the arrow's direction up to the edge; black cells never cover a
   this size cannot reach is served at the nearest rung found and labelled as
   such beside `requested_difficulty`. A board whose confirming count runs out
   of its node budget is treated as ambiguous and the next attempt is tried.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed clues (`count` and arrow `dir`), and `solution` the shading (true =
+  shaded).

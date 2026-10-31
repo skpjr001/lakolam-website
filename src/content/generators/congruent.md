@@ -79,3 +79,7 @@ Championship, where symbol versions add one of each symbol to every piece.
   pieces_piece_size_and_symbols`) — up to 10 cells Kids, 16 Easy, 22
   Medium, 29 Hard (Expert when pieces have 7 or more cells), above that
   Expert. Each band is reached by its default pieces and piece size.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`, on the shape's bounding box): `shape` the cells inside the outline,
+  `cells` the printed symbol kinds (null = none), and the answer as `regions`
+  (each piece's cells) and `solution` (each cell's piece).

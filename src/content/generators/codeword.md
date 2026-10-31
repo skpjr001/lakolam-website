@@ -52,3 +52,7 @@ clues at all — the vocabulary itself is the constraint set.
   committed), and word choice prefers candidates bringing new letters, so the
   cipher typically spans 14–24 letters.
 - The answer key ships as a second scene: full grid and full legend.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the printed number of each square (null for a block),
+  `decoded` the footholds (`[number, letter]`), `key` the letter of each
+  number, and `solution` every square's letter, row-major.

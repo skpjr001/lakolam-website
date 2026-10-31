@@ -80,3 +80,7 @@ mid-2000s and has been widely copied since.
   the start and the answer can be animated or replayed without reading the
   drawing (added in 1.0.1; the page and key are unchanged).
   Generation takes well under a millisecond (30 points: ~0.5 ms).
+
+- **Structured data:** the page's `data` is a `graph`: `nodes` (printed
+  `1..=n`, 0-based here) and `edges`, the tangled `start` positions (unit
+  square), and an untangled `solution` on the `grid × grid` dot grid.

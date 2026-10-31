@@ -100,3 +100,7 @@ which is why the tricky words (hour, unicorn) need practice.
   verb and comparative forms from the spelling rules (doubling, y to i,
   dropping e), a/an from the spelling rule plus its listed exceptions. The
   page is rated by its hardest grammar point (`rating_basis`).
+- **Structured data:** the page also carries the sheet as JSON (`kind:
+  "choices"`): per sentence the text `before` and `after` the gap, the
+  printed `choices` in order, and the index of the one that fits as
+  `solution`.

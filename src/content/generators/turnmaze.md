@@ -110,3 +110,10 @@ Gilbert's clickmazes collection has a family of them. Walk-through
   route_steps_and_loops`). A band not reached is served as the nearest,
   labelled honestly with `requested_difficulty`; occasionally a street seed
   serves Expert as Hard.
+
+- **Structured data:** the page's `data` is a `grid` with `mode`, `start`,
+  `finish` and the route as `solution` (square indices in order). Marked
+  mazes add the printed marks in `cells`/`givens` (`"L"`, `"R"`) and the
+  `blocked` squares; street mazes add `walls` between neighbouring squares
+  (the rim is walled but for the two gaps), `entry` (heading driven in with:
+  0 up, 1 right, 2 down, 3 left) and `exit` (the side of GOAL).

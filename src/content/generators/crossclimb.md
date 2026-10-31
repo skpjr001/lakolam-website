@@ -64,3 +64,7 @@ the middle is right.
   5 words of 4 letters, Medium 7 of 4 (the usual daily shape), Hard 6 of 5,
   Expert 7 of 5. The clues are general crossword vocabulary, so Kids builds
   the Easy ladder and is rated Easy.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "ladder"`): the word length, the middle rungs' `clues` in printed order, the
+  `top` and `bottom` clues, and the answer — `solution` the words top to
+  bottom and `order`, the rung (0 = top) of each printed clue.

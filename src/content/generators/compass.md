@@ -79,3 +79,7 @@ Simple Compass, and 2019) and is playable on the puzz.link collection.
   records the request); on 8×8 the gentle bands are sometimes out of reach
   — the connectivity rung does not settle every division there — and a
   harder board is served and labelled as such.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `compasses`, each with its `cell` and printed `counts` (north,
+  east, south, west; null = blank), and the answer as `solution` (each cell's
+  compass index, row-major) and `regions`.

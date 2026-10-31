@@ -108,3 +108,8 @@ the most common early literacy worksheets.
 - **Limits:** British and other accents differ in places (non-rhotic
   speakers rhyme FARMER with LLAMA, for instance); the pages follow
   American pronunciation and say so in the meta (`pronunciation`).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "worksheet"`): the task, and per task the rows (`rows`: prompt, words and
+  the answer's index), the match columns with the partner of each left word
+  (`left`, `right`, `partner`), or the word bank with the sort houses and
+  their words (`bank`, `houses`).

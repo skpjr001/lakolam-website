@@ -55,3 +55,6 @@ H. Hunter later coined **alphametic** for the meaningful-words special case.
   six-letter sum.
 - **Difficulty:** letter count and how late the search's first forced digit
   arrives, banded.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "cryptarithm"`): the printed `addends` and `total`, and the `solution`, the
+  digit of every letter.

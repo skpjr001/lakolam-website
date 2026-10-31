@@ -90,3 +90,10 @@ work (FUN 2026) studies how hard such mazes can be to solve.
   Easy, two Medium, three Hard, four or more Expert. Expert (four deep) is
   reached on most seeds but not all; a missed band is served honestly as
   the nearest and reported as `requested_difficulty`.
+- **Structured data:** the page also carries the maze as JSON (`kind:
+  "grid"`, `n × n` squares): the open passages (`edges`), the boxes
+  (`boxes`: letter and top-left `[row, col]`, side `box_side`), the numbered
+  outer gaps (`gaps`: number, `side` 0 top, 1 right, 2 bottom, 3 left, and
+  square `t` along it), `start` and `goal`, and the answer: the one shortest
+  escape, every state (`route`: the boxes entered, outermost first, and the
+  square).

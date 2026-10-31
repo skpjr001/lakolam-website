@@ -38,7 +38,7 @@ dark country sky.
 **Finding it in the sky.** Start with the figure's brightest stars, the
 largest discs, and look for their shape; the neighbouring constellations,
 named in spaced letters, help you step from one figure to the next. The
-star letters let you name what you see: α Orionis is Betelgeuse, β Orionis
+star letters let you name what you see: Alpha Orionis is Betelgeuse, Beta Orionis
 is Rigel.
 
 **As a print.** Each plate is a finished picture: frame a single one, or

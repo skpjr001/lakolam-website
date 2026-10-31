@@ -98,3 +98,5 @@ idea and lets you keep your trail.
   hides the maze. On paper the maze is all printed and the card is the
   honour system; the rule "mark only through the window" replaces the
   fading, and you may keep your marks, which is kinder.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the `n × n` maze (cells row by row; IN is the top-left square, entered from the left, OUT the bottom-right, left to the right), its passages (`edges`) and walls (`walls`) as pairs of neighbouring squares, the viewing window's side, and the answer — the one path from IN to OUT, square by square (`path`). Cells are numbered row by row from 0 where the data is a grid.

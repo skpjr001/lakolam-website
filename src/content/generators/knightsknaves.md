@@ -76,3 +76,6 @@ logic courses, brain-teaser books and puzzle magazines.
   Hard up to 6 and Expert above. A count that cannot reach the requested
   band is rated honestly at the nearest, with `requested_difficulty` in
   meta.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "knights_knaves"`): `names` in speaking order, `statements` (each islander's
+  words as printed) and `solution`, `"knight"` or `"knave"` per islander.

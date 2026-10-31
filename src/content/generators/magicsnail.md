@@ -72,3 +72,7 @@ in order.
   Lines alone never settle a board — the snail order is always needed. A
   size that cannot reach the requested band is rated honestly at the
   nearest band, with `requested_difficulty` in meta.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed letters in `cells`/`givens`, the filled `solution`
+  (null = blank), the `letters` in use and `path`, the snail's cell order from
+  the top-left corner inwards.

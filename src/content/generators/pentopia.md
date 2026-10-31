@@ -79,3 +79,7 @@ published dozens. It is also on the puzz.link puzzle site.
   that need the shape rule rather than from guessing. Every band is reached
   at its default size; with a custom `size` the label states the band
   actually reached.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): each arrow cell's directions as letters (`U`, `D`, `L`, `R`) in
+  `cells`/`givens`, the shading as `solution` (`true` = inside a pentomino),
+  each pentomino's cells as `regions` and their letters as `pentominoes`.

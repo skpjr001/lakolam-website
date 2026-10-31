@@ -83,3 +83,5 @@ No. 119 (2007). Otto Janko's online archive carries a collection of them.
   settle alone is a band easier. Boards past 8×8 are not offered: the
   generator was too slow and too often failed there. With a custom `size`
   the band of that size is served and the request is reported beside it.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the pillars (`#` or number), `solution` every cell (pillar, `P` pillow, `F` futon, `C` corridor) and `futons` as `[cell, cell, pillow]`.

@@ -69,3 +69,8 @@ Frame–Stewart numbers (5, 9, 13, 17, 25 moves for 3–7 discs) are exact.
   `requested_difficulty`; a clamped disc count as `requested_discs`. The
   tests re-prove the minimum and the number of shortest lists with their
   own breadth-first search, and check the four-peg whole-stack numbers.
+- **Structured data:** the page also carries the puzzle as JSON (`kind:
+  "hanoi"`): the number of `discs` (1 the smallest) and `pegs` (lettered
+  from A), the `goal` peg, the `start` position (each disc's peg, smallest
+  first), a shortest move list as `solution` (`disc`, `from`, `to`), and
+  `unique` (whether it is the only shortest one).

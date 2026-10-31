@@ -92,3 +92,5 @@ recreates the "increasingly hard" ladder on paper.
   records the target, the alphabet, the exact near-miss count and ratio,
   and where the one occurrence is.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn). A grid page is `kind: "grid"` (`cells`: the symbol in every cell, row by row); a web page is `kind: "web"` (`nodes`: each circle's symbol and position in grid units, `edges`: the lines joining circles). Both carry the target (its symbols in order), the directions it may run in (grid), and the answer: the cells or circles of its one occurrence, in reading order (`answer`). Cells are numbered row by row from 0 where the data is a grid.

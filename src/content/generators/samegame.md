@@ -86,3 +86,5 @@ question of whether the board can be cleared completely.
   band's plan, re-prove small boards clearable with an independent search,
   and check the hint search against `lako_statesearch::count_solutions`
   and the independent search on random boards.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` each block's colour (rows from the top), `solution` the move that removes each block, and `moves` the clearing plan as 1-based `[column, row]` clicks.

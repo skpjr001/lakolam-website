@@ -76,3 +76,7 @@ a fusion of their own Yajisan-Kazusan counting clues with the loop genres.
   measured and still finished Medium on every seed, so those requests are
   served as Medium (or as the nearest found) with `requested_difficulty`
   recorded. Kids has no band of its own and is served as Easy.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed clues (`count` and arrow `dir`), and the answer — the `shaded`
+  cells and the loop as `solution`, the pairs of neighbouring cells it joins.

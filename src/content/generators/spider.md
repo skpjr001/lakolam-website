@@ -93,3 +93,5 @@ suits shipped with home computers around the turn of the millennium.
   `solution_moves`, `deals`, `solver_nodes`, `suits`. Times: Kids/Easy a
   few ms, Medium about 0.3 s (up to ~1 s), Hard about 0.2–0.4 s, Expert up
   to ~7.5 s.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `patience`: the ten piles and five stock deals by card label, and `solution`, the winning line as printed steps and actions.

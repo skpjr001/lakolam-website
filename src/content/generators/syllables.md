@@ -89,3 +89,5 @@ worksheets.
 - **Limits:** counts follow American pronunciation; a few words are said
   with a different number of beats elsewhere, and the honesty rule leaves
   out the common ones rather than guess.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "worksheet"`: the task, every row (its words and its answer — the syllable count, or the odd word's index), and for the sort task the bank as printed and each column's syllable count with its words.

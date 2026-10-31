@@ -2,7 +2,7 @@
 title: "Girih"
 blurb: "Girih — Islamic geometric star patterns by Hankin's polygons-in-contact method"
 category: design
-version: "1.2.0"
+version: "1.2.1"
 ---
 Islamic geometric star patterns — rosettes of six, eight and twelve points,
 interlaced across the whole page.
@@ -90,3 +90,6 @@ his Taprats software.
   Lines run to the page edge and the frame sits a line-width inside it, so
   half a stroke's width used to fall past the edge as ink outside the page
   bounds; the picture is unchanged, the bytes of every page change.
+- **Version 1.2.1:** drawn in order for motion: one path per tile's motif,
+  in ordered layers ringing outward from the page centre; the picture is
+  unchanged, the bytes of every page change.

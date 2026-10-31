@@ -86,3 +86,5 @@ landing and *fuwari* the soft drift of something light floating up.
   is connected and holds one balloon and one ball, each resting legally.
   Meta records `unique`, `difficulty`, `requested_difficulty`,
   `rating_basis`, `hardest_technique`, the grid, regions and black cells.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the printed black cells (`cells`: `true`, null elsewhere), the outlined regions (`regions`), and the answer (`solution`: `"balloon"`, `"iron"` or null for an empty cell). Cells are numbered row by row from 0 where the data is a grid.

@@ -74,3 +74,7 @@ the classic form.
   straight off the words. Uniqueness depends only on the printed list, never
   on a dictionary. `rating_basis` is `hardest_technique`, and the step is
   named in the metadata.
+- **Structured data:** the page also carries the puzzle as JSON (`kind:
+  "grid"`, 5 × 5): the printed letters as `cells`/`givens`, the full letter
+  grid as `solution`, the `words` to trace (each consecutive pair of letters
+  in king-move neighbouring cells) and the letters `to_place`.

@@ -72,3 +72,5 @@ can and cannot be cleared.
   `requested_difficulty`. The tests re-count the solutions with their own
   search and require the same number. `mode: board` is a playing board with
   nothing to solve and ships no answer key.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the page's content, a graph of holes: each hole's lattice position (row, column) and printed name, the holes holding a peg at the start, the ringed goal hole if any, every legal jump line (from, over, to) and one winning jump list. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

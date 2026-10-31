@@ -70,3 +70,7 @@ another side" rule have been widely copied since.
   Boxed has many answers by design, so no uniqueness is claimed: meta
   carries `answers_checked`, and a solver may find real words that are not
   in the list.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "letter_boxed"`): `sides` (the three letters of the top, right, bottom and
+  left sides, each read clockwise), `target_words` and `solution`, a shortest
+  solution in order.

@@ -80,3 +80,5 @@ four-corner rule replaces Shikaku's one-number-per-piece rule.
   Meta records `unique`, `difficulty`, `requested_difficulty`,
   `rating_basis`, `hardest_technique`, the grid, squares, numbers and
   `max_side`.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the numbers, `solution` the square covering each cell and `regions` each square's cells.

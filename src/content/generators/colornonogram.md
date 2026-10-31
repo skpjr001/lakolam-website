@@ -78,3 +78,7 @@ stores.
   doubled. They are served as medium, the nearest band, and the request is
   reported as `requested_difficulty`. Colour clues need colour printing;
   there is no black-and-white mode.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `clues.rows`/`clues.cols` the printed runs as `[length, colour]`,
+  the `palette` (`#rrggbb`, colour k is entry k − 1) and `solution` the
+  picture row-major (0 = empty).

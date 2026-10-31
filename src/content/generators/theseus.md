@@ -75,3 +75,5 @@ number of positions of the two pieces together is what makes them hard.
   (`rating_basis: shortest_escape_moves_easiest_board`). A board that misses
   its band is returned at its honest rating. The key lists every escape as
   U, D, L, R and W (wait) in groups of five and traces Theseus's path.
+
+**Structured data.** The page's machine-readable content (`Generated::data`, never drawn) is `kind: "levels"`: every level as a grid — walls between squares as cell pairs (the border is wall but for the exit), the exit square and the way out, Theseus's and the Minotaur's squares — with the solution as move letters (U D L R, W wait) and its length.

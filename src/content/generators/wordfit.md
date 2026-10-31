@@ -57,3 +57,8 @@ canonical inventor — none is recorded.
   property that makes an answer key honest.
 - **Difficulty:** slot count, crossing density, and how many words share each
   length (more same-length words means more real choice), banded.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed letters (the foothold and any starters), `solution` every letter
+  (null on a blocked square), the word `bank`, and the `words` — each slot's
+  `row`, `col`, `dir`, `len` and `answer`.

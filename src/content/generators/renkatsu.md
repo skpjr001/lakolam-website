@@ -66,3 +66,7 @@ containing all numbers from 1 to N exactly once.
   Easy above; shared cells Medium; trial Hard up to 7×7 and Expert above. A
   band a size cannot reach is served at the nearest band found and labelled
   as such beside `requested_difficulty`.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the number printed in every cell (`cells`/`givens`), and the
+  answer: each cell's region index (`solution`) and the regions' cells
+  (`regions`).

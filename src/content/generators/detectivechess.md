@@ -83,3 +83,5 @@ squares.
   board_pieces_and_marking`): five or more pieces, then eight pieces or an
   8×8 board, each add a band, and unmarked squares add two. Every band is
   reached by its own plan.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the attack numbers as printed (`cells`, null on a square without one), the answer (`solution`: the piece letter on each square, null where empty), the pieces to place, and the marked squares (marked boards: every square that holds a piece). Cells are numbered row by row from 0 where the data is a grid.

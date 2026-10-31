@@ -89,3 +89,5 @@ Lowe, who sold it as "bingo"; Britain and Australia kept the older 90-ball
   (tested). Difficulty applies to word and maths cards (`rating_basis`
   `maths_facts_by_grade` or `card_size`); number cards are a fixed format
   (`fixed_format`). `card_index` is capped at 996.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the `pool` of callable items (what the card shows, what the caller reads, the value where there is one) and each card (`number` in the set, `rows` × `cols` of pool indices, `null` for the free or blank cells).

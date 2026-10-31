@@ -86,3 +86,5 @@ answer only has to contain an awkward letter, is common to the genre.
   Hard needs trial, with lengths shown. Expert is trial or deeper with the
   lengths hidden. The clues are general-vocabulary crossword clues, so Kids
   builds the Easy puzzle and is rated Easy.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` as printed (a starter letter, `""` for an empty white cell, `null` for a black one), `solution` the letters, and the A to Z `entries` — clue letter, clue, answer, and the answer's `cells` (in order), `dir` and grid `number`; `starter` marks answers already written in.

@@ -124,3 +124,8 @@ boards lean on parity arguments researchers still write papers about.
   `requested_difficulty`. Measured at seed 0xa11ce and 1–3: 12×12 and
   15×15 take under 1 s in every band; 20×20 Easy and Medium about 1 s, Hard
   2–3.5 s; 20×20 with `max_room` 12 and Hard 15–22 s.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): the rooms as `regions`, each room's number
+  as `room_numbers` (null where none is printed) and as printed in its
+  top-left cell (`cells`/`givens`), and the painting as `solution` (`true` =
+  painted).

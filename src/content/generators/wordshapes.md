@@ -72,3 +72,6 @@ partly by their outline.
   never dropped, and a page too small for them is still refused. A
   `box_size` below the 9 pt minimum is drawn at 9 pt instead of failing.
 
+- **Structured data:** the page's `data` is `word_shapes`: the word `bank`
+  as printed, and per shape its `boxes` (`"short"`, `"tall"`, `"tail"` per
+  letter), the printed `hint` letter (or null), and the `answer`.

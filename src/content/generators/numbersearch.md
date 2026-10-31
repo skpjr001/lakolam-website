@@ -83,3 +83,4 @@ actually uses.
   pulls the shortest down; both set the wrong way round are swapped), and
   numbers longer than the grid is wide are shortened to fit it.
 
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the digit grid (`cells`, row-major), the numbers to find in list order (`words`), and where each reads (`placements`: the number, its first digit's row and column, and its step `[dr, dc]`). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

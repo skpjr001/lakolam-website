@@ -107,3 +107,5 @@ picross, griddlers, hanjie, and paint-by-numbers.
     pictures at large sizes, mostly), the first draw is repaired instead —
     majority-smoothed while that helps, then edited cell by cell — so the
     page no longer errors. Only pages that used to fail change.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the row and column clues (`clues.rows`, read left to right; `clues.cols`, read top to bottom), any printed givens (`cells`: `true` filled, `false` a dot, `null` blank) and the picture (`solution`: `true` filled). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

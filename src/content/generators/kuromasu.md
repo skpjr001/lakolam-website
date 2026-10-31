@@ -89,3 +89,6 @@ Kuromasu ("black squares") is the name that travelled west.
 - **Version 1.1.0:** sides above 11 were clamped to 11 and now give the
   bigger board, so those specs' output changed; every spec with both sides
   ≤ 11 is byte-identical to 1.0.1.
+- **Structured data:** the generator attaches the puzzle as JSON (`kind:
+  "grid"`): the printed numbers in `cells`/`givens` and the answer as
+  `"black"` or `"white"` per cell in `solution`.

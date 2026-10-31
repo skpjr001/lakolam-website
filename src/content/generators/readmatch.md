@@ -85,3 +85,8 @@ sentence back word by word, independently of how it was made, and re-check
 every picture against it. Difficulty is the hardest kind of sentence on
 the page (`rating_basis`). Sentences are written in lower case with a
 capital first letter and a full stop or question mark.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "reading_rows"`): the task, and each row's sentence (`text`), its pictures
+  (the noun and the attributes each picture shows) and the answer (`answer`:
+  the matching picture's index for `circle`, 1 = yes and 0 = no for
+  `yes_no`).

@@ -83,3 +83,7 @@ collections of handmade examples are published online.
   the label states the band actually reached (for example Kids above 5×5 is
   Easy, Medium at 9×9 and 10×10 is served Easy, and Hard below 8×8 is often
   Medium).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed numbers as `cells`/`givens`, and as `solution` the
+  direction (`U`, `D`, `L`, `R`) from each white cell toward the number
+  whose line covers it (null on black cells).

@@ -148,3 +148,8 @@ Panel (2000) and England's Rose Review (2006).
   and the page asks which letters a word has, not how it sounds. OW as in
   COW and OO as in BOOK (other sounds of the same teams) are left out of
   the vowel-team tables.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "worksheet"`): the pattern and the task, the printed words (`printed`),
+  and per task the rows (`rows`: prompt, the blank's byte range, the
+  choices, the answer's index and the answer word) or the word bank with the
+  sort houses and their words (`bank`, `houses`).

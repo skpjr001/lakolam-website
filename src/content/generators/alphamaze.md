@@ -87,3 +87,5 @@ move through colours in a fixed rotation.
   the nearest maze with its honest rating. If a long route does not fit a
   small grid, it is shortened and `requested_length` records the request.
   The key shades the route and draws it in red.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — every square's item as printed (a letter or number as a string; in shapes mode the shape's index), `start` and `goal` squares, the one `route` as square indices, and `solution` each square's step number on the route (`null` off it). `diagonal` says whether corner-touching squares count as next to each other.

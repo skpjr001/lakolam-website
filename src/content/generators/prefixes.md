@@ -80,3 +80,6 @@ standards for the early grades.
   derivation and a dictionary word (`answers_checked`); choose, split and
   meaning rows each have exactly one answer, re-checked before the page
   ships and again by brute force in the tests.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "worksheet"`): the task, the prefixes in play, and each row: the word with
+  its prefix and base, the options offered and the correct option's index.

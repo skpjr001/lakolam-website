@@ -89,3 +89,8 @@ keep it alive today.
   Because a hidden start is capped at 20 stones, Expert with a hidden start
   is served as Hard, labelled with `requested_difficulty`. The key numbers
   every stone and draws the route.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, lattice points row-major, index `r * cols + c`): `board` (`true`
+  on the shape), the stones as `cells` (`true`), `start` (the first stone
+  when the page marks it, else null), and the answer as `path` (stones in
+  pick-up order) and `solution` (each stone's number from 1).

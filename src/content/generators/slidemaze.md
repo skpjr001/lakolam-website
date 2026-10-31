@@ -75,3 +75,5 @@ robot-motion puzzles such as Alex Randolph's board game *Ricochet Robots*
   route, so a lettered maze often rates a band above the level asked for, and
   if a band is missed the nearest legal maze is returned with its honest
   rating. The key draws the route in red and numbers every stop.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the rocks (`#`), `START`, `GOAL` and lettered points, with `waypoints` in order and `route` the squares stopped on.

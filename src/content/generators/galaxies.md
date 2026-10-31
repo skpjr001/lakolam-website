@@ -135,3 +135,8 @@ West as Spiral Galaxies. A favourite of Simon Tatham's puzzle collection.
   band picks the share. Before, the share was 0.14 for every request and every
   page came out expert. Pages that set `galaxy_share`, expert requests, and
   the default page are byte-identical to 1.0.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`): `dots` in doubled coordinates (`[2·row + 1, 2·col + 1]` is a
+  cell centre; an even value sits on a grid line), and the answer as
+  `solution` (each cell's galaxy, an index into `dots`) and `regions` (each
+  galaxy's cells, index `r * cols + c`).

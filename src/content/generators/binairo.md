@@ -68,3 +68,5 @@ through Games Magazine's *Tohu wa Vohu*.
 - **Guarantees:** deterministic per seed; exactly one solution, proven by
   exhaustive count; the printed board solves by inference alone, and the
   rating is the hardest technique the solve actually used.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` the printed circles (`"black"`, `"white"`, `null` open) and `solution` every cell's colour.

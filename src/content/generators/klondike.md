@@ -99,3 +99,8 @@ be won: around eight in ten with draw 1.
   steps, a run of draws counted once), `actions`, `card_moves`, `draws`,
   `solver_nodes`, `draw`, `passes`. Every band is served for the default
   rules; median times about 50–160 ms per band, the slowest sweep case (Kids asked with one pass) about 3 s.
+- **Structured data:** the generator attaches the deal as JSON (`kind:
+  "klondike"`): `stock` (card labels such as `"9S"`, top card first), `piles`
+  (seven lists, bottom card first; the last card of each is the face-up one),
+  `draw`, `passes` (null for unlimited) and `solution`, the winning line as
+  printed in the key.

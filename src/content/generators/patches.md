@@ -75,3 +75,5 @@ puzzle), adding the square, wide and tall shape clues.
   is Kids, otherwise Easy; lookahead is Medium; trial is Hard, or Expert on 81+
   cells. Every band is reached at its default size; boards generate in well
   under 0.1 s (11x11 Expert up to about 0.5 s).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the clue cells (`cells`: `{"area": n or null, "shape": "Any" | "Square" | "Wide" | "Tall"}`, `null` blank), and the answer: each clue's rectangle (`rectangles`, in clue order, as row/col/height/width) and as cell lists (`regions`). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

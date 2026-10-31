@@ -72,3 +72,7 @@ Janko's online collection has more than a hundred of them, from 6×6 up to
   aims every band at the basic rung — trial rarely settles what basic
   leaves open — so the bands follow size. Every band is served at its
   default size; with a custom `size` the label states the band reached.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed black squares (`"#"`) and circles (`"o"`), and the answer as
+  `regions` — the cells of each four-square piece.

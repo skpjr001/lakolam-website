@@ -1,8 +1,8 @@
 ---
 title: "Wagara"
-blurb: "Wagara: traditional Japanese patterns (seigaiha, asanoha, kikko, shippo, sayagata and seven more) as exact seamless repeats in a page, tile, circle or fan, or a labelled sampler; colouring page or traditional colours"
+blurb: "Wagara: traditional Japanese patterns (seigaiha, asanoha, kikko, shippo, sayagata and seven more) as exact seamless repeats in a page, tile, circle or fan, edge to edge, or a labelled sampler; colouring page or traditional colours"
 category: design
-version: "1.0.0"
+version: "1.1.1"
 ---
 Twelve traditional Japanese patterns, from seigaiha waves to the hemp-leaf
 star, drawn as exact repeats to colour in or printed in traditional colours.
@@ -96,7 +96,9 @@ restricted cloth covered in it.
 - **Spec knobs:** `pattern` (`auto`, the default, lets the seed choose one
   of the twelve); `layout` (`single`, or `sampler`: all twelve in a grid,
   in a seed-shuffled order, labelled, each motif at 60 percent of `scale`); `frame` (`full` page, `tile` of whole
-  repeats, `circle`, `fan`); `style` (`line`, the default, or `colour`);
+  repeats, `circle`, `fan`, or `none`: the pattern runs edge to edge across
+  the whole page with no outline, margin or caption — a sampler keeps its
+  labels and drops only the swatch outlines); `style` (`line`, the default, or `colour`);
   `palette` (`ai`, `beni`, `matcha`, `sakura`, `fuji`, `yamabuki`, `sumi`;
   colour style only); `scale` (motif size, 6-40 mm, default 14); `stroke`
   (0.75-3 pt); `width`/`height` (144-2000 pt); `margin` (0-144 pt, at most a
@@ -130,4 +132,12 @@ restricted cloth covered in it.
   adult colourability check (strokes at least 0.75 pt, regions at least
   40 square millimetres, ink under 55 percent); meta `colorable` reports
   the check for the page actually made (small scales or the sampler can
-  fall below it). The colour page is not checked.
+  fall below it, and so can a frameless page of a dense pattern such as
+  same komon, which has no white border to keep its ink under the ceiling).
+  The colour page is not checked.
+- **Versions:** 1.1.0 adds `frame: "none"`; every other page is
+  byte-identical to 1.0.0. 1.1.1 is drawn in order for motion: the lines
+  are split into one ordered layer per row of the repeat, top to bottom
+  (tatewaku column by column; dots likewise, then the frame and labels,
+  panel after panel); the picture is unchanged, the bytes of every page
+  change.

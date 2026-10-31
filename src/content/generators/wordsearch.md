@@ -159,3 +159,9 @@ Oro is a contemporaneous independent claim). Teachers spread it; by the
   unchanged by the new options.
 - **Difficulty:** grid size, direction set, word length distribution and fill
   entropy, banded.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed letters, and `words` — each hidden word with its start (`row`,
+  `col`), step (`dr`, `dc`) and the `cells` it covers — plus the hidden
+  `message`, when the leftover letters spell one. (The one-word mode carries
+  no data yet.)

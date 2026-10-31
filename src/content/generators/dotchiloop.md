@@ -83,3 +83,5 @@ Puzzle Federation's Puzzle Grand Prix, which featured it in 2025.
   is Easy, Medium at 5×5 and 6×6 is Easy, Expert up to 7×7 is Hard, Hard
   from 8×8 up is Expert, and on 9×9 and 10×10 Kids and Easy sometimes come
   out Medium (the local rung alone rarely settles a big board).
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the circles as printed (`cells`: `"white"`, `"black"` or null), the rooms (`regions`), and the answer — the loop as its cells in order (`loop`), as joined neighbours (`edges`) and per cell (`solution`: `true` on the loop). Cells are numbered row by row from 0 where the data is a grid.

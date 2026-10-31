@@ -78,3 +78,5 @@ generator builds new ones from a family of question templates.
   count with plain enumeration on unclimbed random quizzes.
 - **App:** printable for now (a tap-quiz app game can use `build`, the
   question texts and `quiz::sheet_ok`).
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `quiz`: each question's text, options as printed and true letter, and the whole answer sheet as `solution`.

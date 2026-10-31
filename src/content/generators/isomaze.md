@@ -78,3 +78,8 @@ Renaissance.
   30–49, Hard 50–79, Expert 80 or more); a `size` too small or too large for
   the requested band serves the nearest band and reports
   `requested_difficulty`; clamped knobs report `requested_<field>`.
+- **Structured data:** the page also carries the maze as JSON (`kind:
+  "grid"`, squares indexed `y * cols + x`): each square's level 0–3 as
+  `heights`, the hedges as `walls` (pairs of same-level squares a hedge
+  separates), the flights of stairs as `stairs` (`[high, low]` square
+  pairs), `start` and `goal`, and the one route as `path`.

@@ -87,3 +87,8 @@ goats.
   request: Easy and Medium at 5×5 are Kids, Kids and Medium at 6×6 are
   Easy, Kids and Easy from 7×7 are Medium, Expert up to 7×7 is Hard and
   Hard from 8×8 is Expert.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  animals shown (`"sheep"`, `"wolf"`), `black_dots` the inner grid points
+  with a dot (`[i, j]`, the point below-right of cell `(i, j)`), and the
+  `solution` — each fence as the pair of neighbouring cells it separates.

@@ -83,3 +83,8 @@ hundred of them.
   search effort is recorded as `search_nodes`. With a custom `size` the
   size decides the band and the request is recorded as
   `requested_difficulty`.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "grid"`, index `r * cols + c`): the black arrow cells as `arrows` (`cell`,
+  `dir` — `"U"`, `"D"`, `"L"`, `"R"` — and `value`, the number of the first
+  snake cell seen, 0 for none), and the answer as `snakes` (five cells each,
+  head 1 to tail 5) and `solution` (each cell's number, null where empty).

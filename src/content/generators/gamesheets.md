@@ -101,3 +101,9 @@ first sold in 1974.
   a true lattice - neighbouring dots exactly one spacing apart, none closer,
   every dot with at least two neighbours - and sprouts spots stay well apart
   from each other and from the frame.
+- **Structured data:** puzzle pages also carry their boards as JSON (`kind:
+  "dots_and_boxes"`): for each board its `rows` and `cols` of boxes, the
+  `drawn` lines (each a pair of `[row, col]` dots), the owner of each box
+  row-major (`"Y"`, `"F"` or null), the `score` so far, and as `solution`
+  the one winning line with the `final_score` best play reaches. Game pads
+  have nothing to solve and carry no data.

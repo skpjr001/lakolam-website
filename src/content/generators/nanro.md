@@ -81,3 +81,5 @@ block.
   its default size; a band the chosen size cannot reach is served at the
   nearest band found and labelled as such (`requested_difficulty` in the
   metadata).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the given numbers (`cells`), the regions, and the answer (`solution`: each cell's number, `0` when empty). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

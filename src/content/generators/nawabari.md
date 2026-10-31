@@ -81,3 +81,5 @@ grid into rectangles but clues their areas instead.
   reached (small boards serve Kids or Easy whatever is asked; Kids and Easy
   from 8×8 up usually need the blocking rung and serve Hard or Expert;
   Medium and Hard at 6×6 and 7×7 are Medium).
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed numbers (`cells`), and the answer's rectangles both as `regions` (cell lists) and as `rectangles` (`[top, left, bottom, right]`, inclusive). Cells are numbered row-major (`row * cols + col`) where the content is a grid.

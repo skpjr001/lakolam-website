@@ -73,3 +73,5 @@ hundred of them, from 6×6 up to 14×14.
   squares: Easy, Medium, Hard, Expert at the same sizes; trial: Hard up to
   6×6, else Expert). Every band is served at its default size; with a
   custom `size` the label states the band reached.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the printed numbers, `solution` the shading (`true` = shaded).

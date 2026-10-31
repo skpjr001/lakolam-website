@@ -178,3 +178,5 @@ It remains one of the most-analysed pencil puzzles in computer science.
   with any answer). Tiles are drawn with faint outlines under the dots;
   clues are one size per board, from the smallest tile's inner circle. Square,
   hex and triangle boards are byte-identical to before.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: square boards as a `grid`: `cells` the clues and `loop` the answer as joined lattice-dot pairs (dots numbered on the (rows + 1) × (cols + 1) lattice). Other boards carry no data yet.

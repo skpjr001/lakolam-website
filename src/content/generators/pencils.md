@@ -80,3 +80,8 @@ Janko's site, where it is called Bleistifte.
   only. With a custom `size` the label states the band actually reached
   (`requested_difficulty` records the request); when a numbers-only board
   cannot be made, tips are allowed and the band drops accordingly.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): the printed numbers as `cells`/`givens`, the shown tips as
+  `tips` (`[row, col, dir]`, dir 0–3 = up, right, down, left), each cell's
+  pencil index as `solution`, and every pencil's `shaft`, `tip`, `dir` and
+  `line` cells.

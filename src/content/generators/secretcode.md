@@ -88,3 +88,5 @@ E.161 — the same keys once used to type text messages.
   shift, the messages and a difficulty by code: numbers and mirror writing
   Kids, pigpen, symbols and keypad Easy, the Caesar wheel Medium. The answer
   key fills in every box and writes out mirror answers.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `cipher`: the cipher, its printed key (letter → glyph token such as `pigpen:4.`), and each message's question, coded cells and answer.

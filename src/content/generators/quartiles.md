@@ -62,3 +62,7 @@ five-words-of-four-tiles grid is Apple's.
   50-54, Expert 55 and more (words of 11-14 letters). The count of shorter
   words is reported but not rated. A word missing from the list may still be
   real; the key counts words in the list. Boards generate in about 1 ms.
+- **Structured data:** the page also carries the board as JSON (`kind:
+  "tiles"`): the twenty tiles in printed order (`tiles`), and the answer:
+  the five quartiles with their four tile indices in word order
+  (`quartiles`), and every other word of one to three tiles (`others`).

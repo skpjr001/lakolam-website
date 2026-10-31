@@ -89,3 +89,5 @@ idea: Star Battle's counting with Minesweeper's clues.
   6×6, Medium on 9×9; trial: Medium on 6×6, Hard on 9×9). **Expert is not
   reachable:** the ladder's top rung is a single trial, which honestly rates
   Hard, so an Expert request returns a Hard board labelled Hard.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): the printed numbers (`cells`), the mines as the solution (`true` = mine), the boxes as `regions`, any extra houses, and how many mines each row, column and box holds. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

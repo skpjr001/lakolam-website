@@ -73,3 +73,7 @@ clues that may be false — which is why a shaded clue is allowed to lie.
   up to 8×8 and Expert above. Every band is reached at its default size; a
   band a chosen size cannot reach (Kids above 5×5, Hard at 9×9 and 10×10)
   is served as the nearest band that size reaches, and labelled as such.
+
+- **Structured data:** the page's `data` is a `grid`: `cells`/`givens` the
+  printed arrow clues (`count` and `dir`), and `solution` the shading (true =
+  shaded; a shaded clue's count is void).

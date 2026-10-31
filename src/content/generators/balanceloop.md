@@ -83,3 +83,5 @@ clues of Nikoli's Masyu.
   out), so from 7×7 up Kids and Easy come out Medium, and at 8×8 and 9×9
   the easy bands come out Medium or, when the loop rung finds nothing,
   Expert. Sizes stop at 9×9: trial-rung boards beyond that took seconds.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — the circles (`cell`, `white`, printed `sum` or `null`; `cells` shows `"white"`/`"black"` per circle cell), the answer `loop` as cells in order, `edges` its steps between neighbouring cells, and `solution`, `true` for each cell the loop passes through.

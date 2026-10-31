@@ -55,3 +55,5 @@ puzzles he invented. The full name *Shikaku ni kire* means "cut into squares
   retries them, then moves each a step at a time toward its default (2 and
   8); the metadata reports `min_area_used` and `max_area_used`. Every board
   that generated before is unchanged.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the numbers, `solution` the rectangle covering each cell and `regions` each rectangle's cells.

@@ -81,3 +81,8 @@ pipe's ends are left open.
   Kids from 6×6 up is Easy, Medium at 4×4 to 6×6 is Easy, Expert up to 7×7
   is Hard, Hard from 8×8 up is Expert, and on the smallest boards Hard and
   Expert sometimes come out Easy.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): each shown piece as the letters of the sides its pipe leaves by
+  (`U`, `D`, `L`, `R`; all four for a crossing) in `cells`/`givens`, and the
+  answer: every cell's piece (`solution`) and the loop's links as pairs of
+  neighbouring cells (`edges`).

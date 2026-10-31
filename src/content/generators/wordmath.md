@@ -70,3 +70,9 @@ ten-letter key word a regular feature under the name **Word Math**.
   key word is fully determined. Difficulty is rated by layout size
   (`rating_basis`); meta carries `unique: true`, the key word and the
   numbers.
+
+- **Structured data:** the page's `data` is a `cryptarithm`: the `layout`
+  (division or multiplication), its `rows` as printed (letters) with each
+  row's last column (`ends`; the divisor sits at column -2), and the
+  `solution` — the rows in digits and the `key` word (the letter for each
+  digit 0 to 9).

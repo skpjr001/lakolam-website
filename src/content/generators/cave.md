@@ -73,3 +73,6 @@ the rock. It is a regular genre at World Puzzle Federation championships.
   reached in 24 attempts — for instance Kids or Easy on a large board, where
   the first rung alone cannot settle every cell — the ladder is raised one
   rung at a time and the nearest band found is returned and labelled as such.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `cells` the printed numbers (null = empty), `givens`, and
+  `solution` the shading row-major (`true` = rock).

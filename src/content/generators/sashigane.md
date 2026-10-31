@@ -84,3 +84,5 @@ puzzles.
   the nearest band found at the shortest cap that works; such a grid says so
   in meta (`longest_arm`, `requested_max_arm`). Every grid that generated
   before is unchanged.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid`: `cells` the clues (`O`, `O3`, `^ > v <` for arrows), `solution` the L covering each cell and `regions` each L's cells.

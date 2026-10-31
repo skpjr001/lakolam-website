@@ -115,3 +115,5 @@ the pencil cannot tell which was meant.
   will not run through them.
 - Rating basis: `dot_count` (Easy ≤ 25, Medium ≤ 55, Hard above). `unique`
   means the numbering admits one sensible tracing under the spacing floor.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn) (`kind: "dot_to_dot"`): the dots in tracing order (`points`, Pt), the label printed by each (`labels`) and the key's label (`key_labels`: the answers, for times-table facts), and the lengths of the runs the dots make, one after another (`runs`; each run joins its dots in order and closes back to its first).

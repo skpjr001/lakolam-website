@@ -68,3 +68,5 @@ remove its first letter".
 - **Guarantees:** deterministic per seed; exactly one answer per row
   (`unique`); the removed letters spell the hidden word; nothing repeats.
 - **Version 1.1:** the shared family-friendly word filter now refuses more words (an audit of the everyday dictionary tiers: crude, sexual, drug, drink and violent words and inflections of words already refused), so some pages draw different words.
+
+**Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — per row the printed `word`, the `answer` left when one letter is taken, the taken `letter` and its index `at`; the `hidden` word the taken letters spell; the `removal` rule.

@@ -76,3 +76,7 @@ through daily online word games.
   herrings — 0 is Easy (Kids when every word is everyday and short), 1–2
   Medium, 3–4 Hard, 5 or more Expert. The answer key shades each group and
   names its connection; the metadata lists the herrings.
+
+- **Structured data:** the page's `data` is `word_groups`: the sixteen
+  `words` in printed order and the `solution` — four groups, each its
+  connection (`name`, `kind`) and its four `words`.

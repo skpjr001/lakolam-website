@@ -97,3 +97,7 @@ follows one convention and says which.
   comma is fixed by `style`. The tests re-check every sentence from its
   text alone against the written rules. The page is rated by the hardest
   rule it asks for (`rating_basis`).
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "worksheet"`): the task and the convention, and each sentence as printed
+  (`shown`), corrected (`answer`), and the capitals and marks the task asks
+  for (`features`).

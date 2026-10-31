@@ -55,3 +55,5 @@ Simon Tatham's Puzzles (as "Dominosa"); the domino set itself dates to
   `difficulty` picks the set. Before, the set was always double-six and every
   request was served hard. Pages that set `max_pip`, hard requests, and the
   default page are byte-identical to 1.0.
+
+**Structured data.** Every page also carries its content as JSON (`Generated::data`, never drawn): the printed pips (`cells`, every cell has one), the answer as the dominoes' cell pairs (`edges`) and as each cell's domino number (`solution`), and the highest pip. Cells are numbered row by row from 0 where the data is a grid.

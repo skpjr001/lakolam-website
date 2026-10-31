@@ -104,3 +104,8 @@ grew from the same idea.
   answer, the solution table), `Marks` (placed values and crosses),
   `check`, and `next_deduction`, which returns the next visible step from
   the player's marks with the rung that found it, or names a mistake.
+
+- **Structured data:** the page's `data` is a `logic_grid`: the number of
+  `houses`, the `categories` (name and values, as printed), the `clues` as
+  printed and the `question`, and the `solution` — per category the value
+  index in each house (`table[category][house]`) — with the `answer`.

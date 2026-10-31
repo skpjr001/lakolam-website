@@ -74,3 +74,5 @@ double acrostic.
   read down spell the hidden word. Meta carries `unique`, the difficulty and
   its basis, the hidden word and theme, and the count of words that settle
   their letter alone.
+
+**Structured data.** Each page also carries its content as JSON (never drawn, so the page's bytes are unchanged): each row's words as printed (`_` marks the gap), the whole words and the gap positions, the row's missing letter, and the hidden word they spell. Cells are numbered row-major (`row * cols + col`) where the content is a grid.

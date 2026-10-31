@@ -78,3 +78,8 @@ English in the seventeenth and eighteenth centuries.
 - **Guarantees:** deterministic per seed; every answer is a table entry
   (`answers_checked`), re-checked before the page ships; the tests
   recount match pages by brute force over every pairing.
+
+- **Structured data:** the page's `data` is `word_forms`: the `form`,
+  `task` and `reverse`; each row's printed `prompt`, its `answer` and
+  `irregular`; on a match page the `right` column as printed and, per row,
+  the index of its partner there (`match`).

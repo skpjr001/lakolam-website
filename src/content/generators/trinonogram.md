@@ -94,3 +94,7 @@ crossings, more ways for one deduction to spread.
   answer key is that solution. `edited_cells` reports how many cells differ
   from the drawn picture. Tests re-prove uniqueness on small boards with an
   independent exhaustive count.
+
+- **Structured data:** the page's `data` is `cell_lines`: each cell's
+  `polygons` (board units), the clue `lines` (`family`, `cells` read from the
+  clue end), the `clues`, and the `solution` (true = filled).

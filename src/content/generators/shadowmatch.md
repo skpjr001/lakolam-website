@@ -90,3 +90,5 @@ turned shadows are the harder level here.
   cannot find pictures that far apart is served as Easy, and an Expert one
   that cannot fill a single family as Hard; `requested_difficulty` records
   the request. The key draws each matching line and crosses out the decoys.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: kind `matching`: the pictures, the shadows (icon, quarter turns, mirror) and `solution`, each picture's shadow index; unowned shadows are `decoys`.

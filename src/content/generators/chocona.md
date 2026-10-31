@@ -72,3 +72,7 @@ on puzz.link, and shares its rectangle rule with Choco Banana and Shikaku.
   Every band is reached at its default size; a band a chosen size cannot
   reach in 30 attempts is served at the nearest band found and labelled as
   such.
+- **Structured data:** the page also carries its content as JSON (`kind:
+  "grid"`): `regions` (cell indices), `cells`/`givens` each printed count in
+  its region's first cell, and `solution` the shading row-major (`true` =
+  shaded).

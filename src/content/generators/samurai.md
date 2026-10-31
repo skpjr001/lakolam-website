@@ -75,3 +75,5 @@ and other papers gave it around 2005.
   engine). The default `samurai` layout draws from the same random streams as
   before, and every board it made before is byte-identical. Hard Windmill and
   Sohei boards take about five seconds each to dig.
+
+**Structured data.** The page also carries its content as machine-readable JSON, never drawn: a `grid` on the whole frame: `cells` the givens, `solution` the digits (`null` outside every grid), `regions` every 3×3 box once and `grids` each 9×9 grid's top-left corner.
