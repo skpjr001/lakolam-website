@@ -1,7 +1,7 @@
 ---
 title: "Party crowns and hats"
 blurb: "Party crowns, cone hats and animal-ear headbands sized to a head circumference, true size with glue tabs"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Paper party crowns, cone hats and animal-ear headbands, printed at true size

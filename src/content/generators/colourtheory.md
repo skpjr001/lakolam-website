@@ -1,7 +1,7 @@
 ---
 title: "Colour Theory"
 blurb: "Colour theory and swatch sheets — RYB colour wheels, harmony worksheets with keys, value scales, tint/tone/shade strips, paint mixing grids with every pair once, and numbered marker swatch charts"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Colour theory sheets for the art room and the craft table: colour wheels,

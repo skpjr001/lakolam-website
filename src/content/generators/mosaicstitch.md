@@ -1,7 +1,7 @@
 ---
 title: "Mosaic Stitch"
 blurb: "Mosaic crochet and mosaic knitting charts — one colour a row, every drop and slip proven legal by re-making the fabric, as a chart, stitched preview or row-by-row pattern"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Mosaic crochet and mosaic knitting charts: two colours, one at a time, and

@@ -1,7 +1,7 @@
 ---
 title: "Polyhedra"
 blurb: "Papercraft nets of the Platonic and Archimedean solids and star ornaments, with numbered glue tabs"
-category: design
+category: craft
 version: "1.0.1"
 ---
 Cut, fold and glue: paper models of the Platonic and Archimedean solids and

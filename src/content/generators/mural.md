@@ -1,7 +1,7 @@
 ---
 title: "Mural"
 blurb: "Collaborative colouring posters — one mandala, stained glass or tiling split into numbered pages that tape into a wall mural; tiles partition the poster exactly, edges register, no page is blank"
-category: design
+category: colouring
 version: "1.0.1"
 ---
 A collaborative colouring poster: one big design split into numbered pages

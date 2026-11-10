@@ -1,7 +1,7 @@
 ---
 title: "Map Pages"
 blurb: "Map pages — states and countries visited trackers, label-the-map quizzes with keys and map colouring for the US, Canada, Australia, Europe and the world, from public-domain Natural Earth outlines"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Real outline maps of the United States, Canada, Australia, Europe and the

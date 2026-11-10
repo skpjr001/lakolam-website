@@ -5,7 +5,7 @@ export const SITE = {
   name: 'Lakolam',
   tagline: 'Deterministic generative designs, mazes and puzzles',
   description:
-    'Lakolam is a generative engine: 992 generators for mandalas, kolams, mazes, logic and word puzzles, maths worksheets and printable paper, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
+    'Lakolam is a generative engine: 1,068 generators for mandalas, kolams, mazes, logic and word puzzles, maths worksheets and printable paper, every page reproducible from a seed, every puzzle proven uniquely solvable — rendered as SVG, PNG or print-ready PDF.',
   studio: 'https://app.lakolam.com',
   studioGpui: 'https://studio.lakolam.com',
   // How to reach the maker: shown in the contact band and footer, and
@@ -18,9 +18,9 @@ export const SITE = {
   // The seed behind every image on this site — determinism as a brand asset.
   artSeed: '0xa11ce',
   stats: {
-    generators: 992,
-    tests: 13355,
-    crates: 1009,
+    generators: 1068,
+    tests: 17501,
+    crates: 1087,
     profiles: 10,
   },
 } as const;
@@ -35,6 +35,10 @@ export const studioUrl = (id: string, seed: string = SITE.artSeed) =>
 
 export const CATEGORY_LABELS: Record<string, string> = {
   design: 'Design',
+  colouring: 'Colouring page',
+  craft: 'Craft pattern',
+  game: 'Game',
+  printable: 'Printable',
   maze: 'Maze',
   puzzle: 'Logic puzzle',
   word: 'Word puzzle',
@@ -42,9 +46,27 @@ export const CATEGORY_LABELS: Record<string, string> = {
   paper: 'Paper template',
 };
 
+/** The lanes in display order: the design family first, then puzzles, paper last. */
+export const LANE_ORDER = [
+  'design',
+  'colouring',
+  'craft',
+  'game',
+  'printable',
+  'maze',
+  'puzzle',
+  'word',
+  'maths',
+  'paper',
+] as const;
+
 /** Each lane's own collection page, e.g. /designs/ (noindex — /generators/ is the indexed list). */
 export const LANE_SLUGS: Record<string, string> = {
   design: 'designs',
+  colouring: 'colouring',
+  craft: 'crafts',
+  game: 'games',
+  printable: 'printables',
   maze: 'mazes',
   puzzle: 'puzzles',
   word: 'words',
@@ -54,7 +76,15 @@ export const LANE_SLUGS: Record<string, string> = {
 
 export const CATEGORY_BLURBS: Record<string, string> = {
   design:
-    'Mandalas, kolams, tilings and flow fields — colourable line art with mathematical bones.',
+    'Kolams, tilings, flow fields and ornament — generative art with mathematical bones.',
+  colouring:
+    'Mandalas, zentangles, colour-by-number and mystery mosaics — line art made to be coloured in.',
+  craft:
+    'Cross-stitch, knitting and crochet charts, quilt blocks, polyhedron nets, pop-ups and papercraft — patterns and templates to make something.',
+  game:
+    'Snakes and ladders, Ludo, card decks, score pads and tournament brackets — games to print and play.',
+  printable:
+    'Planners, logbooks, trackers, charts, tracing and handwriting sheets — pages to fill in and use.',
   maze: 'Square, triangular, hexagonal and circular mazes carved by eleven algorithms, with answer keys.',
   puzzle:
     'Sudoku, nonograms, slitherlink and a hundred more — every one proven uniquely solvable.',

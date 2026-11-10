@@ -1,7 +1,7 @@
 ---
 title: "Tablet Weaving"
 blurb: "Tablet weaving drafts — threading, turning sequence and drawdown for threaded-in diamonds, lines and ram's horns, the band re-woven by turning every card and the twist kept within a limit"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Tablet (card) weaving drafts for threaded-in bands: threading, turning and a

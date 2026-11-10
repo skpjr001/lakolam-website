@@ -1,7 +1,7 @@
 ---
 title: "Chord Chart"
 blurb: "Chord and scale charts for guitar, ukulele, mandolin, banjo and bass in any tuning — a key's chords, chord libraries, fretboard scale maps, name-the-chord worksheets; every voicing found by search and checked"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Chord and scale charts for guitar, ukulele, mandolin, banjo and bass, in

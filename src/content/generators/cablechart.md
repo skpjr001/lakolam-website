@@ -1,7 +1,7 @@
 ---
 title: "Cable Chart"
 blurb: "Aran cable panel charts — ropes, braids, honeycomb, XOXO and travelling diamonds on a purl ground with standard cross symbols and written rows, every row re-knit as a permutation and the vertical repeat closed"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Aran cable panel charts: ropes, braids, honeycomb, XOXO and travelling

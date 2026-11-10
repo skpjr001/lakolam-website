@@ -1,7 +1,7 @@
 ---
 title: "Paper town"
 blurb: "Paper town — fold-up cottages, shops, barns, churches and lighthouses at OO, HO or N scale or as village ornaments, every net fold-checked closed and every tab paired with its edge"
-category: design
+category: craft
 version: "1.1.0"
 ---
 Fold-up paper buildings — cottages, shops, barns, a church and a

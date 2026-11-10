@@ -1,7 +1,7 @@
 ---
 title: "Sun-Path Diagram"
 blurb: "Sun-path diagram: the architect's polar sun chart for a latitude, with date arcs, hour lines, sunrise azimuths and an optional shadow-angle protractor"
-category: design
+category: printable
 version: "1.0.0"
 ---
 The architect's sun chart for your latitude: where the Sun is in the sky at

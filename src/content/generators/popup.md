@@ -1,7 +1,7 @@
 ---
 title: "Pop-up Cards"
 blurb: "Pop-up cards — 90° origamic architecture: cities, castles, staircases and ziggurats cut and folded from one sheet, fold-checked open and closed"
-category: design
+category: craft
 version: "1.0.0"
 ---
 One sheet of card, cut and folded: open it to a right angle and a city, a

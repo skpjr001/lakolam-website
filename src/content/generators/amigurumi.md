@@ -1,7 +1,7 @@
 ---
 title: "Amigurumi Shapes"
 blurb: "Amigurumi shape patterns — balls, eggs, capsules, cylinders, cones and bowls sized from gauge, written round by round in US or UK terms with staggered increases and a scale profile; every printed round read back and recounted"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Round-by-round crochet patterns for the basic amigurumi shapes, sized from

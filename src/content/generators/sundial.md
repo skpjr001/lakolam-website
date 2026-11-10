@@ -1,7 +1,7 @@
 ---
 title: "Sundial"
 blurb: "Paper sundials for your latitude — horizontal, vertical, declining, polar or equatorial, exact hour lines, a true-size gnomon template with glue tabs, and an equation-of-time table"
-category: design
+category: craft
 version: "1.1.0"
 ---
 A paper sundial made for your latitude: cut out the gnomon, fold it, glue it

@@ -1,7 +1,7 @@
 ---
 title: "Thread Portrait"
 blurb: "Thread portrait: a picture drawn by thousands of straight threads between pins on a circle or square, with a numbered pin template and the threading sequence"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A picture drawn by one long thread wound two thousand times across a ring of

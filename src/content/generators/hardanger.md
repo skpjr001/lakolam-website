@@ -1,7 +1,7 @@
 ---
 title: "Hardanger"
 blurb: "Hardanger cutwork charts — kloster-block squares, diamonds, stars, crosses and lattices with cut lines, bars and dove's eyes, every cut thread anchored by a kloster block at both ends"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Hardanger cutwork charts: kloster-block outlines, cut threads, bars and

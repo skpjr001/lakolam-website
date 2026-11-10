@@ -1,7 +1,7 @@
 ---
 title: "Swedish Weaving"
 blurb: "Swedish weaving charts for monk's cloth and huck — waves, diamonds, loops and braids whose yarns pass only under floats, mirror about the centre and run selvedge to selvedge"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Swedish weaving (huck embroidery) charts for monk's cloth and huck

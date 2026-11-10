@@ -1,7 +1,7 @@
 ---
 title: "Constellation Cards"
 blurb: "Constellation cards: a sheet of star-chart, colouring or dot-to-dot cards, each with its best evening month and brightest star"
-category: design
+category: printable
 version: "1.0.0"
 ---
 A sheet of cards, one constellation each — a star chart, a colouring card

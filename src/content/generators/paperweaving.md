@@ -1,7 +1,7 @@
 ---
 title: "Paper Weaving"
 blurb: "Paper weaving — a slit mat and numbered strips printed so that weaving over and under reveals a picture, a check or a gingham"
-category: design
+category: craft
 version: "1.1.0"
 ---
 Cut a mat, cut the strips, weave them over and under — and a picture

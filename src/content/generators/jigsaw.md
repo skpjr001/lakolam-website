@@ -1,7 +1,7 @@
 ---
 title: "Jigsaw puzzle templates"
 blurb: "Jigsaw puzzle templates: colour or blank cut sheets, big kids' pieces, heart, circle, star and hexagon puzzles, numbered assembly keys"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Cut lines for a jigsaw puzzle of your own: a colour sheet, a blank to draw on, big pieces for small hands, or a heart, circle, star or hexagon.

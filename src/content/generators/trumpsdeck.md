@@ -1,7 +1,7 @@
 ---
 title: "Trumps Deck"
 blurb: "Trumps Deck — print-and-cut cards of invented monsters, robots, dinosaurs, space ships or animals; no ties, and every card can beat every other at something"
-category: design
+category: game
 version: "1.0.1"
 ---
 Print, cut and play a deck of invented monsters, robots, dinosaurs, space

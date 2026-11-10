@@ -25,6 +25,10 @@ const ART_SEED = '0xa11ce';
 // Mirrors src/lib/site.ts (a plain .mjs script cannot import the TypeScript).
 const LANES = [
   { cat: 'design', slug: 'designs', label: 'Designs' },
+  { cat: 'colouring', slug: 'colouring', label: 'Colouring pages' },
+  { cat: 'craft', slug: 'crafts', label: 'Craft patterns' },
+  { cat: 'game', slug: 'games', label: 'Games' },
+  { cat: 'printable', slug: 'printables', label: 'Printables' },
   { cat: 'maze', slug: 'mazes', label: 'Mazes' },
   { cat: 'puzzle', slug: 'puzzles', label: 'Logic puzzles' },
   { cat: 'word', slug: 'words', label: 'Word puzzles' },

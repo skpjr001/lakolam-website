@@ -1,7 +1,7 @@
 ---
 title: "Mystery Mosaic"
 blurb: "Mystery mosaics — extreme colour by number on fine hexagon, triangle, diamond or square cells hiding a stained-glass, tiling, quilt or rug design; painting every cell by the key reproduces the picture exactly"
-category: design
+category: colouring
 version: "1.0.0"
 ---
 Thousands of tiny numbered cells and a colour key. Colour them all and a

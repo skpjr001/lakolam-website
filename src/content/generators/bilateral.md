@@ -1,7 +1,7 @@
 ---
 title: "Two-Hand Mirror Tracing"
 blurb: "Two-hand mirror tracing: paired paths, mirrored or shifted, to trace with both hands at once"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Pairs of paths to trace with a pencil in each hand at the same time — one

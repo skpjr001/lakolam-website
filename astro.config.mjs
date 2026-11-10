@@ -33,7 +33,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        !/^\/(designs|mazes|puzzles|words|maths|paper)\/$/.test(new URL(page).pathname),
+        !/^\/(designs|colouring|crafts|games|printables|mazes|puzzles|words|maths|paper)\/$/.test(new URL(page).pathname),
       // Image sitemap entries: each generator page's engine-rendered preview,
       // so the pages can surface in image search ("printable sudoku").
       serialize(item) {

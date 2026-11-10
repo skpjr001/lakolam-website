@@ -1,7 +1,7 @@
 ---
 title: "Balancing Mobile"
 blurb: "Balanced hanging mobiles to cut from card — every bar balances exactly, its own mass included, and swinging parts never collide"
-category: design
+category: craft
 version: "1.0.1"
 ---
 A hanging mobile to cut from card, in the style of Alexander Calder, with

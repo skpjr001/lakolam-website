@@ -1,7 +1,7 @@
 ---
 title: "Paper Circuit Card"
 blurb: "Paper-circuit light-up cards — copper-tape paths, a coin-cell fold, LEDs under cover windows; two nets that never touch, polarity checked"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A light-up card to make with copper tape, a coin cell and LEDs. The two sides of the circuit never touch, and every LED faces the right way.

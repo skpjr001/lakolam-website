@@ -1,7 +1,7 @@
 ---
 title: "Perspective"
 blurb: "Perspective drawing sheets — one-point names, hallways and roads, two-point street corners and boxes, three-point towers; trace, complete-the-drawing or finished, every receding edge checked to its vanishing point and hidden lines removed exactly"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Drawing sheets for one-, two- and three-point perspective: a street

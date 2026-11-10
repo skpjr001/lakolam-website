@@ -1,7 +1,7 @@
 ---
 title: "Logbooks"
 blurb: "Logbooks — password and address books with A-Z tabs, blood pressure, blood sugar, medication, reading, mileage, workout, garden and maintenance logs, every writing space true size"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Password books, address books and health, reading, mileage, workout, garden

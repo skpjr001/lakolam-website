@@ -1,7 +1,7 @@
 ---
 title: "Human Sundial"
 blurb: "Human-gnomon (analemmatic) sundial: a dimensioned plan in metres for a playground, or a true-size desk dial for a pencil, with an exact date scale"
-category: design
+category: craft
 version: "1.0.0"
 ---
 The plan for a sundial where you are the gnomon: mark the hour points and

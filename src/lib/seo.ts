@@ -7,7 +7,17 @@
 
 import { SITE } from './site';
 
-type Lane = 'design' | 'maze' | 'puzzle' | 'word' | 'maths' | 'paper';
+type Lane =
+  | 'design'
+  | 'colouring'
+  | 'craft'
+  | 'game'
+  | 'printable'
+  | 'maze'
+  | 'puzzle'
+  | 'word'
+  | 'maths'
+  | 'paper';
 
 interface LaneCopy {
   /** What the H1 and title call the generator: "Sudoku generator". */
@@ -66,6 +76,79 @@ const LANES: Record<Lane, LaneCopy> = {
       '{t} pattern',
       '{t} SVG',
       'generative art',
+    ],
+    facts: [formats, sizes, free, seed],
+  },
+  colouring: {
+    noun: (t) => `${t} generator`,
+    tails: ['Free Printable Colouring Pages', 'Free & Printable'],
+    pitches: [
+      ' Free in the browser: print it as PDF, PNG or SVG, every page reproducible from a seed.',
+      ' Free, printable as PDF, PNG or SVG.',
+      ' Free and printable.',
+    ],
+    keywords: [
+      '{t} generator',
+      'printable {t}',
+      'free {t}',
+      '{t} colouring page',
+      '{t} coloring page',
+      'colouring pages for adults',
+      'coloring pages printable',
+    ],
+    facts: [formats, sizes, free, seed],
+  },
+  craft: {
+    noun: (t) => `${t} generator`,
+    tails: ['Free Printable Craft Patterns', 'Free & Printable'],
+    pitches: [
+      ' Free in the browser: print the pattern as PDF, PNG or SVG, every page reproducible from a seed.',
+      ' Free, printable as PDF, PNG or SVG.',
+      ' Free and printable.',
+    ],
+    keywords: [
+      '{t} generator',
+      '{t} pattern',
+      '{t} template',
+      'printable {t}',
+      'free {t} pattern',
+      'craft templates',
+    ],
+    facts: [formats, sizes, free, seed],
+  },
+  game: {
+    noun: (t) => `${t} generator`,
+    tails: ['Free Printable Games', 'Free & Printable'],
+    pitches: [
+      ' Free in the browser: print it as PDF, PNG or SVG and play, every page reproducible from a seed.',
+      ' Free, printable as PDF, PNG or SVG.',
+      ' Free and printable.',
+    ],
+    keywords: [
+      '{t} generator',
+      'printable {t}',
+      'free {t}',
+      '{t} printable game',
+      '{t} template',
+      'printable board games',
+    ],
+    facts: [formats, sizes, free, seed],
+  },
+  printable: {
+    noun: (t) => `${t} generator`,
+    tails: ['Free Printables', 'Free & Printable'],
+    pitches: [
+      ' Free in the browser: print it as PDF, PNG or SVG, every page reproducible from a seed.',
+      ' Free, printable as PDF, PNG or SVG.',
+      ' Free and printable.',
+    ],
+    keywords: [
+      '{t} generator',
+      'printable {t}',
+      'free {t}',
+      '{t} template',
+      '{t} PDF',
+      'free printables',
     ],
     facts: [formats, sizes, free, seed],
   },

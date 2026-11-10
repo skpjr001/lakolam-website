@@ -1,7 +1,7 @@
 ---
 title: "Tracing Lines"
 blurb: "Tracing lines — pre-writing and scissor-skill paths that never cross"
-category: design
+category: printable
 version: "1.0.1"
 ---
 Rows of dashed paths from a green dot to a little picture: trace them with a

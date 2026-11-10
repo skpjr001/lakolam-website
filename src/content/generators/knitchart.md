@@ -1,7 +1,7 @@
 ---
 title: "Knitting Chart"
 blurb: "Stranded colourwork in the Fair Isle and Selbu traditions — OXO and peerie bands or eight-petal stars, two colours a row with capped floats, as a chart, knitted swatch or colour-by-square page"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Stranded colourwork charts in the Fair Isle and Selbu traditions: two

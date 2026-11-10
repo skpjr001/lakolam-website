@@ -1,7 +1,7 @@
 ---
 title: "Weave"
 blurb: "Weaving drafts — overshot stars, roses and tables and point, broken, rosepath and M's & W's twills, with threading, tie-up, treadling and drawdown, floats capped"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Weaving drafts for overshot coverlets and twills: threading, tie-up,

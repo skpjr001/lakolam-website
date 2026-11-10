@@ -1,7 +1,7 @@
 ---
 title: "Colour Cards"
 blurb: "Colouring bookmarks, greeting cards, gift tags, door hangers and postcards cut from a mandala, stained glass or tiling — cut lines inside the margin, folds simulated, every space still colourable after cropping"
-category: design
+category: colouring
 version: "1.1.1"
 ---
 Bookmarks, greeting cards, gift tags, door hangers and postcards to colour

@@ -1,7 +1,7 @@
 ---
 title: "Slot-together sculptures"
 blurb: "Slot-together card sculptures — a sphere, egg, dome, torus, pebble, onion dome or heart as an egg-crate grid or ribs and rings, every crossing's two slot depths adding up to its length"
-category: design
+category: craft
 version: "1.0.1"
 ---
 Flat card shapes that slot into each other to make a sphere, an egg, a

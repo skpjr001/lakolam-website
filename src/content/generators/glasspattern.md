@@ -1,7 +1,7 @@
 ---
 title: "Stained Glass Pattern"
 blurb: "Stained-glass cutting patterns — numbered pieces with colour codes, a foil-allowance template and glass list; every piece cuttable, every score line edge to edge"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Cutting patterns for real stained glass: numbered pieces, a colour for each,

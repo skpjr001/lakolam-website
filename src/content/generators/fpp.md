@@ -1,7 +1,7 @@
 ---
 title: "Foundation Paper Piecing"
 blurb: "Foundation paper piecing — quilt block patterns cut by straight seams, every section proven sewable in its numbered order"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Quilt block patterns sewn onto printed paper: sharp points and crisp

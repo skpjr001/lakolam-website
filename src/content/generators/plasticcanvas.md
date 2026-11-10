@@ -1,7 +1,7 @@
 ---
 title: "Plastic Canvas"
 blurb: "Plastic-canvas charts — tissue-box covers, coaster sets, baskets and ornaments on 7-, 10- or 14-mesh, with a cutting list, yarn estimate and assembly net; the net is folded in 3D so every seam joins hole for hole"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Plastic-canvas charts for tissue-box covers, coaster sets, baskets and

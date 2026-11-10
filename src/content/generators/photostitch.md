@@ -1,7 +1,7 @@
 ---
 title: "Photo Cross-Stitch"
 blurb: "A picture (an upload or a built-in coloured picture) as a counted cross-stitch chart: threads chosen from a built-in palette, symbols, a key with stitch counts and skeins, and a stitched preview"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Any picture as a counted cross-stitch chart: a few threads chosen to match

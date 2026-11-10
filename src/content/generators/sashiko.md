@@ -1,7 +1,7 @@
 ---
 title: "Sashiko"
 blurb: "Sashiko stitch templates — moyozashi patterns dashed so no stitch lies across an intersection"
-category: design
+category: craft
 version: "1.0.1"
 ---
 Japanese running-stitch patterns laid out as stitch templates: every line

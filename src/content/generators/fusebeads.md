@@ -1,7 +1,7 @@
 ---
 title: "Fuse Beads"
 blurb: "Fuse beads — true-size ironing-bead patterns: pixel creatures, coasters, hexagon snowflakes, name plates and a slot-together bead box, every piece proven to fuse as one"
-category: design
+category: craft
 version: "1.0.0"
 ---
 True-size fuse-bead patterns — pixel creatures, coasters, snowflakes,

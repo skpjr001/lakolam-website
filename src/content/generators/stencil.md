@@ -1,7 +1,7 @@
 ---
 title: "Stencils"
 blurb: "Stencils — allover wall stencils (Moroccan trellis, ogee, quatrefoil, honeycomb) with registration holes, and bridged lettering; the sheet is proven to stay one piece"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Wall stencils that step seamlessly across a room, and lettering stencils

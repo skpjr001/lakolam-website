@@ -1,7 +1,7 @@
 ---
 title: "Dot Mandala"
 blurb: "Dot mandala templates — rings of dots at true dotting-tool sizes, with a tool and colour key; no two dots touch"
-category: design
+category: craft
 version: "1.0.1"
 ---
 Dot-painting mandalas: rings of dots at the real sizes of numbered dotting

@@ -1,7 +1,7 @@
 ---
 title: "Bargello"
 blurb: "Bargello flame stitch — mirrored line profiles in cycling bands of shade, as a preview, stitch chart or colouring page"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Florentine flame stitch: one zigzag line of upright stitches, repeated down

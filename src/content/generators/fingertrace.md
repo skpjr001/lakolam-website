@@ -1,7 +1,7 @@
 ---
 title: "Finger Tracing Meander"
 blurb: "Finger-tracing meander: one smooth closed groove winding through a whole shape, never crossing"
-category: design
+category: printable
 version: "1.0.0"
 ---
 One smooth groove that winds through a whole shape and comes back to where

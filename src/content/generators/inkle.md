@@ -1,7 +1,7 @@
 ---
 title: "Inkle Weaving"
 blurb: "Inkle-loom drafts — heddled and open warping drafts for plain-weave bars, stripes, spots and log cabin, and two-colour pick-up bands, the band re-woven by simulating both sheds and every pick-up, with floats kept within a limit"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Inkle-loom drafts for warp-faced bands: plain-weave bars, stripes, spots and

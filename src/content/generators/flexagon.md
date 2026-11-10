@@ -1,7 +1,7 @@
 ---
 title: "Flexagons"
 blurb: "Flexagons — printable hexahexaflexagons and trihexaflexagons, every face proven by a folding simulation"
-category: design
+category: craft
 version: "1.0.1"
 ---
 A folded paper hexagon that turns itself inside out: pinch it, open it,

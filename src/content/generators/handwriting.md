@@ -1,7 +1,7 @@
 ---
 title: "Handwriting Practice"
 blurb: "Handwriting practice — ruled guides, model letters and dotted copies to trace"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Ruled writing lines with a model letter or word to copy, dotted copies to

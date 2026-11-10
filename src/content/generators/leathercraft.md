@@ -1,7 +1,7 @@
 ---
 title: "Leather patterns"
 blurb: "Leather patterns — a card holder, key fob, luggage tag or coin pouch with stitch holes at the pricking iron's pitch, every corner on a hole and mated edges with equal hole counts"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A card holder, key fob, luggage tag or coin pouch to cut and hand-stitch

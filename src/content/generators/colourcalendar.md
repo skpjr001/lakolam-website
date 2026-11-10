@@ -1,7 +1,7 @@
 ---
 title: "Colour Calendar"
 blurb: "Colouring calendars — a cover and twelve large-print month pages, each under its own mandala, stained glass or tiling to colour; every weekday checked by Zeller's congruence, Easter by Gauss"
-category: design
+category: colouring
 version: "1.0.1"
 ---
 A colouring wall calendar: a cover and twelve large-print months, each

@@ -1,7 +1,7 @@
 ---
 title: "Bookbinding guides"
 blurb: "Bookbinding guides — Japanese stab-binding hole templates with a sewing route proven to make every stitch and end at the tie, pamphlet-stitch and coptic punching guides, case-binding cover layouts"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Hole templates and sewing routes for Japanese stab binding, pamphlet

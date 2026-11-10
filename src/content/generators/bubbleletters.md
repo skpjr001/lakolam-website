@@ -1,7 +1,7 @@
 ---
 title: "Bubble letters"
 blurb: "Bubble letters — quote colouring pages, radial name designs, bulletin-board letters and name plates in hollow rounded lettering"
-category: design
+category: colouring
 version: "1.0.0"
 ---
 Big, round, hollow letters to colour: word-art quotes, radial name designs,

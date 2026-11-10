@@ -1,7 +1,7 @@
 ---
 title: "Colour by Number"
 blurb: "Colour by number — a numbered grid that colours into a symmetric design"
-category: design
+category: colouring
 version: "1.1.0"
 ---
 A grid of numbered cells and a colour legend. Colour each cell by its number

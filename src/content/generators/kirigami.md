@@ -1,7 +1,7 @@
 ---
 title: "Auxetic Kirigami"
 blurb: "A true-size auxetic kirigami cut sheet: rotating squares, hierarchical or conformally graded, with an opened preview"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A sheet of paper that gets wider when you stretch it longer: cut the lines,

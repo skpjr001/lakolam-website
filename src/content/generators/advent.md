@@ -1,7 +1,7 @@
 ---
 title: "Advent calendars"
 blurb: "Advent and countdown calendars — numbered doors in a tree, house or pile of presents, with a back page registered for double-sided printing"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Printable advent and countdown calendars: a Christmas tree, a house or a pile

@@ -1,7 +1,7 @@
 ---
 title: "Himmeli"
 blurb: "Himmeli straw ornaments — a cut list and one threading route through every straw, the shortest possible thread"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Straw ornaments threaded on a single thread: a cut list, and one route through every straw that uses the least thread.

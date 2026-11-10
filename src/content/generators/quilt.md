@@ -1,7 +1,7 @@
 ---
 title: "Quilt"
 blurb: "Quilt - patchwork quilt designs from classic blocks, with a cutting list"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A patchwork quilt designed block by block: sixteen classic blocks, the

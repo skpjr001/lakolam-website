@@ -1,7 +1,7 @@
 ---
 title: "Planner"
 blurb: "Planner pages — year and month calendars, weekly and daily planners, habit and mood trackers, reading log, meal planner, budget, gratitude and goal pages"
-category: design
+category: printable
 version: "1.1.0"
 ---
 Printable planner and tracker pages: a year at a glance, monthly and weekly

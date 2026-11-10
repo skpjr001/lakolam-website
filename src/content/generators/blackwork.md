@@ -1,7 +1,7 @@
 ---
 title: "Blackwork"
 blurb: "Blackwork fillings — symmetric double-running-stitch patterns on the thread grid, as a sampler or graded shading over a silhouette"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Holbein-stitch fillings: small symmetric lattices of straight stitches,

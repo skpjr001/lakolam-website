@@ -1,7 +1,7 @@
 ---
 title: "Breathing Guides"
 blurb: "Breathing guides to trace: each stretch exactly as long as its seconds, a tick every second"
-category: design
+category: printable
 version: "1.0.0"
 ---
 A shape to trace with a finger while you breathe, every stretch exactly as

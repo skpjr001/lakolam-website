@@ -1,7 +1,7 @@
 ---
 title: "Pantograph"
 blurb: "Edge-to-edge quilting pantographs — loops, waves, scallops and points as one continuous line per row, seamless repeats, rows nested at a measured clearance; quilt preview, printable template or plotter lines"
-category: design
+category: craft
 version: "1.1.1"
 ---
 Edge-to-edge quilting designs: one continuous line per row, repeating

@@ -1,7 +1,7 @@
 ---
 title: "Jogakbo"
 blurb: "Korean patchwork wrapping cloth pieced scrap by scrap along straight seams, as art or a numbered sewing template"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A Korean patchwork wrapping cloth, pieced scrap by scrap along straight seams — to hang, to colour or to sew.

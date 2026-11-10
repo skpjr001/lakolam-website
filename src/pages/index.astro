@@ -6,7 +6,7 @@ import MazeScene from '../components/MazeScene.astro';
 import CtaScene from '../components/CtaScene.astro';
 import GeneratorCard from '../components/GeneratorCard.astro';
 import SponsorSlots from '../components/SponsorSlots.astro';
-import { SITE, CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS } from '../lib/site';
+import { SITE, CATEGORY_LABELS, CATEGORY_BLURBS, LANE_ORDER, LANE_SLUGS } from '../lib/site';
 import * as ld from '../lib/jsonld';
 
 const generators = (await getCollection('generators')).sort((a, b) =>
@@ -15,7 +15,7 @@ const generators = (await getCollection('generators')).sort((a, b) =>
 const featured = ['mandala', 'maze', 'sudoku', 'kolam', 'crossword', 'celtic', 'nonogram', 'tiling']
   .map((id) => generators.find((g) => g.id === id))
   .filter((g) => g !== undefined);
-const lanes = (['design', 'maze', 'puzzle', 'word', 'maths', 'paper'] as const).map((cat) => ({
+const lanes = (LANE_ORDER).map((cat) => ({
   cat,
   label: CATEGORY_LABELS[cat],
   blurb: CATEGORY_BLURBS[cat],

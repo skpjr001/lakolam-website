@@ -1,7 +1,7 @@
 ---
 title: "Score Pads"
 blurb: "Large-print score sheets for five dice, Farkle, rummy, gin, Mexican train, golf, canasta, bridge and cribbage, with a scoring page and every maximum computed"
-category: design
+category: game
 version: "1.0.0"
 ---
 Large-print score sheets for the dice, card and domino games people play at

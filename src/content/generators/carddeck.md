@@ -1,7 +1,7 @@
 ---
 title: "Card Deck"
 blurb: "Printable card decks and domino sets — 52 cards and jokers in large print, double-6, double-9 and double-12 dominoes — every set complete and every back registered for duplex printing"
-category: design
+category: game
 version: "1.0.0"
 ---
 Print-and-cut playing cards and domino sets, with large print for players

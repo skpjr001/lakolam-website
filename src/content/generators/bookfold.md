@@ -1,7 +1,7 @@
 ---
 title: "Folded book art"
 blurb: "Folded-book art patterns — a word, heart, star, paw or tree standing out of a book's page edges, as a measure-mark-fold or cut-and-fold table re-folded to prove it makes the shape"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A word, heart, star, paw print or tree that stands out of a book's page

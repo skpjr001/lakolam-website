@@ -1,7 +1,7 @@
 ---
 title: "Beadwork"
 blurb: "Bead charts in peyote, brick, loom and square stitch, with bead counts and a row-by-row word chart"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Bead charts for peyote, brick, loom and square stitch — with bead counts,

@@ -1,7 +1,7 @@
 ---
 title: "Nocturnal Star Clock"
 blurb: "Nocturnal: a print-and-make star clock — set the date, sight the pole, lay the arm on the pointer stars and read the time"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Print, cut and pin together a star clock: set tonight's date, sight the Pole

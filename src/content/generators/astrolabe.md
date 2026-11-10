@@ -1,7 +1,7 @@
 ---
 title: "Planispheric Astrolabe"
 blurb: "Planispheric astrolabe: a print-and-make astrolabe — mater, plate for your latitude, star rete for your year, rule and alidade"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Print, cut and pin together a working astrolabe for your latitude, with the

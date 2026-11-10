@@ -1,7 +1,7 @@
 ---
 title: "Traditional Game Boards"
 blurb: "Traditional game boards — morris, fox and geese, alquerque, Chinese checkers, halma, Go, hex, mancala, draughts and chess — with rules and cut-out counters, every board graph checked against the standard counts"
-category: design
+category: game
 version: "1.0.0"
 ---
 Print-and-play boards for the old games — morris, fox and geese, alquerque, Chinese checkers, halma, Go, hex, mancala, draughts and chess, backgammon, reversi, gomoku, the game of the goose and more — each with its rules and a sheet of counters to cut out.

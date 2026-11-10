@@ -1,7 +1,7 @@
 ---
 title: "Crease Pattern"
 blurb: "Origami tessellation crease patterns: twists, Miura-ori and Yoshimura, every vertex proven to fold flat"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Origami tessellation crease patterns (twist tilings, Miura-ori and

@@ -1,7 +1,7 @@
 ---
 title: "Solar System to Scale"
 blurb: "The Solar System to scale: a true-size lineup, a distance strip to tape across pages, the orbits on a date and a scale-model table"
-category: design
+category: printable
 version: "1.0.0"
 ---
 The Sun and planets at one true scale — a lineup, a strip to tape across the

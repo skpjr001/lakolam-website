@@ -1,7 +1,7 @@
 ---
 title: "Signal Flags"
 blurb: "Signal flags — names and messages in maritime signal flags, semaphore, Morse and braille cells, as wall prints, alphabet posters, colouring pages and decode worksheets, every drawing read back to its text"
-category: design
+category: printable
 version: "1.0.0"
 ---
 A name or message spelled in maritime signal flags, semaphore, Morse code or

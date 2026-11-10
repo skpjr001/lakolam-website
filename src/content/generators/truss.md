@@ -1,7 +1,7 @@
 ---
 title: "Truss Bridge"
 blurb: "Truss bridge plans for craft sticks or straws — true-size templates and exact member forces, determinacy and rigidity checked"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Plans for a craft-stick or straw truss bridge: true-size templates, a stick count, and the exact force in every member.

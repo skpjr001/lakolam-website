@@ -1,7 +1,7 @@
 ---
 title: "Fortune Teller"
 blurb: "Fortune teller — a paper cootie catcher to cut and fold, with colour flaps, numbers and kind fortunes"
-category: design
+category: game
 version: "1.0.0"
 ---
 Cut out the square, fold it into a fortune teller, and let a friend pick a

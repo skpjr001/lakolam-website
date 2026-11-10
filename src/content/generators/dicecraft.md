@@ -1,7 +1,7 @@
 ---
 title: "Paper Dice"
 blurb: "Paper dice d4–d20 with balanced numbering, and non-transitive Efron, Grime and Miwin sets with exact win chances"
-category: design
+category: game
 version: "1.0.1"
 ---
 Cut, fold and glue your own dice: the six classic shapes from d4 to d20,

@@ -1,7 +1,7 @@
 ---
 title: "Punch Needle"
 blurb: "Punch-needle and rug-hooking patterns at true hoop size, printed mirrored for working from the back, every colour region at least two loop rows wide, with a colour key and yarn estimates"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Punch-needle and rug-hooking patterns at true hoop size, printed mirrored

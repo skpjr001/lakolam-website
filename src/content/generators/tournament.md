@@ -1,7 +1,7 @@
 ---
 title: "Tournament"
 blurb: "Tournament sheets — pickleball and tennis partner mixers, round robins, single and double elimination brackets and bunco movement, every schedule re-checked from the page"
-category: design
+category: game
 version: "1.0.0"
 ---
 Brackets and rotation sheets for club nights: partner mixers, round

@@ -1,7 +1,7 @@
 ---
 title: "English Paper Piecing"
 blurb: "English paper piecing — seeded rosette and tiling layouts with cutting counts, and true-size templates inside an exact seam allowance with a test square; every interior vertex's angles sum to 360°"
-category: design
+category: craft
 version: "1.0.0"
 ---
 True-size English paper piecing templates with an exact seam allowance, and

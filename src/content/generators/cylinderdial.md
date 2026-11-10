@@ -1,7 +1,7 @@
 ---
 title: "Shepherd's Dial"
 blurb: "Shepherd's cylinder dial: a true-size wrap for a tube with hour curves across the year, a gnomon template and a turning top cap"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A pocket sundial on a tube: wrap it round a cardboard roll, turn the cap to

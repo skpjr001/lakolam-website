@@ -1,7 +1,7 @@
 ---
 title: "Volvelles"
 blurb: "Volvelles to cut and pin — a perpetual calendar, a Caesar cipher wheel and a times-table wheel, every setting checked"
-category: design
+category: craft
 version: "1.0.1"
 ---
 Paper wheels to cut out and pin together: a perpetual calendar, a secret

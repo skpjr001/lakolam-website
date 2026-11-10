@@ -3,13 +3,13 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import GeneratorCard from '../../components/GeneratorCard.astro';
 import GeneratorSearch from '../../components/GeneratorSearch.astro';
-import { CATEGORY_LABELS, CATEGORY_BLURBS, LANE_SLUGS, SITE } from '../../lib/site';
+import { CATEGORY_LABELS, CATEGORY_BLURBS, LANE_ORDER, LANE_SLUGS, SITE } from '../../lib/site';
 import * as ld from '../../lib/jsonld';
 
 const generators = (await getCollection('generators')).sort((a, b) =>
   a.id.localeCompare(b.id)
 );
-const lanes = (['design', 'maze', 'puzzle', 'word', 'maths', 'paper'] as const).map((cat) => ({
+const lanes = (LANE_ORDER).map((cat) => ({
   cat,
   label: CATEGORY_LABELS[cat],
   blurb: CATEGORY_BLURBS[cat],

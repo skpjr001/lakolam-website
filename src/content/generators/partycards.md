@@ -1,7 +1,7 @@
 ---
 title: "Secret Word Party Cards"
 blurb: "Secret Word Party Cards — fold-over cards for 3-10 players: everyone gets the same secret word except one odd one out"
-category: design
+category: game
 version: "1.0.0"
 ---
 Everyone gets the same secret word — except one player. Give clues, listen

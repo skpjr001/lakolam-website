@@ -1,7 +1,7 @@
 ---
 title: "Slab-built boxes"
 blurb: "Slab-built boxes — gingerbread houses, species-sized nest boxes and planters with thickness-compensated pieces, proven in 3-D to close at every joint and cut from the stated board or baking sheets"
-category: design
+category: craft
 version: "1.0.0"
 ---
 A gingerbread house, a nest box sized for a bird species, or a planter,

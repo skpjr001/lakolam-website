@@ -1,7 +1,7 @@
 ---
 title: "Fold-up Desk Calendars"
 blurb: "Fold-up desk calendars — dodecahedron, tent, pyramid and perpetual date cubes, every weekday and every net checked"
-category: design
+category: craft
 version: "1.0.1"
 ---
 A whole year to cut, fold and glue: a dodecahedron with a month on every

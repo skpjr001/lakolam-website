@@ -1,7 +1,7 @@
 ---
 title: "Bunting"
 blurb: "Bunting — pennant banners that spell a message, one letter per flag, matching flags with hanging holes"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Pennant banners that spell a message, one big letter per flag, ready to cut

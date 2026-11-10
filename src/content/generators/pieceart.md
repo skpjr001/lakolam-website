@@ -1,7 +1,7 @@
 ---
 title: "Piece Art"
 blurb: "Cut-and-glue polygon pictures: a numbered low-poly outline and sheets of matching coloured pieces to cut out or print as stickers"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Cut-and-glue polygon pictures: match every numbered piece to its numbered

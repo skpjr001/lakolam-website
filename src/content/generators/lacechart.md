@@ -1,7 +1,7 @@
 ---
 title: "Lace Charts"
 blurb: "Knitted lace charts — eyelet diamonds, leaves, chevrons, zigzags and mesh, every row re-knitted to prove its stitch count balances and every yarn over is paired with a decrease leaning away from it"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Knitted lace charts in which every row keeps its stitch count and every

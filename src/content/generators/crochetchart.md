@@ -1,7 +1,7 @@
 ---
 title: "Crochet Chart"
 blurb: "Crochet symbol charts — granny squares, solid grannies, flat circles and mandalas with a key, colourway and written rounds, every count re-derived from the placed stitches against the flat-circle and square-corner rules"
-category: design
+category: craft
 version: "1.0.1"
 ---
 Crochet symbol charts worked in the round: granny squares, solid grannies,

@@ -1,7 +1,7 @@
 ---
 title: "Tic-Tac-Toe"
 blurb: "Tic-tac-toe sheets to play on (3x3, 4x4, 5x5, ultimate) and X-to-play-and-win puzzles with one minimax-proven winning move"
-category: design
+category: game
 version: "1.1.0"
 ---
 Sheets of boards for the game everyone knows, and puzzles where exactly one

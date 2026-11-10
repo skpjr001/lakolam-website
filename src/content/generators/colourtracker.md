@@ -1,7 +1,7 @@
 ---
 title: "Colour-in trackers"
 blurb: "Colour-in trackers — savings challenges whose amounts add up exactly to the goal, day counts, reading shelves and sticker charts"
-category: design
+category: printable
 version: "1.0.0"
 ---
 Savings challenges, day counts, reading shelves and sticker charts: a picture

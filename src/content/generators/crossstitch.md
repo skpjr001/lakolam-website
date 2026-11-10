@@ -1,7 +1,7 @@
 ---
 title: "Folk Cross-Stitch"
 blurb: "Folk cross-stitch band samplers: charts with symbol keys, stitch counts and finished sizes"
-category: design
+category: craft
 version: "1.0.0"
 ---
 Band samplers to stitch: a border, rows of diamonds, stars and hooked
