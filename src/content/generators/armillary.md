@@ -57,7 +57,10 @@ engraved style. The obliquity used is the IAU value for J2000, 23.4393°.
   of Good Hope); `sidereal_hours` (how the inner cage is turned; null lets
   the seed choose); `labels` (ring names with leader lines); `zodiac`;
   `globe`; `stand`; `title`; `palette` (brass, engraving, night, ink, or
-  auto); `page`; `margin_mm`.
+  auto); `page`; `margin_mm`; the camera — `yaw` (-180-180°) and `pitch`
+  (-90-90°) orbit the view from the seeded one, `distance` (1-10 times the
+  usual eye distance) dollies out, shrinking the sphere and flattening its
+  perspective; the defaults (0, 0, 1) are the seeded view.
 - **Generation:** world frame x north, y west, z zenith; the pole at
   (cos φ, 0, sin φ); equatorial axes from the local sidereal time; every
   ring a circle p·n = sin δ₀ (great or small) built as a band — belts across

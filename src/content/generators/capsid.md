@@ -56,7 +56,12 @@ prolate heads of tailed phages such as T4.
   empty for the seed's choice), `view` (auto, five_fold, three_fold,
   two_fold), `style` (auto, capsomers, subunits, facets), `palette`
   (auto, cryo, pastel, amber, ink), `caption`, `width`, `height`,
-  `margin`.
+  `margin`; the camera — `view` picks the axis looked down, then `yaw`
+  (-180-180°) and `pitch` (-90-90°) orbit the camera from it (yaw about
+  the shell's vertical, pitch up over it; the phage head turns by the yaw
+  only, keeping its tail upright), and `distance` (1-10 times the usual
+  eye distance) shrinks the shell about its centre; the defaults (0, 0, 1)
+  are the view straight down the axis.
 - **Generation:** the `(h, k)` lattice is folded onto the icosahedron and
   its points pushed onto the sphere: the 12 vertices are the pentamers,
   the rest hexamers, each with its lattice neighbours in order round it.

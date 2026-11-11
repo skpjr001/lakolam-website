@@ -67,7 +67,12 @@ drinking straws.
   longest cut straw, 2-40, never more than a whole straw); `straw_cm`
   (whole straw length, 5-60); `tail_cm` (thread for the tail, knots and
   loop, 0-200); `look` (`colour`, `outline`); `page`; `margin` (inches,
-  0.1-1). Out-of-range values are clamped and recorded as `requested_*`.
+  0.1-1); and the camera on the pictures — `yaw` (-180-180°) turns the
+  view about the ornament's hanging axis and `pitch` (-90-90°) tilts it,
+  both from the seeded view (the one of eight whose knots stand furthest
+  apart), and `distance` (1-10 times the usual eye distance) shrinks the
+  pictures; the defaults (0, 0, 1) are the seeded view. Out-of-range
+  values are clamped and recorded as `requested_*`.
 - **Generation:** the model's edge graph is built in model units. Where
   the proportions are free, the seed picks them: for example, apex height
   over ring radius for the diamond, bicone, pyramids and chain. Every

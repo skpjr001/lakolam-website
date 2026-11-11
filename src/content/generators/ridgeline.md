@@ -58,7 +58,13 @@ from the receding ridges of Chinese shan shui painting and Hokusai's prints.
   | `hills` | `terrain` | `egg_crate`); `amplitude` (0.2–3); `camera`
   (surface elevation in degrees, 10–70, 0 = seeded 24–40); `fill` (pulsar
   and surface: light on a dark ground; mountains: a colour print instead of
-  line art; default true); `width`, `height`, `stroke` (pt).
+  line art; default true); `width`, `height`, `stroke` (pt); the surface
+  camera — `camera` is its pitch (the elevation above), `yaw` (-180-180°)
+  orbits it round the terrain from the seeded azimuth (25–65° either way;
+  the terrain turns under the camera), and `distance` (1-10 times the
+  usual eye distance) dollies out, shrinking the surface and flattening
+  its perspective; the defaults (0, 1) are the seeded view. Pulsar and
+  mountains are drawn flat and ignore `yaw` and `distance`.
 - **Generation:** the floating horizon is a piecewise-linear envelope stored
   as sorted breakpoints. It can have gaps where nothing is drawn yet, and
   jumps, stored as two breakpoints at one `x`. To clip a segment, the

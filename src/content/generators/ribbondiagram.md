@@ -60,7 +60,12 @@ and Per Kraulis's MolScript (1991).
   picked by the seed — `all_alpha`, `all_beta`, `alpha_beta`,
   `alpha_plus_beta`); `size` (`small`, `medium`, `large`); `style`
   (`rainbow`, `by_type`, `cartoon`, `lines`); `termini` (N and C labels);
-  `caption`; `depth_cue`; `stroke` (0.2-4).
+  `caption`; `depth_cue`; `stroke` (0.2-4); the camera — `yaw`
+  (-180-180°) and `pitch` (-90-90°) orbit the view from the seeded
+  three-quarter one, `distance` (1-10 times the usual eye distance) dollies
+  out, shrinking the protein about its centre (the view is orthographic, so
+  nothing flattens); the defaults (0, 0, 1) are the seeded view, which meta
+  still reports as `view_azimuth_deg` / `view_elevation_deg`.
 - **Generation:** the fold class fixes the cast and the seed the details.
   All-α: an up-down bundle on a ring 10 Å apart (with a core helix when
   large). All-β: a meander barrel (strands round a circle at a 4.8 Å

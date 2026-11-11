@@ -2,7 +2,7 @@
 title: "Arrow Escape"
 blurb: "Arrow escape — tap each arrow off the board in the one order that works"
 category: puzzle
-version: "1.0.0"
+version: "1.1.0"
 ---
 Tap the arrows off the board — but only one can go at a time.
 
@@ -69,3 +69,5 @@ direction, became a mobile hit in the 2020s under many names.
   orders with their own search.
 
 **Structured data:** every page carries its content as JSON beside the picture (`Generated::data`) — `cells` gives the piece (index into `pieces`) covering each square, `null` if none; each piece lists its cells tail to head and the step `[dr, dc]` it slides along; `order` is a removal order that clears the board (the only one when `unique`).
+
+**Since 1.1.0:** the board panel's pale fill and its grey outline are two items — the fill in the page's background layer — so a page rendered on a transparent background keeps the board outline and drops only the fill.

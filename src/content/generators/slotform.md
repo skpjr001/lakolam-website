@@ -71,7 +71,12 @@ Autodesk's 123D Make (2012) brought it to makers.
   radial: ribs, 3–12); `rings` (radial only, 1–4); `size_cm` (6–40, the
   largest dimension); `thickness_mm` (0.3–5, the slot width); `look`
   (`colour`, `outline`); `labels`; `index` (which page); `page`,
-  `landscape`; `margin` (inches).
+  `landscape`; `margin` (inches); and the camera for the small picture
+  of the finished sculpture — `yaw` (-180-180°) and `pitch` (-90-90°)
+  orbit its three-quarter view (pitch stops just short of straight overhead
+  or underneath), `distance` (1-10 times the usual eye distance) dollies
+  out, shrinking the orthographic picture in its box; the defaults (0, 0,
+  1) are the usual view. The parts themselves are flat and never change.
 - **Generation:** each solid is an inside test in unit coordinates (the
   heart is two discs and a polygon, puffed out so that every slice parallel
   to it is the heart shrunk about its centre). Outlines are traced along

@@ -53,7 +53,13 @@ follows. Ring radii here are in planet radii, roughly Saturn's.
 - **Spec knobs:** `style` (colour, hatch, outline), `tilt_deg` (ring
   opening, 0–70), `phase_deg` (Sun–planet–viewer angle, 0–150), `moons`
   (0–6), `ringlets` (20–400), `stars`, `palette` (auto, saturn, ice, ember,
-  violet, ink), `width`, `height`.
+  violet, ink), `width`, `height`; the camera — `tilt_deg` is its pitch
+  (how far above the ring plane it looks from) and `phase_deg` its turn
+  about the planet relative to the Sun (the planet is round and banded and
+  the rings are round, so turning the camera about the pole is the phase
+  angle), so the only added knob is `distance` (1-10 times the usual eye
+  distance), which shrinks the planet and rings about the page centre; the
+  default 1 is the fitted view.
 - **Generation:** orthographic projection with the ring plane opened by B:
   a ring point at radius r and azimuth λ lands at (r cos λ, −r sin λ sin B)
   with depth r sin λ cos B, so each ringlet is drawn as two half-annuli — the

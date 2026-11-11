@@ -88,6 +88,23 @@ the edges of the sheet, as these pages do.
   - `text`: the word for `name`. Up to 10 capitals and digits; other
     characters are dropped and reported.
   - `page` (landscape, but portrait for towers) and `line`.
+  - The camera, moved from the sheet's set-up view (the defaults 0, 0, 1
+    are that view): `yaw` (-180-180°) and `pitch` (-90-90°) turn the
+    camera, eye and view together, about the middle of the solids, and
+    `distance` (1-10 times the usual eye distance) backs the eye away from
+    it, keeping focal length and page centre, so the scene shrinks and
+    flattens. The view stops 1° short of straight up or down, so the
+    camera never rolls. In the hallway and on the road the eye stands
+    inside the scene: there `distance` backs it straight out along its
+    line of sight, and `yaw` and `pitch` are ignored (meta
+    `camera_turn_ignored`), since turning there would put solids beside
+    and behind the eye. A moved camera keeps every check: vanishing points
+    are computed from it and drawn when they land in the frame, so a moved
+    one-point sheet can show receding edges whose vanishing point is off
+    the sheet; when the moved view grazes a face edge-on and the ray-cast
+    check disagrees, the eye backs off 12% at a time until it agrees
+    (meta `camera_backed_off`, the factor). Meta `camera_moved` marks a
+    moved camera.
 - **Generation:**
   - Each scene is built in world units as axis-aligned solids with
     surface details: windows, doors, floor tiles, road markings.

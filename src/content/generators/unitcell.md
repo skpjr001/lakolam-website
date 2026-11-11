@@ -70,7 +70,12 @@ Russian mineralogist Lev Perovski; Gustav Rose described the mineral in
   (`plate`, `white`, `night`); `projection` (`perspective`,
   `orthographic`); `atom_scale` (0.2-1, default 0.6: the fraction of the
   largest ball size at which no two atoms touch); `cell_box`, `labels`,
-  `depth_cue`; `stroke` (0.2-4).
+  `depth_cue`; `stroke` (0.2-4); the camera — `projection` picks the
+  lens, `yaw` (-180-180°) and `pitch` (-90-90°) orbit the view from the
+  seeded oblique one, `distance` (1-10 times the usual eye distance)
+  dollies out, shrinking the block and, in perspective, flattening it; the
+  defaults (0, 0, 1) are the seeded view, which meta still reports as
+  `view_azimuth_deg` / `view_elevation_deg`.
 - **Generation:** each structure is its conventional cell: lattice
   (cubic, tetragonal or hexagonal with γ = 120°), measured lattice parameters
   (near room temperature; ice near its melting point), and every site in fractional coordinates from the space

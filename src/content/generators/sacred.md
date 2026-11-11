@@ -72,7 +72,14 @@ the traditional recipe is only approximate.
   merkaba, torus, golden_spiral, platonic_solids), `style` (line_art, gold,
   palette), `palette` (auto, temple, ocean, forest, night, rose), `detail`
   (1 to 5, 0 = seeded 2 to 4), `stroke`, `solids` (Metatron's embedded
-  solids in bold), `frame` (seeded border ornament), `label`, `size`.
+  solids in bold), `frame` (seeded border ornament), `label`, `size`,
+  and the camera for the two figures drawn from 3D solids (merkaba and
+  Platonic solids) — `yaw` (-180-180°) and `pitch` (-90-90°) orbit the
+  view from the seeded one (for the Platonic solids yaw turns each solid
+  about its upright axis; for the merkaba both turn about the screen's
+  axes), `distance` (1-10 times the usual eye distance) dollies out, so
+  the orthographic solids shrink in their circles; the defaults (0, 0, 1)
+  are the seeded view, and the flat figures ignore all three.
 - **Generation:** each figure is built in a unit disc from its
   construction. Flower-of-life arcs are clipped to the bounding circle
   analytically (the arc of a lattice circle inside it is found from the

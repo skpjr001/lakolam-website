@@ -72,7 +72,12 @@ and later in ceramic.
   `n`); `look` (`colour`, `outline`); `storeys` (1–3, 0 lets the seed
   choose one or two; it sets the wall height); `tab_mm` (3–12); `labels`
   (title, steps and seam letters); `index` (which page of a set); `page`,
-  `landscape`; `margin` (inches).
+  `landscape`; `margin` (inches); the camera for the "when built" picture
+  — `yaw` (-180-180°) and `pitch` (-90-90°) orbit the view from the usual
+  three-quarter one (orthographic, held 1° short of straight down or up),
+  `distance` (1-10 times the usual eye distance) draws the picture
+  smaller; the defaults (0, 0, 1) are the usual view, and the parts never
+  move. A building with no room for its picture is not changed by them.
 - **Generation:** each building is one or two convex solids — a prism
   under a gable, saltbox or gambrel profile, a box under a hipped roof, a
   tapered eight-sided tower under a pointed cap, or a square tower under a

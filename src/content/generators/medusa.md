@@ -60,7 +60,12 @@ plate: the construction is ours.
   always shows one from above), `canals` (radial canals per quarter, 1-16),
   `tentacles` (relative to the kind's usual number, 0-3), `current` (0-1),
   `palette` (`abyss` default, `haeckel`, `ink`), `line`, `width`, `height`,
-  `margin`.
+  `margin`; the camera — `view` picks side or top, then `yaw` (-180-180°)
+  and `pitch` (-90-90°) orbit every medusa's view from that (seeded) one —
+  a pitched view also fits the tentacles, which come into sight —, and
+  `distance` (1-10 times the usual eye distance) dollies out, shrinking
+  the medusa and flattening its perspective; the defaults (0, 0, 1) are
+  the usual view.
 - **Generation:** the bell is a surface of revolution whose profile is a
   superellipse quadrant (`r = cos φ^(2/n)`, `z = H·sin φ^(2/n)`), its margin
   cut into lappets that reach out and hang down; it is meshed and painted

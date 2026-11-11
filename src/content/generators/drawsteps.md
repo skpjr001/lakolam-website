@@ -2,7 +2,7 @@
 title: "How to Draw"
 blurb: "How to draw, step by step — a picture built up in numbered panels, big shapes first, with room to practise"
 category: printable
-version: "1.0.1"
+version: "1.1.0"
 ---
 Draw a cat, a car or a rocket one easy step at a time.
 
@@ -72,3 +72,4 @@ books today.
   that every covering shape comes no later than what it covers, and that
   every step adds ink. A one-part picture (a plain shape) is a one-step
   page.
+- **Since 1.1.0:** each panel's white fill and its grey frame are two items — the fill in the page's background layer — so a page rendered on a transparent background keeps the frames and drops only the white.

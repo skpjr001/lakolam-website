@@ -78,7 +78,11 @@ each shorter one a single swing more, which is this page's default.
   moment, an arrow in the other views); `trails` (rig ghosts, 0-12);
   `palette` (`auto` — a colour scheme drawn by the seed — `dusk`,
   `ocean`, `ember`, `ink`); `marks` (shade and label the pattern moments);
-  `stroke`.
+  `stroke`; and the camera, for the rig view only (the strip and the
+  space-time chart are flat) — `yaw` (-180-180°) turns the three-quarter
+  view about the vertical and `pitch` (-90-90°) tilts it, and `distance`
+  (1-10 times the usual eye distance) shrinks the apparatus; the defaults
+  (0, 0, 1) are the usual view.
 - **Generation:** pendulum `k` has period `T_k = Γ / (N₀ + k)` and length
   `g (T_k / 2π)²`, and moves as `θ_k(t) = A cos(2π (N₀ + k) t / Γ)` — the
   small-angle motion the tuning is built on. The strip draws the moments

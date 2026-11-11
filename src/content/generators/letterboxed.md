@@ -2,7 +2,7 @@
 title: "Four Sides"
 blurb: "Four Sides - chain words round a square of 12 letters, using them all in the fewest words"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Twelve letters round a square: chain words together until every letter is
 used, in as few words as you can.
@@ -74,3 +74,4 @@ another side" rule have been widely copied since.
   "letter_boxed"`): `sides` (the three letters of the top, right, bottom and
   left sides, each read clockwise), `target_words` and `solution`, a shortest
   solution in order.
+- **Since 1.1.0:** the box's white fill and its black outline are two items — the fill in the page's background layer — so a page rendered on a transparent background keeps the box outline and drops only the white.

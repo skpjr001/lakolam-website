@@ -53,7 +53,12 @@ of Plants* (1990) gave the computer models this page follows.
 - **Spec knobs:** `fruit` (auto, pine, spruce, pineapple, artichoke, hop),
   `layout` (single, plate of four), `organs` (16–400; empty for a count
   typical of the fruit), `count_spirals`, `palette` (auto, linen, sage,
-  sky, night, ink), `caption`, `width`, `height`, `margin`.
+  sky, night, ink), `caption`, `width`, `height`, `margin`; the camera —
+  `yaw` (-180-180°) and `pitch` (-90-90°) orbit every fruit's view from its
+  seeded one, `distance` (1-10 times the usual eye distance) dollies out —
+  the view is parallel, so the fruit only shrinks in its place; the
+  defaults (0, 0, 1) are the seeded view (`view_deg` in meta stays the
+  seeded one).
 - **Generation:** each fruit is a surface of revolution from a seeded
   profile. Organ `i` sits at angle `i × 137.508°` and at the height where
   the area below it is `(i + ½)/n` of the whole, so scales keep one size.

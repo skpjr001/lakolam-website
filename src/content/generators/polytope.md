@@ -58,7 +58,13 @@ generative-art sketchbooks.
   rotated, perspective), `layout` (single, grid), `grid` (2–6 per side, grid
   only), `keep` (10–100% of edges), `depth_cue`, `vertices`, `ink` (ink,
   night, colour), `caption`, `stroke` (0.05–6 pt), `width`, `height`
-  (144–3000 pt), `margin`. Out-of-range values are clamped and reported as
+  (144–3000 pt), `margin`; and the camera on the final 3D view — after the
+  higher dimensions are projected as before, `yaw` (-180-180°) turns that
+  view about its vertical axis and `pitch` (-90-90°) tilts it (so the
+  Petrie view's symmetry gives way to its seeded depth axis), and
+  `distance` (1-10 times the usual eye distance) shrinks each drawing and,
+  in perspective, moves the last eye out; the defaults (0, 0, 1) are the
+  usual view. Out-of-range values are clamped and reported as
   `requested_*`.
 - **Generation:** vertices from exact coordinates. The cube is {±1}ⁿ, the
   16-cell ±eᵢ, the 24-cell the permutations of (±1, ±1, 0, 0) and the

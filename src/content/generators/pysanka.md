@@ -60,7 +60,13 @@ that spirit; they are not copies of any region's or village's patterns.
 
 - **Spec knobs:** `width`, `height`, `margin`, `division` (auto, meridian,
   belt, four_sides, forty_eight, star, diamonds), `output` (egg, template),
-  `palette` (classic, red_ground, light), `line_art`, `stroke`.
+  `palette` (classic, red_ground, light), `line_art`, `stroke`; the egg
+  view's camera — `yaw` (-180-180°, about the egg's axis) and `pitch`
+  (-90-90°) orbit it from the seeded view, `distance` (1-10 times the
+  usual eye distance) shrinks the egg about the page centre; the defaults
+  (0, 0, 1) are the seeded view. The egg keeps its drawn outline, narrower
+  at the top, whatever the pitch. The template has no camera and ignores
+  them.
 - **Generation:** every shape is a closed outline on the unit sphere:
   fields are polygons in longitude and latitude with their edges subdivided
   (loops round a pole are carried on through a full turn rather than back
@@ -81,8 +87,9 @@ that spirit; they are not copies of any region's or village's patterns.
 - **Guarantees:** deterministic per seed. Tested: every design is invariant
   shape for shape under a turn of 360/d degrees about the egg's axis, where
   d is the reported `symmetry_order` (and not under half that turn), and
-  under reflection in each of its mirror planes; the egg view is
-  mirror-symmetric on the page and every point lies inside the egg's
+  under reflection in each of its mirror planes; the egg view (at yaw 0 or
+  a half turn, reported as `mirror_symmetric`) is mirror-symmetric on the
+  page and every point lies inside the egg's
   outline; clipping keeps exactly the visible part; every template shape
   lies inside its gore; only the palette's inks are used; line art passes
   the adult colourability check (pieces too small to colour are inked

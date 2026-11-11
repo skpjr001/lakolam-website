@@ -70,7 +70,12 @@ calculators; the tables here are the same Class I (method 1) domes.
   `radius` and `units` (`metric`: metres and millimetres; `imperial`:
   feet and inches to the nearest sixteenth) for the cut list; `colour`
   (struts and faces coloured by type, or black on white); `width`,
-  `height`; `line`.
+  `height`; `line`; the wireframe's camera — `yaw` (-180-180°) and
+  `pitch` (-90-90°) orbit the view from the seeded turn and tilt,
+  `distance` (1-10 times the usual eye distance) shrinks the dome about
+  the page centre; the defaults (0, 0, 1) are the seeded view. The plan
+  (a fixed view from the zenith) and the model net have no camera and
+  ignore them.
 - **Generation:** the icosahedron stands on a vertex at the zenith; each
   face is divided into `V²` triangles on its flat face and every point is
   normalised onto the unit sphere (Class I, method 1). A dome keeps the hubs

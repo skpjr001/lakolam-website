@@ -55,7 +55,11 @@ Elementary Introduction to the Hopf Fibration", Mathematics Magazine 76
   (6–240 circles), `ribbon` (width in points), `gaps` (break the far
   ribbon at crossings), `inset` (the globe of base points), `palette`
   (auto, spectrum, night, pastel, ink), `caption`, `width`, `height`,
-  `margin`.
+  `margin`; the camera — `yaw` (-180-180°) and `pitch` (-90-90°) orbit the
+  view of the circles from the seeded one, `distance` (1-10 times the usual
+  eye distance) dollies out, shrinking them and flattening the perspective;
+  the defaults (0, 0, 1) are the seeded view. The inset globe always faces
+  the base points and does not move with the camera.
 - **Generation:** base points are laid out along the chosen curve in a
   frame on the 2-sphere; the fibre over `(a, b, c)` is
   `q(t) = (√((1+c)/2)·e^{it}, (a+ib)/√(2(1+c))·e^{it})`, sampled at 144

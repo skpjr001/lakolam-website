@@ -74,7 +74,15 @@ pattern, and the Menger sponge was described by Karl Menger in 1926.
   `palette` (`stone`, `sand`, `ocean`, `forest`, `candy`), `surfaces`
   (merge each flat surface into one region instead of showing every cube),
   `stroke`, `cell` (tumbling blocks' cube edge), `width`, `height`,
-  `margin`.
+  `margin`; the camera — `yaw` (-180-180°, rounded to quarter turns and
+  recorded as `requested_yaw` when rounding moved it) draws the blocks
+  from another corner: the structure is turned that many quarter turns
+  about the vertical and painted again from the usual corner, so the
+  lattice stays exact; `distance` (1-10 times the usual eye distance)
+  draws the cubes that much smaller about the middle of the page. The
+  defaults (0, 1) are the usual view. There is no `pitch`: the isometric
+  angle is the lattice itself. Impossible figures and tumbling blocks
+  only work from their one corner and ignore `yaw`.
 - **Generation:** a voxel's corner `(x, y, z)` lands on lattice point
   `(x − z, y − z)` of a triangular lattice, so each visible face (+x, +y,
   top) is exactly two lattice triangles. Voxels are painted far to near by

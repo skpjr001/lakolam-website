@@ -66,8 +66,14 @@ with that kind of rule; they do not reproduce any of Mohr's works.
   6, 12, 24, 40; else 1 up to the edge count, one less for complement),
   `vary` (both, rotation, subset), `step` (0-90°, default 15), `look`
   (lines, planes, inverse), `ghost`, `caption`, `stroke` (0.5-12 pt,
-  default 3.5, at most 8% of a cell). Values outside a range are clamped
-  and reported as `requested_<field>`.
+  default 3.5, at most 8% of a cell); the camera, moved from the seeded
+  view for every cell at once — `yaw` (-180-180°) turns the page's x axis
+  towards the depth axis (the third row of each cell's view), `pitch`
+  (-90-90°) the page's y axis, and `distance` (1-10 times the usual eye
+  distance) draws every cube smaller in its cell (the view is
+  orthographic, so nothing flattens); the defaults (0, 0, 1) are the
+  seeded view. Values outside a range are clamped and reported as
+  `requested_<field>`.
 - **Generation:** vertices are the bit masks of {0, 1}ⁿ (centred at the
   origin), edges join masks one bit apart (n·2ⁿ⁻¹), faces fix all but two
   bits. The view is the best of sixteen seeded orientations (the one whose

@@ -63,7 +63,13 @@ the perturbation terms of Meeus's *Astronomical Formulae for Calculators*;
   month); `view` (auto — a globe for one eclipse, a map for a decade — globe,
   map: an Equal Earth world map); `partial_zone` (the halftone and contours
   of the partial eclipse, one mode); `palette` (auto, night, atlas, sepia,
-  ink); `page`; `margin_mm`.
+  ink); `page`; `margin_mm`; the globe's camera — `view` chooses globe or
+  map, then `yaw` (-180-180°, about the Earth's axis, positive eastwards)
+  and `pitch` (-90-90°, positive from further north) orbit the camera from
+  the globe turned towards the eclipse, and `distance` (1-10 times the
+  usual eye distance) shrinks the globe about its centre; the defaults (0,
+  0, 1) are today's view. The Equal Earth map has no camera and ignores
+  them.
 - **Generation:** candidates are the new moons within 0.36 of a lunar node
   (|sin F|). At each instant the apparent geocentric Sun and Moon (our own
   60+60-term lunar series and a perturbed solar theory, with nutation and

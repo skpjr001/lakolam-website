@@ -2,7 +2,7 @@
 title: "Word Families"
 blurb: "Word families — phonics pages: build words from a rime, sort words into family houses, or find the odd one out"
 category: word
-version: "1.0.0"
+version: "1.1.0"
 ---
 Phonics pages for early readers: build words from a family's ending, sort
 words into family houses, and spot the word that does not belong.
@@ -80,3 +80,4 @@ to build about 500 primary-grade words, is still quoted on teaching sites.
   per house the family's `rime`, its `words` and their `onsets` (the build
   tiles), the sort `bank` as printed, and per odd-one-out row the four
   printed `words` and the index of the `odd` one.
+- **Since 1.1.0:** each house body's white fill and its black outline are two items — the fill in the page's background layer — so a page rendered on a transparent background keeps the outlines and drops only the white.

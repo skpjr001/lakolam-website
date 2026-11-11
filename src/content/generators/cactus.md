@@ -52,7 +52,12 @@ in sunflowers and pine cones (Bravais and Bravais, 1837).
   opuntia, echeveria, aeonium), `pots` (3–6 on the windowsill), `ribs`
   (5–40; empty for the seed's choice), `spines` (auto, none, short, long,
   hooked), `flowers`, `palette` (auto, sunny, mint, dusk, ink), `caption`,
-  `width`, `height`, `margin`.
+  `width`, `height`, `margin`; the camera — `yaw` (-180-180°) and `pitch`
+  (-90-90°) orbit every plant's view from its seeded one (each plant is
+  grown facing that seeded view and is not regrown), `distance` (1-10 times
+  the usual eye distance) dollies out: the views are orthographic, so the
+  plants shrink where they stand on the sill; the defaults (0, 0, 1) are
+  the seeded view.
 - **Generation:** a stem is a tube along a centreline (straight for a
   column or barrel; out, round an elbow and up for a saguaro arm) with
   rotation-minimising frames; its cross-section is

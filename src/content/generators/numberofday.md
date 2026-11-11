@@ -2,7 +2,7 @@
 title: "Number of the Day"
 blurb: "Number of the day — one number, every box about it: words, tally marks, ten frames, tens and ones, expanded form, odd or even, more and less, number line, two ways to make it, coins, rounding and more"
 category: maths
-version: "1.0.0"
+version: "1.1.0"
 ---
 One number at the top of the page, and a box for everything you can say
 about it.
@@ -106,3 +106,4 @@ India.
   rules — for every number to 1,200, a stride of numbers to 999,999 and
   every band, in all three locales. "Two ways to make it" and "coins"
   accept any working answer; the key shows one and says so.
+- **Since 1.1.0:** each box's white card and its black outline are two items — the card in the page's background layer — so a page rendered on a transparent background keeps the outlines and drops only the white.

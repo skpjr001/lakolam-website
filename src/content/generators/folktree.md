@@ -2,7 +2,7 @@
 title: "Folk Tree of Life"
 blurb: "Folk tree of life: a mirrored tree grown from a vase, with flowers sized to the space at every branch end"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 A mirror-symmetric tree of life rising from a vase, every branch ending in a flower sized to the space around it.
 
@@ -79,3 +79,5 @@ time smaller in an accent colour.
 reflection of the right; every motif, stem and the base has its mirror image); no
 grown node crosses the axis; no two motifs overlap — every motif lies inside its
 circle and no two circles intersect; all ink is on the page.
+
+**Since 1.1.0:** the frame band is drawn as a ring over the panel's ground (the ground in the page's background layer) rather than a filled outer shape under a filled inner panel, so a page rendered on a transparent background keeps the band and both its outlines and drops only the ground.

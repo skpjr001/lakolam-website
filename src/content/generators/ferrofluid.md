@@ -65,7 +65,14 @@ Kodama's ferrofluid sculptures (from 2000) made the spikes famous as art.
   pages use fewer, reported as `requested_cells`); `field` (reduced field
   strength above critical, 0.05-1: sets ε and the quadratic term, and the
   spike height); `grains` (hexagonal grains seeded, 1-12; a small dish
-  holds fewer, meta `grains_used`); `steps` (relaxation steps, 50-1500).
+  holds fewer, meta `grains_used`); `steps` (relaxation steps, 50-1500);
+  the oblique camera — `yaw` (-180-180°) orbits it round the dish,
+  `pitch` (-90-90°) raises or lowers it from its usual 42° (it stays
+  between 5° above the fluid and straight down), and `distance` (1-10
+  times the usual eye distance) dollies out, shrinking the dish and
+  flattening its perspective (the haze is measured from the usual eye, so
+  it does not swallow the dish); the defaults (0, 0, 1) are the usual
+  view. The top view is straight down and ignores them.
 - **Generation:** the Swift–Hohenberg equation `∂u/∂t = εu − (1+∇²)²u +
   g·u² − u³` is stepped semi-implicitly in Fourier space (a radix-2 FFT with
   deterministic twiddles) for exactly `steps` steps of 0.5 on a 64-256

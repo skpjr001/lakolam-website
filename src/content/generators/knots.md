@@ -64,7 +64,13 @@ the 1980s settled Tait's old conjectures about alternating diagrams.
   crossings, 4–20), `style` (`ribbon` default, `line`), `alternating`,
   `band` (ribbon width in points, default 16), `line` (outline or line
   weight), `palette` (`jewel`, `celtic`, `primary`, `ink`), `line_art`,
-  `label`, `width`, `height`, `margin`.
+  `label`, `width`, `height`, `margin`; and the camera — `yaw` (-180-180°)
+  and `pitch` (-90-90°) turn the space curve about the picture's vertical
+  and horizontal axes before its shadow is taken (the usual view looks
+  straight down the torus or braid axis; a turned view is another diagram
+  of the same curve, with its own crossings, checked like any other), and
+  `distance` (1-10 times the usual eye distance) shrinks the diagram about
+  the page's centre; the defaults (0, 0, 1) are the usual view.
 - **Generation:** the space curve is sampled densely: T(p, q) as
   `(R + r cos θ)(cos φ, sin φ)`, `z = r sin θ`, with `φ = p′t`,
   `θ = q′t + 2πj/(d·p′)` for each of the `d = gcd(p, q)` components and a

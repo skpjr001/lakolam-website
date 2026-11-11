@@ -53,7 +53,11 @@ Abstract Art in the Early 20th Century" (2010).
   helicoid, twisted_cylinder), `layout` (single, plate), `threads` (per
   family, 4–160), `frame` (brass tube rims or plain lines), `palette` (auto,
   museum, silk, blueprint, rose, ink), `line`, `caption`, `width`,
-  `height`, `margin`.
+  `height`, `margin`; the camera — `yaw` (-180-180°) and `pitch`
+  (-90-90°) orbit every model's view from its seeded one (on a plate, all
+  four turn together), `distance` (1-10 times the usual eye distance)
+  dollies out, shrinking each model and flattening its perspective; the
+  defaults (0, 0, 1) are the seeded views, which meta still reports.
 - **Generation:** each model is two rim curves and a matching rule; the
   hyperboloid joins θ below to θ ± φ above (both families on
   `(x²+y²)/a² − z²/c² = 1`, `a = R cos(φ/2)`, `c = h / tan(φ/2)`), the

@@ -59,7 +59,13 @@ Peter Cromwell, *Polyhedra* (1997, ch. 7).
   seed choose; held to the solid's last finite one); `colouring`
   (`layers`, `highlight`, `lines`); `palette` (`auto`, `lapis`, `vellum`,
   `lagoon`, `plum`, `ink`); `show_solid` (the 3D inset); `caption`;
-  `stroke` (line width).
+  `stroke` (line width); the camera on the 3D inset — `yaw` (-180-180°)
+  and `pitch` (-90-90°) orbit the view from the seeded one, `distance`
+  (1-10 times the usual eye distance) dollies out, shrinking the solid in
+  its disc (the view is orthographic, so nothing flattens); the defaults
+  (0, 0, 1) are the seeded view, which meta still reports as `view_deg`.
+  The diagram itself is flat and does not move; with `show_solid` off
+  the camera has nothing to turn.
 - **Generation:** the face planes are taken at inradius 1; each other
   plane meets the chosen face plane in a line (coincident lines merged,
   parallel planes skipped). The cells are found by cutting a square beyond

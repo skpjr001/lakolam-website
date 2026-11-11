@@ -55,7 +55,12 @@ Mineral Science*, 23rd ed.).
   minerals, or invent every crystal); `hidden_edges` (dashed back edges);
   `labels` (Miller indices on the faces); `nets` (the cut-out page);
   `palette` (mineral — each in its mineral's colour —, pastel — each form
-  its own tint —, atlas, ink, or auto); `page`; `margin_mm`.
+  its own tint —, atlas, ink, or auto); `page`; `margin_mm`; the camera —
+  `yaw` (-180-180°) and `pitch` (-90-90°) turn every crystal's view away
+  from the clinographic one, `distance` (1-10 times the usual eye distance)
+  dollies out — the rays stay parallel, so the crystal only shrinks in its
+  cell; the defaults (0, 0, 1) are the classical clinographic view. The
+  nets page is flat and does not move.
 - **Generation:** each crystal has a cell (a, b, c, α, β, γ) and a point group
   (m3̄m, m3̄, 4̄3m, 4/mmm, 6/mmm, 3̄m, 32, mmm, 2/m or 1̄) whose operations are
   the closure of its generators as Cartesian matrices (c along z, a along x).

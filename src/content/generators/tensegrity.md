@@ -54,7 +54,10 @@ form-finding methods for tensegrity structures" (2003).
   `layout` (plate of six, or single); `forces` (colour members by force);
   `shadow`; `caption`; `strut_width` (tube radius as a fraction of strut
   length); `palette` (gallery, steel, bamboo, night, ink, or auto); `page`;
-  `margin_mm`.
+  `margin_mm`; the camera — `yaw` (-180-180°) and `pitch` (-90-90°) orbit
+  every sculpture's view from its seeded one, `distance` (1-10 times the
+  usual eye distance) dollies out, shrinking and flattening it; the
+  defaults (0, 0, 1) are the seeded view.
 - **Generation:** prisms: two unit n-gons, the top turned by the analytic
   equilibrium twist π/2 + π/n (150° for three struts) with struts from
   corner i to corner i and vertical cables to the corner before; the

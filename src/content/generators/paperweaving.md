@@ -2,7 +2,7 @@
 title: "Paper Weaving"
 blurb: "Paper weaving — a slit mat and numbered strips printed so that weaving over and under reveals a picture, a check or a gingham"
 category: craft
-version: "1.1.0"
+version: "1.2.0"
 ---
 Cut a mat, cut the strips, weave them over and under — and a picture
 appears.
@@ -99,3 +99,4 @@ three basic weave structures of textiles.
   every square, weave them by the printed rule and compare with the
   preview's colours. No printing colour is close enough to white to pass
   for an "under" square.
+- **Since 1.2.0:** the mat's white paper and its black cut outline are two items — the paper in the page's background layer — so a page rendered on a transparent background keeps the cut line and drops only the white.

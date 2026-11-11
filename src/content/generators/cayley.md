@@ -71,7 +71,13 @@ Group Theory* (2009) and the Group Explorer software.
   `m` (2–8, default 3) for Z_n × Z_m; `labels` (`auto` — names for groups
   of order 24 or less — `words`, `none`); `style` (`poster` (default),
   `colour`, `ink`); `palette` (`auto`, `primary`, `jewel`, `sunset`,
-  `ocean`; auto picks per seed); `stroke` (0.2–4, default 1).
+  `ocean`; auto picks per seed); `stroke` (0.2–4, default 1); and the
+  camera, for the 3D layouts only (the torus of Z_n × Z_m with m ≥ 3 and
+  the truncated solids of A4, S4 and A5; the flat rings, circles and
+  squares ignore it) — `yaw` (-180-180°) and `pitch` (-90-90°) orbit the
+  seeded view about the picture's vertical and horizontal axes, and
+  `distance` (1-10 times the usual eye distance) shrinks the graph; the
+  defaults (0, 0, 1) are the seeded view.
 - **Generation:** every group is a permutation group built by
   breadth-first closure from its generators, which gives each element a
   shortest word. Z_n is an n-cycle; D_n a rotation and a reflection of the

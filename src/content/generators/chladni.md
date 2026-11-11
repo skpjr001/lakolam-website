@@ -2,7 +2,7 @@
 title: "Chladni Figures"
 blurb: "Chladni figures — the nodal lines of a vibrating plate, as a two-colour pattern or sand"
 category: design
-version: "1.0.1"
+version: "1.1.0"
 ---
 The patterns sand draws on a singing metal plate: nodal lines of vibration,
 as a two-colour pattern, as sand, or as a colouring page.
@@ -93,10 +93,22 @@ looks at the same time.
   areas add up to the plate's area within 2%. The smallest region of either
   sign is reported (`smallest_region_mm2`, `regions_above_floor`). If it is
   under the 40 mm² floor, or the line-art page fails the ADULT gate, the
-  page is re-drawn with fresh modes up to three times (`attempt`). Line-art
-  pages on all four plates pass the gate across seeds. Sand gathers on the
-  nodal lines: most grains sit where |f| is under a fifth of its maximum.
-  A page takes under 0.2 s in release builds.
+  page is re-drawn with fresh modes up to three times (`attempt`). When
+  `mix` is given, the check covers the whole range, not the given value.
+  The modes kept are those of the first attempt that passes at mix 0.2,
+  0.4, 0.6, 0.8 and 1, or else of the attempt that passes at the most of
+  them. So every mix of one seed keeps the same modes, and the figure
+  morphs smoothly from 0 to 1. The reported `smallest_region_mm2` and
+  `regions_above_floor` then say whether this mix crowds two lines below
+  the floor. (Before version 1.1 the check used the given mix. Close to 1,
+  where nodal lines nearly touch, the page then jumped to other, finer
+  modes.)
+  Line-art pages on all four plates pass the gate across seeds. Sand
+  gathers on the nodal lines: most grains sit where |f| is under a fifth
+  of its maximum.
+  A page takes under 0.2 s in release builds. A page with a given mix
+  traces its figure once per judged mix, usually 5 times, and at most 20
+  times when every attempt fails somewhere, so it can take up to ~3 s.
 - **Caveats:** the square and rectangular formulas are the classical
   approximation, not exact free-plate eigenmodes (those have no closed
   form). They reproduce Chladni's drawings closely, but not a measured plate

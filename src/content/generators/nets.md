@@ -63,7 +63,14 @@ mathematics.
   `cube`, `cuboid`, `triangular_prism`, `square_pyramid`, `tetrahedron`,
   `cylinder`, `cone`); `layout` (1-11 picks one of the eleven cube nets, 0 any);
   `tabs`; `units` (`cm` or `in`: whole-unit measurements, drawn at true size);
-  `count` (quiz shapes, 4-12, 0 by level); page `width` and `height`; `line`.
+  `count` (quiz shapes, 4-12, 0 by level); page `width` and `height`; `line`;
+  the camera for the small picture of the solid beside the net — `yaw`
+  (-180-180°) and `pitch` (-90-90°) orbit the polyhedron's view from the
+  usual one (orthographic, elevation held to ±90°), `distance` (1-10 times
+  the usual eye distance) draws the picture smaller; the defaults (0, 0, 1)
+  are the usual view. Cylinders and cones are drawn at their one view
+  (only `distance` changes them), the net itself never moves, and the quiz
+  has no picture.
 - **Generation:** difficulty maps to grade. With `shape: auto`, Kids (grade 3)
   builds cubes, Easy (grade 4) cubes and cuboids, Medium (grade 5) cuboids,
   triangular prisms and square pyramids with their measurements printed,

@@ -2,7 +2,7 @@
 title: "Biomorphs"
 blurb: "Dawkins's Biomorphs: nine-gene recursive creatures on a breeding sheet, a line of descent or a zoo"
 category: design
-version: "1.0.0"
+version: "1.1.0"
 ---
 Nine numbers grow a creature. Change one by one step and see what evolution
 can do with it.
@@ -97,3 +97,4 @@ extensions.
   stays on the page. Meta records the genomes, the mutations and
   `verification: single_gene_mutations`; clamped `offspring`,
   `generations`, `forms` and `max_depth` are reported as `requested_*`.
+- **Since 1.1.0:** each card's pale tint and its border are two items — the tint in the page's background layer, the border in the frame layer — so a page rendered on a transparent background keeps the borders (the heavy one marks the parent) and drops only the tint.

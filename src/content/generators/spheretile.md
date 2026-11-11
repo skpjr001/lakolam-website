@@ -63,7 +63,11 @@ became the football's panel pattern in the 1960s.
   (auto, parity, face_type, proper), `layout` (single, grid), `mirrors`
   (draw every mirror line), `shading` (light and rim shading), `palette`
   (auto, jewel, porcelain, candy, night, ink), `caption`, `line`,
-  `width`, `height`, `margin`.
+  `width`, `height`, `margin`; the camera — `yaw` (-180-180°) and `pitch`
+  (-90-90°) orbit every ball's view from its seeded one (yaw about the
+  page's vertical, pitch up over the top), `distance` (1-10 times the
+  usual eye distance) shrinks each ball about its centre; the defaults
+  (0, 0, 1) are the seeded view.
 - **Generation:** the Schwarz triangle (π/2, π/3, π/r) is taken from the
   regular solid's vertex, face centre and edge midpoint and reflected in
   its sides breadth-first until 24, 48 or 120 copies exist, each with its

@@ -11,7 +11,7 @@ than their own value.
 
 A grid carved into rooms. Each room of size *n* holds the numbers 1…*n*, each
 once. The ripple rule: two copies of the number *k* in the same row or column
-must have **more than k cells between them**. A pair of 1s needs one cell of
+must have **at least k cells between them**. A pair of 1s needs one cell of
 gap; a pair of 5s needs five.
 
 ## How to play

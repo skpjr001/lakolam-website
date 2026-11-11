@@ -52,7 +52,11 @@ imitates.
   supershape, vase, mobius, klein), `lines` (8–80 lines in the main
   family; the other family follows the surface's proportions),
   `density_shading`, `silhouettes`, `palette` (auto, porcelain, sunset,
-  blueprint, celadon, ink), `line`, `caption`, `width`, `height`, `margin`.
+  blueprint, celadon, ink), `line`, `caption`, `width`, `height`, `margin`;
+  the camera — `yaw` (-180-180°) and `pitch` (-90-90°) orbit the view from
+  the seeded one, `distance` (1-10 times the usual eye distance) dollies
+  out, shrinking the surface and flattening its perspective; the defaults
+  (0, 0, 1) are the seeded view, which meta still reports as `view_deg`.
 - **Generation:** each surface is its classical parametrisation over the
   unit square with seeded shape parameters (tube radius, Dini's pitch and
   turns, Enneper's disc radius, Scherk's reach towards the asymptotes,

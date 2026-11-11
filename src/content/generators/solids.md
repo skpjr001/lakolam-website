@@ -72,7 +72,13 @@ cylinder — made handling and naming solids part of early childhood.
   `euler`); `locale` (`us` "rectangular prism" and "square pyramid"; `uk`
   "cuboid" and "square-based pyramid"; `in` "cuboid" and "square
   pyramid"); `count` (2-12); `color` (soft shading); `hidden_edges` (dashed
-  back edges); `width`, `height`, `line`.
+  back edges); `width`, `height`, `line`; and the camera — `yaw`
+  (-180-180°) turns every solid about its upright axis and `pitch`
+  (-90-90°) tilts the view, both from each problem's chosen view
+  (cylinders, cones and spheres stay seen from 5-85° above the horizon,
+  where their outlines are drawn exactly), and `distance` (1-10 times the
+  usual eye distance) shrinks each solid in its box; the defaults (0, 0, 1)
+  are the usual views. Nets are flat and do not move.
 - **Generation:** Kids names cubes, cuboids, square pyramids, triangular
   prisms, cylinders, cones and spheres; Easy counts their faces, edges and
   vertices; Medium adds pentagonal and hexagonal prisms and pyramids,

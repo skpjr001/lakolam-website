@@ -69,7 +69,13 @@ the method of Bruno Jobard and Wilfrid Lefer (1997).
   one long trajectory; `traces`: many short ones, flows only), `palette`
   (`ocean` default, `ember`, `violet`, `ink` for black only), `detail`
   (0.05-1, default 0.6: integration length, trace count or streamline
-  density), `line` (stroke width), `frame`, `width`, `height`, `margin`.
+  density), `line` (stroke width), `frame`, `width`, `height`, `margin`;
+  and the camera, for the 3D flows only (the de Jong and Clifford map
+  fields are flat and ignore it) — `yaw` (-180-180°) turns the camera
+  about the attractor's vertical axis and `pitch` (-90-90°) tilts it, both
+  from the seeded view, and `distance` (1-10 times the seeded eye distance)
+  dollies out, shrinking the attractor and flattening its perspective; the
+  defaults (0, 0, 1) are the seeded view. The seeded roll is kept.
 - **Generation:** flows are integrated with classical fourth-order
   Runge-Kutta at a fixed step per system (Lorenz s=10, r=28, b=8/3; Aizawa
   a=0.95, b=0.7, c=0.6, d=3.5, e=0.25, f=0.1; Thomas b=0.18; Halvorsen

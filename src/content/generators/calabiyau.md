@@ -55,7 +55,9 @@ Calabi–Yau space, reproduced in Brian Greene's *The Elegant Universe*
 - **Spec knobs:** `width`, `height` (points, 200–3000); `n` (the degree,
   3–8; 5 by default); `alpha` (projection angle in degrees, 0–180);
   `azimuth` (0–360) and `elevation` (−80–80) of the camera in degrees, each
-  null to let the seed choose; `mesh` (quads along a patch side, 4–40, default 18; the
+  null to let the seed choose — these are the camera's turn and tilt;
+  `distance` (1-10 times the usual eye distance, default 1) dollies the
+  camera out, shrinking the surface and flattening its perspective; `mesh` (quads along a patch side, 4–40, default 18; the
   surface is held to 60 000 quads); `reach` (the ξ half-range, 0.5–2.5);
   `style` (`shaded`, `wireframe`, `lines`); `palette` (`auto`, `spectrum`,
   `ember`, `glacier`, `aurora`); `caption`; `stroke` (0.2–4).

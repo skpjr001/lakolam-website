@@ -51,7 +51,12 @@ Moore built and drew forms from stacked contours.
   they melt), `carving` (gyroid tunnels), `plinth`, `slices` (auto,
   horizontal, vertical, tilted), `slice_count` (4–90), `hatching`,
   `silhouette`, `palette` (auto, clay, marble, night, lagoon, ink), `line`,
-  `width`, `height`, `margin`.
+  `width`, `height`, `margin`; the camera — `yaw` (-180-180°) and `pitch`
+  (-90-90°) orbit the view from the seeded one, `distance` (1-10 times the
+  usual eye distance) dollies out, shrinking and flattening the sculpture;
+  the defaults (0, 0, 1) are the seeded view. The slicing planes stay put
+  on the sculpture (set from the seeded view), so turning the camera shows
+  them from another side; meta `view_deg` keeps the seeded angles.
 - **Generation:** primitives are placed by a seeded random walk upwards
   from the base (spheres, tori, rounded boxes and capsules with seeded
   sizes and turns), fused by a polynomial smooth minimum, optionally

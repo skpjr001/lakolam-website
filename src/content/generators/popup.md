@@ -71,8 +71,15 @@ showed that any such polygonal shape can be built, and Low and others
   `card_height_mm` (the folded card's height, 50–200); `min_feature_mm`
   (narrowest strip, face, gap or window margin, 2–15); `windows` (ignored
   for the staircase); `preview` (the opened card); `labels` (title, line
-  legend, 50 mm check bar); `line` (cut-line weight). Any value out of
-  range is clamped and reported as `requested_<field>` in meta.
+  legend, 50 mm check bar); `line` (cut-line weight); the camera for the
+  preview — `pitch` (-90-90°) tilts the oblique view from its usual 25°
+  above the card's floor, held between level with the floor and straight
+  down onto it, and `distance` (1-10 times the usual eye distance) draws
+  it smaller, both inside the preview's usual box; the defaults (0, 1) are
+  the usual view. There is no `yaw`: the preview is painted wall, floor,
+  then columns left to right, an order that hides correctly only from in
+  front. Any value out of range is clamped and reported as
+  `requested_<field>` in meta.
 - **Generation:** the parallel-fold model. The sheet is divided across the
   spine into columns, each following a staircase path from wall to floor
   (out, down, out, down — a box, a setback block, a flight of steps, a

@@ -61,7 +61,12 @@ such as Cornell's NestWatch publish the sizes for each species.
   `thickness_mm` (3–40, null for 5 mm dough or 19 mm wood);
   `stock_width_mm` (50–600) and `stock_length_mm` (300–3000), the board or
   baking sheet, null for a 140 × 1829 mm board or a 330 × 460 mm sheet;
-  `look`; `index`; `page`; `margin` (inches).
+  `look`; `index`; `page`; `margin` (inches); the camera for the
+  assembled view on the first page — `yaw` (-180-180°) and `pitch`
+  (-90-90°) orbit the view from the usual isometric front-left corner (an
+  orthographic view, its elevation held to ±90°), `distance` (1-10 times
+  the usual eye distance) draws the box smaller; the defaults (0, 0, 1)
+  are the usual view, and the pieces, joints and templates never change.
 - **Generation:** each piece is a convex outline extruded along one axis.
   A nest box's inside floor and entrance follow its species (entrance
   diameter, floor side and entrance height above the floor, from common

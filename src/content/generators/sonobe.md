@@ -78,7 +78,12 @@ an edge colouring of the dual map.
   is clamped and recorded as `requested_colours`); `look` (`colour` fills
   the units, `outline` prints colour letters to colour in); `numbers`
   (building-order numbers); `fold_diagram` (the folding strip); `page`,
-  `landscape`; `margin` (inches, 0.1–1).
+  `landscape`; `margin` (inches, 0.1–1); and the camera on the front and
+  back pictures — `yaw` (-180-180°) and `pitch` (-90-90°) turn the ball
+  from its seeded orientation (both pictures together, the back staying
+  the far side), `distance` (1-10 times the usual eye distance) shrinks it
+  in its picture; the defaults (0, 0, 1) are the usual view. The building
+  order and colouring do not change.
 - **Generation:** each model is a polyhedron with triangular faces, its
   corners on a sphere: a triangle seen from both sides, the tetrahedron,
   octahedron, icosahedron, and a dodecahedron whose faces are rings of five

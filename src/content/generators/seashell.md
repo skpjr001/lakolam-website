@@ -59,7 +59,13 @@ Buch (1829), are used to identify species.
   seed's choice — `ornament` (auto, smooth, ribs, spines), `bands` (auto,
   none, spiral, flames), `palette` (auto, sand, coral, tiger, slate, ink),
   `growth_lines` per whorl, `sinistral`, `caption`, `width`, `height`,
-  `margin`.
+  `margin`; the camera — `yaw` (-180-180°) and `pitch` (-90-90°) orbit
+  every specimen's view from its seeded one, `camera_distance` (1-10 times
+  the usual eye distance; not `distance`, which is Raup's D) dollies out,
+  shrinking each shell in its cell (the views are orthographic, so nothing
+  flattens); the defaults (0, 0, 1) are the seeded views, which meta still
+  reports as `view_deg`. A clamped camera distance is reported as
+  `requested_camera_distance`.
 - **Generation:** the tube's centre is at radius `Rc(θ) = W^{θ/2π}` and
   height `−T·Rc`, its cross-section an ellipse of radial semi-axis
   `ρ = Rc(1 − D)/(1 + D)` and axial semi-axis `S·ρ` (a cone's has a flat

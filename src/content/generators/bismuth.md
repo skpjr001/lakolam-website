@@ -59,7 +59,15 @@ P.-P. Sloan and P. Shirley (*Journal of Computer Graphics Techniques*, 2013).
   (`isometric`, `top`); `style` (`iridescent`, `metallic`, `lines`);
   `crystals` (1–9); `terraces` stepping into each face of the largest crystal
   (2–10; smaller crystals have fewer); `oxide_nm`, the mean oxide thickness
-  (0–300 nm); `oxide_spread`, how far it wanders either way (0–150 nm).
+  (0–300 nm); `oxide_spread`, how far it wanders either way (0–150 nm);
+  the isometric camera — `yaw` (-180-180°, rounded to quarter turns so the
+  cubes stay on the lattice; a rounded value is reported as
+  `requested_yaw`) orbits it round the cluster, which is turned voxel for
+  voxel with its terraces and oxide, and `distance` (1-10 times the usual
+  eye distance) dollies out, shrinking the cluster about the page centre;
+  the defaults (0, 1) are the usual view. There is no `pitch`: the exact
+  hidden-surface method needs the isometric angle. The top view ignores
+  both.
 - **Generation:** isometric: each crystal is a box of voxels; every face
   carries strictly nested rectangles (rim 2–3 voxels, each frame at least 2
   wide, one side wider in turn so the frames wind like a square spiral), each
